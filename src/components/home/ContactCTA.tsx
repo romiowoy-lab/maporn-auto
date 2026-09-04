@@ -4,20 +4,19 @@ import ScrollFx from "@/components/ui/ScrollFx";
 
 export default function ContactCTA() {
   return (
-    <section className="py-16 sm:py-20 bg-white">
+    <section className="py-20 sm:py-32 bg-white">
       <div className="container-page">
-        <ScrollFx effect="blur" className="rounded-3xl bg-brand-navy text-white p-8 sm:p-14 text-center relative overflow-hidden">
-          <div className="absolute -right-10 -top-10 h-56 w-56 rounded-full bg-brand-red/10" />
-          <div className="absolute -left-10 -bottom-10 h-56 w-56 rounded-full bg-brand-red/10" />
-          <div className="relative z-10">
-            <p className="section-eyebrow-light mb-3">Let&apos;s Talk</p>
-            <h2 className="text-2xl sm:text-4xl font-bold max-w-2xl mx-auto">
+        <ScrollFx effect="blur" className="rounded-sm bg-brand-navy text-white p-10 sm:p-20 text-center relative overflow-hidden">
+          <span className="absolute inset-x-0 top-0 hairline-light" aria-hidden="true" />
+          <div className="relative z-10 flex flex-col items-center">
+            <p className="section-eyebrow-light mb-5">Let&apos;s Talk</p>
+            <h2 className="text-3xl sm:text-5xl font-black max-w-3xl mx-auto leading-[1.04] tracking-[-0.03em] text-balance">
               พร้อมให้คำปรึกษาและดูแลคุณตลอดเส้นทางการเลือกซื้อรถ
             </h2>
-            <p className="mt-4 text-white/70 max-w-xl mx-auto text-sm sm:text-base">
+            <p className="mt-5 text-white/70 max-w-xl mx-auto text-base sm:text-lg font-light leading-relaxed">
               ทีมฝ่ายขายของเราพร้อมให้คำแนะนำ ตอบทุกคำถาม และช่วยคุณเลือกรถที่ใช่ที่สุด
             </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <div className="mt-10 flex flex-wrap justify-center gap-3">
               <a href={`tel:${company.salesPhone}`} className="btn-red">
                 โทร {company.salesPhone}
               </a>

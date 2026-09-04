@@ -21,11 +21,11 @@ export default function QuickSearch() {
   }
 
   const selectClass =
-    "w-full rounded-lg border-0 bg-white px-4 py-3 text-sm text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-red";
+    "w-full rounded-sm border-0 bg-white px-4 py-3 text-sm text-brand-navy focus:outline-none focus:ring-2 focus:ring-white/60";
 
   return (
-    <div className="bg-white/10 backdrop-blur border border-white/20 rounded-2xl p-4 sm:p-5">
-      <p className="text-xs font-semibold text-brand-red mb-3 uppercase tracking-wide">ค้นหารถที่ใช่สำหรับคุณ</p>
+    <div className="bg-white/10 backdrop-blur border border-white/20 rounded-sm p-4 sm:p-5">
+      <p className="text-xs font-semibold text-white/70 mb-3 uppercase tracking-[0.18em]">ค้นหารถที่ใช่สำหรับคุณ</p>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
         <select value={brand} onChange={(e) => setBrand(e.target.value)} className={selectClass}>
           <option value="">ทุกแบรนด์</option>
@@ -51,7 +51,10 @@ export default function QuickSearch() {
           <option value="EV">EV</option>
         </select>
       </div>
-      <button onClick={handleSearch} className="btn-red w-full sm:w-auto mt-3">
+      <button
+        onClick={handleSearch}
+        className="inline-flex w-full sm:w-auto items-center justify-center rounded-sm bg-white px-9 py-[0.95rem] mt-3 text-[0.82rem] font-semibold uppercase tracking-[0.06em] text-brand-navy transition-colors duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-white/90"
+      >
         ค้นหารถยนต์
       </button>
     </div>

@@ -9,6 +9,9 @@
   --brand-red-soft: #ff3333;
   --brand-slate: #5b5b58;
   --brand-line: #e5e3df;
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+  /* Engineered, weighted easing — no bounce, decisive settle. */
+  --ease-engineered: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @theme inline {
@@ -53,17 +56,18 @@ h1, h2, h3 {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  border-radius: 9999px;
+  border-radius: 2px;
   background: var(--brand-navy);
   color: white;
-  padding: 0.75rem 1.75rem;
+  padding: 0.95rem 2.25rem;
   font-weight: 600;
-  font-size: 0.9rem;
-  transition: background-color 0.2s ease, transform 0.15s ease;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: background-color 0.6s var(--ease-engineered);
 }
 .btn-primary:hover {
   background: var(--brand-navy-soft);
-  transform: translateY(-1px);
 }
 
 .btn-red {
@@ -71,17 +75,18 @@ h1, h2, h3 {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  border-radius: 9999px;
+  border-radius: 2px;
   background: var(--brand-red);
   color: white;
-  padding: 0.75rem 1.75rem;
+  padding: 0.95rem 2.25rem;
   font-weight: 700;
-  font-size: 0.9rem;
-  transition: background-color 0.2s ease, transform 0.15s ease;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: background-color 0.6s var(--ease-engineered);
 }
 .btn-red:hover {
   background: var(--brand-red-soft);
-  transform: translateY(-1px);
 }
 
 .btn-outline {
@@ -89,13 +94,16 @@ h1, h2, h3 {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  border-radius: 9999px;
-  border: 1.5px solid var(--brand-navy);
+  border-radius: 2px;
+  border: 1px solid var(--brand-navy);
   color: var(--brand-navy);
-  padding: 0.7rem 1.65rem;
+  padding: 0.9rem 2.15rem;
   font-weight: 600;
-  font-size: 0.9rem;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: background-color 0.6s var(--ease-engineered), color 0.6s var(--ease-engineered),
+    border-color 0.6s var(--ease-engineered);
 }
 .btn-outline:hover {
   background: var(--brand-navy);
@@ -103,31 +111,76 @@ h1, h2, h3 {
 }
 
 .section-eyebrow {
-  letter-spacing: 0.18em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--brand-red);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--brand-navy);
+}
+.section-eyebrow::before {
+  content: "";
+  width: 1.75rem;
+  height: 1px;
+  background: rgba(17, 17, 17, 0.4);
 }
 
-/* Same eyebrow style for use on dark (navy) backgrounds, where red fails contrast. */
+/* Same eyebrow style for use on dark (navy) backgrounds. */
 .section-eyebrow-light {
-  letter-spacing: 0.18em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+}
+.section-eyebrow-light::before {
+  content: "";
+  width: 1.75rem;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.4);
 }
 
 .card-elevated {
   background: white;
   border: 1px solid var(--brand-line);
-  border-radius: 1rem;
-  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  border-radius: 2px;
+  transition: border-color 0.6s var(--ease-engineered), box-shadow 0.6s var(--ease-engineered);
 }
 .card-elevated:hover {
-  box-shadow: 0 20px 40px -20px rgba(17, 17, 17, 0.18);
-  transform: translateY(-3px);
+  border-color: var(--brand-navy);
+  box-shadow: 0 20px 50px -30px rgba(17, 17, 17, 0.35);
+}
+
+/* Hairline divider — 1px low-opacity rule for separating sections/rows. */
+.hairline {
+  height: 1px;
+  width: 100%;
+  background: rgba(17, 17, 17, 0.1);
+  border: 0;
+}
+.hairline-light {
+  height: 1px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.14);
+  border: 0;
+}
+
+/* Cinematic photo treatment — slightly desaturated, deeper contrast. */
+.img-cinematic {
+  filter: saturate(0.82) contrast(1.06) brightness(0.96);
+}
+/* Vignette overlay for editorial imagery. */
+.vignette::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(120% 100% at 50% 40%, transparent 55%, rgba(0, 0, 0, 0.45) 100%);
 }
 
 input, select, textarea {
