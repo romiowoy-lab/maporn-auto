@@ -7,9 +7,9 @@ import ScrollFx from "@/components/ui/ScrollFx";
 export default function BranchesSection() {
   const preview = branches.slice(0, 4);
   return (
-    <section className="py-16 sm:py-20 bg-[#f7f7f5]">
+    <section className="py-20 sm:py-32 bg-[#f7f7f5]">
       <div className="container-page">
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5">
           <SectionHeading
             eyebrow="Showroom Network"
             title="โชว์รูมและสาขาของเรา"
@@ -19,7 +19,7 @@ export default function BranchesSection() {
             ดูสาขาทั้งหมด
           </Link>
         </div>
-        <ScrollFx effect="slide-left" stagger={0.1} className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <ScrollFx effect="slide-left" stagger={0.1} className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {preview.map((b) => (
             <BranchCard key={b.slug} branch={b} />
           ))}
