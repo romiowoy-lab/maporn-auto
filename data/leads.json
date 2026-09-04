@@ -1,0 +1,18 @@
+[
+  {
+    "id": "LDMTMUQ42K",
+    "type": "test-drive",
+    "status": "New",
+    "name": "ทดสอบ ระบบ",
+    "phone": "0812345678",
+    "brand": "suzuki",
+    "model": "suzuki-fronx",
+    "branch": "bangkok-ladprao",
+    "preferredDate": "2026-09-20",
+    "preferredTime": "14:00",
+    "contactChannel": "โทรศัพท์",
+    "needsFinancing": false,
+    "consentAccepted": true,
+    "createdAt": "2026-09-04T11:09:20.540Z"
+  }
+]
