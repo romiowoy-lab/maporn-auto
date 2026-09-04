@@ -18,8 +18,10 @@ export default function NewsSection() {
           </Link>
         </div>
 
+        <div className="hairline mt-8" />
+
         {featured && (
-          <ScrollFx effect="scale" className="mt-12 sm:mt-16">
+          <ScrollFx effect="scale" className="mt-10 sm:mt-12">
             <NewsFeatured article={featured} />
           </ScrollFx>
         )}

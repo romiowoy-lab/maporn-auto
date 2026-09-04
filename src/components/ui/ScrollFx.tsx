@@ -54,7 +54,7 @@ export default function ScrollFx({
       }
 
       const fromVars: gsap.TweenVars = { opacity: 0 };
-      const toVars: gsap.TweenVars = { opacity: 1, duration: 0.9, ease: "power3.out", delay, stagger };
+      const toVars: gsap.TweenVars = { opacity: 1, duration: 1.15, ease: "power2.out", delay, stagger };
 
       if (effect === "fade-up") {
         fromVars.y = 40;

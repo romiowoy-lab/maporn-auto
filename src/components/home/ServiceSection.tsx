@@ -27,7 +27,7 @@ export default function ServiceSection() {
             {serviceOfferings.slice(0, 4).map((s) => (
               <div key={s.title} className="card-elevated p-6">
                 <h3 className="font-bold text-brand-navy text-sm mb-2">{s.title}</h3>
-                <p className="text-xs text-brand-slate leading-relaxed">{s.description}</p>
+                <p className="text-xs text-brand-slate font-light leading-relaxed">{s.description}</p>
               </div>
             ))}
           </ScrollFx>

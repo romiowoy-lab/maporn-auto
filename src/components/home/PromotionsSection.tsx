@@ -13,10 +13,10 @@ export default function PromotionsSection() {
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5">
           <div className="max-w-2xl">
             <p className="section-eyebrow-light mb-4">Promotions</p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.08] text-balance">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-[-0.03em] leading-[1.02] text-balance">
               โปรโมชั่นล่าสุด
             </h2>
-            <p className="mt-4 text-white/70 text-base sm:text-lg max-w-xl leading-relaxed">
+            <p className="mt-4 text-white/70 text-base sm:text-lg font-light max-w-xl leading-relaxed">
               โปรโมชั่นพิเศษที่กำลังดำเนินการอยู่ ณ ขณะนี้ อย่าพลาดข้อเสนอสุดคุ้ม
             </p>
           </div>
@@ -25,8 +25,10 @@ export default function PromotionsSection() {
           </Link>
         </div>
 
+        <div className="hairline-light mt-8" />
+
         {featured && (
-          <ScrollFx effect="scale" className="mt-12 sm:mt-16">
+          <ScrollFx effect="scale" className="mt-10 sm:mt-12">
             <PromotionFeatured promotion={featured} dark />
           </ScrollFx>
         )}

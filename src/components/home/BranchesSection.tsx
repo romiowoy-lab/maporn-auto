@@ -19,7 +19,8 @@ export default function BranchesSection() {
             ดูสาขาทั้งหมด
           </Link>
         </div>
-        <ScrollFx effect="slide-left" stagger={0.1} className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="hairline mt-8" />
+        <ScrollFx effect="slide-left" stagger={0.1} className="mt-10 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {preview.map((b) => (
             <BranchCard key={b.slug} branch={b} />
           ))}
