@@ -12,6 +12,8 @@ export interface Brand {
   founded: string;
   origin: string;
   heroImage?: string;
+  /** Optional short motion clip shown instead of heroImage (used as poster) on the brand detail hero. */
+  heroVideo?: string;
   logo?: string;
 }
 
@@ -72,6 +74,7 @@ export interface Branch {
   isServiceCenter: boolean;
   salesContact: string;
   mapQuery: string;
+  branchCode?: string;
 }
 
 export interface ServiceOffering {

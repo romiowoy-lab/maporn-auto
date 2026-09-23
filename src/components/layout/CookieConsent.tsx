@@ -2,10 +2,12 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const STORAGE_KEY = "maporn-cookie-consent";
 
 export default function CookieConsent() {
+  const pathname = usePathname();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -29,13 +31,13 @@ export default function CookieConsent() {
     setVisible(false);
   }
 
-  if (!visible) return null;
+  if (!visible || pathname === "/home-2") return null;
 
   return (
     <div className="fixed inset-x-0 bottom-0 z-[60] lg:pb-0 pb-16">
       <div className="container-page pb-4">
-        <div className="card-elevated bg-white shadow-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-          <p className="text-xs sm:text-sm text-brand-slate leading-relaxed flex-1">
+        <div className="card-elevated bg-white shadow-2xl p-4 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
+          <p className="text-[11px] sm:text-sm text-brand-slate leading-relaxed flex-1">
             เว็บไซต์นี้ใช้คุกกี้เพื่อมอบประสบการณ์การใช้งานที่ดียิ่งขึ้น และเพื่อวิเคราะห์การเข้าใช้งานเว็บไซต์
             ตาม{" "}
             <Link href="/pdpa" className="underline text-brand-navy font-medium">

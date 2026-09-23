@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import QuotationForm from "@/components/forms/QuotationForm";
 
 export const metadata: Metadata = {
-  title: "ขอใบเสนอราคา",
-  description: "ขอใบเสนอราคารถยนต์จากทั้ง 7 แบรนด์ในเครือ Maporn Autogroup พร้อมข้อมูลไฟแนนซ์และโปรโมชั่นล่าสุด",
+  title: "ขอใบเสนอราคารถยนต์ 7 แบรนด์",
+  description: "ขอใบเสนอราคารถยนต์จาก Maporn Autogroup เลือกรุ่นที่สนใจจาก 7 แบรนด์ พร้อมข้อมูลไฟแนนซ์และโปรโมชั่นล่าสุด",
 };
 
 export default async function QuotationPage({

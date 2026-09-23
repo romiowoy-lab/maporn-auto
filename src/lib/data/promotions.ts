@@ -49,18 +49,6 @@ export const promotions: Promotion[] = [
     endDate: "2026-12-31",
   },
   {
-    slug: "jaecoo-j8-family-gift",
-    title: "JAECOO J8 ครบครัวอบอุ่น รับของแถมสูงสุด 50,000 บาท",
-    category: "Gift",
-    brandSlug: "jaecoo",
-    modelSlug: "jaecoo-j8",
-    description: "จองและออกรถวันนี้ รับฟรีประกันภัยชั้น 1 พรมปูพื้น ฟิล์มกรองแสง และกล้องติดรถยนต์",
-    detail:
-      "เมื่อจองและออกรถ JAECOO J8 ทุกรุ่นย่อย รับฟรีแพ็กเกจของแถมมูลค่ารวมสูงสุด 50,000 บาท ประกอบด้วยประกันภัยชั้น 1 ฟรี 1 ปี พรมปูพื้นเกรดพรีเมียม ฟิล์มกรองแสงกันความร้อน และกล้องติดรถยนต์หน้า-หลัง",
-    startDate: "2026-08-10",
-    endDate: "2026-11-10",
-  },
-  {
     slug: "omoda-5-interest-rate",
     title: "OMODA 5 ดอกเบี้ยพิเศษ 1.99% เริ่มต้นปีแรก",
     category: "Interest Rate",

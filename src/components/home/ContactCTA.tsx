@@ -20,7 +20,7 @@ export default function ContactCTA() {
               <a href={`tel:${company.salesPhone}`} className="btn-red">
                 โทร {company.salesPhone}
               </a>
-              <Link href="/contact" className="btn-outline border-white text-white hover:bg-white hover:text-brand-navy">
+              <Link href="/contact" className="btn-outline border-white! text-white! hover:bg-white! hover:text-brand-navy!">
                 ติดต่อฝ่ายขาย
               </Link>
             </div>

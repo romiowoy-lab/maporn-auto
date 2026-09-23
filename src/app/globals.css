@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f7f7f5;
-  --foreground: #111111;
-  --brand-navy: #111111;
-  --brand-navy-soft: #262626;
-  --brand-red: #df0000;
-  --brand-red-soft: #ff3333;
+  --background: #f6f6f5;
+  --foreground: #1a1b1c;
+  --brand-navy: #0f172a;
+  --brand-navy-soft: #1e293b;
+  --brand-red: #dc2626;
+  --brand-red-soft: #b91c1c;
   --brand-slate: #5b5b58;
   --brand-line: #e5e3df;
   --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
@@ -23,17 +23,42 @@
   --color-brand-red-soft: var(--brand-red-soft);
   --color-brand-slate: var(--brand-slate);
   --color-brand-line: var(--brand-line);
-  --font-sans: var(--font-anuphan), "Noto Sans Thai", "Leelawadee UI", "Segoe UI", Tahoma, ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-prompt), "Leelawadee UI", "Segoe UI", Tahoma, ui-sans-serif, system-ui, sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  line-height: 1.6;
 }
 
 h1, h2, h3 {
   letter-spacing: -0.01em;
+}
+
+/* ---------- Typography system ---------- */
+.text-display {
+  font-size: clamp(48px, 6vw, 88px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.text-h2 {
+  font-size: clamp(36px, 4vw, 64px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+.text-nav-item {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+@media (min-width: 1024px) {
+  .text-nav-item {
+    font-size: 0.9rem;
+  }
 }
 
 .container-page {
@@ -56,11 +81,11 @@ h1, h2, h3 {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  border-radius: 2px;
+  border-radius: 6px;
   background: var(--brand-navy);
   color: white;
-  padding: 0.95rem 2.25rem;
-  font-weight: 600;
+  padding: 14px 24px;
+  font-weight: 500;
   font-size: 0.82rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -75,11 +100,11 @@ h1, h2, h3 {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  border-radius: 2px;
+  border-radius: 6px;
   background: var(--brand-red);
   color: white;
-  padding: 0.95rem 2.25rem;
-  font-weight: 700;
+  padding: 14px 24px;
+  font-weight: 500;
   font-size: 0.82rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -94,11 +119,11 @@ h1, h2, h3 {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  border-radius: 2px;
+  border-radius: 6px;
   border: 1px solid var(--brand-navy);
   color: var(--brand-navy);
-  padding: 0.9rem 2.15rem;
-  font-weight: 600;
+  padding: 14px 24px;
+  font-weight: 500;
   font-size: 0.82rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -156,6 +181,19 @@ h1, h2, h3 {
   box-shadow: 0 20px 50px -30px rgba(17, 17, 17, 0.35);
 }
 
+/* Dark glassmorphism panel — used on brand-forward sections (Hero, stats, pillars). */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  backdrop-filter: blur(24px);
+  border-radius: 1.5rem;
+  transition: box-shadow 0.4s var(--ease-engineered), border-color 0.4s var(--ease-engineered);
+}
+.glass-panel:hover {
+  border-color: rgba(14, 165, 233, 0.4);
+  box-shadow: 0 0 30px -8px rgba(14, 165, 233, 0.35);
+}
+
 /* Hairline divider — 1px low-opacity rule for separating sections/rows. */
 .hairline {
   height: 1px;
@@ -187,6 +225,16 @@ input, select, textarea {
   font-family: inherit;
 }
 
+/* Hero carousel (mobile) — restyle Swiper's default blue pagination to match the brand accent. */
+.hero-carousel .swiper-pagination-bullet {
+  background: var(--brand-navy);
+  opacity: 0.25;
+}
+.hero-carousel .swiper-pagination-bullet-active {
+  background: var(--brand-red);
+  opacity: 1;
+}
+
 .no-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -210,4 +258,10 @@ input, select, textarea {
     transform: none;
     transition: none;
   }
+}
+
+/* Never allow sideways page scroll on phones (intentional bleed sections are clipped) */
+html,
+body {
+  overflow-x: clip;
 }

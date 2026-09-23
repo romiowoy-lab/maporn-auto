@@ -5,8 +5,8 @@ import NewsCard from "@/components/news/NewsCard";
 import NewsFeatured from "@/components/news/NewsFeatured";
 
 export const metadata: Metadata = {
-  title: "ข่าวสารและกิจกรรม",
-  description: "ข่าวสาร กิจกรรม และบทความเกี่ยวกับรถยนต์จาก Maporn Autogroup",
+  title: "ข่าวสารและกิจกรรมรถยนต์",
+  description: "ข่าวสาร กิจกรรม และบทความเกี่ยวกับรถยนต์และรถ EV จาก Maporn Autogroup",
 };
 
 const CATEGORIES = ["Company", "Vehicle", "Technology", "EV", "Lifestyle", "Event", "CSR"] as const;

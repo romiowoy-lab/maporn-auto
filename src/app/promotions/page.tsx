@@ -4,8 +4,8 @@ import PromotionCard from "@/components/promotions/PromotionCard";
 import PromotionFeatured from "@/components/promotions/PromotionFeatured";
 
 export const metadata: Metadata = {
-  title: "โปรโมชั่นทั้งหมด",
-  description: "รวมโปรโมชั่นรถใหม่ EV ไฟแนนซ์ แคมเปญพิเศษ และส่วนลดจากทุกแบรนด์ในเครือ Maporn Autogroup",
+  title: "โปรโมชั่นรถยนต์ใหม่และรถ EV ล่าสุด",
+  description: "รวมโปรโมชั่นรถใหม่ รถ EV ไฟแนนซ์ แคมเปญพิเศษ และส่วนลดจากทุกแบรนด์ในเครือ Maporn Autogroup",
 };
 
 const CATEGORIES = ["New Car", "EV", "Financing", "Campaign", "Discount", "Gift", "Interest Rate"] as const;

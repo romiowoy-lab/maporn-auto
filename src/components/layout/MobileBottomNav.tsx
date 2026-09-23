@@ -1,52 +1,51 @@
-import Link from "next/link";
+"use client";
+
+import { usePathname } from "next/navigation";
+import { Phone, MessageCircle } from "lucide-react";
 import { company } from "@/lib/data/company";
 
-export default function MobileBottomNav() {
+function FacebookIcon({ className }: { className?: string }) {
   return (
-    <div className="fixed bottom-0 inset-x-0 z-40 lg:hidden bg-brand-navy pb-[env(safe-area-inset-bottom)]">
-      <div className="grid grid-cols-3 divide-x divide-white/10">
-        <a
-          href={`tel:${company.salesPhone}`}
-          className="flex flex-col items-center justify-center gap-1 py-3 text-white text-xs font-semibold"
-        >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} className="h-5 w-5">
-            <path
-              d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4c0 1-1 2-2 2C9.5 21 3 14.5 3 7c0-1 1-2 2-2Z"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-          โทร
-        </a>
-        <a
-          href={`https://line.me/ti/p/${company.line}`}
-          target="_blank"
-          rel="noreferrer"
-          className="flex flex-col items-center justify-center gap-1 py-3 text-white text-xs font-semibold"
-        >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} className="h-5 w-5">
-            <path
-              d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3 0 .7 0 1l-.1 1c0 .3-.2 1.1 1 .6s6.4-3.8 8.8-6.5C22.5 13.7 22 12.4 22 11c0-4.4-4.5-8-10-8Z"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-          Line
-        </a>
-        <Link
-          href="/test-drive"
-          className="flex flex-col items-center justify-center gap-1 py-3 text-white text-xs font-bold bg-brand-red"
-        >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="h-5 w-5">
-            <path
-              d="M4 16h16M5 16l1.5-5.5A2 2 0 0 1 8.4 9h7.2a2 2 0 0 1 1.9 1.5L19 16M6 16v2a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-3M18 16v2a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-3"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-          ทดลองขับ
-        </Link>
-      </div>
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+      <path d="M14 8.5h2V5.5h-2c-1.93 0-3.5 1.57-3.5 3.5v1.5H8.5v3H10.5V22h3v-8.5H15.83l.5-3H13.5V9c0-.28.22-.5.5-.5Z" />
+    </svg>
+  );
+}
+
+// Floating round contact buttons, persistent on every page (replaces the old
+// full-width bottom CTA bar). TikTok was requested too but there's no real
+// TikTok link anywhere in company data, so it's left out rather than faked —
+// add it here once a real URL exists.
+const ACTIONS = [
+  { key: "call", href: `tel:${company.salesPhone}`, label: "โทร", icon: Phone },
+  { key: "line", href: `https://line.me/ti/p/${company.line}`, label: "แอดไลน์", icon: MessageCircle },
+  { key: "facebook", href: company.facebook, label: "Facebook", icon: FacebookIcon },
+];
+
+export default function MobileBottomNav() {
+  const pathname = usePathname();
+
+  if (pathname === "/home-2") return null;
+
+  return (
+    <div className="fixed right-3 bottom-24 lg:bottom-6 z-40 flex flex-col gap-2">
+      {ACTIONS.map((a) => {
+        const Icon = a.icon;
+        const external = a.href.startsWith("http");
+        return (
+          <a
+            key={a.key}
+            href={a.href}
+            target={external ? "_blank" : undefined}
+            rel={external ? "noreferrer" : undefined}
+            aria-label={a.label}
+            title={a.label}
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white/95 text-brand-red shadow-md transition-all hover:border-brand-red/40 hover:shadow-xl hover:scale-105"
+          >
+            <Icon className="h-4 w-4" />
+          </a>
+        );
+      })}
     </div>
   );
 }

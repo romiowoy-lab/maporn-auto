@@ -17,10 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/promotions",
     "/branches",
     "/service",
-    "/service/appointment",
-    "/finance",
     "/news",
-    "/test-drive",
     "/quotation",
     "/contact",
     "/privacy-policy",
@@ -33,7 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: path === "" ? 1 : 0.7,
   }));
 
-  const brandRoutes = brands.map((b) => ({
+  const brandRoutes = brands.filter((b) => b.slug !== "omoda").map((b) => ({
     url: `${BASE_URL}/brands/${b.slug}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,

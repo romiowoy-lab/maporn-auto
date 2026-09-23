@@ -139,6 +139,7 @@ export default function QuotationForm({ defaultModel = "" }: { defaultModel?: st
                 <option value="เงินสด">เงินสด</option>
                 <option value="เช่าซื้อ / ผ่อนชำระ">เช่าซื้อ / ผ่อนชำระ</option>
                 <option value="ลีสซิ่ง">ลีสซิ่ง</option>
+                <option value="เทิร์นรถเก่า (Trade-in)">เทิร์นรถเก่า (Trade-in)</option>
               </SelectField>
             </div>
             <label className="flex items-center gap-2.5 text-sm text-brand-navy">
@@ -164,8 +165,12 @@ export default function QuotationForm({ defaultModel = "" }: { defaultModel?: st
               <TextField label="Line ID" placeholder="Line ID ของคุณ" value={lineId} onChange={(e) => setLineId(e.target.value)} />
             </div>
             <TextAreaField
-              label="หมายเหตุเพิ่มเติม"
-              placeholder="ระบุความต้องการเพิ่มเติม (ถ้ามี)"
+              label={purchaseType === "เทิร์นรถเก่า (Trade-in)" ? "รายละเอียดรถเก่าที่ต้องการเทิร์น" : "หมายเหตุเพิ่มเติม"}
+              placeholder={
+                purchaseType === "เทิร์นรถเก่า (Trade-in)"
+                  ? "ระบุยี่ห้อ รุ่น ปีที่จดทะเบียน และระยะทางที่ใช้งานของรถเก่า"
+                  : "ระบุความต้องการเพิ่มเติม (ถ้ามี)"
+              }
               value={remark}
               onChange={(e) => setRemark(e.target.value)}
             />

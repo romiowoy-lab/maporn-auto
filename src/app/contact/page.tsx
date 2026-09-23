@@ -3,8 +3,8 @@ import { company } from "@/lib/data/company";
 import ContactForm from "@/components/forms/ContactForm";
 
 export const metadata: Metadata = {
-  title: "ติดต่อเรา",
-  description: "ติดต่อ Maporn Autogroup สำนักงานใหญ่ เบอร์โทร Email และ Line พร้อมแบบฟอร์มติดต่อฝ่ายขาย",
+  title: "ติดต่อเรา โทร Line และแบบฟอร์มฝ่ายขาย",
+  description: "ติดต่อ Maporn Autogroup สำนักงานใหญ่ เบอร์โทร Email และ Line พร้อมแบบฟอร์มติดต่อฝ่ายขายสำหรับรถยนต์ทุกแบรนด์",
 };
 
 export default async function ContactPage({

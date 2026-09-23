@@ -14,10 +14,12 @@ export default function TestDriveForm({
   defaultBrand = "",
   defaultModel = "",
   defaultBranch = "",
+  defaultRemark = "",
 }: {
   defaultBrand?: string;
   defaultModel?: string;
   defaultBranch?: string;
+  defaultRemark?: string;
 }) {
   const { state, errorMessage, leadId, submit, reset } = useLeadSubmit();
   const [step, setStep] = useState(0);
@@ -30,7 +32,7 @@ export default function TestDriveForm({
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [contactChannel, setContactChannel] = useState("โทรศัพท์");
-  const [remark, setRemark] = useState("");
+  const [remark, setRemark] = useState(defaultRemark);
   const [consent, setConsent] = useState(false);
 
   const availableModels = brand ? getModelsByBrand(brand) : models;

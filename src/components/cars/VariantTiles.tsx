@@ -12,49 +12,43 @@ export default function VariantTiles({ modelSlug, variants }: { modelSlug: strin
         return (
           <div
             key={v.name}
-            className={`relative rounded-2xl border p-5 flex flex-col ${
-              recommended ? "border-brand-red bg-brand-navy text-white shadow-xl" : "border-brand-line bg-white"
+            className={`relative flex flex-col rounded-2xl border p-6 transition-all duration-300 hover:-translate-y-1 ${
+              recommended
+                ? "border-brand-red/70 bg-gradient-to-b from-[#2a1416] to-[#1C1E22] shadow-[0_18px_50px_rgba(223,0,0,0.18)]"
+                : "border-white/10 bg-[#1C1E22] shadow-[0_10px_30px_rgba(0,0,0,0.35)] hover:border-white/25"
             }`}
           >
             {recommended && (
-              <span className="absolute -top-3 left-5 bg-brand-red text-white text-[10px] font-bold px-3 py-1 rounded-full">
-                รุ่นแนะนำ
-              </span>
+              <span className="absolute -top-3 left-6 rounded-full bg-brand-red px-3 py-1 text-[10px] font-bold text-white">รุ่นแนะนำ</span>
             )}
-            <p className={`text-xs font-semibold uppercase tracking-wide ${recommended ? "text-white/70" : "text-brand-slate"}`}>
-              รุ่นย่อย
-            </p>
-            <h3 className="text-lg font-bold mt-0.5">{v.name}</h3>
-            <p className={`text-2xl font-black mt-3 ${recommended ? "text-brand-red-soft" : "text-brand-navy"}`}>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">รุ่นย่อย</p>
+            <h3 className="mt-1 text-xl font-bold text-white">{v.name}</h3>
+            <p className="mt-3 text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
               {formatTHB(v.price)}
             </p>
 
-            <ul className={`mt-4 space-y-1.5 text-xs flex-1 ${recommended ? "text-white/70" : "text-brand-slate"}`}>
-              <li className="flex justify-between">
-                <span>เครื่องยนต์ / มอเตอร์</span>
-                <span className="font-medium">{v.engine}</span>
-              </li>
-              <li className="flex justify-between">
-                <span>กำลังสูงสุด</span>
-                <span className="font-medium">{v.power}</span>
-              </li>
-              <li className="flex justify-between">
-                <span>แรงบิด</span>
-                <span className="font-medium">{v.torque}</span>
-              </li>
-              <li className="flex justify-between">
-                <span>เกียร์</span>
-                <span className="font-medium">{v.transmission}</span>
-              </li>
-              <li className="flex justify-between">
-                <span>ที่นั่ง</span>
-                <span className="font-medium">{v.seats} ที่นั่ง</span>
-              </li>
+            <ul className="mt-5 flex-1 space-y-2.5 text-sm">
+              {[
+                ["เครื่องยนต์ / มอเตอร์", v.engine],
+                ["กำลังสูงสุด", v.power],
+                ["แรงบิด", v.torque],
+                ["เกียร์", v.transmission],
+                ["ที่นั่ง", `${v.seats} ที่นั่ง`],
+              ].map(([k, val]) => (
+                <li key={k} className="flex justify-between gap-3 border-b border-white/[0.07] pb-2 last:border-none">
+                  <span className="text-white/55">{k}</span>
+                  <span className="font-semibold text-white">{val}</span>
+                </li>
+              ))}
             </ul>
 
             <Link
               href={`/quotation?model=${modelSlug}&variant=${encodeURIComponent(v.name)}`}
-              className={recommended ? "btn-red mt-5 text-xs" : "btn-outline mt-5 text-xs"}
+              className={
+                recommended
+                  ? "btn-red mt-6 text-xs"
+                  : "mt-6 inline-flex items-center justify-center rounded-md border border-white/30 px-6 py-3.5 text-xs font-medium text-white transition-colors hover:bg-white hover:text-[#101113]"
+              }
             >
               ขอใบเสนอราคารุ่นนี้
             </Link>

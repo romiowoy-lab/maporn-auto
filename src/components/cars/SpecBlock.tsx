@@ -1,13 +1,15 @@
 export function SpecList({ title, items }: { title: string; items: string[] }) {
   return (
-    <div className="card-elevated p-5">
-      <h3 className="font-bold text-brand-navy mb-3">{title}</h3>
-      <ul className="space-y-2">
+    <div className="rounded-2xl border border-white/10 bg-[#1C1E22] p-6">
+      <h3 className="mb-4 text-lg font-bold text-white">{title}</h3>
+      <ul className="grid gap-3 sm:grid-cols-2">
         {items.map((item) => (
-          <li key={item} className="flex items-start gap-2 text-sm text-brand-slate">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="h-4 w-4 mt-0.5 text-brand-red shrink-0">
-              <path d="m5 13 4 4L19 7" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
+          <li key={item} className="flex items-start gap-3 rounded-xl border border-white/[0.07] bg-white/[0.03] p-3.5 text-sm text-white/80">
+            <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-red/20">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="h-3 w-3 text-[#FF5A5A]">
+                <path d="m5 13 4 4L19 7" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </span>
             {item}
           </li>
         ))}
@@ -18,9 +20,9 @@ export function SpecList({ title, items }: { title: string; items: string[] }) {
 
 export function SpecRow({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex items-center justify-between py-2.5 border-b border-brand-line last:border-none text-sm">
-      <span className="text-brand-slate">{label}</span>
-      <span className="font-semibold text-brand-navy">{value}</span>
+    <div className="flex items-center justify-between gap-4 border-b border-white/10 py-2.5 text-sm last:border-none">
+      <span className="text-white/55">{label}</span>
+      <span className="text-right font-semibold text-white">{value}</span>
     </div>
   );
 }

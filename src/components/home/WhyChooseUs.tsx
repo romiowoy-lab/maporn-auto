@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { companyValues, company } from "@/lib/data/company";
+import { branches } from "@/lib/data/branches";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ScrollFx from "@/components/ui/ScrollFx";
 
@@ -43,6 +45,18 @@ export default function WhyChooseUs() {
               <div className="hairline-light my-4" />
               <p className="text-[0.7rem] sm:text-xs uppercase tracking-[0.18em] text-white/55">{s.label}</p>
             </div>
+          ))}
+        </ScrollFx>
+
+        <ScrollFx effect="fade-up" className="mt-10 flex flex-wrap justify-center gap-2.5">
+          {branches.map((b) => (
+            <Link
+              key={b.slug}
+              href={`/branches/${b.slug}`}
+              className="text-xs font-semibold rounded-full px-3.5 py-1.5 border border-brand-line text-brand-slate hover:border-brand-navy hover:text-brand-navy transition-colors"
+            >
+              {b.name.replace("Maporn Autogroup สาขา", "")} · {b.province}
+            </Link>
           ))}
         </ScrollFx>
       </div>

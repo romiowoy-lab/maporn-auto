@@ -27,6 +27,7 @@ export const brands: Brand[] = [
     founded: "2021",
     origin: "จีน",
     heroImage: "/brand/models/farizon-van.jpg",
+    logo: "/brand/logos/farizon.png",
   },
   {
     slug: "wuling",
@@ -54,6 +55,7 @@ export const brands: Brand[] = [
     founded: "2023",
     origin: "จีน",
     heroImage: "/brand/models/nex-pickup.jpg",
+    logo: "/brand/logos/nex.png",
   },
   {
     slug: "gwm",
@@ -80,8 +82,9 @@ export const brands: Brand[] = [
     colorHex: "#B8860B",
     founded: "2022",
     origin: "จีน",
-    heroImage: "/brand/brands-hero/omoda-jaecoo.jpg",
-    logo: "/brand/brands-hero/omoda-jaecoo.jpg",
+    heroImage: "/brand/hero/omoda-jaecoo-more-rain.jpg",
+    heroVideo: "/brand/video/omoda-jaecoo-more-rain.mp4",
+    logo: "/brand/logos/jaecoo.svg",
   },
   {
     slug: "omoda",
@@ -94,8 +97,9 @@ export const brands: Brand[] = [
     colorHex: "#7B2D8E",
     founded: "2022",
     origin: "จีน",
-    heroImage: "/brand/brands-hero/omoda-jaecoo.jpg",
-    logo: "/brand/brands-hero/omoda-jaecoo.jpg",
+    heroImage: "/brand/hero/omoda-jaecoo-more-rain.jpg",
+    heroVideo: "/brand/video/omoda-jaecoo-more-rain.mp4",
+    logo: "/brand/logos/omoda.svg",
   },
   {
     slug: "lepas",
@@ -108,7 +112,8 @@ export const brands: Brand[] = [
     colorHex: "#A0522D",
     founded: "2024",
     origin: "จีน",
-    heroImage: "/brand/brands-hero/lepas.jpg",
+    heroImage: "/brand/brands-hero/lepas-l6-launch-poster.jpg",
+    logo: "/brand/logos/lepas.png",
   },
 ];
 

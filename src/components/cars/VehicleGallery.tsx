@@ -39,6 +39,7 @@ function GalleryFrame({ image, className, priority }: { image: GalleryImage; cla
 }
 
 export default function VehicleGallery({ images }: { images: GalleryImage[] }) {
+  const [active, setActive] = useState(0);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
 
@@ -62,23 +63,32 @@ export default function VehicleGallery({ images }: { images: GalleryImage[] }) {
       <div className="space-y-3">
         <button
           type="button"
-          onClick={() => setOpenIndex(0)}
-          className="block w-full text-left"
-          aria-label={`ดูรูปขยาย ${images[0].label}`}
+          onClick={() => setOpenIndex(active)}
+          className="group relative block w-full overflow-hidden rounded-2xl border border-white/10 text-left shadow-[0_25px_60px_rgba(0,0,0,0.5)]"
+          aria-label={`ดูรูปขยาย ${images[active].label}`}
         >
-          <GalleryFrame image={images[0]} className="aspect-[4/3] rounded-2xl" priority />
+          <GalleryFrame image={images[active]} className="aspect-[4/3] transition-transform duration-700 group-hover:scale-[1.03]" priority />
+          <span
+            className="pointer-events-none absolute bottom-3 left-4 text-xs font-semibold uppercase tracking-[0.2em] text-white"
+            style={{ textShadow: "0 1px 8px rgba(0,0,0,0.8)" }}
+          >
+            {images[active].label}
+          </span>
         </button>
         {images.length > 1 && (
-          <div className="grid grid-cols-3 gap-3">
-            {images.slice(1).map((img, i) => (
+          <div className="grid grid-cols-4 gap-2 sm:grid-cols-5">
+            {images.map((img, i) => (
               <button
                 key={i}
                 type="button"
-                onClick={() => setOpenIndex(i + 1)}
-                className="block text-left"
-                aria-label={`ดูรูปขยาย ${img.label}`}
+                onClick={() => setActive(i)}
+                className={`relative block overflow-hidden rounded-lg border-2 transition-all duration-300 ${
+                  i === active ? "border-brand-red opacity-100" : "border-transparent opacity-60 hover:opacity-100"
+                }`}
+                aria-label={`เลือกรูป ${img.label}`}
+                aria-current={i === active}
               >
-                <GalleryFrame image={img} className="aspect-square rounded-xl" />
+                <GalleryFrame image={img} className="aspect-[4/3]" />
               </button>
             ))}
           </div>
