@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { company } from "@/lib/data/company";
+import { branches } from "@/lib/data/branches";
 import ContactForm from "@/components/forms/ContactForm";
+import { Phone, MessageCircle, Clock, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "ติดต่อเรา โทร Line และแบบฟอร์มฝ่ายขาย",
@@ -71,6 +73,59 @@ export default async function ContactPage({
             <h2 className="font-bold text-brand-navy mb-5">ส่งข้อความถึงเรา</h2>
             <ContactForm defaultBrand={brand} />
           </div>
+        </div>
+      </div>
+      {/* All branches */}
+      <div className="mt-14">
+        <div className="text-center mb-8">
+          <p className="section-eyebrow mb-2">Our Locations</p>
+          <h2 className="text-2xl sm:text-3xl font-bold text-brand-navy">ติดต่อสาขาทั้งหมด</h2>
+          <p className="mt-2 text-brand-slate text-sm">เลือกสาขาที่ใกล้คุณเพื่อติดต่อฝ่ายขายโดยตรง</p>
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {branches.map((b) => {
+            const short = b.name
+              .replace("Maporn Autogroup ", "")
+              .replace("Suzuki ", "")
+              .replace("GWM ", "")
+              .replace("Wuling ", "")
+              .replace("Lepas ", "")
+              .replace("OMODA & JAECOO ", "");
+            return (
+              <div key={b.slug} className="card-elevated p-5 flex flex-col gap-3">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-brand-slate">{b.province}</p>
+                  <h3 className="mt-0.5 font-bold text-brand-navy leading-snug">{b.name}</h3>
+                </div>
+                <div className="flex items-start gap-2 text-sm text-brand-slate">
+                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-red" />
+                  <span>{b.address}</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-brand-slate">
+                  <Clock className="h-4 w-4 shrink-0 text-brand-red" />
+                  <span>{b.hours}</span>
+                </div>
+                <div className="flex flex-wrap gap-2 mt-1">
+                  <a
+                    href={`tel:${b.phone.replace(/[^0-9+]/g, "")}`}
+                    className="flex items-center gap-1.5 rounded-lg border border-brand-line px-3 py-2 text-xs font-semibold text-brand-navy transition-colors hover:bg-brand-navy hover:text-white"
+                  >
+                    <Phone className="h-3.5 w-3.5" /> {b.phone}
+                  </a>
+                  {b.lineUrl && (
+                    <a
+                      href={b.lineUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-1.5 rounded-lg bg-[#06C755] px-3 py-2 text-xs font-semibold text-white transition-opacity hover:opacity-90"
+                    >
+                      <MessageCircle className="h-3.5 w-3.5" /> LINE {short}
+                    </a>
+                  )}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
