@@ -65,6 +65,19 @@ export const MODEL_GALLERY: Record<string, GalleryImage[]> = {
     { src: "/brand/studio2/jaecoo-j7-interior.jpg", label: "ห้องโดยสารด้านหน้า" },
     { src: "/brand/studio3/jaecoo-j7-shs-interior.jpg", label: "เบาะหลัง" },
   ],
+  "gwm-ora-5": [
+    { src: "/brand/gwm-ora5/hero-front.png", label: "GWM ORA 5", sublabel: "Exterior" },
+    { src: "/brand/gwm-ora5/hero-side.png", label: "ด้านข้าง", sublabel: "Side View" },
+    { src: "/brand/gwm-ora5/hero-rear.png", label: "ด้านหลัง", sublabel: "Rear View" },
+    { src: "/brand/gwm-ora5/hero-low.png", label: "มุมต่ำ", sublabel: "Low Angle" },
+    { src: "/brand/gwm-ora5/hero-straight.png", label: "ด้านหน้าตรง", sublabel: "Front View" },
+    { src: "/brand/gwm-ora5/interior.jpg", label: "ห้องโดยสาร", sublabel: "Interior" },
+    { src: "/brand/gwm-ora5/sunroof.jpg", label: "ซันรูฟพาโนรามิค", sublabel: "Panoramic Sunroof" },
+    { src: "/brand/gwm-ora5/surround-camera.jpg", label: "กล้องรอบทิศทาง 360°", sublabel: "360° Camera" },
+    { src: "/brand/gwm-ora5/charging.png", label: "การชาร์จ", sublabel: "Charging" },
+    { src: "/brand/gwm-ora5/safety-airbags.jpg", label: "ถุงลมนิรภัย 6 ใบ", sublabel: "Safety Airbags" },
+    { src: "/brand/gwm-ora5/colors.jpg", label: "สีตัวถัง", sublabel: "Color Options" },
+  ],
 };
 
 // Photos for the Technology / Design & Comfort story blocks (real photos only).
@@ -88,5 +101,9 @@ export const MODEL_STORY_IMAGES: Record<string, { technology?: string; design?: 
   "jaecoo-j7": {
     technology: "/brand/studio2/jaecoo-j7-interior.jpg",
     design: "/brand/studio3/jaecoo-j7-shs-interior.jpg",
+  },
+  "gwm-ora-5": {
+    technology: "/brand/gwm-ora5/surround-camera.jpg",
+    design: "/brand/gwm-ora5/interior.jpg",
   },
 };
