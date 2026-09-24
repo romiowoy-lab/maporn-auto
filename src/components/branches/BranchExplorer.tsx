@@ -9,10 +9,10 @@ import { getBrand } from "@/lib/data/brands";
 import { company } from "@/lib/data/company";
 import { BRANCH_PHOTO } from "@/components/branches/BranchCard";
 
-// Only these branches' phone / LINE are verified against a real source (legacy Suzuki site).
-// Other branches still hold placeholder contact data, so their cards fall back to the
-// head-office number and the company LINE instead of showing unverified details.
-const VERIFIED_CONTACT = new Set(["srinakarin", "rayong"]);
+const VERIFIED_CONTACT = new Set([
+  "srinakarin", "rayong", "rayong-omoda-jaecoo", "rayong-wuling",
+  "rayong-lepas", "sriracha", "lamlukka", "suzy-fix",
+]);
 
 function mapsHref(mapQuery: string) {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery)}`;
@@ -29,9 +29,15 @@ function FacebookGlyph({ className = "" }: { className?: string }) {
 function BranchWideCard({ b }: { b: Branch }) {
   const verified = VERIFIED_CONTACT.has(b.slug);
   const phone = verified ? b.phone : company.phone;
-  const lineId = verified ? b.line : company.line;
+  const lineHref = b.lineUrl ?? null;
+  const mapsUrl = b.googleMapsUrl ?? mapsHref(b.mapQuery);
   const photo = BRANCH_PHOTO[b.slug];
-  const short = b.name.replace("Maporn Autogroup ", "");
+  const short = b.name
+    .replace("Maporn Autogroup ", "")
+    .replace("Suzuki ", "")
+    .replace("GWM ", "")
+    .replace("Wuling ", "")
+    .replace("Lepas ", "");
 
   return (
     <article className="overflow-hidden rounded-3xl border border-black/[0.06] bg-white shadow-[0_10px_40px_rgba(15,23,42,0.08)]">
@@ -86,10 +92,17 @@ function BranchWideCard({ b }: { b: Branch }) {
               <Phone className="h-5 w-5" />
               โทร
             </a>
-            <a href={`https://line.me/R/ti/p/${encodeURIComponent(lineId)}`} target="_blank" rel="noreferrer" className="flex flex-col items-center gap-1 rounded-xl border border-green-100 bg-green-50 py-3 text-[11px] font-bold text-green-800 transition-colors hover:bg-green-100">
-              <MessageCircle className="h-5 w-5" />
-              LINE
-            </a>
+            {lineHref ? (
+              <a href={lineHref} target="_blank" rel="noreferrer" className="flex flex-col items-center gap-1 rounded-xl border border-green-100 bg-green-50 py-3 text-[11px] font-bold text-green-800 transition-colors hover:bg-green-100">
+                <MessageCircle className="h-5 w-5" />
+                LINE
+              </a>
+            ) : (
+              <span className="flex flex-col items-center gap-1 rounded-xl border border-brand-line bg-slate-50 py-3 text-[11px] font-bold text-brand-slate/40 cursor-not-allowed">
+                <MessageCircle className="h-5 w-5" />
+                LINE
+              </span>
+            )}
             <a href={company.facebook} target="_blank" rel="noreferrer" className="flex flex-col items-center gap-1 rounded-xl border border-blue-100 bg-blue-50 py-3 text-[11px] font-bold text-blue-800 transition-colors hover:bg-blue-100">
               <FacebookGlyph className="h-5 w-5" />
               Facebook
@@ -117,7 +130,7 @@ function BranchWideCard({ b }: { b: Branch }) {
           </div>
           <div className="grid gap-2 p-4 sm:grid-cols-2">
             <a
-              href={mapsHref(b.mapQuery)}
+              href={mapsUrl}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-navy px-4 py-3 text-sm font-bold text-white transition-colors hover:bg-brand-red"
