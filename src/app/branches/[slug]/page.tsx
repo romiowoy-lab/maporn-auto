@@ -46,8 +46,7 @@ export default async function BranchDetailPage({ params }: { params: Promise<{ s
 
   const verified = VERIFIED_CONTACT.has(branch.slug);
   const phone = verified ? branch.phone : company.phone;
-  const lineId = verified ? branch.line : company.line;
-  const lineHref = branch.lineUrl ?? `https://line.me/R/ti/p/${encodeURIComponent(lineId)}`;
+  const lineHref = branch.lineUrl ?? null;
   const photo = BRANCH_PHOTO[branch.slug];
   const short = branch.name.replace("Maporn Autogroup ", "").replace("Suzuki ", "").replace("GWM ", "").replace("Wuling ", "").replace("Lepas ", "");
   const maps = branch.googleMapsUrl ?? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(branch.mapQuery)}`;
@@ -90,9 +89,11 @@ export default async function BranchDetailPage({ params }: { params: Promise<{ s
             <a href={`tel:${phone.replace(/[^0-9+]/g, "")}`} className="mt-1 flex items-center gap-2 text-3xl font-extrabold tracking-tight hover:text-[#FF5A5A]">
               <Phone className="h-6 w-6 text-[#FF5A5A]" /> {phone}
             </a>
-            <div className="mt-4 grid grid-cols-2 gap-2">
+            <div className={`mt-4 grid gap-2 ${lineHref ? "grid-cols-2" : "grid-cols-1"}`}>
               <a href={`tel:${phone.replace(/[^0-9+]/g, "")}`} className="flex items-center justify-center gap-2 rounded-xl border border-white/20 py-3 text-sm font-bold transition-colors hover:bg-white hover:text-[#101113]"><Phone className="h-4 w-4" /> โทร</a>
-              <a href={lineHref} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 rounded-xl border border-white/20 py-3 text-sm font-bold transition-colors hover:bg-white hover:text-[#101113]"><MessageCircle className="h-4 w-4" /> LINE</a>
+              {lineHref && (
+                <a href={lineHref} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 rounded-xl border border-white/20 py-3 text-sm font-bold transition-colors hover:bg-white hover:text-[#101113]"><MessageCircle className="h-4 w-4" /> LINE</a>
+              )}
             </div>
           </div>
 
