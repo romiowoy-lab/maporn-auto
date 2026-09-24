@@ -74,6 +74,8 @@ export interface Branch {
   isServiceCenter: boolean;
   salesContact: string;
   mapQuery: string;
+  lineUrl?: string;
+  googleMapsUrl?: string;
   branchCode?: string;
 }
 

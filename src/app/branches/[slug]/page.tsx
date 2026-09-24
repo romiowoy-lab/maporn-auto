@@ -8,8 +8,8 @@ import { MapPin, Clock, Phone, MessageCircle, Navigation } from "lucide-react";
 import { BRANCH_PHOTO } from "@/components/branches/BranchCard";
 import { company } from "@/lib/data/company";
 
-// Only these branches' phone/LINE are verified against a real source; others fall back to head office.
-const VERIFIED_CONTACT = new Set(["srinakarin", "rayong"]);
+// Branches with verified phone/LINE; others fall back to head office.
+const VERIFIED_CONTACT = new Set(["srinakarin", "rayong", "rayong-omoda-jaecoo", "rayong-wuling", "rayong-lepas", "sriracha", "lamlukka", "suzy-fix"]);
 
 export function generateStaticParams() {
   return branches.map((b) => ({ slug: b.slug }));
@@ -47,9 +47,10 @@ export default async function BranchDetailPage({ params }: { params: Promise<{ s
   const verified = VERIFIED_CONTACT.has(branch.slug);
   const phone = verified ? branch.phone : company.phone;
   const lineId = verified ? branch.line : company.line;
+  const lineHref = branch.lineUrl ?? `https://line.me/R/ti/p/${encodeURIComponent(lineId)}`;
   const photo = BRANCH_PHOTO[branch.slug];
-  const short = branch.name.replace("Maporn Autogroup ", "");
-  const maps = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(branch.mapQuery)}`;
+  const short = branch.name.replace("Maporn Autogroup ", "").replace("Suzuki ", "").replace("GWM ", "").replace("Wuling ", "").replace("Lepas ", "");
+  const maps = branch.googleMapsUrl ?? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(branch.mapQuery)}`;
 
   return (
     <div className="bg-[#101113] text-white">
@@ -91,7 +92,7 @@ export default async function BranchDetailPage({ params }: { params: Promise<{ s
             </a>
             <div className="mt-4 grid grid-cols-2 gap-2">
               <a href={`tel:${phone.replace(/[^0-9+]/g, "")}`} className="flex items-center justify-center gap-2 rounded-xl border border-white/20 py-3 text-sm font-bold transition-colors hover:bg-white hover:text-[#101113]"><Phone className="h-4 w-4" /> โทร</a>
-              <a href={`https://line.me/R/ti/p/${encodeURIComponent(lineId)}`} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 rounded-xl border border-white/20 py-3 text-sm font-bold transition-colors hover:bg-white hover:text-[#101113]"><MessageCircle className="h-4 w-4" /> LINE {lineId}</a>
+              <a href={lineHref} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 rounded-xl border border-white/20 py-3 text-sm font-bold transition-colors hover:bg-white hover:text-[#101113]"><MessageCircle className="h-4 w-4" /> LINE</a>
             </div>
           </div>
 
