@@ -82,11 +82,14 @@ export default function LepasShowcase() {
           </motion.div>
         </AnimatePresence>
 
+        {/* Dark gradient overlay for text legibility */}
+        <div className="absolute inset-0 z-[5] bg-gradient-to-r from-black/60 via-black/20 to-transparent" />
+
         <div className="absolute inset-x-0 top-0 z-10 pt-8 sm:pt-12">
           <div className="container-page flex flex-wrap items-start justify-between gap-4">
-            <div style={{ textShadow: "0 2px 14px rgba(0,0,0,0.65)" }}>
+            <div style={{ textShadow: "0 2px 8px rgba(0,0,0,0.95), 0 4px 24px rgba(0,0,0,0.8)" }}>
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#E8C77E]">Showcase</p>
-              <h2 className="mt-2 text-3xl sm:text-5xl font-extralight tracking-tight text-white">
+              <h2 className="mt-2 text-3xl sm:text-5xl font-light tracking-tight text-white">
                 Lepas L6
                 <br /> in Every Light
               </h2>
