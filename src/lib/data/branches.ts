@@ -9,7 +9,7 @@ export const branches: Branch[] = [
     phone: "02-322-3663-5",
     line: "@mapornsuzuki",
     hours: "ทุกวัน 08:00 - 17:00 น.",
-    brands: ["suzuki", "farizon", "nex"],
+    brands: ["suzuki", "farizon"],
     isShowroom: true,
     isServiceCenter: true,
     salesContact: "ฝ่ายขาย โทร. 02-322-3663-5",

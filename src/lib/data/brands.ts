@@ -1,6 +1,6 @@
 import { Brand } from "@/lib/types";
 
-export const brands: Brand[] = [
+const allBrands: Brand[] = [
   {
     slug: "suzuki",
     name: "Suzuki",
@@ -56,6 +56,7 @@ export const brands: Brand[] = [
     origin: "จีน",
     heroImage: "/brand/models/nex-pickup.jpg",
     logo: "/brand/logos/nex.png",
+    hidden: true,
   },
   {
     slug: "gwm",
@@ -117,6 +118,10 @@ export const brands: Brand[] = [
   },
 ];
 
+/** Visible brands only — hidden brands are excluded from all public listings. */
+export const brands: Brand[] = allBrands.filter((b) => !b.hidden);
+
+/** Includes hidden brands — use only for admin/internal lookups. */
 export function getBrand(slug: string): Brand | undefined {
-  return brands.find((b) => b.slug === slug);
+  return allBrands.find((b) => b.slug === slug);
 }

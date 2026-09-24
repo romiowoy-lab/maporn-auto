@@ -1,6 +1,7 @@
 import { VehicleModel } from "@/lib/types";
+import { getBrand } from "@/lib/data/brands";
 
-export const models: VehicleModel[] = [
+const allModels: VehicleModel[] = [
   // ---------- SUZUKI ----------
   {
     slug: "suzuki-fronx",
@@ -585,6 +586,11 @@ export const models: VehicleModel[] = [
     image: "/brand/models/lepas-l6.jpg",
   },
 ];
+
+/** Visible models only — excludes models belonging to hidden brands. */
+export const models: VehicleModel[] = allModels.filter(
+  (m) => !getBrand(m.brandSlug)?.hidden
+);
 
 export function getModel(slug: string): VehicleModel | undefined {
   return models.find((m) => m.slug === slug);

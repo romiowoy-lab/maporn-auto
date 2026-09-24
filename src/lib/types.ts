@@ -15,6 +15,8 @@ export interface Brand {
   /** Optional short motion clip shown instead of heroImage (used as poster) on the brand detail hero. */
   heroVideo?: string;
   logo?: string;
+  /** Set true to hide this brand sitewide without deleting the data. */
+  hidden?: boolean;
 }
 
 export interface Variant {
