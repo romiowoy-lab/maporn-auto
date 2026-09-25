@@ -78,6 +78,27 @@ export const MODEL_GALLERY: Record<string, GalleryImage[]> = {
     { src: "/brand/gwm-ora5/safety-airbags.jpg", label: "ถุงลมนิรภัย 6 ใบ", sublabel: "Safety Airbags" },
     { src: "/brand/gwm-ora5/colors.jpg", label: "สีตัวถัง", sublabel: "Color Options" },
   ],
+  "gwm-poer-sahar-diesel": [
+    { src: "/brand/gwm-poer/hero.jpg", label: "GWM POER SAHAR Diesel", sublabel: "Key Visual" },
+    { src: "/brand/gwm-poer/hero2.jpg", label: "ออฟโรด", sublabel: "Off-Road" },
+    { src: "/brand/gwm-poer/front.jpg", label: "ด้านหน้า", sublabel: "Front View" },
+    { src: "/brand/gwm-poer/side.jpg", label: "ด้านข้าง", sublabel: "Side View" },
+    { src: "/brand/gwm-poer/rear.jpg", label: "ด้านหลัง", sublabel: "Rear View" },
+    { src: "/brand/gwm-poer/detail.jpg", label: "รายละเอียด", sublabel: "Detail" },
+    { src: "/brand/gwm-poer/exterior-1.jpg", label: "ภายนอก", sublabel: "Exterior" },
+    { src: "/brand/gwm-poer/exterior-2.jpg", label: "ภายนอก 2", sublabel: "Exterior" },
+    { src: "/brand/gwm-poer/front-2.jpg", label: "ด้านหน้ามุมเฉียง", sublabel: "Front Angle" },
+    { src: "/brand/gwm-poer/side-2.jpg", label: "ด้านข้าง 2", sublabel: "Side View" },
+    { src: "/brand/gwm-poer/rear-2.jpg", label: "ด้านหลัง 2", sublabel: "Rear View" },
+    { src: "/brand/gwm-poer/black-ultra.png", label: "สี Sun Black (ULTRA)", sublabel: "Color" },
+    { src: "/brand/gwm-poer/grey-ultra.png", label: "สี Ayers Grey (ULTRA)", sublabel: "Color" },
+    { src: "/brand/gwm-poer/white-ultra.png", label: "สี Hamilton White (ULTRA)", sublabel: "Color" },
+    { src: "/brand/gwm-poer/acc.jpg", label: "ACC ควบคุมความเร็วอัตโนมัติ", sublabel: "Safety" },
+    { src: "/brand/gwm-poer/fcw.jpg", label: "FCW เตือนการชน", sublabel: "Safety" },
+    { src: "/brand/gwm-poer/rcta.jpg", label: "RCTA จุดอับสายตาด้านหลัง", sublabel: "Safety" },
+    { src: "/brand/gwm-poer/powerful.jpg", label: "พลังขับเคลื่อน", sublabel: "Power" },
+    { src: "/brand/gwm-poer/engine.jpg", label: "เครื่องยนต์ 2.4T 9AT", sublabel: "Engine" },
+  ],
 };
 
 // Photos for the Technology / Design & Comfort story blocks (real photos only).
@@ -101,6 +122,10 @@ export const MODEL_STORY_IMAGES: Record<string, { technology?: string; design?: 
   "jaecoo-j7": {
     technology: "/brand/studio2/jaecoo-j7-interior.jpg",
     design: "/brand/studio3/jaecoo-j7-shs-interior.jpg",
+  },
+  "gwm-poer-sahar-diesel": {
+    technology: "/brand/gwm-poer/acc.jpg",
+    design: "/brand/gwm-poer/hero.jpg",
   },
   "gwm-ora-5": {
     technology: "/brand/gwm-ora5/surround-camera.jpg",

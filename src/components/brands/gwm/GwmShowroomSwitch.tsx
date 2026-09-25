@@ -5,11 +5,12 @@ import { motion, useAnimationControls } from "framer-motion";
 import { ArrowLeftRight } from "lucide-react";
 import GwmTank300Showroom from "@/components/brands/gwm/GwmTank300Showroom";
 import GwmTank500Showroom from "@/components/brands/gwm/GwmTank500Showroom";
+import GwmPoerShowroom from "@/components/brands/gwm/GwmPoerShowroom";
 import GwmOra5Showroom from "@/components/brands/gwm/GwmOra5Showroom";
 
-// GWM page with a 3-way model switch (Tank 300 / Tank 500 / ORA 5) and a full-screen wipe between them.
+// GWM page with a 4-way model switch (Tank 300 / Tank 500 / POER / ORA 5) and a full-screen wipe between them.
 
-type View = "tank300" | "tank500" | "ora5";
+type View = "tank300" | "tank500" | "poer" | "ora5";
 
 const MODEL: Record<View, { label: string; sub: string; sweep: string; glow: string }> = {
   tank300: {
@@ -23,6 +24,12 @@ const MODEL: Record<View, { label: string; sub: string; sweep: string; glow: str
     sub: "3.0T Diesel",
     sweep: "linear-gradient(120deg,#0e0f11 0%,#2a2c30 45%,#8a8f94 100%)",
     glow: "#C5CAD0",
+  },
+  poer: {
+    label: "POER",
+    sub: "SAHAR Diesel",
+    sweep: "linear-gradient(120deg,#0f0e0c 0%,#2a1f0e 45%,#B07B3E 100%)",
+    glow: "#B07B3E",
   },
   ora5: {
     label: "ORA 5",
@@ -63,7 +70,7 @@ export default function GwmShowroomSwitch() {
           <motion.span animate={{ rotate: spin }} transition={{ duration: 0.6, ease }} className="hidden text-white/60 sm:inline-flex" aria-hidden="true">
             <ArrowLeftRight className="h-4 w-4" />
           </motion.span>
-          <div className="relative flex rounded-full bg-white/[0.06] p-1" role="tablist" aria-label="สลับรุ่น GWM Tank 300 / Tank 500 / ORA 5">
+          <div className="relative flex rounded-full bg-white/[0.06] p-1" role="tablist" aria-label="สลับรุ่น GWM Tank 300 / Tank 500 / POER / ORA 5">
             {(Object.keys(MODEL) as View[]).map((v) => {
               const active = target === v;
               return (
@@ -73,7 +80,7 @@ export default function GwmShowroomSwitch() {
                   role="tab"
                   aria-selected={active}
                   onClick={() => switchTo(v)}
-                  className={`relative z-10 min-w-[76px] rounded-full px-3 py-2 text-xs font-extrabold uppercase tracking-[0.14em] transition-colors duration-300 sm:min-w-[104px] sm:px-5 sm:tracking-[0.18em] sm:text-sm ${
+                  className={`relative z-10 min-w-[64px] rounded-full px-2.5 py-2 text-xs font-extrabold uppercase tracking-[0.10em] transition-colors duration-300 sm:min-w-[88px] sm:px-4 sm:tracking-[0.14em] sm:text-sm ${
                     active ? "text-[#101114]" : "text-white/70 hover:text-white"
                   }`}
                 >
@@ -98,6 +105,8 @@ export default function GwmShowroomSwitch() {
           <GwmTank300Showroom />
         ) : view === "tank500" ? (
           <GwmTank500Showroom />
+        ) : view === "poer" ? (
+          <GwmPoerShowroom />
         ) : (
           <GwmOra5Showroom />
         )}
