@@ -73,10 +73,10 @@ const SAFETY = [
 ];
 
 const COLORS = [
-  { name: "Sun Black", hex: "#0e0e0f" },
-  { name: "Hamilton White", hex: "#F2F2EF" },
-  { name: "Ayers Grey", hex: "#8A8D90" },
-  { name: "Snow White", hex: "#E8EAE8" },
+  { name: "Ayers Grey", hex: "#8A8D90", img: P + "grey-ultra.png" },
+  { name: "Hamilton White", hex: "#F2F2EF", img: P + "white-ultra.png" },
+  { name: "Snow White", hex: "#E8EAE8", img: P + "white-ultra.png" },
+  { name: "Sun Black", hex: "#0e0e0f", img: P + "black-ultra.png" },
 ];
 
 function Nav() {
@@ -362,65 +362,112 @@ function Safety() {
 
 function Trims() {
   const m = getModel("gwm-poer-sahar-diesel");
+  const [selectedColor, setSelectedColor] = useState(0);
+  const color = COLORS[selectedColor];
+
   return (
-    <section id="trims" className="grid scroll-mt-32 border-t border-white/[0.06] bg-[#101114] lg:grid-cols-2">
-      <div className="relative min-h-[380px] overflow-hidden lg:min-h-[460px]">
-        <Image src={P + "rear.jpg"} alt="GWM POER SAHAR ด้านหลัง" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
-        <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, ease }} className="relative z-10 p-6 text-center sm:p-10" style={SHADOW}>
-          <h2 className="text-3xl font-bold uppercase tracking-tight text-white sm:text-4xl">Choose your POER</h2>
-          <p className="mt-2 text-sm text-white/90 sm:text-base">หลายรุ่นย่อย ทั้ง Double Cab และ Single Cab</p>
-        </motion.div>
+    <section id="trims" className="scroll-mt-32 border-t border-white/[0.06] bg-[#101114]">
+      {/* Color viewer */}
+      <div className="border-b border-white/[0.06] bg-[#0c0d0e] py-10 sm:py-14">
+        <div className="container-page">
+          <p className="mb-8 text-center text-xs font-bold uppercase tracking-[0.25em]" style={{ color: ACCENT }}>
+            สีตัวถัง — เลือกสีที่ชื่นชอบ
+          </p>
+          <div className="relative mx-auto aspect-[16/9] max-w-2xl overflow-hidden rounded-2xl bg-[#f5f5f3]">
+            {COLORS.map((c, i) => (
+              <motion.div
+                key={c.name}
+                initial={false}
+                animate={{ opacity: i === selectedColor ? 1 : 0 }}
+                transition={{ duration: 0.35, ease }}
+                className="absolute inset-0"
+              >
+                <Image
+                  src={c.img}
+                  alt={`GWM POER SAHAR สี ${c.name}`}
+                  fill
+                  sizes="(min-width: 768px) 672px, 100vw"
+                  className="object-contain p-4"
+                />
+              </motion.div>
+            ))}
+          </div>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+            {COLORS.map((c, i) => (
+              <button
+                key={c.name}
+                type="button"
+                onClick={() => setSelectedColor(i)}
+                className="flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-semibold transition-colors"
+                style={
+                  i === selectedColor
+                    ? { borderColor: ACCENT, color: "#fff", backgroundColor: "rgba(176,123,62,0.18)" }
+                    : { borderColor: "rgba(255,255,255,0.18)", color: "rgba(255,255,255,0.65)" }
+                }
+              >
+                <span
+                  className="h-4 w-4 rounded-full border-2"
+                  style={{
+                    backgroundColor: c.hex,
+                    borderColor: i === selectedColor ? ACCENT : "rgba(255,255,255,0.35)",
+                  }}
+                />
+                {c.name}
+              </button>
+            ))}
+          </div>
+          <p className="mt-3 text-center text-[11px] text-white/40">{color.name} · สอบถามสีที่มีจำหน่ายที่โชว์รูม</p>
+        </div>
       </div>
 
-      <div className="flex flex-col justify-center gap-6 bg-[#26282b] p-6 sm:p-10 lg:p-12">
-        <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-white/50">Model</p>
-          <h3 className="mt-1 text-2xl font-bold uppercase tracking-tight text-white sm:text-3xl">GWM POER SAHAR Diesel</h3>
-          <p className="mt-2 text-lg font-extrabold text-white">
-            เริ่มต้น {m ? formatTHB(m.startPrice) : ""}
-          </p>
-          <p className="text-[11px] text-white/45">ราคาเริ่มต้น · สอบถามราคาแต่ละรุ่นย่อยที่โชว์รูม</p>
+      {/* Trims + specs */}
+      <div className="grid lg:grid-cols-2">
+        <div className="relative min-h-[320px] overflow-hidden lg:min-h-[400px]">
+          <Image src={P + "rear.jpg"} alt="GWM POER SAHAR ด้านหลัง" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, ease }} className="relative z-10 p-6 text-center sm:p-10" style={SHADOW}>
+            <h2 className="text-3xl font-bold uppercase tracking-tight text-white sm:text-4xl">Choose your POER</h2>
+            <p className="mt-2 text-sm text-white/90 sm:text-base">หลายรุ่นย่อย ทั้ง Double Cab และ Single Cab</p>
+          </motion.div>
         </div>
 
-        <div>
-          <p className="mb-2 text-xs uppercase tracking-[0.2em] text-white/50">รุ่นย่อย</p>
-          <div className="grid grid-cols-2 gap-2">
-            {["ULTRA 4WD", "ULTRA 2WD", "PRO 2WD", "Single Cab S", "Single Cab L"].map((t) => (
-              <span key={t} className="rounded-lg border border-white/12 bg-[#1C1E22] px-3 py-2.5 text-center text-xs font-bold text-white/85" style={{ borderColor: "rgba(255,255,255,0.12)" }}>
-                {t}
-              </span>
-            ))}
+        <div className="flex flex-col justify-center gap-6 bg-[#26282b] p-6 sm:p-10 lg:p-12">
+          <div>
+            <p className="text-xs uppercase tracking-[0.2em] text-white/50">Model</p>
+            <h3 className="mt-1 text-2xl font-bold uppercase tracking-tight text-white sm:text-3xl">GWM POER SAHAR Diesel</h3>
+            <p className="mt-2 text-lg font-extrabold text-white">
+              เริ่มต้น {m ? formatTHB(m.startPrice) : ""}
+            </p>
+            <p className="text-[11px] text-white/45">ราคาเริ่มต้น · สอบถามราคาแต่ละรุ่นย่อยที่โชว์รูม</p>
           </div>
-        </div>
 
-        <div>
-          <p className="mb-2 text-xs uppercase tracking-[0.2em] text-white/50">สีตัวถัง</p>
-          <div className="flex flex-wrap gap-2">
-            {COLORS.map((c) => (
-              <span key={c.name} className="flex items-center gap-2 rounded-full border border-white/15 px-3 py-1.5 text-xs text-white/80">
-                <span className="h-3.5 w-3.5 rounded-full border border-white/30" style={{ backgroundColor: c.hex }} />
-                {c.name}
-              </span>
-            ))}
+          <div>
+            <p className="mb-2 text-xs uppercase tracking-[0.2em] text-white/50">รุ่นย่อย</p>
+            <div className="grid grid-cols-2 gap-2">
+              {["ULTRA 4WD", "ULTRA 2WD", "PRO 2WD", "Single Cab S", "Single Cab L"].map((t) => (
+                <span key={t} className="rounded-lg border border-white/12 bg-[#1C1E22] px-3 py-2.5 text-center text-xs font-bold text-white/85" style={{ borderColor: "rgba(255,255,255,0.12)" }}>
+                  {t}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
 
-        <ul className="space-y-2">
-          {["ขนาดตัวถัง 5,360 × 1,934 × 1,847 มม. ฐานล้อ 3,130 มม.", "เครื่องยนต์ดีเซล 2.4L เทอร์โบ 184 แรงม้า แรงบิด 480 Nm เกียร์ 9 สปีด"].map((f) => (
-            <li key={f} className="flex items-center gap-2 text-sm text-white/75">
-              <Check className="h-4 w-4 shrink-0" style={{ color: ACCENT }} />
-              {f}
-            </li>
-          ))}
-        </ul>
+          <ul className="space-y-2">
+            {["ขนาดตัวถัง 5,360 × 1,934 × 1,847 มม. ฐานล้อ 3,130 มม.", "เครื่องยนต์ดีเซล 2.4L เทอร์โบ 184 แรงม้า แรงบิด 480 Nm เกียร์ 9 สปีด"].map((f) => (
+              <li key={f} className="flex items-center gap-2 text-sm text-white/75">
+                <Check className="h-4 w-4 shrink-0" style={{ color: ACCENT }} />
+                {f}
+              </li>
+            ))}
+          </ul>
 
-        <div className="flex flex-wrap gap-3">
-          <Link href="/cars/gwm-poer-sahar-diesel" className="rounded-lg px-6 py-2.5 text-sm font-bold text-[#2a1500] transition-all hover:brightness-110" style={{ backgroundColor: ACCENT }}>
-            ดูรายละเอียด
-          </Link>
-          <Link href="/quotation?model=gwm-poer-sahar-diesel" className="rounded-lg border border-white/40 px-6 py-2.5 text-sm font-bold text-white transition-colors hover:bg-white hover:text-[#101114]">
-            ขอใบเสนอราคา
-          </Link>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/cars/gwm-poer-sahar-diesel" className="rounded-lg px-6 py-2.5 text-sm font-bold text-[#2a1500] transition-all hover:brightness-110" style={{ backgroundColor: ACCENT }}>
+              ดูรายละเอียด
+            </Link>
+            <Link href="/quotation?model=gwm-poer-sahar-diesel" className="rounded-lg border border-white/40 px-6 py-2.5 text-sm font-bold text-white transition-colors hover:bg-white hover:text-[#101114]">
+              ขอใบเสนอราคา
+            </Link>
+          </div>
         </div>
       </div>
     </section>
