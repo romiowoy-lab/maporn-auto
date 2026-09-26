@@ -78,6 +78,23 @@ export const MODEL_GALLERY: Record<string, GalleryImage[]> = {
     { src: "/brand/gwm-ora5/safety-airbags.jpg", label: "ถุงลมนิรภัย 6 ใบ", sublabel: "Safety Airbags" },
     { src: "/brand/gwm-ora5/colors.jpg", label: "สีตัวถัง", sublabel: "Color Options" },
   ],
+  "gwm-haval-h6": [
+    { src: "/brand/gwm-haval-h6/hero.jpg", label: "GWM Haval H6", sublabel: "Key Visual" },
+    { src: "/brand/gwm-haval-h6/exterior.webp", label: "ภายนอก", sublabel: "Exterior" },
+    { src: "/brand/gwm-haval-h6/side.webp", label: "ด้านข้าง", sublabel: "Side View" },
+    { src: "/brand/gwm-haval-h6/phev.webp", label: "Haval H6 PHEV", sublabel: "PHEV" },
+    { src: "/brand/gwm-haval-h6/detail-1.webp", label: "รายละเอียด 1", sublabel: "Detail" },
+    { src: "/brand/gwm-haval-h6/detail-2.webp", label: "รายละเอียด 2", sublabel: "Detail" },
+    { src: "/brand/gwm-haval-h6/detail-3.webp", label: "รายละเอียด 3", sublabel: "Detail" },
+    { src: "/brand/gwm-haval-h6/detail-4.webp", label: "รายละเอียด 4", sublabel: "Detail" },
+    { src: "/brand/gwm-haval-h6/interior-1.webp", label: "ห้องโดยสาร 1", sublabel: "Interior" },
+    { src: "/brand/gwm-haval-h6/interior-2.webp", label: "ห้องโดยสาร 2", sublabel: "Interior" },
+    { src: "/brand/gwm-haval-h6/interior-3.webp", label: "ห้องโดยสาร 3", sublabel: "Interior" },
+    { src: "/brand/gwm-haval-h6/interior-4.webp", label: "ห้องโดยสาร 4", sublabel: "Interior" },
+    { src: "/brand/gwm-haval-h6/app.webp", label: "GWM App", sublabel: "Technology" },
+    { src: "/brand/gwm-haval-h6/color-grey.png", label: "สี Ayers Grey", sublabel: "Color" },
+    { src: "/brand/gwm-haval-h6/color-black.png", label: "สี Sun Black", sublabel: "Color" },
+  ],
   "gwm-poer-sahar-diesel": [
     { src: "/brand/gwm-poer/hero.jpg", label: "GWM POER SAHAR Diesel", sublabel: "Key Visual" },
     { src: "/brand/gwm-poer/hero2.jpg", label: "ออฟโรด", sublabel: "Off-Road" },
@@ -122,6 +139,10 @@ export const MODEL_STORY_IMAGES: Record<string, { technology?: string; design?: 
   "jaecoo-j7": {
     technology: "/brand/studio2/jaecoo-j7-interior.jpg",
     design: "/brand/studio3/jaecoo-j7-shs-interior.jpg",
+  },
+  "gwm-haval-h6": {
+    technology: "/brand/gwm-haval-h6/interior-1.webp",
+    design: "/brand/gwm-haval-h6/exterior.webp",
   },
   "gwm-poer-sahar-diesel": {
     technology: "/brand/gwm-poer/acc.jpg",
