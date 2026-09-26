@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, useAnimationControls } from "framer-motion";
 import { ArrowLeftRight } from "lucide-react";
 import GwmTank300Showroom from "@/components/brands/gwm/GwmTank300Showroom";
@@ -55,6 +55,15 @@ export default function GwmShowroomSwitch() {
   const [busy, setBusy] = useState(false);
   const [spin, setSpin] = useState(0);
   const controls = useAnimationControls();
+
+  useEffect(() => {
+    const saved = sessionStorage.getItem("gwm-init-view") as View | null;
+    if (saved && saved in MODEL) {
+      sessionStorage.removeItem("gwm-init-view");
+      setView(saved);
+      setTarget(saved);
+    }
+  }, []);
 
   async function switchTo(next: View) {
     if (next === view || busy) return;
