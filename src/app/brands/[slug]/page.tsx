@@ -11,6 +11,7 @@ import CarCard from "@/components/cars/CarCard";
 import PromotionCard from "@/components/promotions/PromotionCard";
 import SuzukiShowcase from "@/components/brands/SuzukiShowcase";
 import GwmShowroomSwitch from "@/components/brands/gwm/GwmShowroomSwitch";
+import GwmModelGrid from "@/components/brands/gwm/GwmModelGrid";
 import OmodaJaecooShowroom from "@/components/brands/omoda-jaecoo/OmodaJaecooShowroom";
 import LepasShowroom from "@/components/brands/lepas/LepasShowroom";
 import WulingShowroom from "@/components/brands/wuling/WulingShowroom";
@@ -116,7 +117,14 @@ export default async function BrandDetailPage({ params }: { params: Promise<{ sl
   }
 
   if (brand.slug === "gwm") {
-    return withLd(<GwmShowroomSwitch />);
+    return withLd(
+      <>
+        <GwmModelGrid />
+        <div id="showroom">
+          <GwmShowroomSwitch />
+        </div>
+      </>
+    );
   }
 
   // OMODA and JAECOO are one paired dealership: both URLs open the same switchable page (JAECOO first).
