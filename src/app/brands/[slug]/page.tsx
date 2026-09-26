@@ -117,14 +117,7 @@ export default async function BrandDetailPage({ params }: { params: Promise<{ sl
   }
 
   if (brand.slug === "gwm") {
-    return withLd(
-      <>
-        <GwmModelGrid />
-        <div id="showroom">
-          <GwmShowroomSwitch />
-        </div>
-      </>
-    );
+    return withLd(<GwmModelGrid />);
   }
 
   // OMODA and JAECOO are one paired dealership: both URLs open the same switchable page (JAECOO first).

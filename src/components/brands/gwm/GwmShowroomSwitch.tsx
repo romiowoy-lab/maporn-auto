@@ -57,12 +57,15 @@ export default function GwmShowroomSwitch() {
   const controls = useAnimationControls();
 
   useEffect(() => {
-    const saved = sessionStorage.getItem("gwm-init-view") as View | null;
-    if (saved && saved in MODEL) {
-      sessionStorage.removeItem("gwm-init-view");
-      setView(saved);
-      setTarget(saved);
-    }
+    const handler = (e: Event) => {
+      const v = (e as CustomEvent<{ view: string }>).detail?.view as View;
+      if (v && v in MODEL) {
+        setView(v);
+        setTarget(v);
+      }
+    };
+    window.addEventListener("gwm-switch", handler);
+    return () => window.removeEventListener("gwm-switch", handler);
   }, []);
 
   async function switchTo(next: View) {
