@@ -24,6 +24,7 @@ export interface BrandGroup {
 export function getBrandGroups(): BrandGroup[] {
   const groups: BrandGroup[] = [];
   for (const b of brands) {
+    if (b.hidden) continue;
     if (b.slug === "jaecoo") continue;
     if (b.slug === "omoda") {
       const jaecoo = getBrand("jaecoo");

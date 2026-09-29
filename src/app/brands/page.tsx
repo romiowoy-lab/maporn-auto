@@ -5,12 +5,12 @@ import { getBrandGroups } from "@/lib/data/brandGroups";
 import { getBrand } from "@/lib/data/brands";
 
 export const metadata: Metadata = {
-  title: "แบรนด์รถยนต์ Suzuki GWM OMODA JAECOO Lepas Wuling Farizon Nex",
-  description: "รวม 7 แบรนด์รถยนต์ในเครือ Maporn Autogroup Suzuki, Farizon, Nex, OMODA | JAECOO, Lepas, Wuling และ GWM เลือกแบรนด์ ดูรุ่น และจองทดลองขับ",
+  title: "แบรนด์รถยนต์ Suzuki GWM OMODA JAECOO Lepas Wuling Farizon",
+  description: "รวมแบรนด์รถยนต์ในเครือ Maporn Autogroup Suzuki, Farizon, OMODA | JAECOO, Lepas, Wuling และ GWM เลือกแบรนด์ ดูรุ่น และจองทดลองขับ",
 };
 
 // Display order requested for this page: Suzuki, OMODA|JAECOO, GWM, Lepas, Wuling, Farizon, Nex, Suzy Fix.
-const ORDER = ["suzuki", "omoda-jaecoo", "gwm", "lepas", "wuling", "farizon", "nex"];
+const ORDER = ["suzuki", "omoda-jaecoo", "gwm", "lepas", "wuling", "farizon"];
 
 export default function BrandsPage() {
   const groups = [...getBrandGroups()].sort((a, b) => ORDER.indexOf(a.key) - ORDER.indexOf(b.key));

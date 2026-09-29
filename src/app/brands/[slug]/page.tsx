@@ -20,7 +20,7 @@ import NexShowroom from "@/components/brands/nex/NexShowroom";
 import FarizonShowroom from "@/components/brands/farizon/FarizonShowroom";
 
 export function generateStaticParams() {
-  return brands.map((b) => ({ slug: b.slug }));
+  return brands.filter((b) => !b.hidden).map((b) => ({ slug: b.slug }));
 }
 
 // Hand-written SEO copy for the redesigned showroom pages (facts only; from the catalog data).
@@ -75,7 +75,7 @@ export async function generateMetadata({
 export default async function BrandDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const brand = getBrand(slug);
-  if (!brand) notFound();
+  if (!brand || brand.hidden) notFound();
 
   const brandModels = getModelsByBrand(brand.slug);
   const featured = brandModels.filter((m) => m.isFeatured).slice(0, 3);

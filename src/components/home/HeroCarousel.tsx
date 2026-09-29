@@ -31,7 +31,6 @@ const GROUP_VIDEOS: Record<string, string> = {
   wuling: "/brand/video/wuling-xingguang-s60-hero-motion.mp4",
   "omoda-jaecoo": "/brand/video/omoda-5-hero-motion.mp4",
   lepas: "/brand/video/lepas-l6-hero-full.mp4",
-  nex: "/brand/video/nex-ev-tractor.mp4",
 };
 
 export default function HeroCarousel() {
@@ -52,7 +51,7 @@ export default function HeroCarousel() {
     },
     ...groups.map((g) => ({
       key: g.key,
-      image: g.key === "nex" ? "/brand/hero/nex-ev-tractor-poster.jpg" : `/brand/showcase/${g.key}.jpg`,
+      image: `/brand/showcase/${g.key}.jpg`,
       video: GROUP_VIDEOS[g.key],
       alt: g.name,
       eyebrow: g.name,
@@ -74,7 +73,7 @@ export default function HeroCarousel() {
 
   // Same order as the desktop hero: JAECOO | OMODA first, Suzuki second-to-last, NEX last.
   // (Overview stays first; Suzy Fix sits just before Suzuki.)
-  const ORDER = ["overview", "omoda-jaecoo", "farizon", "wuling", "gwm", "lepas", "suzy-fix", "suzuki", "nex"];
+  const ORDER = ["overview", "omoda-jaecoo", "farizon", "wuling", "gwm", "lepas", "suzy-fix", "suzuki"];
   const slides = [...unordered].sort((x, y) => ORDER.indexOf(x.key) - ORDER.indexOf(y.key));
 
   return (

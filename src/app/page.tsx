@@ -79,7 +79,6 @@ const BENTO_UNITS: { key: string; tag: string; title: string; href: string; img:
   { key: 'omoda', tag: 'OMODA', title: 'Electric Crossover', href: '/brands/omoda', img: '/brand/omoda-c5/threeq.jpg', pos: '50% 50%', logo: '/brand/logos/omoda.svg', color: '#7B2D8E' },
   { key: 'jaecoo', tag: 'JAECOO', title: 'Feel Alive', href: '/brands/jaecoo', img: '/brand/jaecoo-j7/road.jpg', pos: '65% 50%', logo: '/brand/logos/jaecoo.svg', color: '#B8860B' },
   { key: 'lepas', tag: 'Lepas', title: 'Drive Your Elegance', href: '/brands/lepas', img: '/brand/lepas-l6/street.jpg', pos: '55% 50%', logo: '/brand/logos/lepas.png', color: '#A0522D' },
-  { key: 'nex', tag: 'Nex', title: 'Drive the Better Future', href: '/brands/nex', img: '/brand/hero/nex-ev-tractor-poster.jpg', pos: '35% 50%', logo: '/brand/logos/nex.png', color: '#00A19A' },
   { key: 'wuling', tag: 'Wuling', title: 'Enjoy the Ride', href: '/brands/wuling', img: '/brand/wuling-darion/front34.jpg', pos: '35% 50%', logo: '/brand/logos/wuling.png', color: '#C8102E' },
   { key: 'suzyfix', tag: 'Suzy Fix', title: 'ศูนย์บริการซ่อมสีตัวถังมาตรฐาน Suzuki', href: '/service#suzy-fix', img: '/brand/suzyfix/suzyfix-mechanic.jpg', pos: '50% 40%', logo: null, color: '#E85D2F' },
 ];

@@ -27,7 +27,6 @@ const BRAND_STRIP = [
   { key: "lepas", name: "Lepas", href: "/brands/lepas", logos: ["/brand/logos/lepas.png"], big: true },
   { key: "wuling", name: "Wuling", href: "/brands/wuling", logos: ["/brand/logos/wuling.png"] },
   { key: "farizon", name: "Farizon", href: "/brands/farizon", logos: ["/brand/logos/farizon.png"] },
-  { key: "nex", name: "Nex", href: "/brands/nex", logos: ["/brand/logos/nex.png"] },
   { key: "suzyfix", name: "Suzy Fix", href: "/service#suzy-fix", logos: ["/brand/logos/suzyfix.jpg"] },
 ];
 

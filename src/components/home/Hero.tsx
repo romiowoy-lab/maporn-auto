@@ -50,7 +50,7 @@ export default function Hero() {
           >
             <Image
               src="/brand/hero-7-brands.jpg"
-              alt="7 แบรนด์ในเครือ Maporn Autogroup: Suzuki, Farizon, Wuling, Nex, GWM, JAECOO, Lepas"
+              alt="แบรนด์รถยนต์ในเครือ Maporn Autogroup: Suzuki, Farizon, Wuling, GWM, JAECOO, Lepas"
               fill
               priority
               sizes="(max-width: 1600px) 100vw, 1600px"
