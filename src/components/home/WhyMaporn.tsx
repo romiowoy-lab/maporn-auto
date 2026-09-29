@@ -21,7 +21,7 @@ export default function WhyMaporn() {
   return (
     <section className="py-16 sm:py-28 bg-white">
       <div className="container-page">
-        <SectionHeading eyebrow="Why Maporn" title="ทำไมต้องมาพร" />
+        <SectionHeading title="ทำไมต้องมาพร" />
 
         <ScrollFx effect="reveal" className="mt-8 relative aspect-[16/10] sm:aspect-[21/9] w-full overflow-hidden rounded-xl">
           <Image

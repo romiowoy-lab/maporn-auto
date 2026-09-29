@@ -22,7 +22,6 @@ export default function FeaturedVehicle() {
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/10" aria-hidden="true" />
 
       <ScrollFx effect="fade-up" className="container-page relative z-10 pb-14 sm:pb-20">
-        <p className="section-eyebrow-light mb-4">Featured Vehicle</p>
         <h2 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase leading-[0.95] tracking-tight max-w-2xl">
           {brand?.name} {model.name}
         </h2>

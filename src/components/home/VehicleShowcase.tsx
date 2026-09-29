@@ -30,7 +30,7 @@ export default function VehicleShowcase() {
   return (
     <section className="bg-white py-20 sm:py-28">
       <div className="container-page">
-        <SectionHeading eyebrow="Vehicle Showcase" title="เลือกรถที่ใช่สำหรับคุณ" />
+        <SectionHeading title="เลือกรถที่ใช่สำหรับคุณ" />
 
         <ScrollFx effect="fade-up" stagger={0.1} className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
           {models.map((model) => {

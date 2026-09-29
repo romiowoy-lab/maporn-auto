@@ -12,7 +12,7 @@ export default function NewsSection() {
     <section className="py-20 sm:py-32 bg-[#f7f7f5]">
       <div className="container-page">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5">
-          <SectionHeading eyebrow="News & Updates" title="ข่าวสารและกิจกรรม" />
+          <SectionHeading title="ข่าวสารและกิจกรรม" />
           <Link href="/news" className="btn-outline text-xs shrink-0">
             ดูข่าวสารทั้งหมด
           </Link>

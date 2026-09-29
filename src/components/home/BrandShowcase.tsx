@@ -8,7 +8,6 @@ export default function BrandShowcase() {
       <div className="container-page">
         <ScrollFx effect="fade-up" className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">
-            <p className="section-eyebrow mb-4">Our Brands</p>
             <h2 className="text-h2 text-brand-navy text-balance">โชว์รูมออนไลน์ 7 แบรนด์ระดับโลก</h2>
             <p className="mt-4 text-brand-slate text-base sm:text-lg font-light leading-relaxed text-pretty">
               รถยนต์คุณภาพจาก 7 แบรนด์ชั้นนำ ครบทุกไลฟ์สไตล์การขับขี่ ในที่เดียว

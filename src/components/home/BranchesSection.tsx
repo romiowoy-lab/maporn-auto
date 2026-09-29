@@ -25,7 +25,6 @@ export default function BranchesSection() {
       <div className="container-page">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5">
           <SectionHeading
-            eyebrow="Showroom Network"
             title="โชว์รูมและสาขาของเรา"
             description={`ให้บริการแล้ว ${branches.length} สาขาทั่วประเทศไทย`}
           />

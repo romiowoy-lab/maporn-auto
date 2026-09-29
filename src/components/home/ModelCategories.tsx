@@ -12,7 +12,7 @@ export default function ModelCategories() {
   return (
     <section className="bg-[#f7f7f5] py-20 sm:py-28">
       <div className="container-page">
-        <SectionHeading eyebrow="Model Category" title="ค้นหาตามประเภทรถ" />
+        <SectionHeading title="ค้นหาตามประเภทรถ" />
 
         <ScrollFx effect="fade-up" stagger={0.1} className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 gap-6">
           {categories.map((cat) => {

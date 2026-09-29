@@ -15,7 +15,7 @@ export default function WhyChooseUs() {
   return (
     <section className="py-20 sm:py-32 bg-white">
       <div className="container-page">
-        <SectionHeading eyebrow="Why Maporn Autogroup" title="จุดเด่นของเรา" align="center" />
+        <SectionHeading title="จุดเด่นของเรา" align="center" />
         <ScrollFx effect="fade-up" stagger={0.1} className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {companyValues.map((v, i) => (
             <div key={v.title} className="card-elevated p-7">

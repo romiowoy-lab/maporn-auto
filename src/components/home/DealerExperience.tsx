@@ -14,7 +14,7 @@ export default function DealerExperience() {
   return (
     <section className="bg-white py-20 sm:py-28 border-t border-black/5">
       <div className="container-page">
-        <SectionHeading eyebrow="Dealer Experience" title="พร้อมดูแลคุณทุกขั้นตอน" />
+        <SectionHeading title="พร้อมดูแลคุณทุกขั้นตอน" />
 
         <ScrollFx effect="fade-up" stagger={0.1} className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 divide-y sm:divide-y-0 sm:divide-x divide-black/8 border-t border-b border-black/8">
           {ITEMS.map((item) => (

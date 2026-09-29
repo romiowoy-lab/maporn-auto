@@ -10,7 +10,6 @@ export default function ServiceSection() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <ScrollFx effect="slide-right">
             <SectionHeading
-              eyebrow="Service Center"
               title="ศูนย์บริการมาตรฐาน ดูแลรถคุณครบวงจร"
               description="ทีมช่างผู้เชี่ยวชาญและอะไหล่แท้ครบทุกแบรนด์ พร้อมบริการบำรุงรักษา ซ่อมบำรุง และช่วยเหลือฉุกเฉินตลอด 24 ชั่วโมง"
             />

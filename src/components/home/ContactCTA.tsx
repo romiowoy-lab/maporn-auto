@@ -9,7 +9,6 @@ export default function ContactCTA() {
         <ScrollFx effect="blur" className="rounded-sm bg-brand-navy text-white p-10 sm:p-20 text-center relative overflow-hidden">
           <span className="absolute inset-x-0 top-0 hairline-light" aria-hidden="true" />
           <div className="relative z-10 flex flex-col items-center">
-            <p className="section-eyebrow-light mb-5">Let&apos;s Talk</p>
             <h2 className="text-3xl sm:text-5xl font-black max-w-3xl mx-auto leading-[1.04] tracking-[-0.03em] text-balance">
               พร้อมให้คำปรึกษาและดูแลคุณตลอดเส้นทางการเลือกซื้อรถ
             </h2>

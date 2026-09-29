@@ -21,7 +21,7 @@ export default function MultiBrandMatrix() {
     <section className="bg-white py-20 sm:py-28 border-t border-black/5">
       <div className="container-page">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
-          <SectionHeading eyebrow="Multi-Brand Matrix" title="ค้นรถข้ามแบรนด์ในที่เดียว" />
+          <SectionHeading title="ค้นรถข้ามแบรนด์ในที่เดียว" />
           <div className="flex flex-wrap gap-2">
             {tabs.map((t) => (
               <button

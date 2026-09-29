@@ -12,7 +12,6 @@ export default function PromotionsSection() {
       <div className="container-page">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5">
           <div className="max-w-2xl">
-            <p className="section-eyebrow-light mb-4">Promotions</p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-[-0.03em] leading-[1.02] text-balance">
               โปรโมชั่นล่าสุด
             </h2>
