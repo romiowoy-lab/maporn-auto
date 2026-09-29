@@ -8,10 +8,11 @@ import GwmTank500Showroom from "@/components/brands/gwm/GwmTank500Showroom";
 import GwmPoerShowroom from "@/components/brands/gwm/GwmPoerShowroom";
 import GwmOra5Showroom from "@/components/brands/gwm/GwmOra5Showroom";
 import GwmHavalH6Showroom from "@/components/brands/gwm/GwmHavalH6Showroom";
+import GwmWeyG9Showroom from "@/components/brands/gwm/GwmWeyG9Showroom";
 
-// GWM page with a 5-way model switch (Tank 300 / Tank 500 / POER / ORA 5 / Haval H6) and a full-screen wipe between them.
+// GWM page with a 6-way model switch (Tank 300 / Tank 500 / POER / ORA 5 / Haval H6 / WEY G9) and a full-screen wipe between them.
 
-type View = "tank300" | "tank500" | "poer" | "ora5" | "havalh6";
+type View = "tank300" | "tank500" | "poer" | "ora5" | "havalh6" | "weyg9";
 
 const MODEL: Record<View, { label: string; sub: string; sweep: string; glow: string }> = {
   tank300: {
@@ -43,6 +44,12 @@ const MODEL: Record<View, { label: string; sub: string; sweep: string; glow: str
     sub: "HEV · PHEV",
     sweep: "linear-gradient(120deg,#040810 0%,#061828 45%,#0080C0 100%)",
     glow: "#0080C0",
+  },
+  weyg9: {
+    label: "WEY G9",
+    sub: "THE CRAFTED MASTERPIECE",
+    sweep: "linear-gradient(120deg,#13100A 0%,#2A2010 45%,#B89A6E 100%)",
+    glow: "#B89A6E",
   },
 };
 
@@ -128,8 +135,10 @@ export default function GwmShowroomSwitch() {
           <GwmPoerShowroom />
         ) : view === "ora5" ? (
           <GwmOra5Showroom />
-        ) : (
+        ) : view === "havalh6" ? (
           <GwmHavalH6Showroom />
+        ) : (
+          <GwmWeyG9Showroom />
         )}
       </motion.div>
 

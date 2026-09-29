@@ -625,6 +625,55 @@ const allModels: VehicleModel[] = [
     image: "/brand/gwm-haval-h6/hero.jpg",
   },
 
+  {
+    slug: "gwm-wey-g9",
+    brandSlug: "gwm",
+    name: "WEY G9",
+    bodyType: "MPV",
+    fuelType: "Hybrid",
+    startPrice: 2349000,
+    isNew: true,
+    isFeatured: true,
+    colors: ["Superior Gold", "Nebula Black", "Wisdom Gray", "Aurora White"],
+    dimensions: { length: 5050, width: 1985, height: 1900, wheelbase: 3468 },
+    warranty: "รับประกัน 5 ปี หรือ 150,000 กม. (ตามเงื่อนไขของผู้ผลิต)",
+    safety: [
+      "โครงสร้างเหล็กแรงดึงสูง 83.01% ทั่วทั้งคัน",
+      "เสา A-B จากเหล็ก 1500 MPa (จุดหลัก 2000 MPa)",
+      "ระบบปกป้องแบตเตอรี่ 4 ชั้น (ด้านข้าง) / 6 ชั้น (ด้านล่าง)",
+      "ม่านถุงลมนิรภัยด้านข้างขนาดใหญ่พิเศษ",
+      "โครงสร้างพื้น 4 แนวตั้ง × 7 แนวนอน กระจายแรง 3 ทิศทาง",
+    ],
+    technology: [
+      "Coffee OS ระบบปฏิบัติการอัจฉริยะ",
+      "จอสัมผัสกลาง 14.6 นิ้ว",
+      "จอผู้โดยสารตอนหลัง 17.3 นิ้ว (แถมพิเศษ)",
+      "Amor Acoustic 21 ลำโพง 2,440 วัตต์ ระบบเสียง 3D",
+      "Hi4 ระบบขับเคลื่อน 4 ล้อไฮบริดอัจฉริยะ AWD",
+      "V2L ระบบจ่ายไฟภายนอก 3.3 kW",
+    ],
+    features: [
+      "ตู้เย็นบานคู่แบบอุ่น-เย็น 12.5 ลิตร (0–50°C)",
+      "โต๊ะพับอเนกประสงค์รับน้ำหนักได้ 10 กก.",
+      "พื้นที่ห้องโดยสาร 2,867 มม.",
+      "พื้นที่เก็บสัมภาระ 233–1,725 ลิตร",
+      "ซันรูฟพาโนรามิค",
+    ],
+    variants: [
+      {
+        name: "Hi4 AWD",
+        price: 2349000,
+        engine: "1.5T + DHT-3 + P4 Motor (Hi4 AWD)",
+        power: "442 PS (325 kW) รวม",
+        torque: "642 Nm รวม",
+        transmission: "Automatic",
+        seats: 7,
+      },
+    ],
+    description: "Luxury MPV 7 ที่นั่ง ระบบ Hi4 AWD กำลัง 442 PS แรงบิด 642 Nm อัตราเร่ง 0-100 ใน 5.7 วินาที Amor Acoustic 21 ลำโพง 2,440W ตู้เย็น V2L 3.3kW Coffee OS",
+    image: "/brand/gwm-wey-g9/hero.jpg",
+  },
+
   // ---------- JAECOO ----------
   {
     slug: "jaecoo-j7",
