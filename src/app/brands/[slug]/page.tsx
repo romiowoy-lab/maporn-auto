@@ -10,6 +10,7 @@ import PlaceholderImage from "@/components/ui/PlaceholderImage";
 import CarCard from "@/components/cars/CarCard";
 import PromotionCard from "@/components/promotions/PromotionCard";
 import SuzukiShowcase from "@/components/brands/SuzukiShowcase";
+import SuzukiFronxShowroom from "@/components/brands/suzuki/SuzukiFronxShowroom";
 import GwmShowroomSwitch from "@/components/brands/gwm/GwmShowroomSwitch";
 import GwmModelGrid from "@/components/brands/gwm/GwmModelGrid";
 import OmodaJaecooShowroom from "@/components/brands/omoda-jaecoo/OmodaJaecooShowroom";
@@ -110,10 +111,9 @@ export default async function BrandDetailPage({ params }: { params: Promise<{ sl
     </>
   );
 
-  // Suzuki gets the redesigned catalog-page layout (real bridge hero photo + card grid
-  // with dual CTAs/spec icons); other brands keep the existing story-driven layout below.
+  // Suzuki gets an immersive dark showroom — same pattern as GWM Tank 300.
   if (brand.slug === "suzuki") {
-    return withLd(<SuzukiShowcase />);
+    return withLd(<SuzukiFronxShowroom />);
   }
 
   if (brand.slug === "gwm") {
