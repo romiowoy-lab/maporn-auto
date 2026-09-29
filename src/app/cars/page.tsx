@@ -4,6 +4,7 @@ import { models } from "@/lib/data/models";
 import CarCardDark from "@/components/cars/CarCardDark";
 import BrandLogoCarousel from "@/components/cars/BrandLogoCarousel";
 import { getBrandGroups } from "@/lib/data/brandGroups";
+import { getBrand } from "@/lib/data/brands";
 import CarFilters from "@/components/cars/CarFilters";
 import CarSort from "@/components/cars/CarSort";
 import { Suspense } from "react";
@@ -84,9 +85,15 @@ export default async function CarsPage({
 
   const chips = [
     { key: "all", name: "ทุกแบรนด์", logo: undefined, href: brandHref(""), active: !brand },
-    ...getBrandGroups().map((g) => {
+    ...getBrandGroups().flatMap((g) => {
+      if (g.isCombined) {
+        return g.slugs.map((slug) => {
+          const b = getBrand(slug)!;
+          return { key: slug, name: b.name, logo: b.logo, href: brandHref(slug), active: brand === slug };
+        });
+      }
       const value = g.slugs.join(",");
-      return { key: g.key, name: g.name, logo: g.logo, href: brandHref(value), active: brand === value || (g.slugs.length === 1 && brand === g.slugs[0]) };
+      return [{ key: g.key, name: g.name, logo: g.logo, href: brandHref(value), active: brand === value || (g.slugs.length === 1 && brand === g.slugs[0]) }];
     }),
   ];
 
