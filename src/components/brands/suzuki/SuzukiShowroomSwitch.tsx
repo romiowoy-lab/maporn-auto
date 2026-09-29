@@ -5,8 +5,9 @@ import { motion, useAnimationControls } from "framer-motion";
 import { ArrowLeftRight } from "lucide-react";
 import SuzukiFronxShowroom from "@/components/brands/suzuki/SuzukiFronxShowroom";
 import SuzukiJimnyShowroom from "@/components/brands/suzuki/SuzukiJimnyShowroom";
+import SuzukiCarryShowroom from "@/components/brands/suzuki/SuzukiCarryShowroom";
 
-type View = "fronx" | "jimny";
+type View = "fronx" | "jimny" | "carry";
 
 const MODEL: Record<View, { label: string; sub: string; sweep: string; glow: string }> = {
   fronx: {
@@ -20,6 +21,12 @@ const MODEL: Record<View, { label: string; sub: string; sweep: string; glow: str
     sub: "ALLGRIP PRO 4WD",
     sweep: "linear-gradient(120deg,#0a1208 0%,#162a10 45%,#3A7D44 100%)",
     glow: "#3A7D44",
+  },
+  carry: {
+    label: "CARRY",
+    sub: "กระบะเบา 750 กก.",
+    sweep: "linear-gradient(120deg,#0d1520 0%,#0c2240 45%,#1461A3 100%)",
+    glow: "#1461A3",
   },
 };
 
@@ -54,7 +61,7 @@ export default function SuzukiShowroomSwitch() {
           <motion.span animate={{ rotate: spin }} transition={{ duration: 0.6, ease }} className="hidden text-white/60 sm:inline-flex" aria-hidden="true">
             <ArrowLeftRight className="h-4 w-4" />
           </motion.span>
-          <div className="relative flex rounded-full bg-white/[0.06] p-1" role="tablist" aria-label="สลับรุ่น Suzuki Fronx / Jimny">
+          <div className="relative flex rounded-full bg-white/[0.06] p-1" role="tablist" aria-label="สลับรุ่น Suzuki Fronx / Jimny / Carry">
             {(Object.keys(MODEL) as View[]).map((v) => {
               const active = target === v;
               return (
@@ -86,7 +93,7 @@ export default function SuzukiShowroomSwitch() {
       </div>
 
       <motion.div key={view} initial={{ opacity: 0.4 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }}>
-        {view === "fronx" ? <SuzukiFronxShowroom /> : <SuzukiJimnyShowroom />}
+        {view === "fronx" ? <SuzukiFronxShowroom /> : view === "jimny" ? <SuzukiJimnyShowroom /> : <SuzukiCarryShowroom />}
       </motion.div>
 
       <motion.div

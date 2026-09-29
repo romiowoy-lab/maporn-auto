@@ -70,6 +70,28 @@ const allModels: VehicleModel[] = [
     description: "SUV 7 ที่นั่งบุคลิกลุยได้ทุกเส้นทาง พร้อมออพชันครบครัน",
   },
 
+  {
+    slug: "suzuki-carry",
+    brandSlug: "suzuki",
+    name: "Carry",
+    bodyType: "Pickup",
+    fuelType: "Petrol",
+    startPrice: 395000,
+    isNew: false,
+    isFeatured: false,
+    colors: ["Pearl White"],
+    dimensions: { length: 4400, width: 1645, height: 1800, wheelbase: 2550 },
+    warranty: "รับประกัน 3 ปี หรือ 100,000 กม.",
+    safety: ["ABS ป้องกันล้อล็อก", "Immobilizer กุญแจอัจฉริยะ"],
+    technology: ["วิทยุ AM/FM + USB/iPod", "แอร์ปรับอากาศ"],
+    features: ["กระบะเปิดได้ 3 ด้าน", "พื้นที่กระบะ 1,955 × 1,395 มม.", "รับน้ำหนักบรรทุก 750 กก.", "Turning radius 4.4 ม."],
+    variants: [
+      { name: "MT", price: 395000, engine: "1.5L K15B DOHC", power: "83 แรงม้า", torque: "130 Nm", transmission: "Manual", seats: 2 },
+    ],
+    description: "กระบะเบาอเนกประสงค์ต่อยอดธุรกิจ กระบะบรรทุกขนาดใหญ่เปิดได้ 3 ด้าน น้ำหนักบรรทุก 750 กก.",
+    image: "/brand/suzuki-carry/hero.png",
+  },
+
   // ---------- FARIZON ----------
   {
     slug: "farizon-sv",
