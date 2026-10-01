@@ -15,7 +15,7 @@ import GwmShowroomSwitch from "@/components/brands/gwm/GwmShowroomSwitch";
 import GwmModelGrid from "@/components/brands/gwm/GwmModelGrid";
 import OmodaJaecooShowroom from "@/components/brands/omoda-jaecoo/OmodaJaecooShowroom";
 import LepasShowroom from "@/components/brands/lepas/LepasShowroom";
-import WulingShowroom from "@/components/brands/wuling/WulingShowroom";
+import WulingShowroomSwitch from "@/components/brands/wuling/WulingShowroomSwitch";
 import NexShowroom from "@/components/brands/nex/NexShowroom";
 import FarizonShowroom from "@/components/brands/farizon/FarizonShowroom";
 
@@ -130,7 +130,7 @@ export default async function BrandDetailPage({ params }: { params: Promise<{ sl
   }
 
   if (brand.slug === "wuling") {
-    return withLd(<WulingShowroom />);
+    return withLd(<WulingShowroomSwitch />);
   }
 
   if (brand.slug === "nex") {

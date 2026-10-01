@@ -1,20 +1,13 @@
-// Wuling Starlight Darion EV — single source of truth for the /brands/wuling showcase.
-//
-// Nothing here is verified yet: the project has no Darion EV photography, catalog entry,
-// specs or prices, and the design mockups' numbers/feature copy are illustrative. Every
-// field is null/empty on purpose. The page renders a clear "waiting for real data" state
-// for each one and lights up automatically once a real value or image path is added here
-// (e.g. "/images/darion/hero.jpg" under public/).
+// Wuling Starlight Darion EV — single source of truth for the /brands/wuling showroom.
+// Specs sourced from autospinn.com (Mar 2026). Photography: Maporn Autogroup + AutoLifeThailand.
 
 export interface DarionCallout {
   title: string;
-  /** Real feature description — null until confirmed with source material. */
   text: string | null;
 }
 
 export interface DarionData {
   images: {
-    /** Finished poster-style banner. When set it replaces the hero (image + headline) and fills the whole hero area, cropped to cover. */
     heroBanner: string | null;
     hero: string | null;
     design: string | null;
@@ -24,13 +17,17 @@ export interface DarionData {
     lifestyle: string | null;
     modelCar: string | null;
     cta: string | null;
+    headlight: string | null;
+    wheel: string | null;
+    screen: string | null;
+    captain: string | null;
+    cargo: string | null;
   };
   callouts: { left: DarionCallout[]; right: DarionCallout[] };
   specs: {
     powerKw: number | null;
     torqueNm: number | null;
     rangeKm: number | null;
-    /** Test standard for the range figure (e.g. CLTC / NEDC) — never mix standards. */
     rangeStandard: string | null;
     displayInch: number | null;
   };
@@ -38,47 +35,62 @@ export interface DarionData {
     startPrice: number | null;
     features: string[];
   };
+  variants: { name: string; price: number }[];
 }
 
-// Facts from autospinn.com's Starlight Darion EV article (Mar 2026) — power/torque/battery/range
-// (CLTC)/dimensions/screens/ADAS. Launch prices in that article were introductory and time-limited,
-// so no price is shown. Photos are the client's own Darion EV shots.
 export const darion: DarionData = {
   images: {
     heroBanner: null,
-    hero: "/brand/wuling-darion/front34.jpg",
-    design: "/brand/wuling-darion/side.jpg",
-    callouts: "/brand/wuling-darion/rear34.jpg",
-    interior: "/brand/wuling-darion/cabin.jpg",
-    specsCar: "/brand/wuling-darion/rear.jpg",
-    lifestyle: "/brand/wuling-darion/seats.jpg",
-    modelCar: "/brand/wuling-darion/front.jpg",
-    cta: "/brand/wuling-darion/seat-front.jpg",
+    hero: "/brand/wuling-darion/darion-hero.jpg",
+    design: "/brand/wuling-darion/darion-headlight.jpg",
+    callouts: "/brand/wuling-darion/darion-night.jpg",
+    interior: "/brand/wuling-darion/darion-cockpit.jpg",
+    specsCar: "/brand/wuling-darion/darion-white.jpg",
+    lifestyle: "/brand/wuling-darion/darion-captain.jpg",
+    modelCar: "/brand/wuling-darion/darion-rear34.jpg",
+    cta: "/brand/wuling-darion/darion-hero.jpg",
+    headlight: "/brand/wuling-darion/darion-headlight.jpg",
+    wheel: "/brand/wuling-darion/darion-wheel.jpg",
+    screen: "/brand/wuling-darion/darion-screen.jpg",
+    captain: "/brand/wuling-darion/darion-captain.jpg",
+    cargo: "/brand/wuling-darion/darion-cargo.jpg",
   },
   callouts: {
     left: [
-      { title: "Lighting", text: "ระบบไฟสูงอัจฉริยะ (Intelligent High-beam Assist)" },
-      { title: "Sliding Doors", text: "ประตูสไลด์ด้านหลัง (ไฟฟ้าในรุ่น Premium)" },
-      { title: "7 Seats", text: "7 ที่นั่ง เบาะแถวที่ 2 แบบ Captain Seat" },
+      { title: "LED Lighting", text: "ไฟหน้า LED พร้อม IHMA (ระบบไฟสูงอัจฉริยะ) และไฟกลางวัน DRL" },
+      { title: "Sliding Doors", text: "ประตูสไลด์ไฟฟ้า (รุ่น Premium) เปิด-ปิดอัตโนมัติสะดวกทุกการเดินทาง" },
+      { title: "7 Seats Captain", text: "7 ที่นั่ง เบาะแถวสองแบบ Captain Seat ปรับไฟฟ้า (Premium)" },
     ],
     right: [
-      { title: "Technology", text: "จอกลาง 12.8 นิ้ว HD · มาตรวัด 8.8 นิ้ว · CarPlay / Android Auto" },
-      { title: "Safety", text: "ADAS: ACC, AEB, เตือนออกนอกเลน, เตือนจุดอับสายตา · กล้อง 360°" },
-      { title: "EV Platform", text: "มอเตอร์เดี่ยวขับล้อหน้า 150 kW · แบตเตอรี่ลิเธียมไอออน 69.2 kWh" },
+      { title: "Dual Screen", text: "จอกลาง 12.8 นิ้ว HD · มาตรวัดดิจิทัล 8.8 นิ้ว · Apple CarPlay / Android Auto" },
+      { title: "ADAS 11 ระบบ", text: "ACC, AEB, IDA, LDW, BSD, LCA, DOW, RCTA, RCW, FCW, IHMA" },
+      { title: "EV 150 kW", text: "มอเตอร์ขับล้อหน้า 150 kW · แบตเตอรี่ 69.2 kWh · วิ่งไกล 540 กม. (CLTC)" },
     ],
   },
-  specs: { powerKw: 150, torqueNm: 310, rangeKm: 540, rangeStandard: "CLTC", displayInch: 12.8 },
+  specs: {
+    powerKw: 150,
+    torqueNm: 310,
+    rangeKm: 540,
+    rangeStandard: "CLTC",
+    displayInch: 12.8,
+  },
   model: {
-    startPrice: null,
+    startPrice: 839000,
     features: [
       "ซันรูฟพาโนรามิคไฟฟ้า (รุ่น Premium)",
-      "กล้องรอบทิศทาง 360°",
-      "เบาะปรับไฟฟ้า (คนขับและแถวที่ 2)",
-      "ชาร์จมือถือไร้สาย 50 วัตต์",
-      "กระจกกันความร้อน 2 ชั้น",
+      "กล้องรอบทิศทาง 360° (Premium) / กล้องมองหลัง (Comfort)",
+      "เบาะปรับไฟฟ้า 6 ทิศทาง คนขับ (Premium) + แถวที่ 2",
+      "ชาร์จมือถือไร้สาย 50 วัตต์ (Premium)",
+      "กระจกกันความร้อน 2 ชั้น (Premium)",
       "ขนาดตัวถัง 4,910 × 1,870 × 1,770 มม. ฐานล้อ 2,910 มม.",
+      "รับประกันแบตเตอรี่ 8 ปี / 150,000 กม.",
+      "รับประกันตัวรถ 6 ปี / 150,000 กม.",
     ],
   },
+  variants: [
+    { name: "Comfort", price: 839000 },
+    { name: "Premium", price: 899000 },
+  ],
 };
 
 export const PENDING = "รอข้อมูลจริง";
