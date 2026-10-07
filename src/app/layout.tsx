@@ -53,6 +53,7 @@ export const metadata: Metadata = {
     description: "ตัวแทนจำหน่ายรถยนต์อย่างเป็นทางการ 7 แบรนด์ พร้อมบริการครบวงจรทั่วประเทศ",
   },
   robots: { index: true, follow: true },
+  verification: { google: "75fFsNNE-JHOhqjMySD3NT4zEwMD49YR_j70OA-ykfs" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
