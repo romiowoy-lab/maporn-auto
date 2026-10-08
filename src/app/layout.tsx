@@ -47,6 +47,7 @@ export const metadata: Metadata = {
     siteName: company.name,
     title: `${company.name} | ตัวแทนจำหน่ายรถยนต์ Multi-Brand 7 แบรนด์`,
     description: "ตัวแทนจำหน่ายรถยนต์อย่างเป็นทางการ 7 แบรนด์ พร้อมบริการครบวงจรทั่วประเทศ",
+    images: [{ url: "/Maporn.png", width: 225, height: 225, alt: "Maporn Autogroup" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -64,6 +65,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     name: company.name,
     legalName: company.legalName,
     url: "https://www.mapornautogroup.com",
+    logo: "https://www.mapornautogroup.com/Maporn.png",
+    image: "https://www.mapornautogroup.com/Maporn.png",
     telephone: company.phone,
     email: company.email,
     taxID: company.taxId,
