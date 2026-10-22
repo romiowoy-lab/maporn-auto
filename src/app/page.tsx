@@ -4,7 +4,8 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import MapornHero from '@/components/home/MapornHero';
-import ExploreRange from '@/components/home/ExploreRange';
+// Hidden for now (see section 2.75 below) — uncomment both to bring it back
+// import ExploreRange from '@/components/home/ExploreRange';
 import ScrollFx from '@/components/ui/ScrollFx';
 import { branches } from '@/lib/data/branches';
 import { news } from '@/lib/data/news';
@@ -183,8 +184,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2.75 EXPLORE THE RANGE — brand filter tabs + horizontal scroll of real vehicle cards */}
-      <ExploreRange />
+      {/* 2.75 EXPLORE THE RANGE — brand filter tabs + horizontal scroll of real vehicle cards.
+          Hidden for now at the client's request; uncomment (and the import above) to restore. */}
+      {/* <ExploreRange /> */}
 
       {/* 4. LOCATION SHOWROOMS — real 5 branches, tiled by which real brand(s) each branch
           actually carries (per the client's showroom-network brief), not a generic
