@@ -2,7 +2,8 @@ import fs from "fs";
 import path from "path";
 import { Lead } from "@/lib/types";
 
-const DATA_DIR = path.join(process.cwd(), "data");
+// On the server set LEADS_DIR (e.g. "../maporn-data") so leads live outside the Git deploy folder
+const DATA_DIR = path.resolve(process.cwd(), process.env.LEADS_DIR || "data");
 const LEADS_FILE = path.join(DATA_DIR, "leads.json");
 
 function ensureStore() {
