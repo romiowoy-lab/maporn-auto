@@ -8,6 +8,7 @@ import { Check, Zap, Gauge, Monitor, Volume2, Mountain, Sofa, ShieldCheck } from
 import Stat from "@/components/brands/wuling/Stat";
 import { formatTHB } from "@/lib/utils";
 import { getModel } from "@/lib/data/models";
+import MapornLogo from "@/components/ui/MapornLogo";
 
 // GWM Tank 500 3.0T Diesel — same section structure as the Tank 300 / JAECOO / OMODA pages.
 // All specs come from the official GWM Thailand model page (see models.ts "gwm-tank-500").
@@ -106,11 +107,7 @@ function Nav() {
     <div className="sticky top-[7.5rem] z-40 -mb-16 px-3 pt-2 sm:px-6">
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-4 rounded-2xl border border-white/15 bg-white/[0.08] px-4 shadow-[0_8px_32px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:px-6">
         <div className="flex shrink-0 items-center gap-3">
-          <span className="text-[11px] font-semibold uppercase leading-tight tracking-[0.2em] text-white">
-            Maporn
-            <br />
-            Autogroup
-          </span>
+          <MapornLogo variant="white" className="h-6 w-auto sm:h-7" />
           <span className="h-7 w-px bg-white/25" />
           <span className="flex h-8 items-center rounded-md bg-white px-2.5">
             {/* eslint-disable-next-line @next/next/no-img-element */}

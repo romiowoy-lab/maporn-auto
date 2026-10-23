@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Phone, Calendar, Menu, X, ChevronDown } from "lucide-react";
 import { company } from "@/lib/data/company";
+import MapornLogo from "@/components/ui/MapornLogo";
 
 const NAV_LINKS = [
   { href: "/", label: "หน้าแรก" },
@@ -40,14 +41,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center gap-4 h-16">
         {/* Logo / wordmark */}
         <Link href="/" className="flex items-center gap-2.5 shrink-0" onClick={() => setOpen(false)}>
-          <div className="h-11 w-11 sm:h-12 sm:w-12 rounded-lg bg-white border border-black/[0.06] p-1 shadow-sm flex items-center justify-center shrink-0">
-            <img src="/Maporn.png" alt="Maporn" className="h-full w-full object-contain" />
-          </div>
-          <span className="hidden sm:block leading-tight">
-            <span className="block text-sm font-extrabold tracking-wide text-brand-navy">
-              MAPORN <span className="text-brand-red">AUTO GROUP</span>
-            </span>
-          </span>
+          <MapornLogo variant="red" className="h-9 w-auto sm:h-10" />
         </Link>
 
         {/* Center: 7-brand logo strip — infinite marquee, pauses on hover. Track is the

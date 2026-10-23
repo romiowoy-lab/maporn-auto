@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import MapornLogo from "@/components/ui/MapornLogo";
 
 export default function GwmHero() {
   const [mounted, setMounted] = useState(false);
@@ -111,7 +112,7 @@ export default function GwmHero() {
       <div className="absolute inset-x-0 bottom-0 z-10 border-t border-white/15 bg-black/45 backdrop-blur-md">
         <div className="flex flex-col gap-2 px-6 py-3 sm:px-10 lg:flex-row lg:items-center lg:justify-between lg:px-14 xl:px-20">
           <div className="flex items-baseline gap-3">
-            <span className="text-sm sm:text-base font-extrabold tracking-tight text-white">MAPORN AUTOGROUP</span>
+            <MapornLogo variant="white" className="h-6 w-auto self-center sm:h-7" />
             <span className="text-[11px] uppercase tracking-[0.2em] text-white/70">Authorized Dealer</span>
           </div>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs sm:text-sm font-medium text-white/90">

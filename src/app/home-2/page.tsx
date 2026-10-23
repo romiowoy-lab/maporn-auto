@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Wrench } from "lucide-react";
 import { getBrandGroups } from "@/lib/data/brandGroups";
 import { company } from "@/lib/data/company";
+import MapornLogo from "@/components/ui/MapornLogo";
 
 export const metadata: Metadata = {
   title: "HomePage 2 (Demo)",
@@ -45,12 +46,7 @@ export default function HomePage2Demo() {
 
           <div className="relative">
             <Link href="/" className="flex items-center gap-2.5 w-fit mb-6">
-              <div className="h-9 w-9 rounded-full bg-white flex items-center justify-center overflow-hidden shadow">
-                <Image src="/Maporn.png" alt="Maporn" width={36} height={36} className="h-7 w-7 object-contain" />
-              </div>
-              <span className="text-xs font-bold tracking-wider text-white">
-                MAPORN <span className="text-amber-400 font-normal">AUTO GROUP</span>
-              </span>
+              <MapornLogo variant="white" className="h-9 w-auto" />
             </Link>
 
             <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-white/[0.03] backdrop-blur-md border border-amber-500/25 text-amber-400 text-[10px] font-semibold tracking-widest uppercase mb-5">

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import MapornLogo from "@/components/ui/MapornLogo";
 
 const LINKS = [
   { id: "overview", label: "Overview" },
@@ -32,7 +33,7 @@ export default function FarizonNav() {
     <div className="sticky top-16 z-40 w-full border-b border-white/10 bg-black/80 backdrop-blur-md">
       <div className="container-page flex h-14 items-center justify-between gap-2 sm:gap-4">
         <p className="min-w-0 truncate text-[11px] sm:text-sm font-semibold tracking-wide text-white">
-          MAPORN <span className="font-light text-white/70">AUTOGROUP</span>
+          <MapornLogo variant="white" className="inline-block h-5 w-auto align-middle sm:h-6" />
           <span className="mx-2.5 text-white/25">|</span>
           <span className="font-bold tracking-[0.15em]">FARIZON</span>
         </p>

@@ -5,6 +5,7 @@ import { company, companyTimeline, companyValues, serviceDepartments } from "@/l
 import { brands } from "@/lib/data/brands";
 import { getBrandGroups } from "@/lib/data/brandGroups";
 import ScrollFx from "@/components/ui/ScrollFx";
+import MapornLogo from "@/components/ui/MapornLogo";
 
 // Small inline brand-mark icons — lucide-react in this project doesn't ship Facebook/
 // Instagram glyphs (same reason MobileBottomNav.tsx hand-draws its own Facebook icon).
@@ -106,13 +107,9 @@ export default function AboutPage() {
 
         {/* RIGHT — white */}
         <div className="bg-white px-6 sm:px-10 lg:px-14 py-14 sm:py-20 flex flex-col justify-center">
-          <ScrollFx effect="fade-up" className="flex items-center gap-3">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/Maporn.png" alt="Maporn" className="h-10 w-10 object-contain shrink-0" />
-            <div className="leading-tight">
-              <p className="font-black text-brand-navy text-lg">Maporn Auto Group</p>
-              <p className="font-bold text-brand-red text-lg">มาพร ออโต้ กรุ๊ป</p>
-            </div>
+          <ScrollFx effect="fade-up" className="flex flex-col items-start gap-2">
+            <MapornLogo variant="red" className="h-12 w-auto" />
+            <p className="font-bold text-brand-red text-lg">มาพร ออโต้ กรุ๊ป</p>
           </ScrollFx>
 
           <ScrollFx effect="fade-up" delay={0.1} className="mt-8 grid grid-cols-2 gap-4">

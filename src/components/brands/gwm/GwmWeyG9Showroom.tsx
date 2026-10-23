@@ -7,6 +7,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Check, ShieldCheck, Zap, Volume2, Thermometer, ChevronDown } from "lucide-react";
 import { getModel } from "@/lib/data/models";
 import { formatTHB } from "@/lib/utils";
+import MapornLogo from "@/components/ui/MapornLogo";
 
 const ACCENT = "#B89A6E";
 const DARK = "#0D0B07";
@@ -163,9 +164,7 @@ function Nav() {
     <div className="sticky top-[7.5rem] z-40 -mb-16 px-3 pt-2 sm:px-6">
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/[0.06] px-4 shadow-[0_8px_32px_rgba(0,0,0,0.5)] backdrop-blur-2xl sm:px-6" style={{ borderColor: `${ACCENT}22` }}>
         <div className="flex shrink-0 items-center gap-3">
-          <span className="text-[11px] font-semibold uppercase leading-tight tracking-[0.2em] text-white/80">
-            Maporn<br />Autogroup
-          </span>
+          <MapornLogo variant="white" className="h-6 w-auto sm:h-7" />
           <span className="h-7 w-px bg-white/20" />
           <span className="flex h-8 items-center rounded-md bg-white px-2.5">
             {/* eslint-disable-next-line @next/next/no-img-element */}

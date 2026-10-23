@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import MapornLogo from "@/components/ui/MapornLogo";
 
 const SECTIONS = [
   { id: "model", label: "Model" },
@@ -33,11 +34,7 @@ export default function WulingNav() {
     <div className="sticky top-[4.5rem] z-40 -mb-16 px-3 sm:px-6 pt-2">
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-4 rounded-2xl border border-white/15 bg-white/[0.08] px-4 sm:px-6 shadow-[0_8px_32px_rgba(0,0,0,0.35)] backdrop-blur-xl">
         <div className="flex items-center gap-3 shrink-0">
-          <span className="text-[11px] font-semibold uppercase leading-tight tracking-[0.2em] text-white">
-            Maporn
-            <br />
-            Autogroup
-          </span>
+          <MapornLogo variant="white" className="h-6 w-auto sm:h-7" />
           <span className="h-7 w-px bg-white/25" />
           <span className="flex h-8 items-center rounded-md bg-white px-2.5">
             {/* eslint-disable-next-line @next/next/no-img-element */}
