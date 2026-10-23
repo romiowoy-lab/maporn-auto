@@ -10,15 +10,18 @@ export default function Stat({
   label,
   note,
   size = "lg",
+  decimals,
 }: {
   value: number | null;
   unit?: string;
   label: string;
   note?: string | null;
   size?: "lg" | "md";
+  decimals?: number;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-10%" });
+  // Vertical-only margin: a horizontal inset would never "see" numbers near the screen edge
+  const inView = useInView(ref, { once: true, margin: "-10% 0px" });
   const [display, setDisplay] = useState(value === null ? "—" : "0");
 
   useEffect(() => {
@@ -26,10 +29,13 @@ export default function Stat({
     const controls = animate(0, value, {
       duration: 1.6,
       ease: [0.16, 1, 0.3, 1],
-      onUpdate: (v) => setDisplay(Number.isInteger(value) ? Math.round(v).toString() : v.toFixed(1)),
+      onUpdate: (v) => {
+        const d = decimals ?? (Number.isInteger(value) ? 0 : 1);
+        setDisplay(d === 0 ? Math.round(v).toLocaleString("en-US") : v.toFixed(d));
+      },
     });
     return () => controls.stop();
-  }, [inView, value]);
+  }, [inView, value, decimals]);
 
   return (
     <div>

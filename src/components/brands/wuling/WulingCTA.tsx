@@ -8,7 +8,9 @@ import { darion } from "@/lib/data/wuling-darion";
 export default function WulingCTA() {
   return (
     <section className="relative overflow-hidden border-t border-white/[0.06] bg-[#101114]">
-      <ImageSlot src={darion.images.cta} label="Darion EV — ภาพปิดท้าย" className="absolute inset-0 h-full w-full" />
+      <div className="absolute inset-0">
+        <ImageSlot src={darion.images.cta} label="Darion EV — ภาพปิดท้าย" className="h-full w-full" />
+      </div>
       <div className="relative z-10 container-page flex min-h-[520px] flex-col items-center justify-between gap-10 py-14 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 24 }}
