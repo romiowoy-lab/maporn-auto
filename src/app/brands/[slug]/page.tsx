@@ -32,12 +32,12 @@ const BRAND_SEO: Record<string, { title: string; description: string; image: str
   },
   jaecoo: {
     title: "JAECOO J7 SHS และ OMODA C5 EV ตัวแทนจำหน่าย ทดลองขับ ขอใบเสนอราคา",
-    description: "JAECOO J7 SHS ไฮบริด วิ่งไกลสูงสุด 1,300 กม. (NEDC) JAECOO 6 EV และ OMODA C5 EV ไฟฟ้า 100% เริ่มต้น 709,000 บาท ดูสเปก อุปกรณ์ สี และจองทดลองขับกับ Maporn Autogroup",
+    description: "JAECOO J7 SHS ไฮบริด วิ่งไกลสูงสุด 1,300 กม. (NEDC) JAECOO 5 EV, JAECOO 6 EV และ OMODA C5 EV ไฟฟ้า 100% เริ่มต้น 699,000 บาท ดูสเปก อุปกรณ์ สี และจองทดลองขับกับ Maporn Autogroup",
     image: "/brand/studio3/jaecoo-j7-shs-exterior.jpg",
   },
   omoda: {
     title: "OMODA C5 EV และ JAECOO J7 SHS ตัวแทนจำหน่าย ทดลองขับ ขอใบเสนอราคา",
-    description: "OMODA C5 EV ครอสโอเวอร์ไฟฟ้า 100% 211 แรงม้า วิ่งไกล 422 กม. (NEDC) เริ่มต้น 709,000 บาท พร้อม JAECOO J7 SHS และ JAECOO 6 EV ดูสเปก สี และจองทดลองขับกับ Maporn Autogroup",
+    description: "OMODA C5 EV ครอสโอเวอร์ไฟฟ้า 100% 211 แรงม้า วิ่งไกล 422 กม. (NEDC) เริ่มต้น 709,000 บาท พร้อม JAECOO J7 SHS, JAECOO 5 EV และ JAECOO 6 EV ดูสเปก สี และจองทดลองขับกับ Maporn Autogroup",
     image: "/brand/omoda-c5/hero.jpg",
   },
 };
