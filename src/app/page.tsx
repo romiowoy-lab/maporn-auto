@@ -8,7 +8,7 @@ import MapornHero from '@/components/home/MapornHero';
 // import ExploreRange from '@/components/home/ExploreRange';
 import ScrollFx from '@/components/ui/ScrollFx';
 import { branches } from '@/lib/data/branches';
-import { news } from '@/lib/data/news';
+import { news, NEWS_CATEGORY_LABEL } from '@/lib/data/news';
 import { formatDateTH } from '@/lib/utils';
 import {
   MapPin,
@@ -61,15 +61,6 @@ const BRANCH_REGIONS: { key: 'bangkok' | 'east'; label: string }[] = [
 // site). The others' phones are still placeholders, so they are not shown on the cards.
 const VERIFIED_PHONE = new Set(['srinakarin', 'rayong', 'rayong-omoda-jaecoo']);
 
-const NEWS_CATEGORY_LABEL: Record<string, string> = {
-  Company: 'ข่าวบริษัท',
-  Vehicle: 'รถยนต์',
-  Technology: 'เทคโนโลยี',
-  EV: 'รถยนต์ไฟฟ้า',
-  Event: 'กิจกรรม',
-  CSR: 'CSR',
-  Lifestyle: 'ไลฟ์สไตล์',
-};
 
 // 8 real photos/logos for this highlight grid (public/brand/highlight/) — uniform 4-col x
 // 2-row grid, no asymmetric "big tile" sizing. Suzy Fix (8th) has no separate large photo
@@ -365,10 +356,10 @@ export default function HomePage() {
           <div className="flex items-end justify-between gap-4 mb-10">
             <div>
               <span className="text-xs font-bold text-[#FF0000] uppercase tracking-widest">Blog &amp; News</span>
-              <h2 className="text-2xl sm:text-3xl font-black text-white mt-2">ข่าวสารและกิจกรรม</h2>
+              <h2 className="text-2xl sm:text-3xl font-black text-white mt-2">ข่าวสารและบทความ</h2>
             </div>
             <Link href="/news" className="hidden sm:inline-flex items-center gap-1 text-xs font-semibold text-brand-red hover:text-brand-red/80 transition-colors shrink-0">
-              ดูข่าวสารทั้งหมด
+              ดูบทความทั้งหมด
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
@@ -383,8 +374,12 @@ export default function HomePage() {
                   href={`/news/${n.slug}`}
                   className="group flex flex-col overflow-hidden rounded-xl border border-white/10 bg-[#1C1E22] shadow-[0_10px_30px_rgba(0,0,0,0.35)] transition-all duration-300 hover:border-brand-red/40 hover:-translate-y-1"
                 >
-                  <div className="relative h-40 w-full overflow-hidden bg-gradient-to-br from-brand-red/15 via-[#1C1E22] to-[#25282D] flex items-center justify-center">
-                    <Newspaper className="w-8 h-8 text-brand-red/40" />
+                  <div className="relative h-44 w-full overflow-hidden bg-gradient-to-br from-brand-red/15 via-[#1C1E22] to-[#25282D] flex items-center justify-center">
+                    {n.image ? (
+                      <img src={n.image} alt={n.imageAlt ?? n.title} className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                    ) : (
+                      <Newspaper className="w-8 h-8 text-brand-red/40" />
+                    )}
                     <span className="absolute top-3 left-3 text-[10px] font-bold px-2 py-0.5 rounded bg-brand-red-gradient text-white">
                       {NEWS_CATEGORY_LABEL[n.category] ?? n.category}
                     </span>

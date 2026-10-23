@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { news } from "@/lib/data/news";
+import { news, NEWS_CATEGORY_LABEL } from "@/lib/data/news";
 import NewsCard from "@/components/news/NewsCard";
 import NewsFeatured from "@/components/news/NewsFeatured";
 
 export const metadata: Metadata = {
-  title: "ข่าวสารและกิจกรรมรถยนต์",
-  description: "ข่าวสาร กิจกรรม และบทความเกี่ยวกับรถยนต์และรถ EV จาก Maporn Autogroup",
+  title: "ข่าวสารและบทความรถยนต์",
+  description: "บทความความรู้เรื่องรถยนต์ การดูแลรักษา ช่วงล่าง เบรก เกียร์ น้ำมันเครื่อง และการซ่อมสี จาก Maporn Autogroup",
 };
 
-const CATEGORIES = ["Company", "Vehicle", "Technology", "EV", "Lifestyle", "Event", "CSR"] as const;
+// Only categories that actually have articles get a filter chip
+const CATEGORIES = [...new Set(news.map((n) => n.category))];
 
 export default async function NewsPage({
   searchParams,
@@ -26,7 +27,7 @@ export default async function NewsPage({
     <div className="container-page py-10 sm:py-14">
       <div className="mb-8">
         <p className="section-eyebrow mb-2">News & Updates</p>
-        <h1 className="text-3xl sm:text-4xl font-bold text-brand-navy">ข่าวสารและกิจกรรม</h1>
+        <h1 className="text-3xl sm:text-4xl font-bold text-brand-navy">ข่าวสารและบทความ</h1>
       </div>
 
       <div className="flex flex-wrap gap-2 mb-8">
@@ -42,7 +43,7 @@ export default async function NewsPage({
             href={`/news?category=${c}`}
             className={`text-xs font-semibold rounded-full px-3.5 py-1.5 ${category === c ? "bg-brand-navy text-white" : "border border-brand-line text-brand-slate"}`}
           >
-            {c}
+            {NEWS_CATEGORY_LABEL[c] ?? c}
           </Link>
         ))}
       </div>

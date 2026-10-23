@@ -86,12 +86,20 @@ export interface ServiceOffering {
   description: string;
 }
 
+// Structured article body: headings, paragraphs and bullet lists, in reading order.
+export type ArticleBlock = { h: string; level: 2 | 3 } | { p: string } | { ul: string[] };
+
 export interface NewsArticle {
   slug: string;
   title: string;
-  category: "Company" | "Vehicle" | "Technology" | "EV" | "Lifestyle" | "Event" | "CSR";
+  category: "Company" | "Vehicle" | "Technology" | "EV" | "Lifestyle" | "Event" | "CSR" | "Service";
   excerpt: string;
   content: string[];
+  body?: ArticleBlock[];
+  image?: string;
+  imageAlt?: string;
+  /** Original URL when the article was first published elsewhere (canonical). */
+  sourceUrl?: string;
   author: string;
   publishDate: string;
   tags: string[];
