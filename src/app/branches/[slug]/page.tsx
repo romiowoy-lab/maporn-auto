@@ -6,6 +6,8 @@ import { getBrand } from "@/lib/data/brands";
 import Image from "next/image";
 import { MapPin, Clock, Phone, MessageCircle, Navigation } from "lucide-react";
 import { BRANCH_PHOTO } from "@/components/branches/BranchCard";
+import BranchGallery from "@/components/branches/BranchGallery";
+import { branchGallery } from "@/lib/data/branchPhotos";
 import { company } from "@/lib/data/company";
 
 // Branches with verified phone/LINE; others fall back to head office.
@@ -48,6 +50,7 @@ export default async function BranchDetailPage({ params }: { params: Promise<{ s
   const phone = verified ? branch.phone : company.phone;
   const lineHref = branch.lineUrl ?? null;
   const photo = BRANCH_PHOTO[branch.slug];
+  const gallery = branchGallery[branch.slug];
   const short = branch.name.replace("Maporn Autogroup ", "").replace("Suzuki ", "").replace("GWM ", "").replace("Wuling ", "").replace("Lepas ", "");
   const maps = branch.googleMapsUrl ?? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(branch.mapQuery)}`;
 
@@ -132,6 +135,8 @@ export default async function BranchDetailPage({ params }: { params: Promise<{ s
           </a>
         </div>
       </div>
+
+      {gallery && <BranchGallery photos={gallery} title={`บรรยากาศสาขา ${short}`} />}
     </div>
   );
 }

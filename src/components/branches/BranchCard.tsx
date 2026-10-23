@@ -3,14 +3,14 @@ import Image from "next/image";
 import PlaceholderImage from "@/components/ui/PlaceholderImage";
 import { Branch } from "@/lib/types";
 import { getBrand } from "@/lib/data/brands";
+import { branchGallery } from "@/lib/data/branchPhotos";
 
 // Real showroom / service-centre photos, one per branch (public/brand/branches/).
+// Branches with a gallery (src/lib/data/branchPhotos.ts) use its first photo.
 export const BRANCH_PHOTO: Record<string, string> = {
-  srinakarin: "/brand/branches/srinakarin.jpg",
   minburi: "/brand/branches/minburi.jpg",
-  lamlukka: "/brand/branches/lamlukka.jpg",
-  sriracha: "/brand/branches/sriracha.jpg",
   rayong: "/brand/branches/rayong.jpg",
+  ...Object.fromEntries(Object.entries(branchGallery).map(([slug, photos]) => [slug, photos[0].src])),
 };
 
 export default function BranchCard({ branch }: { branch: Branch }) {

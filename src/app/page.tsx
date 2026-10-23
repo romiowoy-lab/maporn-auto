@@ -23,12 +23,13 @@ import {
   Phone,
 } from 'lucide-react';
 
-// Real per-branch showroom photos, one for each of the 5 real branches (public/brand/branches/).
+// Real per-branch showroom photos, one for each of the 5 real branches (public/brand/branches/;
+// galleries in src/lib/data/branchPhotos.ts).
 const BRANCH_COVER: Record<string, string> = {
-  srinakarin: '/brand/branches/srinakarin.jpg',
+  srinakarin: '/brand/branches/srinakarin/exterior-dusk.webp',
   minburi: '/brand/branches/minburi.jpg',
-  lamlukka: '/brand/branches/lamlukka.jpg',
-  sriracha: '/brand/branches/sriracha.jpg',
+  lamlukka: '/brand/branches/lamlukka/exterior-team.webp',
+  sriracha: '/brand/branches/sriracha/exterior.webp',
   rayong: '/brand/branches/rayong.jpg',
 };
 
@@ -43,11 +44,11 @@ const BRANCH_COVER: Record<string, string> = {
 const BRANCH_BRAND_TILES: { label: string; branchSlug: string; image?: string; region: 'bangkok' | 'east' }[] = [
   { label: 'Suzuki ศรีนครินทร์', branchSlug: 'srinakarin', region: 'bangkok' },
   { label: 'GWM ลำลูกกา', branchSlug: 'lamlukka', region: 'bangkok' },
-  { label: 'Suzy Fix มีนบุรี', branchSlug: 'minburi', region: 'bangkok' },
-  { label: 'Farizon และ Nex ศรีนครินทร์', branchSlug: 'srinakarin', region: 'bangkok' },
+  { label: 'Suzy Fix มีนบุรี', branchSlug: 'minburi', image: '/brand/branches/suzy-fix/entrance.webp', region: 'bangkok' },
+  { label: 'Farizon และ Nex ศรีนครินทร์', branchSlug: 'srinakarin', image: '/brand/branches/srinakarin/farizon-exterior.webp', region: 'bangkok' },
   { label: 'Suzuki ระยอง', branchSlug: 'rayong', region: 'east' },
   { label: 'Suzuki ศรีราชา', branchSlug: 'sriracha', region: 'east' },
-  { label: 'OMODA | JAECOO ระยอง', branchSlug: 'rayong', image: '/brand/branches/rayong-omoda-jaecoo.jpg', region: 'east' },
+  { label: 'OMODA | JAECOO ระยอง', branchSlug: 'rayong-omoda-jaecoo', image: '/brand/branches/rayong-omoda-jaecoo/exterior.webp', region: 'east' },
   { label: 'Lepas / Wuling ระยอง', branchSlug: 'rayong', region: 'east' },
 ];
 
@@ -58,7 +59,7 @@ const BRANCH_REGIONS: { key: 'bangkok' | 'east'; label: string }[] = [
 
 // Only these branches' phone numbers are verified against a real source (the legacy Suzuki
 // site). The others' phones are still placeholders, so they are not shown on the cards.
-const VERIFIED_PHONE = new Set(['srinakarin', 'rayong']);
+const VERIFIED_PHONE = new Set(['srinakarin', 'rayong', 'rayong-omoda-jaecoo']);
 
 const NEWS_CATEGORY_LABEL: Record<string, string> = {
   Company: 'ข่าวบริษัท',
