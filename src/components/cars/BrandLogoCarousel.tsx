@@ -22,7 +22,7 @@ export default function BrandLogoCarousel({ items }: { items: BrandChip[] }) {
               aria-current={b.active ? "true" : undefined}
               className={`flex h-14 min-w-[104px] items-center justify-center rounded-xl border px-4 transition-all duration-300 ${
                 b.active
-                  ? "border-brand-red bg-white shadow-[0_0_0_1px_rgba(223,0,0,0.6),0_10px_30px_rgba(223,0,0,0.25)]"
+                  ? "border-brand-red bg-white shadow-[0_0_0_1px_rgba(255,0,0,0.6),0_10px_30px_rgba(255,0,0,0.25)]"
                   : "border-white/10 bg-white/90 opacity-80 hover:opacity-100 hover:-translate-y-0.5"
               }`}
             >

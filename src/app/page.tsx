@@ -197,7 +197,7 @@ export default function HomePage() {
 
         <div className="relative max-w-6xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <span className="inline-block mb-3 rounded-full border border-brand-red/20 bg-brand-red/5 px-3 py-1 text-xs font-bold uppercase tracking-widest text-[#FF5A5A]">
+            <span className="inline-block mb-3 rounded-full border border-brand-red/20 bg-brand-red/5 px-3 py-1 text-xs font-bold uppercase tracking-widest text-[#FF0000]">
               Our Locations
             </span>
             <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">โชว์รูมและศูนย์บริการ</h2>
@@ -284,7 +284,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center mb-10">
             {/* Left: heading + feature cards */}
             <div>
-              <span className="text-xs font-bold text-[#FF5A5A] uppercase tracking-widest">Why Maporn</span>
+              <span className="text-xs font-bold text-[#FF0000] uppercase tracking-widest">Why Maporn</span>
               <h2 className="text-3xl sm:text-4xl font-black text-white mt-2 mb-6">ทำไมต้องมาพรพาณิชย์</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
@@ -332,7 +332,7 @@ export default function HomePage() {
                 <Link
                   key={idx}
                   href={p.href}
-                  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#1C1E22] shadow-[0_10px_30px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-2 hover:border-brand-red/40 hover:shadow-[0_16px_35px_rgba(223,0,0,0.12)]"
+                  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#1C1E22] shadow-[0_10px_30px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-2 hover:border-brand-red/40 hover:shadow-[0_16px_35px_rgba(255,0,0,0.12)]"
                 >
                   <div className="relative h-40 sm:h-48 w-full overflow-hidden">
                     <img
@@ -364,7 +364,7 @@ export default function HomePage() {
         <div className="relative max-w-6xl mx-auto">
           <div className="flex items-end justify-between gap-4 mb-10">
             <div>
-              <span className="text-xs font-bold text-[#FF5A5A] uppercase tracking-widest">Blog &amp; News</span>
+              <span className="text-xs font-bold text-[#FF0000] uppercase tracking-widest">Blog &amp; News</span>
               <h2 className="text-2xl sm:text-3xl font-black text-white mt-2">ข่าวสารและกิจกรรม</h2>
             </div>
             <Link href="/news" className="hidden sm:inline-flex items-center gap-1 text-xs font-semibold text-brand-red hover:text-brand-red/80 transition-colors shrink-0">

@@ -91,7 +91,7 @@ export default function GwmHero() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/cars?brand=gwm"
-                className="group rounded-lg bg-brand-red px-7 py-3.5 text-sm font-bold tracking-wide text-white shadow-[0_8px_24px_-8px_rgba(223,0,0,0.6)] transition-all hover:brightness-110 hover:-translate-y-0.5"
+                className="group rounded-lg bg-brand-red px-7 py-3.5 text-sm font-bold tracking-wide text-white shadow-[0_8px_24px_-8px_rgba(255,0,0,0.6)] transition-all hover:brightness-110 hover:-translate-y-0.5"
               >
                 ดูรถทั้งหมด
                 <span className="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>

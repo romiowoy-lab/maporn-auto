@@ -11,12 +11,12 @@ export default function BranchContactList({ branches }: { branches: Branch[] }) 
         <div key={b.slug} className="flex flex-col rounded-2xl border border-white/10 bg-[#1C1E22] p-6 shadow-[0_10px_30px_rgba(0,0,0,0.35)] transition-colors hover:border-brand-red/40">
           <h3 className="text-lg font-bold text-white">{b.name}</h3>
           <p className="mt-3 flex items-start gap-2 text-sm leading-relaxed text-white/65">
-            <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#FF5A5A]" />
+            <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#FF0000]" />
             {b.address}
           </p>
           <div className="mt-3 space-y-1 text-sm text-white/65">
             <p className="flex items-center gap-2">
-              <Phone className="h-4 w-4 shrink-0 text-[#FF5A5A]" />
+              <Phone className="h-4 w-4 shrink-0 text-[#FF0000]" />
               {b.phone}
             </p>
             <p className="pl-6 text-xs text-white/50">Line: {b.line}</p>
@@ -30,7 +30,7 @@ export default function BranchContactList({ branches }: { branches: Branch[] }) 
             >
               กดเพื่อนำทาง
             </a>
-            <Link href={`/branches/${b.slug}`} className="flex-1 rounded-md bg-brand-red py-2.5 text-center text-xs font-semibold text-white transition-colors hover:bg-[#c00000]">
+            <Link href={`/branches/${b.slug}`} className="flex-1 rounded-md bg-brand-red py-2.5 text-center text-xs font-semibold text-white transition-colors hover:bg-[#AD0000]">
               ดูสาขา
             </Link>
           </div>

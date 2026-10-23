@@ -6,7 +6,7 @@ export function SpecList({ title, items }: { title: string; items: string[] }) {
         {items.map((item) => (
           <li key={item} className="flex items-start gap-3 rounded-xl border border-white/[0.07] bg-white/[0.03] p-3.5 text-sm text-white/80">
             <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-red/20">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="h-3 w-3 text-[#FF5A5A]">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="h-3 w-3 text-[#FF0000]">
                 <path d="m5 13 4 4L19 7" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </span>

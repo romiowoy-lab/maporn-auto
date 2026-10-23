@@ -101,7 +101,7 @@ export default async function CarsPage({
     <div className="bg-[#101113] text-white">
       <div className="container-page py-10 sm:py-14">
         <div className="mb-8">
-          <p className="mb-2 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.25em] text-[#FF5A5A]">
+          <p className="mb-2 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.25em] text-[#FF0000]">
             <span className="h-px w-8 bg-brand-red" /> Vehicle Catalog
           </p>
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">รถยนต์ทั้งหมด</h1>

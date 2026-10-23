@@ -5,8 +5,11 @@
   --foreground: #1a1b1c;
   --brand-navy: #0f172a;
   --brand-navy-soft: #1e293b;
-  --brand-red: #dc2626;
-  --brand-red-soft: #b91c1c;
+  /* Maporn Auto Group CI (CI-Maporn-logo.pdf): red #FF0000, dark red #AD0000, grey #A7A9AC */
+  --brand-red: #ff0000;
+  --brand-red-soft: #ad0000;
+  --brand-red-gradient: linear-gradient(180deg, #ff0000 0%, #ad0000 100%);
+  --brand-grey: #a7a9ac;
   --brand-slate: #5b5b58;
   --brand-line: #e5e3df;
   --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
@@ -21,9 +24,11 @@
   --color-brand-navy-soft: var(--brand-navy-soft);
   --color-brand-red: var(--brand-red);
   --color-brand-red-soft: var(--brand-red-soft);
+  --color-brand-grey: var(--brand-grey);
   --color-brand-slate: var(--brand-slate);
   --color-brand-line: var(--brand-line);
-  --font-sans: var(--font-prompt), "Leelawadee UI", "Segoe UI", Tahoma, ui-sans-serif, system-ui, sans-serif;
+  /* CI: Poppins for Latin, Prompt for Thai (Poppins has no Thai glyphs, so Thai falls through) */
+  --font-sans: var(--font-poppins), var(--font-prompt), "Leelawadee UI", "Segoe UI", Tahoma, ui-sans-serif, system-ui, sans-serif;
 }
 
 body {
@@ -101,7 +106,7 @@ h1, h2, h3 {
   justify-content: center;
   gap: 0.5rem;
   border-radius: 6px;
-  background: var(--brand-red);
+  background: var(--brand-red-gradient);
   color: white;
   padding: 14px 24px;
   font-weight: 500;

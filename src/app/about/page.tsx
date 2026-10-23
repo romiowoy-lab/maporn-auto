@@ -48,7 +48,7 @@ const DEPT_ICONS = [Car, PackageSearch, PaintBucket, Fuel];
 function DarkHeading({ eyebrow, title }: { eyebrow: string; title: string }) {
   return (
     <div className="text-center">
-      <p className="mb-3 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.25em] text-[#FF5A5A]">
+      <p className="mb-3 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.25em] text-[#FF0000]">
         <span className="h-px w-8 bg-brand-red" /> {eyebrow} <span className="h-px w-8 bg-brand-red" />
       </p>
       <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">{title}</h2>
@@ -211,10 +211,10 @@ export default function AboutPage() {
               return (
                 <div
                   key={v.title}
-                  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#1C1E22] p-7 shadow-[0_10px_30px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-red/50 hover:shadow-[0_18px_40px_rgba(223,0,0,0.15)]"
+                  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#1C1E22] p-7 shadow-[0_10px_30px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-red/50 hover:shadow-[0_18px_40px_rgba(255,0,0,0.15)]"
                 >
                   <span className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-brand-red transition-transform duration-500 group-hover:scale-x-100" />
-                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-red/15 text-[#FF5A5A] transition-colors duration-300 group-hover:bg-brand-red group-hover:text-white">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-red/15 text-[#FF0000] transition-colors duration-300 group-hover:bg-brand-red group-hover:text-white">
                     <Icon className="h-6 w-6" strokeWidth={1.8} />
                   </span>
                   <h3 className="mt-5 text-lg font-bold text-white">{v.title}</h3>
@@ -239,7 +239,7 @@ export default function AboutPage() {
                   key={s.title}
                   className="rounded-2xl border border-white/10 bg-[#1C1E22] p-7 shadow-[0_10px_30px_rgba(0,0,0,0.35)] transition-colors duration-300 hover:border-brand-red/50"
                 >
-                  <Icon className="h-9 w-9 text-[#FF5A5A]" strokeWidth={1.5} />
+                  <Icon className="h-9 w-9 text-[#FF0000]" strokeWidth={1.5} />
                   <h3 className="mt-5 text-lg font-bold text-white">{s.title}</h3>
                   <p className="mt-2 text-sm text-white/65 leading-relaxed">{s.description}</p>
                 </div>
@@ -292,7 +292,7 @@ export default function AboutPage() {
                 key={m.name}
                 className="rounded-2xl border border-white/10 bg-[#1C1E22] p-8 text-center shadow-[0_10px_30px_rgba(0,0,0,0.35)] transition-colors duration-300 hover:border-brand-red/40"
               >
-                <span className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-brand-red to-[#8a0000] shadow-[0_10px_30px_rgba(223,0,0,0.3)] ring-4 ring-white/10">
+                <span className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-brand-red to-[#8a0000] shadow-[0_10px_30px_rgba(255,0,0,0.3)] ring-4 ring-white/10">
                   <UserRound className="h-9 w-9 text-white" strokeWidth={1.5} />
                 </span>
                 <p className="mt-5 text-base font-bold text-white">{m.name}</p>
@@ -312,7 +312,7 @@ export default function AboutPage() {
               {CERTIFICATIONS.map((c) => (
                 <li key={c} className="flex items-start gap-3 rounded-xl border border-white/10 bg-[#1C1E22] p-4 text-sm text-white/80 leading-relaxed">
                   <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-red/20">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="h-3.5 w-3.5 text-[#FF5A5A]">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="h-3.5 w-3.5 text-[#FF0000]">
                       <path d="m5 13 4 4L19 7" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </span>
@@ -329,7 +329,7 @@ export default function AboutPage() {
                   key={b.slug}
                   href={`/brands/${b.slug}`}
                   title={b.name}
-                  className="flex h-16 items-center justify-center rounded-xl border border-white/10 bg-white px-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(223,0,0,0.25)]"
+                  className="flex h-16 items-center justify-center rounded-xl border border-white/10 bg-white px-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(255,0,0,0.25)]"
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={b.logo} alt={b.name} className="h-7 w-auto max-w-[110px] object-contain" />

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Prompt } from "next/font/google";
+import { Poppins, Prompt } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -7,6 +7,14 @@ import MobileBottomNav from "@/components/layout/MobileBottomNav";
 import CookieConsent from "@/components/layout/CookieConsent";
 import { company } from "@/lib/data/company";
 import { branches } from "@/lib/data/branches";
+
+// CI fonts: Poppins (main) + Prompt (Thai)
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-poppins",
+  display: "swap",
+});
 
 const prompt = Prompt({
   subsets: ["thai", "latin"],
@@ -85,7 +93,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   };
 
   return (
-    <html lang="th" className={`h-full antialiased ${prompt.variable}`}>
+    <html lang="th" className={`h-full antialiased ${poppins.variable} ${prompt.variable}`}>
       <body className="min-h-full flex flex-col font-sans">
         <script
           type="application/ld+json"

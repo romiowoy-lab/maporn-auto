@@ -14,7 +14,7 @@ export default function VariantTiles({ modelSlug, variants }: { modelSlug: strin
             key={v.name}
             className={`relative flex flex-col rounded-2xl border p-6 transition-all duration-300 hover:-translate-y-1 ${
               recommended
-                ? "border-brand-red/70 bg-gradient-to-b from-[#2a1416] to-[#1C1E22] shadow-[0_18px_50px_rgba(223,0,0,0.18)]"
+                ? "border-brand-red/70 bg-gradient-to-b from-[#2a1416] to-[#1C1E22] shadow-[0_18px_50px_rgba(255,0,0,0.18)]"
                 : "border-white/10 bg-[#1C1E22] shadow-[0_10px_30px_rgba(0,0,0,0.35)] hover:border-white/25"
             }`}
           >
@@ -23,7 +23,7 @@ export default function VariantTiles({ modelSlug, variants }: { modelSlug: strin
             )}
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">รุ่นย่อย</p>
             <h3 className="mt-1 text-xl font-bold text-white">{v.name}</h3>
-            <p className="mt-3 text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
+            <p className="mt-3 text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-brand-red-soft">
               {formatTHB(v.price)}
             </p>
 

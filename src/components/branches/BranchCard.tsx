@@ -17,7 +17,7 @@ export default function BranchCard({ branch }: { branch: Branch }) {
   return (
     <Link
       href={`/branches/${branch.slug}`}
-      className="card-elevated overflow-hidden flex flex-col h-full group transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_0_0_1px_rgba(223,0,0,0.25),0_24px_48px_-16px_rgba(223,0,0,0.35)]"
+      className="card-elevated overflow-hidden flex flex-col h-full group transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_0_0_1px_rgba(255,0,0,0.25),0_24px_48px_-16px_rgba(255,0,0,0.35)]"
     >
       {BRANCH_PHOTO[branch.slug] ? (
         <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">

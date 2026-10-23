@@ -80,17 +80,17 @@ export default async function BranchDetailPage({ params }: { params: Promise<{ s
         {/* Info */}
         <div className="space-y-4">
           <div className="flex items-start gap-3 rounded-2xl border border-white/10 bg-[#1C1E22] p-5">
-            <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-[#FF5A5A]" />
+            <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-[#FF0000]" />
             <div><p className="text-xs text-white/50">ที่อยู่</p><p className="mt-1 text-sm leading-relaxed text-white">{branch.address}</p></div>
           </div>
           <div className="flex items-start gap-3 rounded-2xl border border-white/10 bg-[#1C1E22] p-5">
-            <Clock className="mt-0.5 h-5 w-5 shrink-0 text-[#FF5A5A]" />
+            <Clock className="mt-0.5 h-5 w-5 shrink-0 text-[#FF0000]" />
             <div><p className="text-xs text-white/50">เวลาทำการ</p><p className="mt-1 text-sm leading-relaxed text-white">{branch.hours}</p></div>
           </div>
           <div className="rounded-2xl border border-white/10 bg-[#1C1E22] p-5">
             <p className="text-xs text-white/50">{verified ? "ติดต่อสาขา" : "ติดต่อสอบถาม (สำนักงานใหญ่)"}</p>
-            <a href={`tel:${phone.replace(/[^0-9+]/g, "")}`} className="mt-1 flex items-center gap-2 text-3xl font-extrabold tracking-tight hover:text-[#FF5A5A]">
-              <Phone className="h-6 w-6 text-[#FF5A5A]" /> {phone}
+            <a href={`tel:${phone.replace(/[^0-9+]/g, "")}`} className="mt-1 flex items-center gap-2 text-3xl font-extrabold tracking-tight hover:text-[#FF0000]">
+              <Phone className="h-6 w-6 text-[#FF0000]" /> {phone}
             </a>
             <div className={`mt-4 grid gap-2 ${lineHref ? "grid-cols-2" : "grid-cols-1"}`}>
               <a href={`tel:${phone.replace(/[^0-9+]/g, "")}`} className="flex items-center justify-center gap-2 rounded-xl border border-white/20 py-3 text-sm font-bold transition-colors hover:bg-white hover:text-[#101113]"><Phone className="h-4 w-4" /> โทร</a>
@@ -130,7 +130,7 @@ export default async function BranchDetailPage({ params }: { params: Promise<{ s
           <div className="aspect-[4/3] lg:aspect-auto lg:h-[calc(100%-72px)] lg:min-h-[420px]">
             <iframe title={`แผนที่ ${branch.name}`} className="h-full w-full" loading="lazy" src={`https://www.google.com/maps?q=${encodeURIComponent(branch.mapQuery)}&output=embed`} />
           </div>
-          <a href={maps} target="_blank" rel="noreferrer" className="flex h-[72px] items-center justify-center gap-2 bg-brand-red text-sm font-bold text-white transition-colors hover:bg-[#c00000]">
+          <a href={maps} target="_blank" rel="noreferrer" className="flex h-[72px] items-center justify-center gap-2 bg-brand-red text-sm font-bold text-white transition-colors hover:bg-[#AD0000]">
             <Navigation className="h-4 w-4" /> เปิดเส้นทาง Google Maps
           </a>
         </div>

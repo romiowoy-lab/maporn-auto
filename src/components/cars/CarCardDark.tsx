@@ -35,7 +35,7 @@ export default function CarCardDark({ model, index }: { model: VehicleModel; ind
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-8%" }}
       transition={{ duration: 0.6, delay: (index % 3) * 0.08, ease: [0.16, 1, 0.3, 1] }}
-      className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#17181B] shadow-[0_10px_30px_rgba(0,0,0,0.35)] transition-all duration-500 hover:-translate-y-2 hover:border-brand-red/50 hover:shadow-[0_20px_50px_rgba(223,0,0,0.15)]"
+      className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#17181B] shadow-[0_10px_30px_rgba(0,0,0,0.35)] transition-all duration-500 hover:-translate-y-2 hover:border-brand-red/50 hover:shadow-[0_20px_50px_rgba(255,0,0,0.15)]"
     >
       {/* Studio stage: dark backdrop + soft radial glow behind the car */}
       <div className="relative aspect-[4/3] overflow-hidden bg-[radial-gradient(ellipse_at_50%_65%,#3b3e45_0%,#1d1e22_60%,#141518_100%)]">
@@ -78,7 +78,7 @@ export default function CarCardDark({ model, index }: { model: VehicleModel; ind
           </span>
           {range && (
             <span className="flex items-center gap-1 rounded-full border border-white/15 bg-black/50 px-2.5 py-1 text-[10px] font-semibold text-white backdrop-blur-md">
-              <Gauge className="h-3 w-3 text-[#FF5A5A]" />
+              <Gauge className="h-3 w-3 text-[#FF0000]" />
               {range}
             </span>
           )}
@@ -88,7 +88,7 @@ export default function CarCardDark({ model, index }: { model: VehicleModel; ind
         <div className="absolute inset-x-0 bottom-0 z-10 flex gap-2 p-3 transition-all duration-300 lg:translate-y-3 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100">
           <Link
             href={`/test-drive?model=${model.slug}`}
-            className="flex-1 rounded-lg bg-brand-red py-2 text-center text-xs font-bold text-white transition-colors hover:bg-[#c00000]"
+            className="flex-1 rounded-lg bg-brand-red py-2 text-center text-xs font-bold text-white transition-colors hover:bg-[#AD0000]"
           >
             ทดลองขับ
           </Link>
@@ -102,12 +102,12 @@ export default function CarCardDark({ model, index }: { model: VehicleModel; ind
       </div>
 
       <div className="flex flex-1 flex-col p-5">
-        <p className="text-[11px] font-semibold uppercase tracking-widest text-[#FF5A5A]">{brand?.name}</p>
+        <p className="text-[11px] font-semibold uppercase tracking-widest text-[#FF0000]">{brand?.name}</p>
         <h3 className="mt-1 text-2xl font-bold text-white">{model.name}</h3>
         <p className="mt-1 text-xs text-white/55">{model.bodyType}</p>
         <div className="mt-4 border-t border-white/10 pt-4">
           <span className="block text-[11px] text-white/50">เริ่มต้น</span>
-          <span className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
+          <span className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-brand-red-soft">
             {formatTHB(model.startPrice)}
           </span>
         </div>
