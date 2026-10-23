@@ -10,8 +10,7 @@ import { company } from "@/lib/data/company";
 import { BRANCH_PHOTO } from "@/components/branches/BranchCard";
 
 const VERIFIED_CONTACT = new Set([
-  "srinakarin", "rayong", "rayong-omoda-jaecoo", "rayong-wuling",
-  "rayong-lepas", "sriracha", "lamlukka", "suzy-fix",
+  "srinakarin", "rayong", "rayong-omoda-jaecoo", "sriracha", "lamlukka", "suzy-fix",
 ]);
 
 function mapsHref(mapQuery: string) {

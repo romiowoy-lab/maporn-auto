@@ -11,7 +11,7 @@ import { branchGallery } from "@/lib/data/branchPhotos";
 import { company } from "@/lib/data/company";
 
 // Branches with verified phone/LINE; others fall back to head office.
-const VERIFIED_CONTACT = new Set(["srinakarin", "rayong", "rayong-omoda-jaecoo", "rayong-wuling", "rayong-lepas", "sriracha", "lamlukka", "suzy-fix"]);
+const VERIFIED_CONTACT = new Set(["srinakarin", "rayong", "rayong-omoda-jaecoo", "sriracha", "lamlukka", "suzy-fix"]);
 
 export function generateStaticParams() {
   return branches.map((b) => ({ slug: b.slug }));
