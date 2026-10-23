@@ -27,8 +27,8 @@
   --color-brand-grey: var(--brand-grey);
   --color-brand-slate: var(--brand-slate);
   --color-brand-line: var(--brand-line);
-  /* CI: Poppins for Latin, Prompt for Thai (Poppins has no Thai glyphs, so Thai falls through) */
-  --font-sans: var(--font-poppins), var(--font-prompt), "Leelawadee UI", "Segoe UI", Tahoma, ui-sans-serif, system-ui, sans-serif;
+  /* Kanit for Thai and English */
+  --font-sans: var(--font-kanit), "Leelawadee UI", "Segoe UI", Tahoma, ui-sans-serif, system-ui, sans-serif;
 }
 
 /* CI red gradient for solid red fills that carry white text (buttons, active tabs, badges).

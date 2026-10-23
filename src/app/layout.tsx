@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins, Prompt } from "next/font/google";
+import { Kanit } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -8,18 +8,11 @@ import CookieConsent from "@/components/layout/CookieConsent";
 import { company } from "@/lib/data/company";
 import { branches } from "@/lib/data/branches";
 
-// CI fonts: Poppins (main) + Prompt (Thai)
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-poppins",
-  display: "swap",
-});
-
-const prompt = Prompt({
+// Site font: Kanit for both Thai and English
+const kanit = Kanit({
   subsets: ["thai", "latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-prompt",
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-kanit",
   display: "swap",
 });
 
@@ -93,7 +86,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   };
 
   return (
-    <html lang="th" className={`h-full antialiased ${poppins.variable} ${prompt.variable}`}>
+    <html lang="th" className={`h-full antialiased ${kanit.variable}`}>
       <body className="min-h-full flex flex-col font-sans">
         <script
           type="application/ld+json"
