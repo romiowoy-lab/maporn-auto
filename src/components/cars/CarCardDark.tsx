@@ -72,7 +72,7 @@ export default function CarCardDark({ model, index }: { model: VehicleModel; ind
         </Link>
 
         <div className="pointer-events-none absolute left-3 top-3 z-10 flex flex-wrap gap-1.5">
-          {model.isNew && <span className="rounded-full bg-brand-red px-2.5 py-1 text-[10px] font-bold text-white">รุ่นใหม่</span>}
+          {model.isNew && <span className="rounded-full bg-brand-red-gradient px-2.5 py-1 text-[10px] font-bold text-white">รุ่นใหม่</span>}
           <span className="rounded-full border border-white/15 bg-black/50 px-2.5 py-1 text-[10px] font-semibold text-white backdrop-blur-md">
             {FUEL_LABELS[model.fuelType]}
           </span>
@@ -88,7 +88,7 @@ export default function CarCardDark({ model, index }: { model: VehicleModel; ind
         <div className="absolute inset-x-0 bottom-0 z-10 flex gap-2 p-3 transition-all duration-300 lg:translate-y-3 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100">
           <Link
             href={`/test-drive?model=${model.slug}`}
-            className="flex-1 rounded-lg bg-brand-red py-2 text-center text-xs font-bold text-white transition-colors hover:bg-[#AD0000]"
+            className="flex-1 rounded-lg bg-brand-red-gradient py-2 text-center text-xs font-bold text-white transition-all hover:brightness-110"
           >
             ทดลองขับ
           </Link>

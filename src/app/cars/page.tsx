@@ -166,7 +166,7 @@ export default async function CarsPage({
                           key={p}
                           href={pageHref(p)}
                           className={`flex h-9 w-9 items-center justify-center rounded-full text-sm font-semibold ${
-                            p === currentPage ? "bg-brand-red text-white" : "border border-white/20 text-white/80 hover:bg-white/10"
+                            p === currentPage ? "bg-brand-red-gradient text-white" : "border border-white/20 text-white/80 hover:bg-white/10"
                           }`}
                         >
                           {p}

@@ -269,7 +269,7 @@ export default function AboutPage() {
                         left ? "md:col-start-1 md:text-right" : "md:col-start-3"
                       }`}
                     >
-                      <span className="inline-block rounded-full bg-brand-red px-3 py-1 text-xs font-black tracking-wider text-white">{t.year}</span>
+                      <span className="inline-block rounded-full bg-brand-red-gradient px-3 py-1 text-xs font-black tracking-wider text-white">{t.year}</span>
                       <h3 className="mt-3 text-lg font-bold text-white">{t.title}</h3>
                       <p className="mt-1.5 text-sm text-white/65 leading-relaxed">{t.description}</p>
                     </div>

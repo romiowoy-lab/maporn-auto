@@ -31,6 +31,13 @@
   --font-sans: var(--font-poppins), var(--font-prompt), "Leelawadee UI", "Segoe UI", Tahoma, ui-sans-serif, system-ui, sans-serif;
 }
 
+/* CI red gradient for solid red fills that carry white text (buttons, active tabs, badges).
+   The darker #AD0000 end keeps white text readable; hover with brightness, not a solid fill. */
+@utility bg-brand-red-gradient {
+  background-color: var(--brand-red-soft);
+  background-image: var(--brand-red-gradient);
+}
+
 body {
   background: var(--background);
   color: var(--foreground);

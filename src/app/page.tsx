@@ -211,7 +211,7 @@ export default function HomePage() {
                   onClick={() => setBranchTab(tab.key)}
                   className={`rounded-full border px-5 py-2 text-sm font-semibold shadow-sm transition-all duration-300 ${
                     branchTab === tab.key
-                      ? 'border-brand-red bg-brand-red text-white'
+                      ? 'border-brand-red bg-brand-red-gradient text-white'
                       : 'border-white/15 bg-white/5 text-white/75 hover:bg-white/10 hover:text-white'
                   }`}
                 >
@@ -341,7 +341,7 @@ export default function HomePage() {
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/5 to-transparent" />
-                    <span className="absolute top-3 left-3 flex h-8 w-8 items-center justify-center rounded-full bg-brand-red text-white text-sm font-black shadow-lg">
+                    <span className="absolute top-3 left-3 flex h-8 w-8 items-center justify-center rounded-full bg-brand-red-gradient text-white text-sm font-black shadow-lg">
                       {idx + 1}
                     </span>
                     <Icon className="absolute bottom-3 left-3 w-6 h-6 text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]" />
@@ -385,7 +385,7 @@ export default function HomePage() {
                 >
                   <div className="relative h-40 w-full overflow-hidden bg-gradient-to-br from-brand-red/15 via-[#1C1E22] to-[#25282D] flex items-center justify-center">
                     <Newspaper className="w-8 h-8 text-brand-red/40" />
-                    <span className="absolute top-3 left-3 text-[10px] font-bold px-2 py-0.5 rounded bg-brand-red text-white">
+                    <span className="absolute top-3 left-3 text-[10px] font-bold px-2 py-0.5 rounded bg-brand-red-gradient text-white">
                       {NEWS_CATEGORY_LABEL[n.category] ?? n.category}
                     </span>
                   </div>

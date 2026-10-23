@@ -19,7 +19,7 @@ export default function VariantTiles({ modelSlug, variants }: { modelSlug: strin
             }`}
           >
             {recommended && (
-              <span className="absolute -top-3 left-6 rounded-full bg-brand-red px-3 py-1 text-[10px] font-bold text-white">รุ่นแนะนำ</span>
+              <span className="absolute -top-3 left-6 rounded-full bg-brand-red-gradient px-3 py-1 text-[10px] font-bold text-white">รุ่นแนะนำ</span>
             )}
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">รุ่นย่อย</p>
             <h3 className="mt-1 text-xl font-bold text-white">{v.name}</h3>

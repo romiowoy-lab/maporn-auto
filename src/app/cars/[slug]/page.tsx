@@ -128,7 +128,7 @@ export default async function CarDetailPage({ params }: { params: Promise<{ slug
               <div className="mt-5 flex flex-wrap gap-2">
                 <span className="rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-xs font-semibold text-white">{model.bodyType}</span>
                 <span className="rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-xs font-semibold text-white">{model.fuelType}</span>
-                {model.isNew && <span className="rounded-full bg-brand-red px-3 py-1.5 text-xs font-semibold text-white">รุ่นใหม่</span>}
+                {model.isNew && <span className="rounded-full bg-brand-red-gradient px-3 py-1.5 text-xs font-semibold text-white">รุ่นใหม่</span>}
               </div>
 
               <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.05] p-6 backdrop-blur-sm">

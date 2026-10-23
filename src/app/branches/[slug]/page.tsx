@@ -68,7 +68,7 @@ export default async function BranchDetailPage({ params }: { params: Promise<{ s
             <span className="font-medium text-white">{short}</span>
           </nav>
           <div className="mb-3 flex flex-wrap gap-2">
-            {branch.isShowroom && <span className="rounded-full bg-brand-red px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide text-white">Showroom</span>}
+            {branch.isShowroom && <span className="rounded-full bg-brand-red-gradient px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide text-white">Showroom</span>}
             {branch.isServiceCenter && <span className="rounded-full bg-white px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide text-[#101113]">Service Center</span>}
           </div>
           <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-6xl">{branch.name}</h1>
@@ -130,7 +130,7 @@ export default async function BranchDetailPage({ params }: { params: Promise<{ s
           <div className="aspect-[4/3] lg:aspect-auto lg:h-[calc(100%-72px)] lg:min-h-[420px]">
             <iframe title={`แผนที่ ${branch.name}`} className="h-full w-full" loading="lazy" src={`https://www.google.com/maps?q=${encodeURIComponent(branch.mapQuery)}&output=embed`} />
           </div>
-          <a href={maps} target="_blank" rel="noreferrer" className="flex h-[72px] items-center justify-center gap-2 bg-brand-red text-sm font-bold text-white transition-colors hover:bg-[#AD0000]">
+          <a href={maps} target="_blank" rel="noreferrer" className="flex h-[72px] items-center justify-center gap-2 bg-brand-red-gradient text-sm font-bold text-white transition-all hover:brightness-110">
             <Navigation className="h-4 w-4" /> เปิดเส้นทาง Google Maps
           </a>
         </div>

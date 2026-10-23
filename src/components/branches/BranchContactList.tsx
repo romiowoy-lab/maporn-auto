@@ -30,7 +30,7 @@ export default function BranchContactList({ branches }: { branches: Branch[] }) 
             >
               กดเพื่อนำทาง
             </a>
-            <Link href={`/branches/${b.slug}`} className="flex-1 rounded-md bg-brand-red py-2.5 text-center text-xs font-semibold text-white transition-colors hover:bg-[#AD0000]">
+            <Link href={`/branches/${b.slug}`} className="flex-1 rounded-md bg-brand-red-gradient py-2.5 text-center text-xs font-semibold text-white transition-all hover:brightness-110">
               ดูสาขา
             </Link>
           </div>

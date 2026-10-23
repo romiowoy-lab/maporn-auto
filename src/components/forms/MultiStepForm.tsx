@@ -33,7 +33,7 @@ export default function MultiStepForm({
             <div key={label} className="flex-1 flex items-center last:flex-none">
               <div
                 className={`h-7 w-7 shrink-0 rounded-full flex items-center justify-center text-[11px] font-bold transition-colors ${
-                  i <= currentStep ? "bg-brand-red text-white" : "bg-slate-100 text-brand-slate"
+                  i <= currentStep ? "bg-brand-red-gradient text-white" : "bg-slate-100 text-brand-slate"
                 }`}
               >
                 {i + 1}

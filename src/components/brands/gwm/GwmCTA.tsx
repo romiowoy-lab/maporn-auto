@@ -65,7 +65,7 @@ export default function GwmCTA() {
         </p>
 
         <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
-          <Link href="/test-drive?brand=gwm" className="rounded-lg bg-brand-red px-7 py-3.5 text-sm font-bold text-white transition-all hover:brightness-110 hover:-translate-y-0.5">
+          <Link href="/test-drive?brand=gwm" className="rounded-lg bg-brand-red-gradient px-7 py-3.5 text-sm font-bold text-white transition-all hover:brightness-110 hover:-translate-y-0.5">
             นัดทดลองขับ →
           </Link>
           <Link href="/contact?brand=gwm" className="rounded-lg border border-white/25 bg-white/[0.06] px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/10">

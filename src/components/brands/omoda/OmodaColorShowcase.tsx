@@ -109,7 +109,7 @@ export default function OmodaColorShowcase({ only }: { only?: string }) {
                 type="button"
                 onClick={() => selectModel(m.key)}
                 className={`rounded-full border px-5 py-2 text-xs font-bold uppercase tracking-[0.12em] transition-colors ${
-                  m.key === model.key ? "border-brand-red bg-brand-red text-white" : "border-white/25 text-white/60 hover:border-white/50 hover:text-white"
+                  m.key === model.key ? "border-brand-red bg-brand-red-gradient text-white" : "border-white/25 text-white/60 hover:border-white/50 hover:text-white"
                 }`}
               >
                 {m.name}

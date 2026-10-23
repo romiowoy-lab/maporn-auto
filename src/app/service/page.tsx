@@ -59,7 +59,7 @@ export default function ServicePage() {
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/service/appointment"
-              className="inline-flex items-center gap-2 rounded-xl bg-brand-red px-6 py-3.5 text-sm font-bold text-white shadow-[0_8px_20px_-6px_rgba(255,0,0,0.5)] transition-all hover:brightness-110"
+              className="inline-flex items-center gap-2 rounded-xl bg-brand-red-gradient px-6 py-3.5 text-sm font-bold text-white shadow-[0_8px_20px_-6px_rgba(255,0,0,0.5)] transition-all hover:brightness-110"
             >
               นัดหมายเข้าศูนย์บริการ
             </Link>

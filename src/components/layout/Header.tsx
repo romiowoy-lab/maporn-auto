@@ -103,7 +103,7 @@ export default function Header() {
             href={`https://line.me/ti/p/${company.line}`}
             target="_blank"
             rel="noreferrer"
-            className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-brand-red hover:brightness-110 text-white text-xs font-bold shadow-sm transition-all"
+            className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-brand-red-gradient hover:brightness-110 text-white text-xs font-bold shadow-sm transition-all"
           >
             <Calendar className="w-3.5 h-3.5" />
             <span>ทดลองขับ</span>
@@ -189,7 +189,7 @@ export default function Header() {
               href={`https://line.me/ti/p/${company.line}`}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-brand-red text-white text-xs font-bold shadow-sm"
+              className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-brand-red-gradient text-white text-xs font-bold shadow-sm"
             >
               <Calendar className="w-3.5 h-3.5" />
               <span>ทดลองขับ</span>

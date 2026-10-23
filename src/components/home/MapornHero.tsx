@@ -192,7 +192,7 @@ export default function MapornHero() {
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href={car.override?.href ?? `/cars/${car.model.slug}`}
-              className="rounded-lg bg-brand-red px-6 py-3.5 text-sm font-bold tracking-wide text-white shadow-[0_8px_20px_-6px_rgba(255,0,0,0.5)] transition-all hover:brightness-110 hover:-translate-y-0.5"
+              className="rounded-lg bg-brand-red-gradient px-6 py-3.5 text-sm font-bold tracking-wide text-white shadow-[0_8px_20px_-6px_rgba(255,0,0,0.5)] transition-all hover:brightness-110 hover:-translate-y-0.5"
             >
               ดูรายละเอียด
             </Link>

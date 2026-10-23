@@ -14,7 +14,7 @@ export default function GwmVehicleCard({ vehicle }: { vehicle: GwmVehicle }) {
           {subBrand}
         </span>
         {model.isNew && (
-          <span className="rounded-full bg-brand-red px-3 py-1 text-[10px] font-bold uppercase tracking-[0.15em] text-white">
+          <span className="rounded-full bg-brand-red-gradient px-3 py-1 text-[10px] font-bold uppercase tracking-[0.15em] text-white">
             New
           </span>
         )}

@@ -93,7 +93,7 @@ export function ErrorBanner({ message }: { message: string }) {
 export function SuccessPanel({ leadId, title, description }: { leadId: string; title: string; description: string }) {
   return (
     <div className="rounded-2xl bg-brand-navy text-white p-8 text-center">
-      <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-brand-red text-white">
+      <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-brand-red-gradient text-white">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="h-7 w-7">
           <path d="m5 13 4 4L19 7" strokeLinecap="round" strokeLinejoin="round" />
         </svg>

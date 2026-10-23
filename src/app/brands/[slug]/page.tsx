@@ -186,7 +186,7 @@ export default async function BrandDetailPage({ params }: { params: Promise<{ sl
           <h1 className="text-3xl sm:text-5xl font-black">{brand.name}</h1>
           <p className="text-brand-red-soft font-semibold mt-1">{brand.tagline}</p>
           {brand.slug === "lepas" && (
-            <span className="mt-3 inline-block rounded-full bg-brand-red px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-white">
+            <span className="mt-3 inline-block rounded-full bg-brand-red-gradient px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-white">
               Maporn Autogroup พร้อมจำหน่าย
             </span>
           )}

@@ -96,7 +96,7 @@ export default function ExploreRange() {
               onClick={() => setActiveKey("all")}
               className={`shrink-0 rounded-full border px-4 py-1.5 text-sm font-medium whitespace-nowrap backdrop-blur-md transition-all duration-300 ${
                 activeKey === "all"
-                  ? "border-brand-red bg-brand-red text-white shadow-lg shadow-brand-red/30"
+                  ? "border-brand-red bg-brand-red-gradient text-white shadow-lg shadow-brand-red/30"
                   : "border-white/15 bg-white/10 text-white/75 hover:bg-white/20 hover:text-white"
               }`}
             >
@@ -109,7 +109,7 @@ export default function ExploreRange() {
                 onClick={() => setActiveKey(g.key)}
                 className={`shrink-0 rounded-full border px-4 py-1.5 text-sm font-medium whitespace-nowrap backdrop-blur-md transition-all duration-300 ${
                   activeKey === g.key
-                    ? "border-brand-red bg-brand-red text-white shadow-lg shadow-brand-red/30"
+                    ? "border-brand-red bg-brand-red-gradient text-white shadow-lg shadow-brand-red/30"
                     : "border-white/15 bg-white/10 text-white/75 hover:bg-white/20 hover:text-white"
                 }`}
               >

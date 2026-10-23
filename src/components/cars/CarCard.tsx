@@ -30,7 +30,7 @@ export default function CarCard({ model }: { model: VehicleModel }) {
         )}
         <div className="absolute top-3 left-3 z-10 flex flex-wrap gap-1.5">
           {model.isNew && (
-            <span className="bg-brand-red text-white text-[10px] font-bold px-2.5 py-1 rounded-full">รุ่นใหม่</span>
+            <span className="bg-brand-red-gradient text-white text-[10px] font-bold px-2.5 py-1 rounded-full">รุ่นใหม่</span>
           )}
           <span className="bg-white/95 text-brand-navy text-[10px] font-semibold px-2.5 py-1 rounded-full">
             {FUEL_LABELS[model.fuelType]}
