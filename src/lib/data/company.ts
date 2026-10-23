@@ -31,7 +31,7 @@ export const companyTimeline = [
   { year: "1998", title: "ขยายสาขาแรกในต่างจังหวัด", description: "เปิดโชว์รูมสาขาชลบุรี รองรับตลาดภาคตะวันออก" },
   { year: "2012", title: "เพิ่มแบรนด์ในเครือ", description: "ขยายไลน์อัพเป็นหลายแบรนด์ พร้อมศูนย์บริการมาตรฐาน Suzy Fix" },
   { year: "2020", title: "ก้าวสู่ยุครถยนต์ไฟฟ้า", description: "นำเข้าแบรนด์รถยนต์ไฟฟ้า Wuling และ Nex สู่ตลาดไทย" },
-  { year: "2024", title: "ครบ 7 แบรนด์ในเครือ", description: "รวมแบรนด์ Suzuki, Farizon, Nex, OMODA, JAECOO, Lepas, Wuling และ GWM ภายใต้เครือเดียว" },
+  { year: "2024", title: "รวมหลายแบรนด์ภายใต้เครือเดียว", description: "รวมแบรนด์ Suzuki, Farizon, Nex, OMODA, JAECOO, Lepas, Wuling และ GWM ภายใต้เครือเดียว" },
   { year: "2026", title: "38 ปีแห่งความไว้วางใจ", description: "ดำเนินธุรกิจมากว่า 38 ปี พร้อมเปิดให้บริการ 5 สาขา 5 ศูนย์บริการทั่วประเทศไทย" },
 ];
 
