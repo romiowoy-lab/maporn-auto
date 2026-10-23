@@ -67,13 +67,14 @@ const VERIFIED_PHONE = new Set(['srinakarin', 'rayong', 'rayong-omoda-jaecoo']);
 // (it's a service sub-brand, not a car) — its own real logo file is used as-is, shown
 // object-contain on a solid tint rather than stretched/cropped like the 7 car photos.
 const BENTO_UNITS: { key: string; tag: string; title: string; href: string; img: string; pos?: string; logo: string | null; color: string; fit?: 'contain' }[] = [
-  { key: 'suzuki', tag: 'Suzuki', title: 'Way of Life!', href: '/brands/suzuki', img: '/brand/showcase/suzuki.jpg', pos: '20% 50%', logo: '/brand/logos/suzuki.svg', color: '#E30016' },
-  { key: 'gwm', tag: 'GWM', title: 'Tank 300 · Tank 500', href: '/brands/gwm', img: '/brand/gwm-tank300/front.jpg', pos: '40% 50%', logo: '/brand/logos/gwm.png', color: '#FF6600' },
   { key: 'omoda', tag: 'OMODA', title: 'Electric Crossover', href: '/brands/omoda', img: '/brand/omoda-c5/threeq.jpg', pos: '50% 50%', logo: '/brand/logos/omoda.svg', color: '#7B2D8E' },
   { key: 'jaecoo', tag: 'JAECOO', title: 'Feel Alive', href: '/brands/jaecoo', img: '/brand/jaecoo-j7/road.jpg', pos: '65% 50%', logo: '/brand/logos/jaecoo.svg', color: '#B8860B' },
+  { key: 'gwm', tag: 'GWM', title: 'Tank 300 · Tank 500', href: '/brands/gwm', img: '/brand/gwm-tank300/front.jpg', pos: '40% 50%', logo: '/brand/logos/gwm.png', color: '#FF6600' },
+  { key: 'suzuki', tag: 'Suzuki', title: 'Way of Life!', href: '/brands/suzuki', img: '/brand/showcase/suzuki.jpg', pos: '20% 50%', logo: '/brand/logos/suzuki.svg', color: '#E30016' },
   { key: 'lepas', tag: 'Lepas', title: 'Drive Your Elegance', href: '/brands/lepas', img: '/brand/lepas-l6/street.jpg', pos: '55% 50%', logo: '/brand/logos/lepas.png', color: '#A0522D' },
   { key: 'wuling', tag: 'Wuling', title: 'Enjoy the Ride', href: '/brands/wuling', img: '/brand/wuling-darion/front34.jpg', pos: '35% 50%', logo: '/brand/logos/wuling.png', color: '#C8102E' },
-  { key: 'suzyfix', tag: 'Suzy Fix', title: 'ศูนย์บริการซ่อมสีตัวถังมาตรฐาน Suzuki', href: '/service#suzy-fix', img: '/brand/suzyfix/suzyfix-mechanic.jpg', pos: '50% 40%', logo: null, color: '#E85D2F' },
+  { key: 'farizon', tag: 'Farizon', title: 'Beyond Logistics', href: '/brands/farizon', img: '/brand/models/farizon-van.jpg', pos: '50% 55%', logo: '/brand/logos/farizon.png', color: '#005BAC' },
+  { key: 'suzyfix', tag: 'Suzy Fix', title: 'ศูนย์ซ่อมสีและตัวถังมาตรฐาน', href: '/service#suzy-fix', img: '/brand/suzyfix/suzyfix-mechanic.jpg', pos: '50% 40%', logo: null, color: '#E85D2F' },
 ];
 
 export default function HomePage() {
@@ -93,10 +94,10 @@ export default function HomePage() {
           <div className="mb-10 sm:mb-12">
             <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-brand-red/[0.05] border border-brand-red/20 text-brand-red text-[10px] font-semibold tracking-widest uppercase mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-red animate-pulse mr-2" />
-              Business Ecosystem · Highlight
+              Our Brands
             </div>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-white">
-              ธุรกิจในเครือ มาพร
+              แบรนด์ที่มาพร ออโต้ กรุ๊ป จัดจำหน่ายและให้บริการ
             </h2>
             <p className="text-sm sm:text-lg mt-2 text-white/65">
               ตัวแทนจำหน่ายครบวงจรทั้งรถบุคคลและยานยนต์เชิงพาณิชย์

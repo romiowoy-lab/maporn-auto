@@ -79,7 +79,9 @@ function SectionTitle({ eyebrow, title, sub, center = false }: { eyebrow: string
 
 export default function AboutPage() {
   const years = new Date().getFullYear() - Number(company.foundedYear);
-  const groups = getBrandGroups();
+  // Client-set brand order: OMODA | JAECOO, GWM, Suzuki, Lepas, Wuling, Farizon
+  const ORDER = ["omoda-jaecoo", "gwm", "suzuki", "lepas", "wuling", "farizon"];
+  const groups = [...getBrandGroups()].sort((x, y) => (ORDER.indexOf(x.key) + 99) % 99 - (ORDER.indexOf(y.key) + 99) % 99);
   const brandCount = groups.length;
   const values = companyValues.map((v) => ({ ...v, description: v.description.replace(/\d+ แบรนด์/, `${brandCount} แบรนด์`) }));
   const standards = [
