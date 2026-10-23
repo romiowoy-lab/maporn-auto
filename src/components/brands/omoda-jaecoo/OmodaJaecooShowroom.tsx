@@ -10,12 +10,19 @@ import { j6 } from "@/lib/data/jaecoo-j6";
 import OmodaC5Showroom from "@/components/brands/omoda-jaecoo/OmodaC5Showroom";
 
 // OMODA and JAECOO are one paired dealership — one page, one switch. JAECOO first
-// (J7 SHS, JAECOO 5 EV, JAECOO 6 EV), OMODA C5 EV last. Phones show the short labels.
+// JAECOO 6 EV opens first, then J7 SHS and JAECOO 5 EV; OMODA C5 EV last. Phones show the short labels.
 // Switching plays a full-screen brand "swipe" (sweeps in, swaps the page underneath, sweeps out).
 
 type View = "jaecoo" | "j5" | "j6" | "omoda";
 
 const BRAND: Record<View, { label: string; short: string; logo: string; sweep: string; glow: string }> = {
+  j6: {
+    label: "JAECOO 6 EV",
+    short: "J6 EV",
+    logo: "/brand/logos/jaecoo.svg",
+    sweep: "linear-gradient(120deg,#101418 0%,#26302f 45%,#C8B27A 100%)",
+    glow: "#C8B27A",
+  },
   jaecoo: {
     label: "JAECOO J7",
     short: "J7",
@@ -28,13 +35,6 @@ const BRAND: Record<View, { label: string; short: string; logo: string; sweep: s
     short: "J5 EV",
     logo: "/brand/logos/jaecoo.svg",
     sweep: "linear-gradient(120deg,#0f1416 0%,#1f3133 45%,#C8B27A 100%)",
-    glow: "#C8B27A",
-  },
-  j6: {
-    label: "JAECOO 6 EV",
-    short: "J6 EV",
-    logo: "/brand/logos/jaecoo.svg",
-    sweep: "linear-gradient(120deg,#101418 0%,#26302f 45%,#C8B27A 100%)",
     glow: "#C8B27A",
   },
   omoda: {
@@ -52,8 +52,8 @@ const ease = [0.16, 1, 0.3, 1] as const;
 const safe = (p: Promise<unknown>, ms: number) => Promise.race([p, new Promise((r) => setTimeout(r, ms))]);
 
 export default function OmodaJaecooShowroom() {
-  const [view, setView] = useState<View>("jaecoo");
-  const [target, setTarget] = useState<View>("jaecoo");
+  const [view, setView] = useState<View>("j6");
+  const [target, setTarget] = useState<View>("j6");
   const [busy, setBusy] = useState(false);
   const [spin, setSpin] = useState(0);
   const controls = useAnimationControls();
