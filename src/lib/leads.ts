@@ -3,7 +3,8 @@ import path from "path";
 import { Lead } from "@/lib/types";
 
 // On the server set LEADS_DIR (e.g. "../maporn-data") so leads live outside the Git deploy folder
-const DATA_DIR = path.resolve(process.cwd(), process.env.LEADS_DIR || "data");
+// turbopackIgnore: a runtime-chosen path would otherwise make the build trace the whole project
+const DATA_DIR = path.resolve(/*turbopackIgnore: true*/ process.cwd(), process.env.LEADS_DIR || "data");
 const LEADS_FILE = path.join(DATA_DIR, "leads.json");
 
 function ensureStore() {
