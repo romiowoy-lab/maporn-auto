@@ -803,24 +803,23 @@ const allModels: VehicleModel[] = [
     name: "C5 EV",
     bodyType: "SUV",
     fuelType: "EV",
-    // Price is NOT in the official brochure — carried over from the earlier catalog, still to be confirmed.
-    startPrice: 899000,
+    // New OMODA C5 EV MAX+ — price from omodajaecoo.co.th, specs from the official spec sheet
+    // OMODAC5EV(KD)V1-032025 (see src/lib/data/omoda-c5-ev.ts).
+    startPrice: 709000,
     isNew: true,
     isFeatured: true,
-    // Specs below are from the official OMODA & JAECOO Thailand brochure (OMODA C5 EV Long Range Dynamic / Max).
-    colors: ["Lunar White", "Mercury Gray", "Space Black", "Lunar White (Black Roof)", "Mint Green (Black Roof)"],
-    dimensions: { length: 4424, width: 1830, height: 1588, wheelbase: 2630 },
-    battery: "58.9 kWh (แบตเตอรี่ไฟฟ้าแรงสูง)",
-    range: "ระยะทางวิ่งสูงสุด 505 กม. (NEDC) · 430 กม. (WLTP)",
+    colors: ["Ice Blue", "Space Black", "Light Silver", "Mercury Grey", "Lunar White"],
+    dimensions: { length: 4545, width: 1830, height: 1588, wheelbase: 2630 },
+    battery: "50.6 kWh (แบตเตอรี่ไฟฟ้าแรงสูง)",
+    range: "422 กม. (NEDC)",
     warranty: "ตามเงื่อนไขของผู้ผลิต (สอบถามที่โชว์รูม)",
-    safety: ["ระบบช่วยเหลือการขับขี่ ADAS (AEB, ACC, LDW/LDP, BSD, ICA, TJA ฯลฯ)", "ถุงลมนิรภัยหน้า/ข้าง/ม่านลม", "กล้องรอบทิศทาง 540 องศา (เฉพาะรุ่น Max)"],
-    technology: ["จอแสดงผลแบบจอกว้าง 24.6 นิ้ว", "ชาร์จมือถือไร้สาย 50 วัตต์", "เครื่องเสียง SONY 8 ลำโพง (เฉพาะรุ่น Max)", "ชาร์จ DC 30-80% ภายใน 28 นาที", "จ่ายไฟให้อุปกรณ์ภายนอก V2L 3.3 กิโลวัตต์"],
-    features: ["มอเตอร์ไฟฟ้า 155 กิโลวัตต์ (211 แรงม้า) ขับเคลื่อนล้อหน้า", "หลังคาซันรูฟ (เฉพาะรุ่น Max)", "พื้นที่บรรทุกสัมภาระ 432 ลิตร"],
+    safety: ["ADAS 19 ระบบ (ACC, TJA, ICA, AEB, LDW/LDP/LKA, BSD, RCTA/RCTB ฯลฯ)", "ถุงลมนิรภัย 6 ใบ", "กล้องรอบทิศทาง 540 องศา", "ABS, EBD, BAS, ESP, TCS, HAC, HDC"],
+    technology: ["จอสัมผัสกลาง 15.6 นิ้ว + จอมาตรวัด 8.8 นิ้ว", "เครื่องเสียง SONY 8 ลำโพง", "ชาร์จมือถือไร้สาย 50 วัตต์", "ชาร์จ DC สูงสุด 110 kW / AC 6.6 kW", "จ่ายไฟให้อุปกรณ์ภายนอก V2L 3.3 กิโลวัตต์"],
+    features: ["มอเตอร์ไฟฟ้า 155 กิโลวัตต์ (211 แรงม้า) ขับเคลื่อนล้อหน้า", "หลังคาซันรูฟ", "เบาะผู้ขับขี่ระบายอากาศ + นวด", "ประตูท้ายไฟฟ้า", "พื้นที่สัมภาระ 442 ลิตร"],
     variants: [
-      { name: "Long Range Dynamic", price: 899000, engine: "Electric Motor", power: "211 แรงม้า (155 kW)", torque: "288 Nm", transmission: "Single-speed", seats: 5 },
-      { name: "Long Range Max", price: 899000, engine: "Electric Motor", power: "211 แรงม้า (155 kW)", torque: "288 Nm", transmission: "Single-speed", seats: 5 },
+      { name: "MAX+", price: 709000, engine: "มอเตอร์ไฟฟ้า ขับเคลื่อนล้อหน้า", power: "211 แรงม้า (155 kW)", torque: "288 Nm", transmission: "Single-speed", seats: 5 },
     ],
-    description: "ครอสโอเวอร์ไฟฟ้า 100% วิ่งไกลสูงสุด 505 กม. (NEDC) ชาร์จ DC 30-80% ภายใน 28 นาที อัตราเร่ง 0-100 กม./ชม. ใน 7.2 วินาที",
+    description: "ครอสโอเวอร์ไฟฟ้า 100% วิ่งไกล 422 กม. (NEDC) ชาร์จ DC สูงสุด 110 kW อัตราเร่ง 0-100 กม./ชม. ใน 7.2 วินาที ADAS 19 ระบบ",
     image: "/brand/models/omoda-c5-ev.jpg",
   },
 

@@ -27,7 +27,7 @@ const BRAND: Record<View, { label: string; logo: string; sweep: string; glow: st
     glow: "#C8B27A",
   },
   omoda: {
-    label: "OMODA",
+    label: "OMODA C5 EV",
     logo: "/brand/logos/omoda.svg",
     sweep: "linear-gradient(120deg,#14101c 0%,#3a1a52 45%,#9b4bc4 100%)",
     glow: "#B36BDD",
@@ -68,7 +68,7 @@ export default function OmodaJaecooShowroom() {
           <motion.span animate={{ rotate: spin }} transition={{ duration: 0.6, ease }} className="hidden text-white/60 sm:inline-flex" aria-hidden="true">
             <ArrowLeftRight className="h-4 w-4" />
           </motion.span>
-          <div className="relative flex rounded-full bg-white/[0.06] p-1" role="tablist" aria-label="สลับรุ่น JAECOO J7 / JAECOO 6 EV / OMODA">
+          <div className="relative flex rounded-full bg-white/[0.06] p-1" role="tablist" aria-label="สลับรุ่น JAECOO J7 / JAECOO 6 EV / OMODA C5 EV">
             {(Object.keys(BRAND) as View[]).map((v) => {
               const active = target === v;
               return (

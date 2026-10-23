@@ -36,23 +36,22 @@ const ALL_MODELS: ColorModel[] = [
   {
     key: "omoda-c5-ev",
     name: "OMODA C5 EV",
-    // Official OMODA & JAECOO Thailand brochure + official studio renders. Colors listed are the
-    // ones in the current brochure (Dynamic: Space Black / Mercury Gray / Lunar White; Max: Lunar
-    // White + Black Roof / Space Black / Mint Green + Black Roof / Mercury Gray).
-    note: "รุ่น Long Range Dynamic: Space Black · Mercury Gray · Lunar White  |  รุ่น Long Range Max: Lunar White (Black Roof) · Space Black · Mint Green (Black Roof) · Mercury Gray — ภาพและสีอาจแตกต่างจากรถจริง",
+    // New OMODA C5 EV MAX+ — colors and renders from omodajaecoo.co.th; figures from the
+    // official spec sheet (OMODAC5EV(KD)V1-032025).
+    note: "รุ่น MAX+: Ice Blue · Space Black · Light Silver · Mercury Grey · Lunar White · ภายในโทน Black & Light Grey — ภาพและสีอาจแตกต่างจากรถจริง",
     facts: [
-      { label: "ระยะทางสูงสุด", value: "505 กม." },
-      { label: "ชาร์จ DC 30–80%", value: "28 นาที" },
+      { label: "ระยะทางสูงสุด", value: "422 กม." },
+      { label: "ชาร์จ DC สูงสุด", value: "110 kW" },
       { label: "อัตราเร่ง 0–100", value: "7.2 วินาที" },
       { label: "กำลังสูงสุด", value: "211 แรงม้า" },
     ],
-    factsNote: "505 กม. ตามมาตรฐาน NEDC (430 กม. ตามมาตรฐาน WLTP) · ระยะทางจริงขึ้นอยู่กับพฤติกรรมการขับขี่ ลักษณะเส้นทาง อุณหภูมิ และปัจจัยอื่น",
+    factsNote: "422 กม. ตามมาตรฐาน NEDC · ระยะทางจริงขึ้นอยู่กับพฤติกรรมการขับขี่ ลักษณะเส้นทาง อุณหภูมิ และปัจจัยอื่น",
     colors: [
-      { key: "lunar-white", name: "Lunar White", hex: "#E4E7EA", copy: "ขาวสะอาด ทันสมัย ดูสว่างในทุกมุมมอง", image: "/brand/studio3/omoda-c5-ev-lunar-white.jpg", fit: "cover", position: "50% 50%" },
-      { key: "mercury-gray", name: "Mercury Gray", hex: "#5B6068", copy: "เทาโลหะ สุขุมและมีระดับ", image: "/brand/studio3/omoda-c5-ev-mercury-gray.jpg", fit: "cover", position: "50% 50%" },
-      { key: "space-black", name: "Space Black", hex: "#1B1C1F", copy: "ดำลึก ดุดัน เต็มไปด้วยพลัง", image: "/brand/studio3/omoda-c5-ev-space-black.jpg", fit: "cover", position: "50% 50%" },
-      { key: "lunar-white-roof", name: "Lunar White (Black Roof)", hex: "linear-gradient(#141416 0 40%, #E4E7EA 40%)", copy: "ขาวตัดหลังคาดำ ดีไซน์สองโทนโฉบเฉี่ยว", image: "/brand/studio3/omoda-c5-ev-lunar-white-roof.jpg", fit: "cover", position: "50% 50%" },
-      { key: "mint-green-roof", name: "Mint Green (Black Roof)", hex: "linear-gradient(#141416 0 40%, #A9D6C2 40%)", copy: "เขียวมินต์สดชื่น ตัดหลังคาดำ", image: "/brand/studio3/omoda-c5-ev-mint-green-roof.jpg", fit: "cover", position: "50% 50%" },
+      { key: "ice-blue", name: "Ice Blue", hex: "#CFE0E8", copy: "ฟ้าอ่อนสดใส ดูทันสมัยและสะอาดตา", image: "/brand/omoda-c5-ev/color-blue.webp", fit: "contain", position: "50% 50%" },
+      { key: "space-black", name: "Space Black", hex: "#1B1C1F", copy: "ดำลึก ดุดัน เต็มไปด้วยพลัง", image: "/brand/omoda-c5-ev/color-black.webp", fit: "contain", position: "50% 50%" },
+      { key: "light-silver", name: "Light Silver", hex: "#C7CACD", copy: "เงินสว่าง เรียบหรู ดูแลง่าย", image: "/brand/omoda-c5-ev/color-silver.webp", fit: "contain", position: "50% 50%" },
+      { key: "mercury-grey", name: "Mercury Grey", hex: "#5B6068", copy: "เทาโลหะ สุขุมและมีระดับ", image: "/brand/omoda-c5-ev/color-grey.webp", fit: "contain", position: "50% 50%" },
+      { key: "lunar-white", name: "Lunar White", hex: "#E9EBEE", copy: "ขาวสะอาด ทันสมัย ดูสว่างในทุกมุมมอง", image: "/brand/omoda-c5-ev/color-white.webp", fit: "contain", position: "50% 50%" },
     ],
   },
   {

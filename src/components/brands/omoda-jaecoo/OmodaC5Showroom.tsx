@@ -4,55 +4,68 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Check, Zap, Gauge, Route, Monitor } from "lucide-react";
+import { Check, Zap, Gauge, BatteryCharging, PlugZap } from "lucide-react";
 import Stat from "@/components/brands/wuling/Stat";
 import OmodaColorShowcase from "@/components/brands/omoda/OmodaColorShowcase";
+import { c5 } from "@/lib/data/omoda-c5-ev";
+import { formatTHB } from "@/lib/utils";
 
 // OMODA showroom — same section structure as the JAECOO / Wuling showrooms, built around the
-// OMODA C5 EV. All figures come from the official OMODA & JAECOO Thailand brochure (see
-// models.ts "omoda-c5-ev"). The price is not in the brochure, so it is not shown.
-// The colour showcase ("เลือกสีที่ใช่สำหรับคุณ") is the existing component, kept as-is.
+// New OMODA C5 EV (MAX+). All figures and the price come from src/lib/data/omoda-c5-ev.ts
+// (official spec sheet + omodajaecoo.co.th). The colour showcase is the shared component.
 
 const ACCENT = "#7FE3C4";
 const ease = [0.16, 1, 0.3, 1] as const;
 const SHADOW = { textShadow: "0 2px 8px rgba(0,0,0,0.8), 0 8px 24px rgba(0,0,0,0.6)" };
 const P = "/brand/omoda-c5/";
+const reveal = {
+  initial: { opacity: 0, y: 24 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.8, ease },
+};
 
 const SECTIONS = [
   { id: "model", label: "Model" },
   { id: "design", label: "Design" },
+  { id: "performance", label: "Performance" },
   { id: "interior", label: "Interior" },
-  { id: "technology", label: "Technology" },
+  { id: "technology", label: "ADAS" },
   { id: "colors", label: "Colors" },
-  { id: "experience", label: "Experience" },
+  { id: "specs", label: "Specs" },
 ];
 
-const CALLOUTS = {
-  left: [
-    { title: "Long-range Battery", text: "แบตเตอรี่ 58.9 kWh วิ่งไกลสูงสุด 505 กม. (NEDC)" },
-    { title: "Fast DC Charging", text: "ชาร์จ DC 30–80% ภายใน 28 นาที" },
-    { title: "V2L", text: "จ่ายไฟให้อุปกรณ์ภายนอก 3.3 กิโลวัตต์" },
-  ],
-  right: [
-    { title: "Display", text: "จอแสดงผลแบบจอกว้าง 24.6 นิ้ว" },
-    { title: "Wireless Charging", text: "ชาร์จมือถือไร้สาย 50 วัตต์" },
-    { title: "Safety", text: "ระบบช่วยเหลือการขับขี่ ADAS (AEB, ACC, LDW/LDP, BSD ฯลฯ)" },
-  ],
-};
+function Eyebrow({ children }: { children: React.ReactNode }) {
+  return (
+    <p className="text-xs font-semibold uppercase tracking-[0.25em]" style={{ color: ACCENT }}>
+      {children}
+    </p>
+  );
+}
 
-const HIGHLIGHTS = [
-  { src: P + "screen.jpg", label: "จอกว้าง 24.6 นิ้ว", span: "md:col-span-2" },
-  { src: P + "wireless.jpg", label: "ชาร์จไร้สาย 50 วัตต์", span: "" },
-  { src: P + "charge.jpg", label: "ชาร์จ DC 30–80% ใน 28 นาที", span: "" },
-  { src: P + "trunk.jpg", label: "พื้นที่เก็บของ 432 ลิตร", span: "" },
-  { src: P + "taillight.jpg", label: "ไฟท้ายเต็มความกว้าง", span: "md:col-span-2" },
-];
+function CheckList({ items }: { items: string[] }) {
+  return (
+    <ul className="space-y-3">
+      {items.map((t) => (
+        <li key={t} className="flex gap-3 text-sm text-white/80 sm:text-base">
+          <Check className="mt-0.5 h-4 w-4 shrink-0" style={{ color: ACCENT }} />
+          {t}
+        </li>
+      ))}
+    </ul>
+  );
+}
 
-const FEATURES = [
-  "มอเตอร์ไฟฟ้า 155 กิโลวัตต์ (211 แรงม้า) ขับเคลื่อนล้อหน้า",
-  "หลังคาซันรูฟ (เฉพาะรุ่น Max)",
-  "พื้นที่บรรทุกสัมภาระ 432 ลิตร",
-];
+function Photo({ src, alt, className = "", position = "center", label }: { src: string; alt: string; className?: string; position?: string; label?: string }) {
+  return (
+    <div className={`relative overflow-hidden ${className}`}>
+      <Image src={src} alt={alt} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" style={{ objectPosition: position }} />
+      {label && (
+        <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 pt-10 text-sm font-semibold text-white">{label}</span>
+      )}
+    </div>
+  );
+}
 
 function Nav() {
   const [active, setActive] = useState("model");
@@ -115,16 +128,15 @@ function Nav() {
 function Hero() {
   return (
     <section id="model" className="relative min-h-[calc(100vh-4.5rem)] w-full overflow-hidden bg-[#0d1012]">
-      <h1 className="sr-only">OMODA C5 EV รถยนต์ไฟฟ้า ตัวแทนจำหน่ายอย่างเป็นทางการ — Maporn Autogroup</h1>
       <motion.div initial={{ opacity: 0, scale: 1.04 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.2, ease }} className="absolute inset-0">
         <Image src={P + "hero.jpg"} alt="OMODA C5 EV" fill priority sizes="100vw" className="object-cover" style={{ objectPosition: "40% 60%" }} />
       </motion.div>
 
       <div className="container-page relative z-10 pt-28 sm:pt-32" style={SHADOW}>
         <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease, delay: 0.15 }} className="max-w-xl">
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-white/90">OMODA C5 EV</p>
-          <p className="mt-3 text-5xl font-extrabold uppercase leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-7xl">Electric Crossover</p>
-          <p className="mt-4 text-base text-white/90 sm:text-lg">ไฟฟ้า 100% วิ่งไกลสูงสุด 505 กม. (NEDC)</p>
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-white/90">Electric Crossover · Already part of your tomorrow</p>
+          <h1 className="mt-3 text-5xl font-extrabold uppercase leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-7xl">OMODA C5 EV</h1>
+          <p className="mt-4 text-base text-white/90 sm:text-lg">ไฟฟ้า 100% วิ่งไกล 422 กม. (NEDC) · เริ่มต้น {formatTHB(c5.price)}</p>
         </motion.div>
       </div>
 
@@ -140,170 +152,158 @@ function Hero() {
   );
 }
 
-function Callout({ title, text, align }: { title: string; text: string; align: "left" | "right" }) {
+function Highlights() {
   return (
-    <div className={`flex items-center gap-3 ${align === "left" ? "lg:flex-row-reverse lg:text-right" : ""}`}>
-      <div className="max-w-[16rem]">
-        <p className="text-sm font-bold uppercase tracking-[0.12em] text-white">{title}</p>
-        <p className="mt-0.5 text-xs text-white/60">{text}</p>
+    <section className="border-t border-white/[0.06] bg-[#17191c] py-12 sm:py-16">
+      <div className="container-page grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-4">
+        {c5.highlights.map((s) => (
+          <Stat key={s.label} value={s.value} unit={s.unit} label={s.label} note={s.note} size="md" />
+        ))}
       </div>
-      <span className="hidden min-w-10 flex-1 items-center lg:flex">
-        <span className="h-px flex-1 bg-white/30" />
-        <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: ACCENT }} />
-      </span>
-    </div>
+    </section>
   );
 }
 
 function Design() {
+  const { images } = c5;
   return (
-    <>
-      <section id="design" className="relative scroll-mt-40 overflow-hidden border-t border-white/[0.06] bg-[#1a1c1f]">
-        <div className="grid lg:grid-cols-2">
-          <div className="flex items-center px-6 py-14 sm:px-12 lg:py-20">
-            <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, ease }}>
-              <h2 className="text-3xl font-bold uppercase tracking-tight text-white sm:text-5xl">The art of design</h2>
-              <p className="mt-3 text-sm text-white/75 sm:text-base">ครอสโอเวอร์ไฟฟ้า ดีไซน์ล้ำสมัย ไฟท้ายเต็มความกว้าง</p>
-            </motion.div>
-          </div>
-          <div className="relative min-h-[280px] sm:min-h-[360px]">
-            <Image src={P + "front.jpg"} alt="OMODA C5 EV ด้านหน้า" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
-          </div>
+    <section id="design" className="scroll-mt-40 border-t border-white/[0.06] bg-[#1a1c1f] py-14 sm:py-20">
+      <div className="container-page">
+        <motion.div {...reveal} className="max-w-2xl">
+          <Eyebrow>The art of design</Eyebrow>
+          <h2 className="mt-3 text-3xl font-bold uppercase tracking-tight text-white sm:text-4xl">ครอสโอเวอร์ไฟฟ้า ดีไซน์ล้ำอนาคต</h2>
+        </motion.div>
+        <div className="mt-8 grid gap-4 md:grid-cols-3">
+          <Photo src={images.frontDetail} alt="ด้านหน้า OMODA C5 EV" label="ดีไซน์ด้านหน้า" className="aspect-[640/576] w-full rounded-2xl" />
+          <Photo src={images.headlight} alt="ไฟหน้า LED" label="ไฟหน้า LED" className="aspect-[640/576] w-full rounded-2xl" />
+          <Photo src={images.taillight} alt="ไฟท้าย LED" label="ไฟท้าย LED" className="aspect-[640/576] w-full rounded-2xl" />
         </div>
-      </section>
+        <div className="mt-10 max-w-3xl">
+          <CheckList items={c5.design} />
+        </div>
+      </div>
+    </section>
+  );
+}
 
-      <section id="technology" className="scroll-mt-40 bg-[#26292d] py-14 sm:py-20">
-        <div className="container-page grid items-center gap-8 lg:grid-cols-[1fr_1.4fr_1fr] lg:gap-4">
-          <div className="order-2 space-y-8 lg:order-1 lg:space-y-16">
-            {CALLOUTS.left.map((c) => (
-              <Callout key={c.title} {...c} align="left" />
-            ))}
-          </div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.94 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-10%" }}
-            transition={{ duration: 1, ease }}
-            className="relative order-1 aspect-[4/3] w-full overflow-hidden rounded-2xl lg:order-2"
-          >
-            <Image src={P + "threeq.jpg"} alt="OMODA C5 EV ด้านข้าง" fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
+function Performance() {
+  const icons = [Zap, Gauge, BatteryCharging, PlugZap];
+  return (
+    <section id="performance" className="scroll-mt-40 border-t border-white/[0.06] bg-[#101114] py-14 sm:py-20">
+      <div className="container-page grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div>
+          <motion.div {...reveal}>
+            <Eyebrow>Electric Performance</Eyebrow>
+            <h2 className="mt-3 text-3xl font-bold uppercase tracking-tight text-white sm:text-4xl">แรง เงียบ ชาร์จไว</h2>
           </motion.div>
-          <div className="order-3 space-y-8 lg:space-y-16">
-            {CALLOUTS.right.map((c) => (
-              <Callout key={c.title} {...c} align="right" />
-            ))}
+          <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-8 sm:max-w-md">
+            {c5.performance.map((p, i) => {
+              const Icon = icons[i];
+              return (
+                <div key={p.label}>
+                  <Icon className="mb-2 h-4 w-4" style={{ color: ACCENT }} />
+                  <Stat value={p.value} unit={p.unit} label={p.label} note={p.note} size="md" />
+                </div>
+              );
+            })}
+          </div>
+          <div className="mt-10">
+            <CheckList items={c5.powertrain} />
           </div>
         </div>
-      </section>
-    </>
+        <Photo src={c5.images.camping} alt="โหมดแคมป์ปิ้ง OMODA C5 EV" className="aspect-[648/520] w-full rounded-2xl" />
+      </div>
+    </section>
   );
 }
 
 function Interior() {
-  const items = [
-    { icon: Zap, value: 211, unit: "hp", label: "Motor", note: "มอเตอร์ไฟฟ้า 155 kW" },
-    { icon: Gauge, value: 288, unit: "Nm", label: "Torque", note: "แรงบิด" },
-    { icon: Route, value: 505, unit: "km", label: "Range*", note: "* NEDC (430 กม. ตามมาตรฐาน WLTP)" },
-    { icon: Monitor, value: 24.6, unit: "inch", label: "Display", note: "จอแสดงผลแบบจอกว้าง" },
-  ];
+  const { images } = c5;
   return (
-    <section id="interior" className="grid scroll-mt-40 border-t border-white/[0.06] bg-[#101114] lg:grid-cols-2">
-      <div className="relative min-h-[360px] overflow-hidden lg:min-h-[440px]">
-        <Image src={P + "interior.jpg"} alt="ห้องโดยสาร OMODA C5 EV" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
-        <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, ease }} className="relative z-10 p-6 sm:p-10" style={SHADOW}>
-          <h2 className="text-3xl font-bold uppercase leading-tight tracking-tight text-white sm:text-4xl">
-            Your space.
-            <br />
-            Your experience.
-          </h2>
-          <p className="mt-2 text-sm text-white/90 sm:text-base">ห้องโดยสารล้ำสมัย พร้อมจอกว้าง 24.6 นิ้ว</p>
+    <section id="interior" className="scroll-mt-40 border-t border-white/[0.06] bg-[#26292d] py-14 sm:py-20">
+      <div className="container-page">
+        <motion.div {...reveal} className="max-w-2xl">
+          <Eyebrow>Your space. Your experience.</Eyebrow>
+          <h2 className="mt-3 text-3xl font-bold uppercase tracking-tight text-white sm:text-4xl">ห้องโดยสารล้ำสมัย จอกว้าง 15.6 นิ้ว</h2>
         </motion.div>
+        <Photo src={images.interior} alt="ห้องโดยสาร OMODA C5 EV" className="mt-8 aspect-[3/2] w-full rounded-2xl sm:aspect-[16/7]" position="50% 45%" />
+        <div className="mt-4 grid grid-cols-2 gap-4 lg:grid-cols-4">
+          <Photo src={images.screen} alt="จอสัมผัส 15.6 นิ้ว" label="จอกลาง 15.6 นิ้ว" className="aspect-[744/500] w-full rounded-2xl" />
+          <Photo src={images.camera} alt="กล้องรอบทิศทาง 540 องศา" label="กล้อง 540°" className="aspect-[744/500] w-full rounded-2xl" />
+          <Photo src={images.seats} alt="เบาะนั่งสปอร์ตพร้อมฟังก์ชันนวด" label="เบาะนวดผู้ขับขี่" className="aspect-[744/500] w-full rounded-2xl" />
+          <Photo src={images.quietGlass} alt="กระจกลดเสียงรบกวน" label="กระจกลดเสียงรบกวน" className="aspect-[744/500] w-full rounded-2xl" />
+        </div>
+        <div className="mt-10 max-w-3xl">
+          <CheckList items={c5.interior} />
+        </div>
       </div>
+    </section>
+  );
+}
 
-      <div className="relative bg-[#17191c] p-6 sm:p-10 lg:p-12">
-        <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:max-w-md">
-          {items.map(({ icon: Icon, ...s }) => (
-            <div key={s.label}>
-              <Icon className="mb-2 h-4 w-4" style={{ color: ACCENT }} />
-              <Stat value={s.value} unit={s.unit} label={s.label} note={s.note} size="md" />
+function Safety() {
+  return (
+    <section id="technology" className="scroll-mt-40 border-t border-white/[0.06] bg-[#17191c] py-14 sm:py-20">
+      <div className="container-page">
+        <motion.div {...reveal} className="max-w-2xl">
+          <Eyebrow>ADAS · 19 ระบบ</Eyebrow>
+          <h2 className="mt-3 text-3xl font-bold uppercase tracking-tight text-white sm:text-4xl">ระบบช่วยขับอัจฉริยะ ปลอดภัยทุกเส้นทาง</h2>
+          <p className="mt-2 text-sm text-white/60">พร้อมถุงลมนิรภัย 6 ใบ · กล้องรอบทิศทาง 540° · ABS, EBD, BAS, ESP, TCS, HAC, HDC</p>
+        </motion.div>
+        <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-4">
+          {c5.adas.map((a) => (
+            <div key={a.code} className="overflow-hidden rounded-2xl border border-white/10 bg-[#101114]">
+              <div className="relative aspect-[3/2]">
+                {a.img ? (
+                  <Image src={a.img} alt={`${a.code} — ${a.name}`} fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover" />
+                ) : (
+                  <div className="flex h-full items-center justify-center bg-gradient-to-br from-[#0f2a2a] to-[#101114]">
+                    <span className="text-3xl font-extrabold tracking-[0.15em]" style={{ color: ACCENT }}>{a.code}</span>
+                  </div>
+                )}
+              </div>
+              <div className="p-4">
+                <p className="text-sm font-bold uppercase tracking-[0.12em]" style={{ color: ACCENT }}>{a.code}</p>
+                <p className="mt-0.5 text-xs text-white/70 sm:text-sm">{a.name}</p>
+              </div>
             </div>
           ))}
         </div>
-        <div className="relative mt-8 aspect-[16/9] w-full overflow-hidden rounded-2xl lg:absolute lg:bottom-6 lg:right-6 lg:mt-0 lg:w-[52%]">
-          <Image src={P + "topview.jpg"} alt="OMODA C5 EV มุมมองด้านบน" fill sizes="(min-width: 1024px) 26vw, 100vw" className="object-cover" />
-        </div>
       </div>
     </section>
   );
 }
 
-function Highlights() {
+function Specs() {
   return (
-    <section className="border-t border-white/[0.06] bg-[#15161A] py-16 sm:py-24">
-      <div className="container-page">
-        <div className="mb-10 text-center">
-          <p className="mb-3 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.25em]" style={{ color: ACCENT }}>
-            <span className="h-px w-8" style={{ backgroundColor: ACCENT }} /> Highlights <span className="h-px w-8" style={{ backgroundColor: ACCENT }} />
-          </p>
-          <h2 className="text-3xl font-bold uppercase tracking-tight text-white sm:text-5xl">Everything you need</h2>
-        </div>
-        <div className="grid auto-rows-[220px] gap-3 sm:auto-rows-[260px] md:grid-cols-4">
-          {HIGHLIGHTS.map((h, i) => (
-            <motion.figure
-              key={h.src}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-8%" }}
-              transition={{ duration: 0.7, ease, delay: (i % 3) * 0.08 }}
-              className={`group relative overflow-hidden rounded-2xl ${h.span}`}
-            >
-              <Image src={h.src} alt={h.label} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
-              <figcaption className="absolute bottom-3 left-4 text-xs font-semibold uppercase tracking-[0.15em] text-white" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.85)" }}>
-                {h.label}
-              </figcaption>
-            </motion.figure>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Experience() {
-  return (
-    <section id="experience" className="grid scroll-mt-40 border-t border-white/[0.06] bg-[#101114] lg:grid-cols-2">
-      <div className="relative min-h-[380px] overflow-hidden lg:min-h-[460px]">
-        <Image src={P + "dash.jpg"} alt="ภายใน OMODA C5 EV" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
-        <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, ease }} className="relative z-10 p-6 text-center sm:p-10" style={SHADOW}>
-          <h2 className="text-3xl font-bold uppercase tracking-tight text-white sm:text-4xl">Move with confidence</h2>
-          <p className="mt-2 text-sm text-white/90 sm:text-base">อัตราเร่ง 0–100 กม./ชม. ใน 7.2 วินาที</p>
-        </motion.div>
-      </div>
-
-      <div className="flex flex-col justify-center gap-8 bg-[#26292d] p-6 sm:p-10 lg:p-12">
-        <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl">
-          <Image src={P + "glow.jpg"} alt="OMODA C5 EV" fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
-        </div>
+    <section id="specs" className="scroll-mt-40 border-t border-white/[0.06] bg-[#101114] py-14 sm:py-20">
+      <div className="container-page grid gap-10 lg:grid-cols-[1fr_1.3fr]">
         <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-white/50">Model</p>
-          <h3 className="mt-1 text-2xl font-bold uppercase tracking-tight text-white sm:text-3xl">OMODA C5 EV</h3>
-          <p className="mt-2 text-sm text-white/70">มี 2 รุ่นย่อย: Long Range Dynamic และ Long Range Max — สอบถามราคาล่าสุดได้ที่โชว์รูม</p>
-          <ul className="mt-4 space-y-2">
-            {FEATURES.map((f) => (
-              <li key={f} className="flex items-center gap-2 text-sm text-white/75">
-                <Check className="h-4 w-4 shrink-0" style={{ color: ACCENT }} />
-                {f}
-              </li>
-            ))}
-          </ul>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/cars/omoda-c5-ev" className="rounded-lg px-6 py-2.5 text-sm font-bold text-[#052018] transition-all hover:brightness-110" style={{ backgroundColor: ACCENT }}>
-              ดูรายละเอียด
-            </Link>
-            <Link href="/quotation?brand=omoda" className="rounded-lg border border-white/40 px-6 py-2.5 text-sm font-bold text-white transition-colors hover:bg-white hover:text-[#101114]">
+          <motion.div {...reveal}>
+            <Eyebrow>Specifications</Eyebrow>
+            <h2 className="mt-3 text-3xl font-bold uppercase tracking-tight text-white sm:text-4xl">OMODA C5 EV {c5.variant}</h2>
+            <p className="mt-4 text-3xl font-extrabold" style={{ color: ACCENT }}>{formatTHB(c5.price)}</p>
+            <p className="mt-1 text-sm text-white/50">ราคาขายปลีกแนะนำ</p>
+          </motion.div>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link href="/quotation?brand=omoda" className="rounded-lg px-6 py-2.5 text-sm font-bold text-[#052018] transition-all hover:brightness-110" style={{ backgroundColor: ACCENT }}>
               ขอใบเสนอราคา
             </Link>
+            <Link href="/cars/omoda-c5-ev" className="rounded-lg border border-white/40 px-6 py-2.5 text-sm font-bold text-white transition-colors hover:bg-white hover:text-[#101114]">
+              ดูรายละเอียด
+            </Link>
           </div>
+        </div>
+        <div>
+          <dl className="overflow-hidden rounded-2xl border border-white/10">
+            {c5.specs.map((s, i) => (
+              <div key={s.label} className={`grid grid-cols-[1fr_1.2fr] gap-4 p-4 text-sm ${i % 2 ? "bg-white/[0.02]" : ""}`}>
+                <dt className="text-white/60">{s.label}</dt>
+                <dd className="font-medium text-white">{s.value}</dd>
+              </div>
+            ))}
+          </dl>
+          <p className="mt-3 text-[11px] text-white/40">ที่มา: ตารางสเปก OMODA C5 EV อย่างเป็นทางการ · ระยะทางจริงขึ้นอยู่กับพฤติกรรมการขับขี่และสภาพแวดล้อม</p>
         </div>
       </div>
     </section>
@@ -338,13 +338,15 @@ export default function OmodaC5Showroom() {
     <div className="bg-[#101114]">
       <Nav />
       <Hero />
-      <Design />
-      <Interior />
       <Highlights />
+      <Design />
+      <Performance />
+      <Interior />
+      <Safety />
       <div id="colors" className="scroll-mt-40">
         <OmodaColorShowcase only="omoda-c5-ev" />
       </div>
-      <Experience />
+      <Specs />
       <CTA />
     </div>
   );
