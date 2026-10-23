@@ -4,18 +4,26 @@ import { useState } from "react";
 import { motion, useAnimationControls } from "framer-motion";
 import { ArrowLeftRight } from "lucide-react";
 import JaecooShowroom from "@/components/brands/jaecoo/JaecooShowroom";
+import JaecooJ6Showroom from "@/components/brands/jaecoo/JaecooJ6Showroom";
 import OmodaC5Showroom from "@/components/brands/omoda-jaecoo/OmodaC5Showroom";
 
-// OMODA and JAECOO are one paired dealership — one page, one switch. JAECOO first.
+// OMODA and JAECOO are one paired dealership — one page, one switch. JAECOO first
+// (J7 SHS, then JAECOO 6 EV), OMODA last.
 // Switching plays a full-screen brand "swipe" (sweeps in, swaps the page underneath, sweeps out).
 
-type View = "jaecoo" | "omoda";
+type View = "jaecoo" | "j6" | "omoda";
 
 const BRAND: Record<View, { label: string; logo: string; sweep: string; glow: string }> = {
   jaecoo: {
-    label: "JAECOO",
+    label: "JAECOO J7",
     logo: "/brand/logos/jaecoo.svg",
     sweep: "linear-gradient(120deg,#1a1b1f 0%,#3b3626 45%,#C8B27A 100%)",
+    glow: "#C8B27A",
+  },
+  j6: {
+    label: "JAECOO 6 EV",
+    logo: "/brand/logos/jaecoo.svg",
+    sweep: "linear-gradient(120deg,#101418 0%,#26302f 45%,#C8B27A 100%)",
     glow: "#C8B27A",
   },
   omoda: {
@@ -56,11 +64,11 @@ export default function OmodaJaecooShowroom() {
     <div className="bg-[#0a0a0b]">
       {/* Switch bar */}
       <div className="sticky top-[4.5rem] z-[60] flex justify-center px-3 pt-2 pointer-events-none">
-        <div className="pointer-events-auto flex items-center gap-3 rounded-full border border-white/15 bg-black/55 p-1.5 pl-4 shadow-[0_8px_32px_rgba(0,0,0,0.45)] backdrop-blur-xl">
-          <motion.span animate={{ rotate: spin }} transition={{ duration: 0.6, ease }} className="text-white/60" aria-hidden="true">
+        <div className="pointer-events-auto flex items-center gap-3 rounded-full border border-white/15 bg-black/55 p-1.5 sm:pl-4 shadow-[0_8px_32px_rgba(0,0,0,0.45)] backdrop-blur-xl">
+          <motion.span animate={{ rotate: spin }} transition={{ duration: 0.6, ease }} className="hidden text-white/60 sm:inline-flex" aria-hidden="true">
             <ArrowLeftRight className="h-4 w-4" />
           </motion.span>
-          <div className="relative flex rounded-full bg-white/[0.06] p-1" role="tablist" aria-label="สลับแบรนด์ JAECOO / OMODA">
+          <div className="relative flex rounded-full bg-white/[0.06] p-1" role="tablist" aria-label="สลับรุ่น JAECOO J7 / JAECOO 6 EV / OMODA">
             {(Object.keys(BRAND) as View[]).map((v) => {
               const active = target === v;
               return (
@@ -70,7 +78,7 @@ export default function OmodaJaecooShowroom() {
                   role="tab"
                   aria-selected={active}
                   onClick={() => switchTo(v)}
-                  className={`relative z-10 min-w-[104px] rounded-full px-5 py-2 text-xs font-extrabold uppercase tracking-[0.18em] transition-colors duration-300 sm:min-w-[128px] sm:text-sm ${
+                  className={`relative z-10 min-w-[84px] whitespace-nowrap rounded-full px-3 py-2 text-[11px] font-extrabold uppercase tracking-[0.06em] transition-colors duration-300 sm:min-w-[128px] sm:px-5 sm:text-sm sm:tracking-[0.18em] ${
                     active ? "text-[#101114]" : "text-white/70 hover:text-white"
                   }`}
                 >
@@ -92,7 +100,7 @@ export default function OmodaJaecooShowroom() {
 
       {/* The swipe overlay covers the swap, so the new page simply fades in underneath it */}
       <motion.div key={view} initial={{ opacity: 0.4 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }}>
-        {view === "jaecoo" ? <JaecooShowroom /> : <OmodaC5Showroom />}
+        {view === "jaecoo" ? <JaecooShowroom /> : view === "j6" ? <JaecooJ6Showroom /> : <OmodaC5Showroom />}
       </motion.div>
 
       {/* Brand swipe overlay */}

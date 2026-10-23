@@ -749,6 +749,30 @@ const allModels: VehicleModel[] = [
     description: "SUV ไฮบริด Super Hybrid System ระยะทางรวมสูงสุด 1,300 กม. (NEDC) ไฟฟ้าล้วน 106 กม. อัตราสิ้นเปลือง 30.35 กม./ลิตร",
     image: "/brand/models/jaecoo-j7.jpg",
   },
+  {
+    slug: "jaecoo-6-ev",
+    brandSlug: "jaecoo",
+    name: "JAECOO 6 EV",
+    bodyType: "SUV",
+    fuelType: "EV",
+    startPrice: 859000,
+    isNew: true,
+    isFeatured: false,
+    colors: ["Arctic White", "Urban Grey", "Night Black", "Honey Yellow", "Forest Green (เฉพาะ LONG RANGE 4WD)"],
+    dimensions: { length: 4342, width: 1910, height: 1715, wheelbase: 2715 },
+    battery: "68 kWh LFP",
+    range: "455 กม. (2WD) / 418 กม. (4WD) มาตรฐาน NEDC",
+    warranty: "สอบถามเงื่อนไขการรับประกันได้ที่โชว์รูม",
+    safety: ["ถุงลมนิรภัย 6 ใบ", "ADAS 14 ระบบ (LONG RANGE 4WD) / 8 ระบบ (2WD MAX)", "กล้องรอบทิศทาง 360° (2WD) / 540° (4WD)", "ABS, EBD, BAS, ESP, TCS", "HAC, HDC, TPMS", "จุดยึด ISOFIX"],
+    technology: ["จอสัมผัสกลาง 15.6 นิ้ว", "จอมาตรวัด 9.2 นิ้ว", "เครื่องเสียง INFINITY 12 ลำโพง (4WD) / PIONEER 6 ลำโพง (2WD)", "V2L จ่ายไฟภายนอก 3.3 kW", "ชาร์จ DC สูงสุดประมาณ 80 kW / AC 6.6 kW", "ชาร์จมือถือไร้สาย 50 วัตต์"],
+    features: ["ดีไซน์ One Box Style Off-Road", "โครงสร้างตัวถังอะลูมิเนียม", "9 โหมดการขับขี่ (4WD)", "ฟังก์ชันนวดผู้โดยสารคู่หน้า (4WD)", "โหมดแคมป์ปิ้ง และโหมดสัตว์เลี้ยง", "พื้นที่สัมภาระ 450 ลิตร"],
+    variants: [
+      { name: "2WD MAX", price: 859000, engine: "มอเตอร์ไฟฟ้า 1 ตัว ขับเคลื่อนล้อหลัง", power: "135 kW (184 แรงม้า)", torque: "220 Nm", transmission: "Single-speed", seats: 5 },
+      { name: "LONG RANGE 4WD", price: 1249000, engine: "มอเตอร์ไฟฟ้า 2 ตัว ขับเคลื่อนสี่ล้อ", power: "205 kW (279 แรงม้า)", torque: "385 Nm", transmission: "Single-speed", seats: 5 },
+    ],
+    description: "SUV ไฟฟ้า 100% ดีไซน์ One Box Style Off-Road แบตเตอรี่ LFP 68 kWh วิ่งไกลสูงสุด 455 กม. (NEDC) 4WD 279 แรงม้า 0-100 ใน 6.5 วินาที",
+    image: "/brand/jaecoo-j6/side-silver.webp",
+  },
 
   // ---------- OMODA ----------
   {
