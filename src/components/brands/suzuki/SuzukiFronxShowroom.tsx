@@ -9,6 +9,7 @@ import Stat from "@/components/brands/wuling/Stat";
 import { getModel } from "@/lib/data/models";
 import { formatTHB } from "@/lib/utils";
 import MapornLogo from "@/components/ui/MapornLogo";
+import BrandHeroCTA from "@/components/brands/BrandHeroCTA";
 
 const ACCENT = "#1B6EC8";
 const ease = [0.16, 1, 0.3, 1] as const;
@@ -158,12 +159,7 @@ function Hero() {
       </div>
 
       <div className="absolute inset-x-0 bottom-6 z-10 flex flex-wrap justify-center gap-3 px-4">
-        <Link href="#design" className="rounded-lg px-8 py-3 text-sm font-bold text-white shadow-lg transition-all hover:-translate-y-0.5 hover:brightness-110" style={{ backgroundColor: ACCENT }}>
-          ดูรถ
-        </Link>
-        <Link href="/test-drive?brand=suzuki" className="rounded-lg border border-white/50 bg-[#101114]/60 px-8 py-3 text-sm font-bold text-white backdrop-blur-sm transition-all hover:bg-white hover:text-[#101114]">
-          ทดลองขับ
-        </Link>
+        <BrandHeroCTA detailsHref="#design" testDriveHref="/test-drive?brand=suzuki" center />
       </div>
     </section>
   );

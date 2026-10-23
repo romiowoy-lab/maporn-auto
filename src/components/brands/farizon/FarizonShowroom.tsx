@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Zap, Route, BatteryCharging, Users, Gauge, Check, Phone, Mail, ShieldCheck, Monitor } from "lucide-react";
 import Stat from "@/components/brands/wuling/Stat";
 import MapornLogo from "@/components/ui/MapornLogo";
+import BrandHeroCTA from "@/components/brands/BrandHeroCTA";
 
 // FARIZON showroom (high-end dark layout). Specs are from the official
 // "FARIZON EV Passenger SUPER VAN P5M (5.5 m)" technical sheet supplied by Maporn.
@@ -141,10 +142,7 @@ function Hero() {
           <p className="mt-3 text-5xl font-extrabold uppercase leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-7xl">Electric mobility for business</p>
           <p className="mt-4 text-base text-white/90 sm:text-lg">รถตู้ไฟฟ้า 100% 11 ที่นั่ง วิ่งได้ 372 กม. ต่อการชาร์จ (NEDC)</p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href={PRODUCT_URL} target="_blank" rel="noreferrer" className="rounded-lg px-8 py-3 text-sm font-bold text-[#04262a] transition-all hover:-translate-y-0.5 hover:brightness-110" style={{ backgroundColor: ACCENT }}>ดูรุ่นทั้งหมดที่ Maporn Autotech</a>
-            <a href="tel:0992299894" className="inline-flex items-center gap-2 rounded-lg border border-white/50 bg-black/30 px-8 py-3 text-sm font-bold text-white backdrop-blur-sm transition-all hover:bg-white hover:text-[#0B0F12]">
-              <Phone className="h-4 w-4" /> 099-229-9894
-            </a>
+            <BrandHeroCTA detailsHref="#design" testDriveHref="/test-drive?brand=farizon" />
           </div>
         </motion.div>
       </div>

@@ -204,11 +204,11 @@ export default function MapornHero() {
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
-              href="/service#suzy-fix"
+              href="/service/appointment"
               className="inline-flex items-center gap-2 rounded-lg border border-white/15 px-6 py-3.5 text-sm font-semibold tracking-wide text-white/80 transition-all hover:text-white hover:border-white/40"
             >
               <Wrench className="h-4 w-4" />
-              ซ่อมสีและตัวถัง
+              นัดหมายเช็คระยะ/ สีและตัวถัง
             </Link>
           </div>
         </motion.div>

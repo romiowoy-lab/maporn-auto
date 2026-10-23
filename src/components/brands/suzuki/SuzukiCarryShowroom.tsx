@@ -9,6 +9,7 @@ import Stat from "@/components/brands/wuling/Stat";
 import { getModel } from "@/lib/data/models";
 import { formatTHB } from "@/lib/utils";
 import MapornLogo from "@/components/ui/MapornLogo";
+import BrandHeroCTA from "@/components/brands/BrandHeroCTA";
 
 const ACCENT = "#1461A3";
 const ease = [0.16, 1, 0.3, 1] as const;
@@ -164,12 +165,7 @@ function Hero() {
           </p>
           <p className="mt-4 text-base text-white/85 sm:text-lg">กระบะบรรทุกขนาดใหญ่ เปิดได้ 3 ด้าน น้ำหนักบรรทุก 750 กก. ต่อยอดธุรกิจได้อย่างหลากหลาย เริ่มต้น {formatTHB(395000)}</p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="#cargo" className="rounded-lg px-8 py-3 text-sm font-bold text-white shadow-lg transition-all hover:-translate-y-0.5 hover:brightness-110" style={{ backgroundColor: ACCENT }}>
-              ดูสเปก
-            </Link>
-            <Link href="/contact?brand=suzuki" className="rounded-lg border border-white/50 bg-[#111418]/60 px-8 py-3 text-sm font-bold text-white backdrop-blur-sm transition-all hover:bg-white hover:text-[#111418]">
-              สอบถามราคา
-            </Link>
+            <BrandHeroCTA detailsHref="#cargo" testDriveHref="/test-drive?brand=suzuki" />
           </div>
         </motion.div>
 

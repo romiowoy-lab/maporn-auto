@@ -8,6 +8,7 @@ import { Check, ShieldCheck, Zap, Volume2, Thermometer, ChevronDown } from "luci
 import { getModel } from "@/lib/data/models";
 import { formatTHB } from "@/lib/utils";
 import MapornLogo from "@/components/ui/MapornLogo";
+import BrandHeroCTA from "@/components/brands/BrandHeroCTA";
 
 const ACCENT = "#B89A6E";
 const DARK = "#0D0B07";
@@ -117,12 +118,7 @@ function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Link href="/contact?brand=gwm" className="inline-flex items-center gap-2 rounded-lg px-8 py-3.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:brightness-110" style={{ backgroundColor: ACCENT }}>
-              สอบถามราคา
-            </Link>
-            <Link href="/test-drive?brand=gwm&model=wey-g9" className="rounded-lg border border-white/40 px-8 py-3.5 text-sm font-bold text-white transition-all hover:bg-white hover:text-[#0D0B07]">
-              นัดทดลองขับ
-            </Link>
+            <BrandHeroCTA detailsHref="#design" testDriveHref="/test-drive?brand=gwm&model=wey-g9" />
           </div>
         </motion.div>
 

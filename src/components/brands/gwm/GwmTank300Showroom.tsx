@@ -9,6 +9,7 @@ import Stat from "@/components/brands/wuling/Stat";
 import { getModel } from "@/lib/data/models";
 import { formatTHB } from "@/lib/utils";
 import MapornLogo from "@/components/ui/MapornLogo";
+import BrandHeroCTA from "@/components/brands/BrandHeroCTA";
 
 // GWM showroom — same section structure as the JAECOO / OMODA showrooms, built around the
 // GWM Tank 300 (Hybrid). Specs and trim prices come from the catalog entry "gwm-tank-300",
@@ -151,12 +152,7 @@ function Hero() {
       </div>
 
       <div className="absolute inset-x-0 bottom-6 z-10 flex flex-wrap justify-center gap-3 px-4">
-        <Link href="#design" className="rounded-lg px-8 py-3 text-sm font-bold text-[#2a1200] shadow-lg transition-all hover:-translate-y-0.5 hover:brightness-110" style={{ backgroundColor: ACCENT }}>
-          ดูรถ
-        </Link>
-        <Link href="/test-drive?brand=gwm" className="rounded-lg border border-white/50 bg-[#101114]/60 px-8 py-3 text-sm font-bold text-white backdrop-blur-sm transition-all hover:bg-white hover:text-[#101114]">
-          ทดลองขับ
-        </Link>
+        <BrandHeroCTA detailsHref="#design" testDriveHref="/test-drive?brand=gwm" center />
       </div>
     </section>
   );

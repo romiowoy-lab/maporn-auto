@@ -8,6 +8,7 @@ import ImageSlot from "@/components/brands/wuling/ImageSlot";
 import Stat from "@/components/brands/wuling/Stat";
 import { porta } from "@/lib/data/wuling-porta";
 import { formatTHB } from "@/lib/utils";
+import BrandHeroCTA from "@/components/brands/BrandHeroCTA";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 const ACCENT = "#5B9BD5";
@@ -81,20 +82,8 @@ export default function WulingPortaShowroom() {
             <p className="mt-6 text-2xl font-bold text-white">
               เริ่มต้น {formatTHB(porta.variants[0].price)}
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="/quotation?brand=wuling"
-                className="rounded-lg px-7 py-3 text-sm font-bold text-white transition-all hover:brightness-110 hover:-translate-y-0.5"
-                style={{ backgroundColor: ACCENT }}
-              >
-                ขอใบเสนอราคา
-              </Link>
-              <Link
-                href="/test-drive?brand=wuling"
-                className="rounded-lg border border-white/40 px-7 py-3 text-sm font-bold text-white transition-all hover:bg-white hover:text-[#101114]"
-              >
-                ทดลองขับ
-              </Link>
+            <div className="mt-8">
+              <BrandHeroCTA detailsHref="#porta-capacity" testDriveHref="/test-drive?brand=wuling" />
             </div>
           </motion.div>
 
@@ -107,7 +96,7 @@ export default function WulingPortaShowroom() {
       </section>
 
       {/* SUPER CAPACITY — cargo body + dimensions */}
-      <section className="grid border-t border-white/[0.06] bg-[#17181c] lg:grid-cols-2">
+      <section id="porta-capacity" className="scroll-mt-32 grid border-t border-white/[0.06] bg-[#17181c] lg:grid-cols-2">
         <div className="relative flex items-center justify-center bg-[#0b0c0f] p-6 sm:p-10">
           <ImageSlot
             src={images.capacity}

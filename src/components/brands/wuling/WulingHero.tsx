@@ -1,10 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import ImageSlot from "@/components/brands/wuling/ImageSlot";
 import { darion } from "@/lib/data/wuling-darion";
+import BrandHeroCTA from "@/components/brands/BrandHeroCTA";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -32,18 +32,7 @@ export default function WulingHero() {
           />
         </motion.div>
         <div className="absolute inset-x-0 bottom-6 z-10 flex flex-wrap justify-center gap-3 px-4">
-          <Link
-            href="#design"
-            className="rounded-lg bg-[#D8BFA0] px-8 py-3 text-sm font-bold text-[#231b10] shadow-lg transition-all hover:brightness-110 hover:-translate-y-0.5"
-          >
-            ดูรถ
-          </Link>
-          <Link
-            href="/test-drive?brand=wuling"
-            className="rounded-lg border border-white/50 bg-[#101114]/60 px-8 py-3 text-sm font-bold text-white backdrop-blur-sm transition-all hover:bg-white hover:text-[#101114]"
-          >
-            ทดลองขับ
-          </Link>
+          <BrandHeroCTA detailsHref="#design" testDriveHref="/test-drive?brand=wuling" center />
         </div>
       </section>
     );
@@ -76,18 +65,7 @@ export default function WulingHero() {
           <p className="mt-5 text-base sm:text-lg text-white/80">เริ่มการเดินทางครั้งใหม่ของคุณ</p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              href="#design"
-              className="rounded-lg bg-[#D8BFA0] px-8 py-3 text-sm font-bold text-[#231b10] transition-all hover:brightness-110 hover:-translate-y-0.5"
-            >
-              ดูรถ
-            </Link>
-            <Link
-              href="/test-drive?brand=wuling"
-              className="rounded-lg border border-white/40 px-8 py-3 text-sm font-bold text-white transition-all hover:bg-white hover:text-[#101114]"
-            >
-              ทดลองขับ
-            </Link>
+            <BrandHeroCTA detailsHref="#design" testDriveHref="/test-drive?brand=wuling" />
           </div>
         </motion.div>
       </div>

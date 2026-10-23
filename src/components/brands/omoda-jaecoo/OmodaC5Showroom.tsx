@@ -10,6 +10,7 @@ import OmodaColorShowcase from "@/components/brands/omoda/OmodaColorShowcase";
 import { c5 } from "@/lib/data/omoda-c5-ev";
 import { formatTHB } from "@/lib/utils";
 import MapornLogo from "@/components/ui/MapornLogo";
+import BrandHeroCTA from "@/components/brands/BrandHeroCTA";
 
 // OMODA showroom — same section structure as the JAECOO / Wuling showrooms, built around the
 // New OMODA C5 EV (MAX+). All figures and the price come from src/lib/data/omoda-c5-ev.ts
@@ -138,12 +139,7 @@ function Hero() {
       </div>
 
       <div className="absolute inset-x-0 bottom-6 z-10 flex flex-wrap justify-center gap-3 px-4">
-        <Link href="#design" className="rounded-lg px-8 py-3 text-sm font-bold text-[#052018] shadow-lg transition-all hover:-translate-y-0.5 hover:brightness-110" style={{ backgroundColor: ACCENT }}>
-          ดูรถ
-        </Link>
-        <Link href="/test-drive?brand=omoda" className="rounded-lg border border-white/50 bg-[#101114]/60 px-8 py-3 text-sm font-bold text-white backdrop-blur-sm transition-all hover:bg-white hover:text-[#101114]">
-          ทดลองขับ
-        </Link>
+        <BrandHeroCTA detailsHref="#design" testDriveHref="/test-drive?brand=omoda" center />
       </div>
     </section>
   );

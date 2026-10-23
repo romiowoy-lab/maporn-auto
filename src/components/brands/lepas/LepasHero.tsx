@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import BrandHeroCTA from "@/components/brands/BrandHeroCTA";
 
 export default function LepasHero() {
   const [mounted, setMounted] = useState(false);
@@ -54,18 +54,7 @@ export default function LepasHero() {
           </p>
 
           <div className="mt-7 flex flex-wrap gap-3" style={{ textShadow: "none" }}>
-            <Link
-              href="#story"
-              className="rounded-full bg-gradient-to-r from-[#C9A15A] to-[#E8C77E] px-8 py-3.5 text-xs font-bold uppercase tracking-[0.15em] text-[#1a1408] transition-all hover:brightness-110 hover:-translate-y-0.5"
-            >
-              ดู L6
-            </Link>
-            <Link
-              href="/test-drive?brand=lepas"
-              className="rounded-full border border-white/40 bg-white/10 px-8 py-3.5 text-xs font-bold uppercase tracking-[0.15em] text-white backdrop-blur-sm transition-all hover:bg-white hover:text-[#0a0a0b]"
-            >
-              ทดลองขับ
-            </Link>
+            <BrandHeroCTA detailsHref="#story" testDriveHref="/test-drive?brand=lepas" />
           </div>
         </div>
       </motion.div>

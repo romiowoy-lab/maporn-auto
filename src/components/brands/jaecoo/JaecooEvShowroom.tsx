@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Check } from "lucide-react";
 import Stat from "@/components/brands/wuling/Stat";
 import { formatTHB } from "@/lib/utils";
+import BrandHeroCTA from "@/components/brands/BrandHeroCTA";
 
 // Shared showroom for the JAECOO EV tabs of the OMODA | JAECOO page (JAECOO 5 EV, JAECOO 6 EV).
 // Each model is a JaecooEvData object in src/lib/data/jaecoo-j*.ts; this file only lays it out.
@@ -93,13 +94,8 @@ function Hero({ d }: { d: JaecooEvData }) {
         </motion.div>
       </div>
 
-      <div className="absolute inset-x-0 bottom-6 z-10 flex flex-wrap justify-center gap-3 px-4">
-        <Link href="/quotation?brand=jaecoo" className="rounded-lg px-8 py-3 text-sm font-bold text-[#241d0f] shadow-lg transition-all hover:-translate-y-0.5 hover:brightness-110" style={{ backgroundColor: ACCENT }}>
-          ขอใบเสนอราคา
-        </Link>
-        <Link href="/test-drive?brand=jaecoo" className="rounded-lg border border-white/50 bg-[#101114]/60 px-8 py-3 text-sm font-bold text-white backdrop-blur-sm transition-all hover:bg-white hover:text-[#101114]">
-          ทดลองขับ
-        </Link>
+      <div className="absolute inset-x-0 bottom-6 z-10 px-4">
+        <BrandHeroCTA detailsHref={`#${d.id}-design`} testDriveHref="/test-drive?brand=jaecoo" center />
       </div>
     </section>
   );
