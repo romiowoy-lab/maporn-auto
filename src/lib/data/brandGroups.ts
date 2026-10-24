@@ -30,7 +30,7 @@ export function getBrandGroups(): BrandGroup[] {
       const jaecoo = getBrand("jaecoo");
       groups.push({
         key: "omoda-jaecoo",
-        name: "OMODA | JAECOO",
+        name: "OJ",
         href: "/brands/omoda",
         slugs: jaecoo ? ["omoda", "jaecoo"] : ["omoda"],
         colorHex: b.colorHex,

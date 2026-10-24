@@ -6,10 +6,10 @@ import { getBrand } from "@/lib/data/brands";
 
 export const metadata: Metadata = {
   title: "แบรนด์รถยนต์ Suzuki GWM OMODA JAECOO Lepas Wuling Farizon",
-  description: "รวมแบรนด์รถยนต์ในเครือ Maporn Autogroup Suzuki, Farizon, OMODA | JAECOO, Lepas, Wuling และ GWM เลือกแบรนด์ ดูรุ่น และจองทดลองขับ",
+  description: "รวมแบรนด์รถยนต์ในเครือ Maporn Autogroup OJ (OMODA & JAECOO), GWM, Suzuki, Lepas, Wuling และ Farizon เลือกแบรนด์ ดูรุ่น และจองทดลองขับ",
 };
 
-// Display order requested for this page: Suzuki, OMODA|JAECOO, GWM, Lepas, Wuling, Farizon, Nex, Suzy Fix.
+// Display order per client: OJ, GWM, Suzuki, Lepas, Wuling, Farizon (NEX hidden), Suzy Fix.
 const ORDER = ["omoda-jaecoo", "gwm", "suzuki", "lepas", "wuling", "farizon", "nex"];
 
 export default function BrandsPage() {
@@ -24,7 +24,7 @@ export default function BrandsPage() {
             <span className="h-px w-6 bg-brand-red/60" />
             Our Brands
           </p>
-          <h1 className="text-3xl sm:text-4xl font-bold text-brand-navy">แบรนด์รถยนต์ทั้งหมด</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold text-brand-navy">แบรนด์ที่มาพร ออโต้ กรุ๊ป จัดจำหน่าย</h1>
           <p className="mt-2 text-brand-slate text-sm max-w-2xl">
             Maporn Autogroup เป็นตัวแทนจำหน่ายอย่างเป็นทางการของ 7 แบรนด์รถยนต์ชั้นนำ ครอบคลุมทุกไลฟ์สไตล์การเดินทาง
           </p>

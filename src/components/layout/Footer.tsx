@@ -10,7 +10,7 @@ const FOOTER_COLUMNS = [
     title: "รถยนต์",
     links: [
       { href: "/cars", label: "รถยนต์ทั้งหมด" },
-      { href: "/brands", label: "แบรนด์รถยนต์" },
+      { href: "/brands", label: "แบรนด์ที่มาพร ออโต้ กรุ๊ป จัดจำหน่าย" },
       { href: "/promotions", label: "โปรโมชั่น" },
       { href: "/compare", label: "เปรียบเทียบรถยนต์" },
     ],

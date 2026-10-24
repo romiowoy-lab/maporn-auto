@@ -30,26 +30,27 @@ const BRAND_STRIP = [
 
 type BrandItem = (typeof BRAND_STRIP)[number];
 
-function BrandMark({ b }: { b: BrandItem }) {
+function BrandMark({ b, compact }: { b: BrandItem; compact?: boolean }) {
   if ("text" in b && b.text) {
-    return <span className="text-[22px] font-black leading-none tracking-[0.08em] text-[#101113]">{b.text}</span>;
+    return <span className={`${compact ? "text-[17px]" : "text-[22px]"} font-black leading-none tracking-[0.08em] text-[#101113]`}>{b.text}</span>;
   }
-  return <img src={b.logos[0]} alt={b.name} className={b.big ? "h-10 w-[80px] object-contain" : "h-8 w-[64px] object-contain"} />;
+  const size = compact ? (b.big ? "h-8 w-[50px]" : "h-6 w-[44px]") : b.big ? "h-10 w-[80px]" : "h-8 w-[64px]";
+  return <img src={b.logos[0]} alt={b.name} className={`${size} object-contain`} />;
 }
 
 // Floating brand logo: no box. Each logo bobs gently on its own soft shadow; on hover it lifts,
 // the shadow widens and a red hairline + "ดูรุ่นรถ" caption appear. The current brand keeps the hairline.
-function BrandFloat({ b, active, index }: { b: BrandItem; active: boolean; index: number }) {
+function BrandFloat({ b, active, index, compact }: { b: BrandItem; active: boolean; index: number; compact?: boolean }) {
   return (
     <Link
       href={b.href}
       title={b.key === "suzyfix" ? "ศูนย์ซ่อมสีและตัวถัง Suzy Fix" : `ดูรุ่นรถ ${b.name}`}
       aria-current={active ? "page" : undefined}
-      className="brand-float group relative flex h-16 shrink-0 flex-col items-center justify-center px-2 xl:px-3"
+      className={`brand-float group relative flex shrink-0 flex-col items-center justify-center ${compact ? "h-14 min-w-0 px-0" : "h-16 px-2 xl:px-3"}`}
       style={{ ["--d" as string]: `${index * -0.45}s` }}
     >
       <span className="brand-float-mark flex h-9 items-center transition-transform duration-300 ease-out group-hover:-translate-y-1.5">
-        <BrandMark b={b} />
+        <BrandMark b={b} compact={compact} />
       </span>
       {/* floor shadow — sells the "floating" */}
       <span className="brand-float-shadow pointer-events-none mt-1 h-1 w-10 rounded-[50%] bg-black/15 blur-[3px] transition-all duration-300 group-hover:w-12 group-hover:bg-black/10" />
@@ -219,9 +220,10 @@ export default function Header() {
     </header>
 
     <div className="lg:hidden border-b border-black/[0.06] bg-white">
-      <nav aria-label="แบรนด์รถยนต์" className="no-scrollbar flex items-center gap-1 overflow-x-auto px-2">
+      {/* All logos fit the screen width: one equal column each, nothing runs past the edge */}
+      <nav aria-label="แบรนด์รถยนต์" className="grid grid-cols-7 items-center px-1">
         {BRAND_STRIP.map((b, i) => (
-          <BrandFloat key={b.key} b={b} active={isActive(b)} index={i} />
+          <BrandFloat key={b.key} b={b} active={isActive(b)} index={i} compact />
         ))}
       </nav>
     </div>
