@@ -8,6 +8,16 @@ export interface BranchPhoto {
 
 const p = (slug: string, file: string, alt: string): BranchPhoto => ({ src: `/brand/branches/${slug}/${file}.webp`, alt });
 
+// Main showroom photo per branch (client-supplied, Oct 2026). Used on /branches cards, the branch
+// page hero, homepage location tiles and brand-page showroom banners. `position` keeps the sign
+// in frame when the photo is cropped to a landscape card.
+export const branchCover: Record<string, { src: string; alt: string; position?: string }> = {
+  rayong: { src: "/brand/branches/covers/suzuki-rayong.webp", alt: "โชว์รูม Suzuki มาพรพาณิชย์ ระยอง", position: "50% 28%" },
+  "rayong-omoda-jaecoo": { src: "/brand/branches/covers/omoda-jaecoo-rayong.webp", alt: "โชว์รูม OMODA | JAECOO Maporn Auto Tech ระยอง", position: "50% 40%" },
+  "rayong-lepas": { src: "/brand/branches/covers/lepas-rayong.webp", alt: "โชว์รูม Lepas มาพร ระยอง", position: "50% 55%" },
+  "farizon-srinakarin": { src: "/brand/branches/covers/farizon-srinakarin.webp", alt: "โชว์รูม Farizon Maporn Auto Tech ศรีนครินทร์", position: "40% 55%" },
+};
+
 export const branchGallery: Record<string, BranchPhoto[]> = {
   srinakarin: [
     p("srinakarin", "exterior-dusk", "โชว์รูม Suzuki Maporn สำนักงานใหญ่ ศรีนครินทร์"),
@@ -15,6 +25,9 @@ export const branchGallery: Record<string, BranchPhoto[]> = {
     p("srinakarin", "lounge", "ห้องรับรองลูกค้า"),
     p("srinakarin", "service", "ศูนย์บริการ"),
     p("srinakarin", "team", "ทีมงาน Maporn ศรีนครินทร์"),
+  ],
+  "farizon-srinakarin": [
+    { src: "/brand/branches/covers/farizon-srinakarin.webp", alt: "โชว์รูม Farizon Maporn Auto Tech ศรีนครินทร์" },
     p("srinakarin", "farizon-exterior", "อาคารโชว์รูม Farizon — Maporn Auto Tech"),
     p("srinakarin", "farizon-showroom", "โชว์รูม Farizon"),
     p("srinakarin", "farizon-showroom-2", "รถตู้ไฟฟ้า Farizon ในโชว์รูม"),
@@ -41,6 +54,7 @@ export const branchGallery: Record<string, BranchPhoto[]> = {
     p("sriracha", "service", "ศูนย์บริการ"),
   ],
   "rayong-omoda-jaecoo": [
+    { src: "/brand/branches/covers/omoda-jaecoo-rayong.webp", alt: "โชว์รูม OMODA | JAECOO Maporn Auto Tech ระยอง" },
     p("rayong-omoda-jaecoo", "exterior", "โชว์รูม OMODA | JAECOO Maporn ระยอง"),
     p("rayong-omoda-jaecoo", "exterior-side", "อาคารโชว์รูมและศูนย์บริการ"),
     p("rayong-omoda-jaecoo", "entrance", "ทางเข้าโชว์รูม"),

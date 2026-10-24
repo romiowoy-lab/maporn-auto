@@ -3,15 +3,18 @@ import Image from "next/image";
 import PlaceholderImage from "@/components/ui/PlaceholderImage";
 import { Branch } from "@/lib/types";
 import { getBrand } from "@/lib/data/brands";
-import { branchGallery } from "@/lib/data/branchPhotos";
+import { branchCover, branchGallery } from "@/lib/data/branchPhotos";
 
 // Real showroom / service-centre photos, one per branch (public/brand/branches/).
-// Branches with a gallery (src/lib/data/branchPhotos.ts) use its first photo.
+// Client cover photo first, else the gallery's first photo (src/lib/data/branchPhotos.ts).
 export const BRANCH_PHOTO: Record<string, string> = {
   minburi: "/brand/branches/minburi.jpg",
-  rayong: "/brand/branches/rayong.jpg",
   ...Object.fromEntries(Object.entries(branchGallery).map(([slug, photos]) => [slug, photos[0].src])),
+  ...Object.fromEntries(Object.entries(branchCover).map(([slug, c]) => [slug, c.src])),
 };
+export const BRANCH_PHOTO_POSITION: Record<string, string> = Object.fromEntries(
+  Object.entries(branchCover).flatMap(([slug, c]) => (c.position ? [[slug, c.position]] : [])),
+);
 
 export default function BranchCard({ branch }: { branch: Branch }) {
   return (
@@ -27,6 +30,7 @@ export default function BranchCard({ branch }: { branch: Branch }) {
             fill
             sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
             className="object-cover transition-transform duration-500 group-hover:scale-105"
+            style={{ objectPosition: BRANCH_PHOTO_POSITION[branch.slug] ?? "center" }}
           />
         </div>
       ) : (

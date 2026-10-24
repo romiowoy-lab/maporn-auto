@@ -8,6 +8,7 @@ import JaecooEvShowroom from "@/components/brands/jaecoo/JaecooEvShowroom";
 import { j5 } from "@/lib/data/jaecoo-j5";
 import { j6 } from "@/lib/data/jaecoo-j6";
 import OmodaC5Showroom from "@/components/brands/omoda-jaecoo/OmodaC5Showroom";
+import BrandShowroomBanner from "@/components/brands/BrandShowroomBanner";
 
 // OMODA and JAECOO are one paired dealership — one page, one switch. JAECOO first
 // JAECOO 6 EV opens first, then J7 SHS and JAECOO 5 EV; OMODA C5 EV last. Phones show the short labels.
@@ -123,6 +124,8 @@ export default function OmodaJaecooShowroom() {
           <OmodaC5Showroom />
         )}
       </motion.div>
+
+      <BrandShowroomBanner slug="rayong-omoda-jaecoo" />
 
       {/* Brand swipe overlay */}
       <motion.div

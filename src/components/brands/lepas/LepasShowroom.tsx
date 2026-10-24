@@ -8,6 +8,7 @@ import LepasShowcase from "@/components/brands/lepas/LepasShowcase";
 import LepasTechnology from "@/components/brands/lepas/LepasTechnology";
 import LepasExperience from "@/components/brands/lepas/LepasExperience";
 import LepasCTA from "@/components/brands/lepas/LepasCTA";
+import BrandShowroomBanner from "@/components/brands/BrandShowroomBanner";
 
 export default function LepasShowroom() {
   return (
@@ -21,6 +22,7 @@ export default function LepasShowroom() {
       <LepasShowcase />
       <LepasTechnology />
       <LepasExperience />
+      <BrandShowroomBanner slug="rayong-lepas" />
       <LepasCTA />
     </div>
   );

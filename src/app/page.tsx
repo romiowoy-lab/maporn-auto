@@ -9,6 +9,7 @@ import MapornHero from '@/components/home/MapornHero';
 import ScrollFx from '@/components/ui/ScrollFx';
 import { branches } from '@/lib/data/branches';
 import { news, NEWS_CATEGORY_LABEL } from '@/lib/data/news';
+import { branchCover } from '@/lib/data/branchPhotos';
 import { formatDateTH } from '@/lib/utils';
 import {
   MapPin,
@@ -30,8 +31,13 @@ const BRANCH_COVER: Record<string, string> = {
   minburi: '/brand/branches/minburi.jpg',
   lamlukka: '/brand/branches/lamlukka/exterior-team.webp',
   sriracha: '/brand/branches/sriracha/exterior.webp',
-  rayong: '/brand/branches/rayong.jpg',
+  rayong: branchCover.rayong.src,
 };
+
+// Crop position per photo (keeps the showroom sign in frame on the landscape tiles)
+const COVER_POSITION: Record<string, string> = Object.fromEntries(
+  Object.values(branchCover).flatMap((c) => (c.position ? [[c.src, c.position]] : [])),
+);
 
 // Which real brand(s) each branch actually carries, per the client's showroom-network
 // brief — a branch with multiple brand lines gets one tile per line, matching the
@@ -45,11 +51,11 @@ const BRANCH_BRAND_TILES: { label: string; branchSlug: string; image?: string; r
   { label: 'Suzuki ศรีนครินทร์', branchSlug: 'srinakarin', region: 'bangkok' },
   { label: 'GWM ลำลูกกา', branchSlug: 'lamlukka', region: 'bangkok' },
   { label: 'Suzy Fix มีนบุรี', branchSlug: 'minburi', image: '/brand/branches/suzy-fix/entrance.webp', region: 'bangkok' },
-  { label: 'Farizon และ Nex ศรีนครินทร์', branchSlug: 'srinakarin', image: '/brand/branches/srinakarin/farizon-exterior.webp', region: 'bangkok' },
+  { label: 'Farizon ศรีนครินทร์', branchSlug: 'farizon-srinakarin', image: branchCover['farizon-srinakarin'].src, region: 'bangkok' },
   { label: 'Suzuki ระยอง', branchSlug: 'rayong', region: 'east' },
   { label: 'Suzuki ศรีราชา', branchSlug: 'sriracha', region: 'east' },
-  { label: 'OMODA | JAECOO ระยอง', branchSlug: 'rayong-omoda-jaecoo', image: '/brand/branches/rayong-omoda-jaecoo/exterior.webp', region: 'east' },
-  { label: 'Lepas / Wuling ระยอง', branchSlug: 'rayong', region: 'east' },
+  { label: 'OMODA | JAECOO ระยอง', branchSlug: 'rayong-omoda-jaecoo', image: branchCover['rayong-omoda-jaecoo'].src, region: 'east' },
+  { label: 'Lepas / Wuling ระยอง', branchSlug: 'rayong-lepas', image: branchCover['rayong-lepas'].src, region: 'east' },
 ];
 
 const BRANCH_REGIONS: { key: 'bangkok' | 'east'; label: string }[] = [
@@ -59,7 +65,7 @@ const BRANCH_REGIONS: { key: 'bangkok' | 'east'; label: string }[] = [
 
 // Only these branches' phone numbers are verified against a real source (the legacy Suzuki
 // site). The others' phones are still placeholders, so they are not shown on the cards.
-const VERIFIED_PHONE = new Set(['srinakarin', 'rayong', 'rayong-omoda-jaecoo']);
+const VERIFIED_PHONE = new Set(['srinakarin', 'rayong', 'rayong-omoda-jaecoo', 'rayong-lepas', 'farizon-srinakarin']);
 
 
 // 8 real photos/logos for this highlight grid (public/brand/highlight/) — uniform 4-col x
@@ -228,6 +234,7 @@ export default function HomePage() {
                         src={tile.image ?? BRANCH_COVER[b.slug]}
                         alt={tile.label}
                         className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        style={{ objectPosition: COVER_POSITION[tile.image ?? BRANCH_COVER[b.slug]] ?? 'center' }}
                       />
                       {isService && (
                         <span className="absolute top-3 left-3 rounded-md bg-black/75 px-3 py-1 text-[11px] font-bold text-white backdrop-blur-md">

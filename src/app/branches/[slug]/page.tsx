@@ -5,13 +5,13 @@ import { branches, getBranch } from "@/lib/data/branches";
 import { getBrand } from "@/lib/data/brands";
 import Image from "next/image";
 import { MapPin, Clock, Phone, MessageCircle, Navigation } from "lucide-react";
-import { BRANCH_PHOTO } from "@/components/branches/BranchCard";
+import { BRANCH_PHOTO, BRANCH_PHOTO_POSITION } from "@/components/branches/BranchCard";
 import BranchGallery from "@/components/branches/BranchGallery";
 import { branchGallery } from "@/lib/data/branchPhotos";
 import { company } from "@/lib/data/company";
 
 // Branches with verified phone/LINE; others fall back to head office.
-const VERIFIED_CONTACT = new Set(["srinakarin", "rayong", "rayong-omoda-jaecoo", "sriracha", "lamlukka", "suzy-fix"]);
+const VERIFIED_CONTACT = new Set(["srinakarin", "rayong", "rayong-omoda-jaecoo", "rayong-lepas", "farizon-srinakarin", "sriracha", "lamlukka", "suzy-fix"]);
 
 export function generateStaticParams() {
   return branches.map((b) => ({ slug: b.slug }));
@@ -51,7 +51,7 @@ export default async function BranchDetailPage({ params }: { params: Promise<{ s
   const lineHref = branch.lineUrl ?? null;
   const photo = BRANCH_PHOTO[branch.slug];
   const gallery = branchGallery[branch.slug];
-  const short = branch.name.replace("Maporn Autogroup ", "").replace("Suzuki ", "").replace("GWM ", "").replace("Wuling ", "").replace("Lepas ", "");
+  const short = branch.name.replace("Maporn Autogroup ", "");
   const maps = branch.googleMapsUrl ?? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(branch.mapQuery)}`;
 
   return (
@@ -60,7 +60,7 @@ export default async function BranchDetailPage({ params }: { params: Promise<{ s
 
       {/* Hero photo */}
       <section className="relative min-h-[420px] overflow-hidden sm:min-h-[520px]">
-        {photo && <Image src={photo} alt={branch.name} fill priority sizes="100vw" className="object-cover" />}
+        {photo && <Image src={photo} alt={branch.name} fill priority sizes="100vw" className="object-cover" style={{ objectPosition: BRANCH_PHOTO_POSITION[branch.slug] ?? "center" }} />}
         <div className="container-page relative z-10 flex min-h-[420px] flex-col justify-end pb-10 pt-24 sm:min-h-[520px]" style={{ textShadow: "0 2px 10px rgba(0,0,0,0.85), 0 8px 30px rgba(0,0,0,0.6)" }}>
           <nav className="mb-4 flex items-center gap-1.5 text-xs text-white/85">
             <Link href="/branches" className="hover:text-white">โชว์รูม / สาขา</Link>

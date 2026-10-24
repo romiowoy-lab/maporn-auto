@@ -7,6 +7,7 @@ import { Zap, Route, BatteryCharging, Users, Gauge, Check, Phone, Mail, ShieldCh
 import Stat from "@/components/brands/wuling/Stat";
 import MapornLogo from "@/components/ui/MapornLogo";
 import BrandHeroCTA from "@/components/brands/BrandHeroCTA";
+import BrandShowroomBanner from "@/components/brands/BrandShowroomBanner";
 
 // FARIZON showroom (high-end dark layout). Specs are from the official
 // "FARIZON EV Passenger SUPER VAN P5M (5.5 m)" technical sheet supplied by Maporn.
@@ -292,6 +293,7 @@ export default function FarizonShowroom() {
       <Performance />
       <Specs />
       <Business />
+      <BrandShowroomBanner slug="farizon-srinakarin" />
     </div>
   );
 }

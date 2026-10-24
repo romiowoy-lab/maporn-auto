@@ -7,10 +7,10 @@ import { MapPin, Clock, Phone, MessageCircle, ExternalLink, Navigation } from "l
 import { Branch } from "@/lib/types";
 import { getBrand } from "@/lib/data/brands";
 import { company } from "@/lib/data/company";
-import { BRANCH_PHOTO } from "@/components/branches/BranchCard";
+import { BRANCH_PHOTO, BRANCH_PHOTO_POSITION } from "@/components/branches/BranchCard";
 
 const VERIFIED_CONTACT = new Set([
-  "srinakarin", "rayong", "rayong-omoda-jaecoo", "sriracha", "lamlukka", "suzy-fix",
+  "srinakarin", "rayong", "rayong-omoda-jaecoo", "rayong-lepas", "farizon-srinakarin", "sriracha", "lamlukka", "suzy-fix",
 ]);
 
 function mapsHref(mapQuery: string) {
@@ -31,19 +31,15 @@ function BranchWideCard({ b }: { b: Branch }) {
   const lineHref = b.lineUrl ?? null;
   const mapsUrl = b.googleMapsUrl ?? mapsHref(b.mapQuery);
   const photo = BRANCH_PHOTO[b.slug];
-  const short = b.name
-    .replace("Maporn Autogroup ", "")
-    .replace("Suzuki ", "")
-    .replace("GWM ", "")
-    .replace("Wuling ", "")
-    .replace("Lepas ", "");
+  // Keep the brand: several Rayong showrooms share an address, so "Maporn ระยอง" alone looks duplicated
+  const short = b.name.replace("Maporn Autogroup ", "");
 
   return (
     <article className="overflow-hidden rounded-3xl border border-black/[0.06] bg-white shadow-[0_10px_40px_rgba(15,23,42,0.08)]">
       <div className="grid lg:grid-cols-[0.9fr_1fr_1.1fr]">
         {/* Photo */}
         <div className="relative min-h-[260px] lg:min-h-full">
-          {photo && <Image src={photo} alt={b.name} fill sizes="(min-width: 1024px) 28vw, 100vw" className="object-cover" />}
+          {photo && <Image src={photo} alt={b.name} fill sizes="(min-width: 1024px) 28vw, 100vw" className="object-cover" style={{ objectPosition: BRANCH_PHOTO_POSITION[b.slug] ?? "center" }} />}
           <div className="absolute left-4 top-4 flex flex-wrap gap-2">
             {b.isShowroom && <span className="rounded-full bg-brand-red-gradient px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide text-white shadow">Showroom</span>}
             {b.isServiceCenter && <span className="rounded-full bg-white px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide text-brand-navy shadow">Service Center</span>}
