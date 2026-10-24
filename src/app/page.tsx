@@ -73,14 +73,16 @@ const VERIFIED_PHONE = new Set(['srinakarin', 'rayong', 'rayong-omoda-jaecoo', '
 // 2-row grid, no asymmetric "big tile" sizing. Suzy Fix (8th) has no separate large photo
 // (it's a service sub-brand, not a car) — its own real logo file is used as-is, shown
 // object-contain on a solid tint rather than stretched/cropped like the 7 car photos.
-const BENTO_UNITS: { key: string; tag: string; title: string; href: string; img: string; pos?: string; logo: string | null; color: string; fit?: 'contain' }[] = [
-  { key: 'omoda', tag: 'OMODA', title: 'Electric Crossover', href: '/brands/omoda', img: '/brand/omoda-c5/threeq.jpg', pos: '50% 50%', logo: '/brand/logos/omoda.svg', color: '#7B2D8E' },
-  { key: 'jaecoo', tag: 'JAECOO', title: 'Feel Alive', href: '/brands/jaecoo', img: '/brand/jaecoo-j7/road.jpg', pos: '65% 50%', logo: '/brand/logos/jaecoo.svg', color: '#B8860B' },
+// Order per client: OJ (OMODA & JAECOO as one card), GWM, Suzuki, Lepas, Wuling, Farizon, NEX, Suzy Fix.
+// logoText: a text badge instead of a logo image (OJ has no single combined logo file).
+const BENTO_UNITS: { key: string; tag: string; title: string; href: string; img: string; pos?: string; logo: string | null; logoText?: string; color: string; fit?: 'contain' }[] = [
+  { key: 'oj', tag: 'OJ', title: 'OJ · Feel Alive', href: '/brands/omoda', img: '/brand/jaecoo-j7/road.jpg', pos: '65% 50%', logo: null, logoText: 'OJ', color: '#B8860B' },
   { key: 'gwm', tag: 'GWM', title: 'Tank 300 · Tank 500', href: '/brands/gwm', img: '/brand/gwm-tank300/front.jpg', pos: '40% 50%', logo: '/brand/logos/gwm.png', color: '#FF6600' },
   { key: 'suzuki', tag: 'Suzuki', title: 'Way of Life!', href: '/brands/suzuki', img: '/brand/showcase/suzuki.jpg', pos: '20% 50%', logo: '/brand/logos/suzuki.svg', color: '#E30016' },
   { key: 'lepas', tag: 'Lepas', title: 'Drive Your Elegance', href: '/brands/lepas', img: '/brand/lepas-l6/street.jpg', pos: '55% 50%', logo: '/brand/logos/lepas.png', color: '#A0522D' },
   { key: 'wuling', tag: 'Wuling', title: 'Enjoy the Ride', href: '/brands/wuling', img: '/brand/wuling-darion/front34.jpg', pos: '35% 50%', logo: '/brand/logos/wuling.png', color: '#C8102E' },
   { key: 'farizon', tag: 'Farizon', title: 'Beyond Logistics', href: '/brands/farizon', img: '/brand/models/farizon-van.jpg', pos: '50% 55%', logo: '/brand/logos/farizon.png', color: '#005BAC' },
+  { key: 'nex', tag: 'NEX', title: 'Drive the Better Future', href: '/brands/nex', img: '/brand/showcase/nex.jpg', pos: '50% 55%', logo: '/brand/logos/nex.png', color: '#00A19A' },
   { key: 'suzyfix', tag: 'Suzy Fix', title: 'ศูนย์ซ่อมสีและตัวถังมาตรฐาน', href: '/service#suzy-fix', img: '/brand/suzyfix/suzyfix-mechanic.jpg', pos: '50% 40%', logo: null, color: '#E85D2F' },
 ];
 
@@ -151,6 +153,11 @@ export default function HomePage() {
                   {String(i + 1).padStart(2, "0")}
                 </span>
 
+                {u.logoText && (
+                  <span className="absolute top-5 left-5 flex h-12 items-center rounded-xl border border-white/40 bg-white/90 px-4 shadow-lg backdrop-blur-md transition-all duration-300 group-hover:-translate-y-1 group-hover:bg-white/25">
+                    <span className="text-2xl font-black tracking-tight text-[#101113]">{u.logoText}</span>
+                  </span>
+                )}
                 {u.logo && (
                   <span className="absolute top-5 left-5 flex h-12 items-center rounded-xl border border-white/40 bg-white/90 px-3.5 shadow-lg backdrop-blur-md transition-all duration-300 group-hover:-translate-y-1 group-hover:bg-white/25">
                     <img src={u.logo} alt={u.tag} className="h-7 w-auto max-w-[100px] object-contain sm:h-8" />
@@ -164,11 +171,8 @@ export default function HomePage() {
                   >
                     {u.tag}
                   </span>
-                  <h3 className="font-bold text-white text-lg sm:text-2xl leading-snug line-clamp-2 transition-transform duration-300 group-hover:-translate-y-0.5">
-                    {u.title}
-                  </h3>
                   <span
-                    className="mt-2.5 inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold transition-all duration-300 group-hover:gap-2.5"
+                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold transition-all duration-300 group-hover:gap-2.5"
                     style={{ color: u.color }}
                   >
                     ดูรายละเอียดเพิ่มเติม

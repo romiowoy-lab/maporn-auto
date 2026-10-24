@@ -56,7 +56,6 @@ const allBrands: Brand[] = [
     origin: "จีน",
     heroImage: "/brand/models/nex-pickup.jpg",
     logo: "/brand/logos/nex.png",
-    hidden: true,
   },
   {
     slug: "gwm",

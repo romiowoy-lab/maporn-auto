@@ -16,27 +16,56 @@ const NAV_LINKS = [
   { href: "/contact", label: "ติดต่อเรา" },
 ];
 
-// 7 brands + Suzy Fix, 8 logo slots — OMODA and JAECOO share one dealership/showroom, so
-// they share one nav slot (two real logos side by side) same as everywhere else on the
-// site. Order per explicit request: OMODA|JAECOO, GWM, Suzuki, Lepas, Wuling, Farizon,
-// Nex, Suzy Fix. Lepas renders at a bigger box (`big: true`) — its real logo is a thin
-// cursive wordmark that reads much smaller than the others at the shared default size.
+// Brand order per client: OJ (OMODA & JAECOO as one slot, shown as "OJ"), GWM, Suzuki, Lepas, Wuling,
+// Farizon, NEX, Suzy Fix. Lepas renders at a bigger box (`big: true`): its logo is a thin cursive wordmark.
 const BRAND_STRIP = [
-  { key: "omoda-jaecoo", name: "OMODA | JAECOO", href: "/brands/omoda", logos: ["/brand/logos/omoda.svg", "/brand/logos/jaecoo.svg"] },
+  { key: "omoda-jaecoo", name: "OJ", href: "/brands/omoda", logos: [] as string[], text: "OJ" },
   { key: "gwm", name: "GWM", href: "/brands/gwm", logos: ["/brand/logos/gwm.png"] },
   { key: "suzuki", name: "Suzuki", href: "/brands/suzuki", logos: ["/brand/logos/suzuki.svg"] },
   { key: "lepas", name: "Lepas", href: "/brands/lepas", logos: ["/brand/logos/lepas.png"], big: true },
   { key: "wuling", name: "Wuling", href: "/brands/wuling", logos: ["/brand/logos/wuling.png"] },
   { key: "farizon", name: "Farizon", href: "/brands/farizon", logos: ["/brand/logos/farizon.png"] },
+  { key: "nex", name: "NEX", href: "/brands/nex", logos: ["/brand/logos/nex.png"] },
   { key: "suzyfix", name: "Suzy Fix", href: "/service#suzy-fix", logos: ["/brand/logos/suzyfix.jpg"] },
 ];
+
+type BrandItem = (typeof BRAND_STRIP)[number];
+
+function BrandChip({ b, active, compact }: { b: BrandItem; active: boolean; compact?: boolean }) {
+  return (
+    <Link
+      href={b.href}
+      title={`ดูรุ่นรถ ${b.name}`}
+      aria-current={active ? "page" : undefined}
+      className={`group relative flex shrink-0 flex-col items-center justify-center rounded-xl border bg-white px-2.5 transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-red/50 hover:shadow-[0_6px_16px_-6px_rgba(220,0,0,0.35)] ${
+        compact ? "h-12 min-w-[76px]" : "h-[52px] min-w-[78px]"
+      } ${active ? "border-brand-red bg-red-50/60 shadow-[0_0_0_1px_rgba(220,0,0,0.25)]" : "border-black/10"}`}
+    >
+      <span className="flex items-center gap-1.5">
+        {"text" in b && b.text && <span className="flex h-[22px] w-[52px] items-center justify-center text-lg font-black tracking-tight text-[#101113]">{b.text}</span>}
+        {b.logos.map((src, j) => (
+          <span key={src} className="flex items-center gap-1.5">
+            {j > 0 && <span className="h-3.5 w-px bg-black/15" />}
+            <img src={src} alt={b.name} className={b.big ? "h-8 w-[66px] object-contain" : "h-[22px] w-[52px] object-contain"} />
+          </span>
+        ))}
+      </span>
+      <span className={`mt-0.5 text-[9px] font-bold leading-none tracking-wide transition-colors ${active ? "text-brand-red" : "text-brand-slate group-hover:text-brand-red"}`}>
+        {b.key === "suzyfix" ? "ซ่อมสี/ตัวถัง ›" : "ดูรุ่น ›"}
+      </span>
+    </Link>
+  );
+}
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [brandsOpen, setBrandsOpen] = useState(false);
   const pathname = usePathname();
+  const isActive = (b: BrandItem) =>
+    b.key === "omoda-jaecoo" ? /^\/brands\/(omoda|jaecoo)/.test(pathname) : b.href.startsWith("/brands/") && pathname.startsWith(b.href);
 
   return (
+    <>
     <header className="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-black/[0.06] shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center gap-4 h-16">
         {/* Logo / wordmark */}
@@ -44,51 +73,19 @@ export default function Header() {
           <MapornLogo variant="red" className="h-9 w-auto sm:h-10" />
         </Link>
 
-        {/* Center: 7-brand logo strip — infinite marquee, pauses on hover. Track is the
-            brand list duplicated once so the -50% loop point is seamless. */}
-        <nav className="hidden lg:flex flex-1 min-w-0 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
-          <div className="brand-marquee flex items-center gap-3 shrink-0">
-            {[...BRAND_STRIP, ...BRAND_STRIP].map((b, i) => (
-              <Link
-                key={`${b.key}-${i}`}
-                href={b.href}
-                title={b.name}
-                className="group flex h-10 shrink-0 items-center gap-2 opacity-60 transition-opacity duration-200 hover:opacity-100"
-              >
-                {b.logos.map((src, j) => (
-                  <span key={src} className="flex h-10 items-center gap-2">
-                    {j > 0 && <span className="h-4 w-px bg-black/15" />}
-                    <img
-                      src={src}
-                      alt={b.name}
-                      className={b.big ? "h-11 w-[86px] object-contain" : "h-8 w-[62px] object-contain"}
-                    />
-                  </span>
-                ))}
-              </Link>
+        {/* Center: brand chips. Static (not a marquee) and full colour so they read as buttons;
+            each carries a "ดูรุ่น" cue and the current brand is highlighted. Scrolls sideways if narrow. */}
+        <nav aria-label="แบรนด์รถยนต์" className="hidden lg:flex flex-1 min-w-0 items-center gap-2">
+          <span className="hidden xl:flex shrink-0 flex-col text-[10px] font-bold uppercase leading-tight tracking-[0.14em] text-brand-slate">
+            เลือกแบรนด์
+            <span className="text-brand-red">ดูรุ่นรถ →</span>
+          </span>
+          <div className="no-scrollbar flex min-w-0 items-center gap-1.5 overflow-x-auto py-1 pr-6 [mask-image:linear-gradient(to_right,black_88%,transparent)] 2xl:pr-0 2xl:[mask-image:none]">
+            {BRAND_STRIP.map((b) => (
+              <BrandChip key={b.key} b={b} active={isActive(b)} />
             ))}
           </div>
         </nav>
-
-        <style>{`
-          @keyframes brandMarquee {
-            from { transform: translateX(0); }
-            to { transform: translateX(-50%); }
-          }
-          .brand-marquee {
-            animation: brandMarquee 28s linear infinite;
-            width: max-content;
-            padding-left: 0.75rem;
-          }
-          nav:hover .brand-marquee {
-            animation-play-state: paused;
-          }
-          @media (prefers-reduced-motion: reduce) {
-            .brand-marquee {
-              animation: none;
-            }
-          }
-        `}</style>
 
         {/* Right: actions */}
         <div className="flex items-center gap-2 ml-auto lg:ml-0">
@@ -198,5 +195,19 @@ export default function Header() {
         </div>
       )}
     </header>
+
+    <div className="lg:hidden border-b border-black/[0.06] bg-white">
+      <div className="no-scrollbar flex items-center gap-2 overflow-x-auto px-4 py-2">
+        <span className="shrink-0 text-[10px] font-bold leading-tight text-brand-slate">
+          เลือกแบรนด์
+          <br />
+          <span className="text-brand-red">ดูรุ่นรถ →</span>
+        </span>
+        {BRAND_STRIP.map((b) => (
+          <BrandChip key={b.key} b={b} active={isActive(b)} compact />
+        ))}
+      </div>
+    </div>
+    </>
   );
 }

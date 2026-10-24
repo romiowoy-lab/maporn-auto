@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 // Display order requested for this page: Suzuki, OMODA|JAECOO, GWM, Lepas, Wuling, Farizon, Nex, Suzy Fix.
-const ORDER = ["suzuki", "omoda-jaecoo", "gwm", "lepas", "wuling", "farizon"];
+const ORDER = ["omoda-jaecoo", "gwm", "suzuki", "lepas", "wuling", "farizon", "nex"];
 
 export default function BrandsPage() {
   const groups = [...getBrandGroups()].sort((a, b) => ORDER.indexOf(a.key) - ORDER.indexOf(b.key));
