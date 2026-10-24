@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { Sparkles, Gauge, ShieldCheck, Zap, ArrowRight } from "lucide-react";
+import { Sparkles, Gauge, ShieldCheck, Zap } from "lucide-react";
 import { getBrandGroups, getModelsForGroup } from "@/lib/data/brandGroups";
 import { getFeaturedModels } from "@/lib/data/models";
 import { formatTHB } from "@/lib/utils";
@@ -183,7 +183,6 @@ export default function ExploreRange() {
                   className="btn-outline border-white! text-white! hover:bg-white! hover:text-brand-navy! inline-flex items-center gap-2"
                 >
                   จองทดลองขับ
-                  <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
             </div>

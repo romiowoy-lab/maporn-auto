@@ -47,16 +47,17 @@ const COVER_POSITION: Record<string, string> = Object.fromEntries(
 // `region` groups tiles by the branch's real province — กรุงเทพและปริมณฑล (Srinakarin/
 // Minburi in Bangkok, Lamlukka in Pathum Thani) vs. ภาคตะวันออก (Rayong, Sriracha — both
 // in the real East-coast provinces).
+// Display order per client: Suzuki ×3, GWM, Farizon, OJ, Lepas, Wuling, Suzy Fix.
 const BRANCH_BRAND_TILES: { label: string; branchSlug: string; image?: string; region: 'bangkok' | 'east' }[] = [
   { label: 'Suzuki ศรีนครินทร์', branchSlug: 'srinakarin', region: 'bangkok' },
-  { label: 'GWM ลำลูกกา', branchSlug: 'lamlukka', region: 'bangkok' },
-  { label: 'Suzy Fix มีนบุรี', branchSlug: 'minburi', image: '/brand/branches/suzy-fix/entrance.webp', region: 'bangkok' },
-  { label: 'Farizon ศรีนครินทร์', branchSlug: 'farizon-srinakarin', image: branchCover['farizon-srinakarin'].src, region: 'bangkok' },
   { label: 'Suzuki ระยอง', branchSlug: 'rayong', region: 'east' },
   { label: 'Suzuki ศรีราชา', branchSlug: 'sriracha', region: 'east' },
-  { label: 'OMODA | JAECOO ระยอง', branchSlug: 'rayong-omoda-jaecoo', image: branchCover['rayong-omoda-jaecoo'].src, region: 'east' },
+  { label: 'GWM ลำลูกกา', branchSlug: 'lamlukka', region: 'bangkok' },
+  { label: 'Farizon ศรีนครินทร์', branchSlug: 'farizon-srinakarin', image: branchCover['farizon-srinakarin'].src, region: 'bangkok' },
+  { label: 'OJ ระยอง', branchSlug: 'rayong-omoda-jaecoo', image: branchCover['rayong-omoda-jaecoo'].src, region: 'east' },
   { label: 'Lepas ระยอง', branchSlug: 'rayong-lepas', image: branchCover['rayong-lepas'].src, region: 'east' },
   { label: 'Wuling ระยอง', branchSlug: 'rayong-wuling', image: branchCover['rayong-wuling'].src, region: 'east' },
+  { label: 'Suzy Fix มีนบุรี', branchSlug: 'minburi', image: '/brand/branches/suzy-fix/entrance.webp', region: 'bangkok' },
 ];
 
 const BRANCH_REGIONS: { key: 'bangkok' | 'east'; label: string }[] = [
@@ -73,7 +74,7 @@ const VERIFIED_PHONE = new Set(['srinakarin', 'rayong', 'rayong-omoda-jaecoo', '
 // 2-row grid, no asymmetric "big tile" sizing. Suzy Fix (8th) has no separate large photo
 // (it's a service sub-brand, not a car) — its own real logo file is used as-is, shown
 // object-contain on a solid tint rather than stretched/cropped like the 7 car photos.
-// Order per client: OJ (OMODA & JAECOO as one card), GWM, Suzuki, Lepas, Wuling, Farizon, NEX, Suzy Fix.
+// Order per client: OJ (OMODA & JAECOO as one card), GWM, Suzuki, Lepas, Wuling, Farizon, Suzy Fix (NEX hidden for now).
 // logoText: a text badge instead of a logo image (OJ has no single combined logo file).
 const BENTO_UNITS: { key: string; tag: string; title: string; href: string; img: string; pos?: string; logo: string | null; logoText?: string; color: string; fit?: 'contain' }[] = [
   { key: 'oj', tag: 'OJ', title: 'OJ · Feel Alive', href: '/brands/omoda', img: '/brand/jaecoo-j7/road.jpg', pos: '65% 50%', logo: null, logoText: 'OJ', color: '#B8860B' },
@@ -82,7 +83,6 @@ const BENTO_UNITS: { key: string; tag: string; title: string; href: string; img:
   { key: 'lepas', tag: 'Lepas', title: 'Drive Your Elegance', href: '/brands/lepas', img: '/brand/lepas-l6/street.jpg', pos: '55% 50%', logo: '/brand/logos/lepas.png', color: '#A0522D' },
   { key: 'wuling', tag: 'Wuling', title: 'Enjoy the Ride', href: '/brands/wuling', img: '/brand/wuling-darion/front34.jpg', pos: '35% 50%', logo: '/brand/logos/wuling.png', color: '#C8102E' },
   { key: 'farizon', tag: 'Farizon', title: 'Beyond Logistics', href: '/brands/farizon', img: '/brand/models/farizon-van.jpg', pos: '50% 55%', logo: '/brand/logos/farizon.png', color: '#005BAC' },
-  { key: 'nex', tag: 'NEX', title: 'Drive the Better Future', href: '/brands/nex', img: '/brand/showcase/nex.jpg', pos: '50% 55%', logo: '/brand/logos/nex.png', color: '#00A19A' },
   { key: 'suzyfix', tag: 'Suzy Fix', title: 'ศูนย์ซ่อมสีและตัวถังมาตรฐาน', href: '/service#suzy-fix', img: '/brand/suzyfix/suzyfix-mechanic.jpg', pos: '50% 40%', logo: null, color: '#E85D2F' },
 ];
 

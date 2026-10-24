@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { ArrowRight, Wrench } from "lucide-react";
+import { Wrench } from "lucide-react";
 
 // The one hero button row used on every brand / model hero (same as the homepage hero):
-// ดูรายละเอียด · ทดลองขับ → · นัดหมายเช็คระยะ/ สีและตัวถัง
+// ดูรายละเอียด · ทดลองขับ · นัดหมายเช็คระยะ/ สีและตัวถัง
 export default function BrandHeroCTA({
   detailsHref,
   testDriveHref,
@@ -33,7 +33,6 @@ export default function BrandHeroCTA({
         className="inline-flex items-center gap-2 rounded-lg border border-white/25 bg-white/5 px-6 py-3.5 text-sm font-semibold tracking-wide text-white backdrop-blur-sm transition-all hover:border-white/40 hover:bg-white/10"
       >
         ทดลองขับ
-        <ArrowRight className="h-4 w-4" />
       </Link>
       <Link
         href={serviceHref}

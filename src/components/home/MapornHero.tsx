@@ -3,40 +3,20 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, ArrowRight, Wrench } from "lucide-react";
+import { ChevronLeft, ChevronRight, Wrench } from "lucide-react";
 import { motion } from "framer-motion";
 import { getModel } from "@/lib/data/models";
 import { getBrand } from "@/lib/data/brands";
 
-// 8 real flagship models, one per brand — each picked because it has a real product
-// photo in the project. Only 2 of the 8 (Suzuki, OMODA) have a real full-scene photo
-// suitable as an edge-to-edge background (`scene: true`); the other 6 are transparent
-// product cutouts with no real background of their own, so they render on a soft
-// brand-tinted gradient backdrop instead of a fabricated photo — full-bleed either way,
-// but only the `scene` cars are an actual photograph filling the section.
+// One flagship model per brand (full-scene photo + motion clip each), followed by the Suzy Fix slide.
 const SPOTLIGHT_SLUGS = [
-  // Order: JAECOO first, Suzuki second-to-last, NEX last (client request).
+  // Order (client request): OJ (JAECOO, OMODA), GWM, Lepas, Wuling, Farizon — Suzy Fix draft slide appended below.
   { slug: "jaecoo-j7", badge: "ADVENTURE SUV", heroImg: "/brand/models/jaecoo-j7-dust-hero.jpg", video: "/brand/video/jaecoo-j7-hero-motion.mp4", scene: true, imagePosition: "62% 40%", noOverlay: true },
-  { slug: "farizon-sv", badge: "COMMERCIAL CARGO VAN", heroImg: "/brand/studio/farizon-sv-hero.jpg", video: "/brand/video/farizon-sv-hero-motion.mp4", scene: true },
-  { slug: "wuling-xingguang-s60", badge: "7-SEAT HYBRID SUV", heroImg: "/brand/studio/wuling-xingguang-s60-hero.jpg", video: "/brand/video/wuling-xingguang-s60-hero-motion.mp4", scene: true },
-  { slug: "gwm-tank-300", badge: "OFF-ROAD SUV", heroImg: "/brand/studio/gwm-tank300-forest-hero.jpg", video: "/brand/video/gwm-tank300-diesel.mp4", scene: true },
   { slug: "omoda-5", badge: "SMART CROSSOVER", heroImg: "/brand/studio/omoda-studio.jpg", video: "/brand/video/omoda-5-hero-motion.mp4", scene: true, imagePosition: "center" },
+  { slug: "gwm-tank-300", badge: "OFF-ROAD SUV", heroImg: "/brand/studio/gwm-tank300-forest-hero.jpg", video: "/brand/video/gwm-tank300-diesel.mp4", scene: true },
   { slug: "lepas-l6", badge: "PREMIUM LIFESTYLE EV", heroImg: "/brand/models/lepas-l6-studio-sharp.jpg", video: "/brand/video/lepas-l6-hero-full.mp4", scene: true, noOverlay: true },
-  { slug: "suzuki-fronx", badge: "NEW ARRIVAL / 2026", heroImg: "/brand/studio/suzuki-fronx-bridge.jpg", video: "/brand/video/suzuki-fronx-iconic-drive.mp4", scene: true, imagePosition: "64% center" },
-  // The NEX slide features the electric tractor head (official NEX clip, contact end-card trimmed off),
-  // so its text is overridden instead of using the catalog's pickup model.
-  {
-    slug: "nex-bev-pickup",
-    badge: "EV TRACTOR",
-    heroImg: "/brand/hero/nex-ev-tractor-poster.jpg",
-    video: "/brand/video/nex-ev-tractor.mp4",
-    scene: true,
-    override: {
-      name: "EV Tractor",
-      description: "รถหัวลากไฟฟ้า 100% แบตเตอรี่ 282.62 kWh บรรทุกเต็มพิกัด 50.5 ตัน",
-      href: "/brands/nex",
-    },
-  },
+  { slug: "wuling-xingguang-s60", badge: "7-SEAT HYBRID SUV", heroImg: "/brand/studio/wuling-xingguang-s60-hero.jpg", video: "/brand/video/wuling-xingguang-s60-hero-motion.mp4", scene: true },
+  { slug: "farizon-sv", badge: "COMMERCIAL CARGO VAN", heroImg: "/brand/studio/farizon-sv-hero.jpg", video: "/brand/video/farizon-sv-hero-motion.mp4", scene: true },
 ];
 
 const CARS = SPOTLIGHT_SLUGS.flatMap(({ slug, badge, heroImg, video, scene, imagePosition, noOverlay, override }: (typeof SPOTLIGHT_SLUGS)[number] & { override?: { name: string; description: string; href: string } }) => {
@@ -48,7 +28,7 @@ const CARS = SPOTLIGHT_SLUGS.flatMap(({ slug, badge, heroImg, video, scene, imag
       model,
       badge,
       heroImg: heroImg ?? model.image,
-      video,
+      video: video as string | undefined,
       scene: scene ?? false,
       imagePosition: imagePosition ?? "center",
       noOverlay: noOverlay ?? false,
@@ -57,6 +37,24 @@ const CARS = SPOTLIGHT_SLUGS.flatMap(({ slug, badge, heroImg, video, scene, imag
       brandLogo: brand?.logo,
     },
   ];
+});
+
+// Suzy Fix draft slide — photo background until the client supplies a video (then set `video`).
+CARS.push({
+  model: { ...CARS[0].model, slug: "suzy-fix", brandSlug: "suzyfix", name: "Body & Paint Center", isNew: false, description: "" },
+  badge: "BODY & PAINT CENTER",
+  heroImg: "/brand/branches/suzy-fix/workshop.webp",
+  video: undefined,
+  scene: true,
+  imagePosition: "center",
+  noOverlay: false,
+  override: {
+    name: "Body & Paint Center",
+    description: "ศูนย์ซ่อมสีและตัวถังมาตรฐาน งานซ่อมเคลม ประกันทุกบริษัท ดูแลโดยทีมช่างมืออาชีพของมาพร ออโต้ กรุ๊ป",
+    href: "/service#suzy-fix",
+  },
+  brandColor: "#E85D2F",
+  brandLogo: "/brand/logos/suzyfix.jpg",
 });
 
 // Clips that actually contain an audio track (the other hero clips are silent files).
@@ -196,13 +194,14 @@ export default function MapornHero() {
             >
               ดูรายละเอียด
             </Link>
-            <Link
-              href={`/test-drive?model=${car.model.slug}`}
-              className="inline-flex items-center gap-2 rounded-lg border border-white/25 bg-white/5 px-6 py-3.5 text-sm font-semibold tracking-wide text-white backdrop-blur-sm transition-all hover:bg-white/10 hover:border-white/40"
-            >
-              ทดลองขับ
-              <ArrowRight className="h-4 w-4" />
-            </Link>
+            {car.model.brandSlug !== "suzyfix" && (
+              <Link
+                href={`/test-drive?model=${car.model.slug}`}
+                className="inline-flex items-center gap-2 rounded-lg border border-white/25 bg-white/5 px-6 py-3.5 text-sm font-semibold tracking-wide text-white backdrop-blur-sm transition-all hover:bg-white/10 hover:border-white/40"
+              >
+                ทดลองขับ
+              </Link>
+            )}
             <Link
               href="/service/appointment"
               className="inline-flex items-center gap-2 rounded-lg border border-white/15 px-6 py-3.5 text-sm font-semibold tracking-wide text-white/80 transition-all hover:text-white hover:border-white/40"
@@ -291,6 +290,7 @@ function getBrandLabel(brandSlug: string) {
     omoda: "OMODA",
     jaecoo: "JAECOO",
     lepas: "Lepas",
+    suzyfix: "Suzy Fix",
   };
   return labels[brandSlug] ?? brandSlug;
 }

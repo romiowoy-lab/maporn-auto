@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
-import { Wrench, Settings, PaintBucket, PackageSearch, ShieldCheck, Siren, MapPin, ChevronRight } from "lucide-react";
+import { Wrench, Settings, PaintBucket, PackageSearch, ShieldCheck, Siren, MapPin } from "lucide-react";
 import { serviceOfferings, branches } from "@/lib/data/branches";
 import SuzyFixGallery from "@/components/service/SuzyFixGallery";
 import BranchCard from "@/components/branches/BranchCard";
@@ -14,12 +14,12 @@ export const metadata: Metadata = {
 // Real service icons, matched by keyword against the real serviceOfferings titles
 // (lib/data/branches.ts) — no fabricated service categories.
 const SERVICE_ICON: Record<string, typeof Wrench> = {
-  Maintenance: Wrench,
-  Repair: Settings,
-  Body: PaintBucket,
-  Spare: PackageSearch,
-  ตรวจเช็ก: ShieldCheck,
-  Roadside: Siren,
+  เช็คระยะ: Wrench,
+  ซ่อมทั่วไป: Settings,
+  สีและตัวถัง: PaintBucket,
+  อะไหล่: PackageSearch,
+  หมดประกัน: ShieldCheck,
+  ฉุกเฉิน: Siren,
 };
 
 function iconFor(title: string) {
@@ -87,19 +87,14 @@ export default function ServicePage() {
           {serviceOfferings.map((s) => {
             const Icon = iconFor(s.title);
             return (
-              <Link
+              <div
                 key={s.title}
-                href="/service/appointment"
-                className="group rounded-2xl border border-black/[0.06] bg-white p-8 shadow-[0_4px_20px_rgba(0,0,0,0.05)] transition-all duration-300 hover:-translate-y-2 hover:border-brand-red/40"
+                className="rounded-2xl border border-black/[0.06] bg-white p-8 shadow-[0_4px_20px_rgba(0,0,0,0.05)]"
               >
                 <Icon className="h-9 w-9 text-brand-red" />
                 <h3 className="mt-5 font-bold text-brand-navy text-lg leading-snug">{s.title}</h3>
                 <p className="mt-2 text-sm text-brand-slate leading-relaxed">{s.description}</p>
-                <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-brand-slate transition-colors group-hover:text-brand-red">
-                  จองบริการนี้
-                  <ChevronRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-                </span>
-              </Link>
+              </div>
             );
           })}
         </div>

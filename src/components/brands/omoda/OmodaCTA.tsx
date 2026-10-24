@@ -25,7 +25,7 @@ export default function OmodaCTA() {
           href="/test-drive?brand=omoda"
           className="mt-9 inline-flex items-center gap-2 rounded-full bg-brand-red-gradient px-8 py-3.5 text-sm font-bold text-white transition-all hover:brightness-110 hover:-translate-y-0.5"
         >
-          ทดลองขับ →
+          ทดลองขับ
         </Link>
       </div>
     </section>
