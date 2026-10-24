@@ -72,7 +72,7 @@ function Photo({ src, alt, className = "", position = "center", label }: { src: 
   );
 }
 
-function Hero({ d }: { d: JaecooEvData }) {
+function Hero({ d, subNav }: { d: JaecooEvData; subNav?: boolean }) {
   return (
     <section id={`${d.id}-model`} className="relative min-h-[calc(100vh-4.5rem)] w-full overflow-hidden bg-[#101114]">
       {d.hero.video ? (
@@ -84,7 +84,7 @@ function Hero({ d }: { d: JaecooEvData }) {
       )}
       <div className="absolute inset-0 bg-gradient-to-b from-[#101114]/70 via-transparent to-[#101114]/80" />
 
-      <div className="container-page relative z-10 pt-28 sm:pt-32" style={SHADOW}>
+      <div className={`container-page relative z-10 ${subNav ? "pt-44 sm:pt-48" : "pt-28 sm:pt-32"}`} style={SHADOW}>
         <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease, delay: 0.15 }}>
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-white/90">{d.tagline}</p>
           <h1 className="mt-3 text-5xl font-extrabold uppercase leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-7xl">{d.name}</h1>
@@ -361,10 +361,11 @@ function CTA({ d }: { d: JaecooEvData }) {
   );
 }
 
-export default function JaecooEvShowroom({ data }: { data: JaecooEvData }) {
+// subNav: a sub-model picker sits under the brand switch bar, so the hero text starts lower
+export default function JaecooEvShowroom({ data, subNav }: { data: JaecooEvData; subNav?: boolean }) {
   return (
     <div className="bg-[#101114]">
-      <Hero d={data} />
+      <Hero d={data} subNav={subNav} />
       <Highlights d={data} />
       <Design d={data} />
       <Battery d={data} />

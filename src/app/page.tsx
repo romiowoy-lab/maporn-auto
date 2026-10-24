@@ -55,7 +55,8 @@ const BRANCH_BRAND_TILES: { label: string; branchSlug: string; image?: string; r
   { label: 'Suzuki ระยอง', branchSlug: 'rayong', region: 'east' },
   { label: 'Suzuki ศรีราชา', branchSlug: 'sriracha', region: 'east' },
   { label: 'OMODA | JAECOO ระยอง', branchSlug: 'rayong-omoda-jaecoo', image: branchCover['rayong-omoda-jaecoo'].src, region: 'east' },
-  { label: 'Lepas / Wuling ระยอง', branchSlug: 'rayong-lepas', image: branchCover['rayong-lepas'].src, region: 'east' },
+  { label: 'Lepas ระยอง', branchSlug: 'rayong-lepas', image: branchCover['rayong-lepas'].src, region: 'east' },
+  { label: 'Wuling ระยอง', branchSlug: 'rayong-wuling', image: branchCover['rayong-wuling'].src, region: 'east' },
 ];
 
 const BRANCH_REGIONS: { key: 'bangkok' | 'east'; label: string }[] = [

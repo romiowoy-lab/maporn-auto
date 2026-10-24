@@ -18,6 +18,7 @@ import LepasShowroom from "@/components/brands/lepas/LepasShowroom";
 import WulingShowroomSwitch from "@/components/brands/wuling/WulingShowroomSwitch";
 import NexShowroom from "@/components/brands/nex/NexShowroom";
 import FarizonShowroom from "@/components/brands/farizon/FarizonShowroom";
+import BrandShowroomBanner from "@/components/brands/BrandShowroomBanner";
 
 export function generateStaticParams() {
   return brands.filter((b) => !b.hidden).map((b) => ({ slug: b.slug }));
@@ -32,12 +33,12 @@ const BRAND_SEO: Record<string, { title: string; description: string; image: str
   },
   jaecoo: {
     title: "JAECOO J7 SHS และ OMODA C5 EV ตัวแทนจำหน่าย ทดลองขับ ขอใบเสนอราคา",
-    description: "JAECOO J7 SHS ไฮบริด วิ่งไกลสูงสุด 1,300 กม. (NEDC) JAECOO 5 EV, JAECOO 6 EV และ OMODA C5 EV ไฟฟ้า 100% เริ่มต้น 699,000 บาท ดูสเปก อุปกรณ์ สี และจองทดลองขับกับ Maporn Autogroup",
+    description: "JAECOO J7 SHS ไฮบริด วิ่งไกลสูงสุด 1,300 กม. (NEDC) JAECOO 5 EV, JAECOO 6 EV, JAECOO 6T EV, JAECOO 6T REEV และ OMODA C5 EV ไฟฟ้า 100% เริ่มต้น 699,000 บาท ดูสเปก อุปกรณ์ สี และจองทดลองขับกับ Maporn Autogroup",
     image: "/brand/studio3/jaecoo-j7-shs-exterior.jpg",
   },
   omoda: {
     title: "OMODA C5 EV และ JAECOO J7 SHS ตัวแทนจำหน่าย ทดลองขับ ขอใบเสนอราคา",
-    description: "OMODA C5 EV ครอสโอเวอร์ไฟฟ้า 100% 211 แรงม้า วิ่งไกล 422 กม. (NEDC) เริ่มต้น 709,000 บาท พร้อม JAECOO J7 SHS, JAECOO 5 EV และ JAECOO 6 EV ดูสเปก สี และจองทดลองขับกับ Maporn Autogroup",
+    description: "OMODA C5 EV ครอสโอเวอร์ไฟฟ้า 100% 211 แรงม้า วิ่งไกล 422 กม. (NEDC) เริ่มต้น 709,000 บาท พร้อม JAECOO J7 SHS, JAECOO 5 EV, JAECOO 6 EV, 6T EV และ 6T REEV ดูสเปก สี และจองทดลองขับกับ Maporn Autogroup",
     image: "/brand/omoda-c5/hero.jpg",
   },
 };
@@ -113,11 +114,11 @@ export default async function BrandDetailPage({ params }: { params: Promise<{ sl
 
   // Suzuki gets a switchable showroom: Fronx (Mild Hybrid) ↔ Jimny (ALLGRIP PRO 4WD).
   if (brand.slug === "suzuki") {
-    return withLd(<SuzukiShowroomSwitch />);
+    return withLd(<><SuzukiShowroomSwitch /><BrandShowroomBanner slugs={["srinakarin", "rayong", "sriracha"]} title="โชว์รูม Suzuki ในเครือมาพร" /></>);
   }
 
   if (brand.slug === "gwm") {
-    return withLd(<GwmShowroomSwitch />);
+    return withLd(<><GwmShowroomSwitch /><BrandShowroomBanner slug="lamlukka" /></>);
   }
 
   // OMODA and JAECOO are one paired dealership: both URLs open the same switchable page (JAECOO first).
@@ -130,7 +131,7 @@ export default async function BrandDetailPage({ params }: { params: Promise<{ sl
   }
 
   if (brand.slug === "wuling") {
-    return withLd(<WulingShowroomSwitch />);
+    return withLd(<><WulingShowroomSwitch /><BrandShowroomBanner slug="rayong-wuling" /></>);
   }
 
   if (brand.slug === "nex") {

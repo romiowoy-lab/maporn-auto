@@ -15,6 +15,7 @@ export const branchCover: Record<string, { src: string; alt: string; position?: 
   rayong: { src: "/brand/branches/covers/suzuki-rayong.webp", alt: "โชว์รูม Suzuki มาพรพาณิชย์ ระยอง", position: "50% 28%" },
   "rayong-omoda-jaecoo": { src: "/brand/branches/covers/omoda-jaecoo-rayong.webp", alt: "โชว์รูม OMODA | JAECOO Maporn Auto Tech ระยอง", position: "50% 40%" },
   "rayong-lepas": { src: "/brand/branches/covers/lepas-rayong.webp", alt: "โชว์รูม Lepas มาพร ระยอง", position: "50% 55%" },
+  "rayong-wuling": { src: "/brand/branches/covers/wuling-rayong.webp", alt: "โชว์รูม Wuling Maporn Rayong", position: "50% 45%" },
   "farizon-srinakarin": { src: "/brand/branches/covers/farizon-srinakarin.webp", alt: "โชว์รูม Farizon Maporn Auto Tech ศรีนครินทร์", position: "40% 55%" },
 };
 

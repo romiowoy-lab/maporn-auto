@@ -126,6 +126,22 @@ export const branches: Branch[] = [
     mapQuery: "Lepas Maporn ระยอง",
   },
   {
+    // Same site as Lepas Rayong. Phone/LINE are placeholders until the client confirms the Wuling showroom's own.
+    slug: "rayong-wuling",
+    name: "Wuling Maporn ระยอง",
+    province: "ระยอง",
+    address: "333 หมู่ 4 ตำบลทับมา อำเภอเมืองระยอง ระยอง 21000",
+    phone: "063-963-5297",
+    line: "@mapornautogroup",
+    googleMapsUrl: "https://maps.app.goo.gl/JVAsEfaq1yxcSMzh9",
+    hours: "วันจันทร์ - เสาร์ 08:00 - 17:00 น.",
+    brands: ["wuling"],
+    isShowroom: true,
+    isServiceCenter: false,
+    salesContact: "ฝ่ายขาย โทร. 063-963-5297",
+    mapQuery: "Wuling Maporn ระยอง",
+  },
+  {
     slug: "suzy-fix",
     name: "Suzy Fix ศูนย์ซ่อมสีและตัวถัง",
     province: "ระยอง",

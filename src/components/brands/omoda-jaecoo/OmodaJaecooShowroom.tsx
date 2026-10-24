@@ -7,19 +7,29 @@ import JaecooShowroom from "@/components/brands/jaecoo/JaecooShowroom";
 import JaecooEvShowroom from "@/components/brands/jaecoo/JaecooEvShowroom";
 import { j5 } from "@/lib/data/jaecoo-j5";
 import { j6 } from "@/lib/data/jaecoo-j6";
+import { j6tEv } from "@/lib/data/jaecoo-6t-ev";
+import { j6tReev } from "@/lib/data/jaecoo-6t-reev";
+import { formatTHB } from "@/lib/utils";
 import OmodaC5Showroom from "@/components/brands/omoda-jaecoo/OmodaC5Showroom";
 import BrandShowroomBanner from "@/components/brands/BrandShowroomBanner";
 
 // OMODA and JAECOO are one paired dealership — one page, one switch. JAECOO first
 // JAECOO 6 EV opens first, then J7 SHS and JAECOO 5 EV; OMODA C5 EV last. Phones show the short labels.
 // Switching plays a full-screen brand "swipe" (sweeps in, swaps the page underneath, sweeps out).
+// JAECOO 6 is a family: its tab carries a second row to pick the sub-model (6 EV / 6T EV / 6T REEV).
 
 type View = "jaecoo" | "j5" | "j6" | "omoda";
 
+const J6_FAMILY = [
+  { data: j6, label: "6 EV", note: "ไฟฟ้า 100%" },
+  { data: j6tEv, label: "6T EV", note: "ไฟฟ้า 100% · 4WD" },
+  { data: j6tReev, label: "6T REEV", note: "ไฟฟ้า + ขยายระยะ 800 กม." },
+];
+
 const BRAND: Record<View, { label: string; short: string; logo: string; sweep: string; glow: string }> = {
   j6: {
-    label: "JAECOO 6 EV",
-    short: "J6 EV",
+    label: "JAECOO 6",
+    short: "J6",
     logo: "/brand/logos/jaecoo.svg",
     sweep: "linear-gradient(120deg,#101418 0%,#26302f 45%,#C8B27A 100%)",
     glow: "#C8B27A",
@@ -56,6 +66,7 @@ export default function OmodaJaecooShowroom() {
   const [view, setView] = useState<View>("j6");
   const [target, setTarget] = useState<View>("j6");
   const [busy, setBusy] = useState(false);
+  const [j6Sub, setJ6Sub] = useState(0);
   const [spin, setSpin] = useState(0);
   const controls = useAnimationControls();
 
@@ -81,7 +92,7 @@ export default function OmodaJaecooShowroom() {
           <motion.span animate={{ rotate: spin }} transition={{ duration: 0.6, ease }} className="hidden text-white/60 sm:inline-flex" aria-hidden="true">
             <ArrowLeftRight className="h-4 w-4" />
           </motion.span>
-          <div className="relative flex rounded-full bg-white/[0.06] p-1" role="tablist" aria-label="สลับรุ่น JAECOO J7 / JAECOO 5 EV / JAECOO 6 EV / OMODA C5 EV">
+          <div className="relative flex rounded-full bg-white/[0.06] p-1" role="tablist" aria-label="สลับรุ่น JAECOO 6 / JAECOO J7 / JAECOO 5 EV / OMODA C5 EV">
             {(Object.keys(BRAND) as View[]).map((v) => {
               const active = target === v;
               return (
@@ -112,6 +123,35 @@ export default function OmodaJaecooShowroom() {
         </div>
       </div>
 
+      {/* JAECOO 6 sub-models: name + starting price so the choice is obvious */}
+      {view === "j6" && (
+        <div className="sticky top-[8.25rem] z-[59] -mb-[4.5rem] flex justify-center px-3 pt-2 pointer-events-none sm:top-[8.75rem]">
+          <div className="pointer-events-auto flex items-center gap-1 rounded-2xl border border-[#C8B27A]/40 bg-black/60 p-1 shadow-[0_8px_24px_rgba(0,0,0,0.4)] backdrop-blur-xl" role="tablist" aria-label="รุ่นย่อย JAECOO 6">
+            <span className="hidden px-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#C8B27A] sm:inline">รุ่นย่อย</span>
+            {J6_FAMILY.map((m, i) => {
+              const active = j6Sub === i;
+              return (
+                <button
+                  key={m.data.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={active}
+                  title={m.note}
+                  onClick={() => {
+                    setJ6Sub(i);
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                  className={`flex min-w-[96px] flex-col items-center rounded-xl px-3 py-1.5 leading-tight transition-colors sm:min-w-[132px] ${active ? "bg-[#C8B27A] text-[#101114]" : "text-white/75 hover:bg-white/10 hover:text-white"}`}
+                >
+                  <span className="text-xs font-extrabold uppercase tracking-wide sm:text-sm">{m.label}</span>
+                  <span className={`text-[10px] sm:text-[11px] ${active ? "text-[#101114]/75" : "text-white/50"}`}>เริ่ม {formatTHB(m.data.startPrice)}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
       {/* The swipe overlay covers the swap, so the new page simply fades in underneath it */}
       <motion.div key={view} initial={{ opacity: 0.4 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }}>
         {view === "jaecoo" ? (
@@ -119,7 +159,7 @@ export default function OmodaJaecooShowroom() {
         ) : view === "j5" ? (
           <JaecooEvShowroom data={j5} />
         ) : view === "j6" ? (
-          <JaecooEvShowroom data={j6} />
+          <JaecooEvShowroom key={J6_FAMILY[j6Sub].data.id} data={J6_FAMILY[j6Sub].data} subNav />
         ) : (
           <OmodaC5Showroom />
         )}
