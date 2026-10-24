@@ -120,7 +120,7 @@ export default function HomePage() {
               <Link
                 key={u.key}
                 href={u.href}
-                className={`business-card group relative ${i === BENTO_UNITS.length - 1 && BENTO_UNITS.length % 2 === 1 ? "col-span-2 aspect-[8/5] sm:aspect-auto" : "aspect-[4/5] sm:aspect-[4/4.5]"} overflow-hidden rounded-3xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-2xl`}
+                className="business-card group relative aspect-[4/5] sm:aspect-[4/4.5] overflow-hidden rounded-3xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-2xl"
                 style={{ ["--accent" as string]: u.color }}
               >
                 {u.fit === "contain" ? (
