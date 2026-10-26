@@ -46,7 +46,7 @@ function BrandFloat({ b, active, index, compact }: { b: BrandItem; active: boole
       href={b.href}
       title={b.key === "suzyfix" ? "ศูนย์ซ่อมสีและตัวถัง Suzy Fix" : `ดูรุ่นรถ ${b.name}`}
       aria-current={active ? "page" : undefined}
-      className={`brand-float group relative flex shrink-0 flex-col items-center justify-center ${compact ? "h-14 min-w-0 px-0" : "h-16 px-2 xl:px-3"}`}
+      className={`brand-float group relative flex shrink-0 flex-col items-center justify-center ${compact ? "h-14 min-w-0 px-0" : "h-16 px-1.5 xl:px-3"}`}
       style={{ ["--d" as string]: `${index * -0.45}s` }}
     >
       <span className="brand-float-mark flex h-9 items-center transition-transform duration-300 ease-out group-hover:-translate-y-1.5">
@@ -76,12 +76,12 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-black/[0.06] shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center gap-4 h-16">
         {/* Logo / wordmark */}
-        <Link href="/" className="flex items-center gap-2.5 shrink-0" onClick={() => setOpen(false)}>
-          <MapornLogo variant="red" className="h-9 w-auto sm:h-10" />
+        <Link href="/" className="flex items-center gap-2.5 shrink-0 lg:mr-2 lg:border-r lg:border-black/10 lg:pr-6 xl:mr-4 xl:pr-8" onClick={() => setOpen(false)}>
+          <MapornLogo variant="red" className="h-8 w-auto sm:h-9 xl:h-10" />
         </Link>
 
         {/* Center: floating brand logos (no boxes), full colour, static. */}
-        <nav aria-label="แบรนด์รถยนต์" className="hidden lg:flex flex-1 min-w-0 items-center justify-center gap-1 xl:gap-3">
+        <nav aria-label="แบรนด์รถยนต์" className="hidden lg:flex flex-1 min-w-0 items-center justify-center-safe gap-0 xl:gap-2">
           {BRAND_STRIP.map((b, i) => (
             <BrandFloat key={b.key} b={b} active={isActive(b)} index={i} />
           ))}
@@ -111,7 +111,7 @@ export default function Header() {
             className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg border border-black/10 bg-black/[0.02] text-brand-navy text-xs font-semibold transition-colors hover:bg-black/[0.05] hover:border-black/20"
           >
             <Phone className="w-3.5 h-3.5" />
-            <span>โทรสอบถาม</span>
+            <span className="lg:hidden xl:inline">โทรสอบถาม</span>
           </a>
           <a
             href={`https://line.me/ti/p/${company.line}`}
