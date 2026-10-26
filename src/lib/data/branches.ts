@@ -70,7 +70,7 @@ export const branches: Branch[] = [
     slug: "farizon-srinakarin",
     name: "Farizon Maporn Auto Tech ศรีนครินทร์",
     province: "กรุงเทพมหานคร",
-    address: "เลขที่ 2 ซอยมาพร ถนนศรีนครินทร์ แขวงหนองบอน เขตประเวศ กรุงเทพฯ 10250",
+    address: "โชว์รูมและศูนย์บริการรถตู้ไฟฟ้า FARIZON เลขที่ 1292 ถนนศรีนครินทร์ แขวงสวนหลวง เขตสวนหลวง กรุงเทพมหานคร 10250",
     phone: "099-229-9894",
     line: "@mapornautogroup",
     hours: "วันจันทร์ - เสาร์ 08:00 - 17:00 น.",
@@ -78,7 +78,7 @@ export const branches: Branch[] = [
     isShowroom: true,
     isServiceCenter: true,
     salesContact: "ฝ่ายขาย โทร. 099-229-9894",
-    mapQuery: "Farizon Maporn Auto Tech ศรีนครินทร์",
+    mapQuery: "FARIZON เลขที่ 1292 ถนนศรีนครินทร์ แขวงสวนหลวง เขตสวนหลวง กรุงเทพมหานคร 10250",
   },
   {
     slug: "rayong-omoda-jaecoo",
