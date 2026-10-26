@@ -194,11 +194,11 @@ export default function HomePage() {
         <div className="absolute inset-0 opacity-[0.05] bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
 
         <div className="relative max-w-6xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-12">
+          <div className="max-w-3xl mb-12">
             <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">โชว์รูมและศูนย์บริการ</h2>
             <p className="mt-2 text-sm sm:text-base text-white/65">ครอบคลุมพื้นที่กรุงเทพฯ ปริมณฑล และภาคตะวันออก</p>
 
-            <div className="mt-8 flex flex-wrap justify-center gap-2">
+            <div className="mt-8 flex flex-wrap gap-2">
               {[{ key: 'all', label: 'ทั้งหมด' }, ...BRANCH_REGIONS].map((tab) => (
                 <button
                   key={tab.key}
