@@ -35,7 +35,7 @@ function BrandMark({ b, compact }: { b: BrandItem; compact?: boolean }) {
     return <span className={`${compact ? "text-[17px]" : "text-[22px]"} font-black leading-none tracking-[0.08em] text-[#101113]`}>{b.text}</span>;
   }
   const size = compact ? (b.big ? "h-8 w-[50px]" : "h-6 w-[44px]") : b.big ? "h-10 w-[80px]" : "h-8 w-[64px]";
-  return <img src={b.logos[0]} alt={b.name} className={`${size} object-contain`} />;
+  return <img src={b.logos[0]} alt={b.name} className={`${size} max-w-full object-contain`} />;
 }
 
 // Floating brand logo: no box. Each logo bobs gently on its own soft shadow; on hover it lifts,
@@ -46,10 +46,10 @@ function BrandFloat({ b, active, index, compact }: { b: BrandItem; active: boole
       href={b.href}
       title={b.key === "suzyfix" ? "ศูนย์ซ่อมสีและตัวถัง Suzy Fix" : `ดูรุ่นรถ ${b.name}`}
       aria-current={active ? "page" : undefined}
-      className={`brand-float group relative flex shrink-0 flex-col items-center justify-center ${compact ? "h-14 min-w-0 px-0" : "h-16 px-1.5 xl:px-3"}`}
+      className={`brand-float group relative flex min-w-0 flex-col items-center justify-center ${compact ? "h-14 px-0" : "h-16 shrink px-1.5 xl:px-3"}`}
       style={{ ["--d" as string]: `${index * -0.45}s` }}
     >
-      <span className="brand-float-mark flex h-9 items-center transition-transform duration-300 ease-out group-hover:-translate-y-1.5">
+      <span className="brand-float-mark flex h-9 max-w-full items-center transition-transform duration-300 ease-out group-hover:-translate-y-1.5">
         <BrandMark b={b} compact={compact} />
       </span>
       {/* floor shadow — sells the "floating" */}
@@ -81,7 +81,7 @@ export default function Header() {
         </Link>
 
         {/* Center: floating brand logos (no boxes), full colour, static. */}
-        <nav aria-label="แบรนด์รถยนต์" className="hidden lg:flex flex-1 min-w-0 items-center justify-center-safe gap-0 xl:gap-2">
+        <nav aria-label="แบรนด์รถยนต์" className="hidden lg:flex flex-1 min-w-0 items-center justify-center-safe gap-0 overflow-x-clip xl:gap-2">
           {BRAND_STRIP.map((b, i) => (
             <BrandFloat key={b.key} b={b} active={isActive(b)} index={i} />
           ))}
