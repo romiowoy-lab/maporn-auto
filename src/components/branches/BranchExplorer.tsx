@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Clock, Phone, MessageCircle, ExternalLink, Navigation } from "lucide-react";
 import { Branch } from "@/lib/types";
-import { getBrand } from "@/lib/data/brands";
 import { company } from "@/lib/data/company";
 import { BRANCH_PHOTO, BRANCH_PHOTO_POSITION } from "@/components/branches/BranchCard";
 
@@ -68,20 +67,6 @@ function BranchWideCard({ b }: { b: Branch }) {
               {phone}
             </a>
           </div>
-
-          {b.brands.length > 0 && (
-            <div className="flex flex-wrap gap-1.5">
-              {b.brands.map((slug) => {
-                const br = getBrand(slug);
-                if (!br) return null;
-                return (
-                  <span key={slug} className="rounded-full px-2.5 py-1 text-[10px] font-bold text-white" style={{ backgroundColor: br.colorHex }}>
-                    {br.name}
-                  </span>
-                );
-              })}
-            </div>
-          )}
 
           <div className="mt-auto grid grid-cols-3 gap-2 pt-1">
             <a href={`tel:${phone.replace(/[^0-9+]/g, "")}`} className="flex flex-col items-center gap-1 rounded-xl border border-sky-100 bg-sky-50 py-3 text-[11px] font-bold text-sky-800 transition-colors hover:bg-sky-100">
