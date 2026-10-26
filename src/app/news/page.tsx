@@ -24,15 +24,16 @@ export default async function NewsPage({
   const [featured, ...filteredRest] = filtered;
 
   return (
+    <div className="min-h-screen bg-[#101113] text-white">
     <div className="container-page py-10 sm:py-14">
       <div className="mb-8">
-        <h1 className="text-3xl sm:text-4xl font-bold text-brand-navy">ข่าวสารและบทความ</h1>
+        <h1 className="text-3xl sm:text-4xl font-bold text-white">ข่าวสารและบทความ</h1>
       </div>
 
       <div className="flex flex-wrap gap-2 mb-8">
         <Link
           href="/news"
-          className={`text-xs font-semibold rounded-full px-3.5 py-1.5 ${!category ? "bg-brand-navy text-white" : "border border-brand-line text-brand-slate"}`}
+          className={`text-xs font-semibold rounded-full px-3.5 py-1.5 ${!category ? "bg-brand-red-gradient text-white" : "border border-white/15 text-white/70 hover:border-white/40 hover:text-white"}`}
         >
           ทั้งหมด
         </Link>
@@ -40,7 +41,7 @@ export default async function NewsPage({
           <Link
             key={c}
             href={`/news?category=${c}`}
-            className={`text-xs font-semibold rounded-full px-3.5 py-1.5 ${category === c ? "bg-brand-navy text-white" : "border border-brand-line text-brand-slate"}`}
+            className={`text-xs font-semibold rounded-full px-3.5 py-1.5 ${category === c ? "bg-brand-red-gradient text-white" : "border border-white/15 text-white/70 hover:border-white/40 hover:text-white"}`}
           >
             {NEWS_CATEGORY_LABEL[c] ?? c}
           </Link>
@@ -48,7 +49,7 @@ export default async function NewsPage({
       </div>
 
       {filtered.length === 0 ? (
-        <div className="card-elevated p-12 text-center text-brand-slate text-sm">ไม่พบข่าวสารในหมวดหมู่นี้</div>
+        <div className="rounded-2xl border border-white/10 bg-[#1C1E22] p-12 text-center text-white/60 text-sm">ไม่พบข่าวสารในหมวดหมู่นี้</div>
       ) : (
         <>
           {featured && (
@@ -65,6 +66,7 @@ export default async function NewsPage({
           )}
         </>
       )}
+    </div>
     </div>
   );
 }

@@ -39,26 +39,27 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
   const label = NEWS_CATEGORY_LABEL[article.category] ?? article.category;
 
   return (
+    <div className="bg-[#101113] text-white">
     <div className="container-page py-10 sm:py-14">
-      <nav className="text-xs text-brand-slate mb-6 flex items-center gap-1.5">
-        <Link href="/news" className="hover:text-brand-navy">
+      <nav className="text-xs text-white/50 mb-6 flex items-center gap-1.5">
+        <Link href="/news" className="hover:text-white">
           ข่าวสารและบทความ
         </Link>
         <span>/</span>
-        <span className="text-brand-navy font-medium line-clamp-1">{article.title}</span>
+        <span className="text-white/85 font-medium line-clamp-1">{article.title}</span>
       </nav>
 
       <article className="max-w-3xl mx-auto">
-        <span className="text-xs font-semibold bg-slate-100 text-brand-navy px-3 py-1.5 rounded-full">{label}</span>
-        <h1 className="text-2xl sm:text-4xl font-bold leading-tight text-brand-navy mt-4">{article.title}</h1>
-        <div className="flex flex-wrap items-center gap-3 text-xs text-brand-slate mt-3">
+        <span className="text-xs font-semibold bg-white/10 text-white px-3 py-1.5 rounded-full">{label}</span>
+        <h1 className="text-2xl sm:text-4xl font-bold leading-tight text-white mt-4">{article.title}</h1>
+        <div className="flex flex-wrap items-center gap-3 text-xs text-white/50 mt-3">
           <span>โดย {article.author}</span>
           <span>•</span>
           <span>{formatDateTH(article.publishDate)}</span>
         </div>
 
         {article.image ? (
-          <div className="relative my-8 aspect-[16/9] overflow-hidden rounded-2xl bg-slate-100">
+          <div className="relative my-8 aspect-[16/9] overflow-hidden rounded-2xl border border-white/10 bg-white/5">
             <Image src={article.image} alt={article.imageAlt ?? article.title} fill priority sizes="(min-width: 768px) 768px, 100vw" className="object-cover" />
           </div>
         ) : (
@@ -70,7 +71,7 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
         ) : (
           <div className="space-y-4">
             {article.content.map((p, i) => (
-              <p key={i} className="text-brand-slate leading-relaxed">
+              <p key={i} className="text-white/75 leading-relaxed">
                 {p}
               </p>
             ))}
@@ -78,14 +79,14 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
         )}
 
         {article.category === "Service" && (
-          <div className="mt-10 rounded-2xl bg-brand-navy p-6 text-white sm:p-8">
+          <div className="mt-10 rounded-2xl border border-white/10 bg-[#1C1E22] p-6 text-white sm:p-8">
             <p className="text-lg font-bold">นัดหมายเข้าศูนย์บริการ Maporn Suzuki</p>
             <p className="mt-1 text-sm text-white/70">ช่างผู้เชี่ยวชาญ อะไหล่แท้ พร้อมห้องรับรองระหว่างรอ</p>
             <div className="mt-5 flex flex-wrap gap-3">
               <Link href="/service/appointment" className="inline-flex items-center gap-2 rounded-lg bg-brand-red-gradient px-5 py-3 text-sm font-bold text-white transition-all hover:brightness-110">
                 <CalendarCheck className="h-4 w-4" /> นัดหมายเข้าศูนย์
               </Link>
-              <a href="https://line.me/R/ti/p/@mapornsuzuki" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-lg border border-white/30 px-5 py-3 text-sm font-bold transition-colors hover:bg-white hover:text-brand-navy">
+              <a href="https://line.me/R/ti/p/@mapornsuzuki" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-lg border border-white/30 px-5 py-3 text-sm font-bold transition-colors hover:bg-white hover:text-[#101113]">
                 <MessageCircle className="h-4 w-4" /> LINE @mapornsuzuki
               </a>
             </div>
@@ -94,14 +95,14 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
 
         <div className="flex flex-wrap gap-2 mt-8">
           {article.tags.map((t) => (
-            <span key={t} className="text-xs border border-brand-line rounded-full px-3 py-1 text-brand-slate">
+            <span key={t} className="text-xs border border-white/15 rounded-full px-3 py-1 text-white/60">
               #{t}
             </span>
           ))}
         </div>
 
         {article.sourceUrl && (
-          <a href={article.sourceUrl} target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center gap-1.5 text-xs text-brand-slate hover:text-brand-red">
+          <a href={article.sourceUrl} target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center gap-1.5 text-xs text-white/45 hover:text-white">
             เผยแพร่ครั้งแรกที่ mapornsuzukith.com <ExternalLink className="h-3.5 w-3.5" />
           </a>
         )}
@@ -109,7 +110,7 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
 
       {related.length > 0 && (
         <section className="mt-16 max-w-5xl mx-auto">
-          <h2 className="text-xl font-bold text-brand-navy mb-5">บทความที่เกี่ยวข้อง</h2>
+          <h2 className="text-xl font-bold text-white mb-5">บทความที่เกี่ยวข้อง</h2>
           <div className="grid sm:grid-cols-3 gap-5">
             {related.map((n) => (
               <NewsCard key={n.slug} article={n} />
@@ -117,6 +118,7 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
           </div>
         </section>
       )}
+    </div>
     </div>
   );
 }
