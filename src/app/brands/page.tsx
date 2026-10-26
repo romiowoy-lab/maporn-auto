@@ -20,10 +20,6 @@ export default function BrandsPage() {
     <div className="min-h-screen bg-[#F7F7F5]">
       <div className="container-page py-10 sm:py-14">
         <div className="mb-10">
-          <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.25em] text-brand-red mb-3">
-            <span className="h-px w-6 bg-brand-red/60" />
-            Our Brands
-          </p>
           <h1 className="text-3xl sm:text-4xl font-bold text-brand-navy">แบรนด์ที่มาพร ออโต้ กรุ๊ป จัดจำหน่าย</h1>
           <p className="mt-2 text-brand-slate text-sm max-w-2xl">
             Maporn Autogroup เป็นตัวแทนจำหน่ายอย่างเป็นทางการของ 7 แบรนด์รถยนต์ชั้นนำ ครอบคลุมทุกไลฟ์สไตล์การเดินทาง

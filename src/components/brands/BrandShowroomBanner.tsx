@@ -54,7 +54,6 @@ export default function BrandShowroomBanner({ slug, slugs, title }: { slug?: str
               <Image src={photo.src} alt={photo.alt} fill sizes="(min-width: 1024px) 58vw, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-105" style={{ objectPosition: photo.position ?? "center" }} />
             </Link>
             <div className="flex flex-col justify-center p-6 sm:p-10">
-              <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#FF0000]">Showroom</p>
               <h2 className="mt-2 text-2xl font-extrabold tracking-tight sm:text-3xl">{branch.name}</h2>
               <p className="mt-4 flex items-start gap-2 text-sm leading-relaxed text-white/75">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#FF0000]" /> {branch.address}
@@ -73,7 +72,6 @@ export default function BrandShowroomBanner({ slug, slugs, title }: { slug?: str
   return (
     <section className="bg-[#101113] py-14 text-white sm:py-20">
       <div className="container-page">
-        <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#FF0000]">Showroom</p>
         <h2 className="mt-2 text-2xl font-extrabold tracking-tight sm:text-3xl">{title ?? "โชว์รูมในเครือมาพร"}</h2>
         <div className={`mt-8 grid gap-5 sm:grid-cols-2 ${list.length >= 3 ? "lg:grid-cols-3" : ""}`}>
           {list.map(({ branch, photo }) => (

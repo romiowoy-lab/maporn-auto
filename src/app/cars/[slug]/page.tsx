@@ -121,7 +121,6 @@ export default async function CarDetailPage({ params }: { params: Promise<{ slug
             <VehicleGallery images={galleryImages} />
 
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#FF0000]">{brand?.name}</p>
               <h1 className="mt-2 text-4xl sm:text-5xl font-extrabold tracking-tight text-white">{model.name}</h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-white/70">{model.description}</p>
 
@@ -185,7 +184,6 @@ export default async function CarDetailPage({ params }: { params: Promise<{ slug
 
       <section className="mt-14">
         <div className="mb-5">
-          <p className="mb-2 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.25em] text-[#FF0000]"><span className="h-px w-8 bg-brand-red" /> Choose Your Variant</p>
           <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">เลือกรุ่นย่อยที่ใช่สำหรับคุณ</h2>
         </div>
         <VariantTiles modelSlug={model.slug} variants={model.variants} />
@@ -264,7 +262,6 @@ export default async function CarDetailPage({ params }: { params: Promise<{ slug
       {sellingBranches.length > 0 && (
         <section className="mt-20">
           <div className="mb-5">
-            <p className="mb-2 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.25em] text-[#FF0000]"><span className="h-px w-8 bg-brand-red" /> Where to Buy</p>
             <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">สาขาที่จำหน่าย {brand?.name} {model.name}</h2>
           </div>
           <BranchContactList branches={sellingBranches} />

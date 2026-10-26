@@ -13,7 +13,6 @@ export default function BranchesPage() {
     <div className="bg-[#f6f6f5] min-h-screen">
       <div className="bg-brand-navy text-white">
         <div className="container-page py-14 sm:py-20">
-          <p className="section-eyebrow-light mb-3">Our Locations</p>
           <h1 className="text-3xl sm:text-5xl font-bold leading-tight">
             โชว์รูมและ<br className="sm:hidden" />ศูนย์บริการ
           </h1>

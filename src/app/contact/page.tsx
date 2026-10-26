@@ -56,7 +56,6 @@ export default async function ContactPage({
 
       <div className="text-center mb-10">
 
-        <p className="section-eyebrow mb-2">Contact Us</p>
 
         <h1 className="text-3xl sm:text-4xl font-bold text-brand-navy">ติดต่อเรา</h1>
 

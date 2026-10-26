@@ -18,7 +18,6 @@ export default async function ComparePage({
   return (
     <div className="container-page py-10 sm:py-14">
       <div className="mb-8">
-        <p className="section-eyebrow mb-2">Car Comparison</p>
         <h1 className="text-3xl sm:text-4xl font-bold text-brand-navy">เปรียบเทียบรถยนต์</h1>
         <p className="mt-2 text-brand-slate text-sm">เลือกรถยนต์ 2-3 รุ่นเพื่อเปรียบเทียบสเปกแบบเคียงข้างกัน</p>
       </div>

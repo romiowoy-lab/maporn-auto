@@ -37,9 +37,6 @@ export default function ModelStorySection({
         )}
       </div>
       <div className={reverse ? "lg:[direction:ltr]" : ""}>
-        <p className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.25em] text-[#FF0000]">
-          <span className="h-px w-8 bg-brand-red" /> {eyebrow}
-        </p>
         <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">{title}</h3>
         <p className="mt-3 text-sm sm:text-base leading-relaxed text-white/65">{description}</p>
 

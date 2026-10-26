@@ -72,7 +72,6 @@ export default function GwmFeaturedVehicle() {
         <div className="absolute inset-x-0 top-0 z-10 hidden lg:block pt-10 xl:pt-12 pointer-events-none">
           <div className="container-page flex justify-end">
             <div className="pointer-events-auto w-full max-w-[520px] rounded-xl bg-black/60 p-4 xl:p-5 backdrop-blur-md">
-              <p className="text-[11px] font-extrabold uppercase tracking-[0.25em] text-[#ff4545]">Why buy with Maporn?</p>
               <p className="mt-1 text-base xl:text-lg font-bold text-white">มากกว่าการขายรถ คือการดูแลทุกเส้นทาง</p>
               <div className="mt-3 grid grid-cols-2 gap-x-5 gap-y-3">
                 {WHY_ITEMS.map(({ icon: Icon, title, description }) => (

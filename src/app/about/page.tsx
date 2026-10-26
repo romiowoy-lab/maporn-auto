@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ArrowUpRight, Eye, HeartHandshake, ShieldCheck, LayoutGrid, Wrench, Users, Car, PackageSearch, PaintBucket, Fuel, Check } from "lucide-react";
-import { company, companyTimeline, companyValues, serviceDepartments } from "@/lib/data/company";
+import { ArrowRight, ArrowUpRight, Eye, HeartHandshake, ShieldCheck, LayoutGrid, Wrench, Users, Check } from "lucide-react";
+import { company, companyTimeline, companyValues } from "@/lib/data/company";
 import { getBrand } from "@/lib/data/brands";
 import { getBrandGroups } from "@/lib/data/brandGroups";
 import ScrollFx from "@/components/ui/ScrollFx";
@@ -12,8 +12,6 @@ import MapornLogo from "@/components/ui/MapornLogo";
 // framed rather than darkened. Photos in public/brand/about/ are not used on any other page.
 const IMG = {
   hero: "/brand/about/customers.webp",
-  // Suzy Fix body & paint centre front (also in the Suzy Fix branch gallery, chosen by the client)
-  service: "/brand/branches/suzy-fix/front.webp",
 };
 
 export const metadata: Metadata = {
@@ -23,9 +21,6 @@ export const metadata: Metadata = {
 };
 
 const VALUE_ICONS = [ShieldCheck, LayoutGrid, Wrench, Users];
-// Body & paint leads the service list on this page
-const DEPT_ORDER = [2, 0, 1, 3];
-const DEPT_ICONS: Record<number, typeof Car> = { 0: Car, 1: PackageSearch, 2: PaintBucket, 3: Fuel };
 
 const TEAM = [
   { name: "นางทิพย์รัตน์ โอภาสรังสรรค์", initial: "ท", role: "ประธานกรรมการบริหาร" },
@@ -57,20 +52,9 @@ function InstagramIcon({ className = "" }: { className?: string }) {
   );
 }
 
-function Eyebrow({ children, center = false }: { children: React.ReactNode; center?: boolean }) {
-  return (
-    <p className={`flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.28em] text-[#FF0000] ${center ? "justify-center" : ""}`}>
-      <span className="h-px w-8 bg-brand-red" />
-      {children}
-      {center && <span className="h-px w-8 bg-brand-red" />}
-    </p>
-  );
-}
-
-function SectionTitle({ eyebrow, title, sub, center = false }: { eyebrow: string; title: React.ReactNode; sub?: string; center?: boolean }) {
+function SectionTitle({ title, sub, center = false }: { title: React.ReactNode; sub?: string; center?: boolean }) {
   return (
     <div className={center ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}>
-      <Eyebrow center={center}>{eyebrow}</Eyebrow>
       <h2 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-[2.6rem]">{title}</h2>
       {sub && <p className="mt-3 leading-relaxed text-white/60">{sub}</p>}
     </div>
@@ -173,7 +157,7 @@ export default function AboutPage() {
       {/* ================= BRANDS ================= */}
       <section className="border-t border-white/[0.06] bg-[#111215] py-16 sm:py-20">
         <div className="container-page">
-          <SectionTitle center eyebrow="Our Brands" title={<>แบรนด์ในเครือ Maporn Autogroup</>} sub={`ตัวแทนจำหน่ายอย่างเป็นทางการ ${brandCount} แบรนด์ ครอบคลุมรถยนต์นั่ง รถเพื่อการพาณิชย์ และรถยนต์ไฟฟ้า`} />
+          <SectionTitle center title={<>แบรนด์ในเครือ Maporn Autogroup</>} sub={`ตัวแทนจำหน่ายอย่างเป็นทางการ ${brandCount} แบรนด์ ครอบคลุมรถยนต์นั่ง รถเพื่อการพาณิชย์ และรถยนต์ไฟฟ้า`} />
           <ScrollFx effect="fade-up" stagger={0.06} className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {groups.map((g) => {
               const logos = g.slugs.map((s) => getBrand(s)?.logo).filter(Boolean) as string[];
@@ -201,7 +185,7 @@ export default function AboutPage() {
       <section className="py-16 sm:py-20">
         <div className="container-page grid gap-12 lg:grid-cols-2 lg:gap-16">
           <ScrollFx effect="fade-up">
-            <SectionTitle eyebrow="Our Story" title={<>{years} ปีบนเส้นทาง<br />แห่งความไว้วางใจ</>} />
+            <SectionTitle title={<>{years} ปีบนเส้นทาง<br />แห่งความไว้วางใจ</>} />
             <p className="mt-6 leading-relaxed text-white/65">
               มาพรพาณิชย์เริ่มต้นธุรกิจตัวแทนจำหน่ายรถยนต์ในปี {company.foundedYear} และเติบโตเป็น Maporn Autogroup ในวันนี้
               เรารวมแบรนด์รถยนต์ชั้นนำไว้ในเครือเดียว พร้อมศูนย์บริการและศูนย์ซ่อมสีตัวถังที่ดูแลรถของคุณได้ครบในที่เดียว
@@ -217,8 +201,8 @@ export default function AboutPage() {
 
           <div className="space-y-4">
             {[
-              { icon: Eye, label: "Vision", title: "วิสัยทัศน์", lead: null as string | null, text: "เป็นเครือข่ายผู้จัดจำหน่ายรถยนต์ที่ดูแลลูกค้าทั่วประเทศ พร้อมศูนย์บริการในกรุงเทพฯ และภาคตะวันออก ที่ให้ความอุ่นใจตลอดการเป็นเจ้าของรถ ไม่ใช่แค่วันที่ซื้อ" },
-              { icon: HeartHandshake, label: "Mission", title: "พันธกิจ", lead: "อุ่นใจเมื่อซื้อรถและใช้บริการกับมาพร", text: "มอบความอุ่นใจตั้งแต่วันแรกที่คุณเดินเข้ามา จนถึงทุกวันที่คุณใช้รถ ด้วยการดูแลลูกค้าด้วยใจตลอดทาง" },
+              { icon: Eye, label: "Vision", title: "วิสัยทัศน์", lead: null as string | null, text: "มาพร ออโต้ กรุ๊ป มุ่งมั่นพัฒนาธุรกิจเพื่อเป็นเครือข่ายตัวแทนจำหน่ายรถยนต์ที่ดูแลลูกค้าทั่วประเทศ พร้อมศูนย์บริการสำหรับในกรุงเทพฯ และภาคตะวันออก (ระยอง จันทบุรี ตราด ชลบุรี) ที่ให้ความอุ่นใจแก่ลูกค้าตลอดการเป็นเจ้าของรถ ไม่ใช่แค่วันที่ซื้อ" },
+              { icon: HeartHandshake, label: "Mission", title: "พันธกิจ", lead: "อุ่นใจเมื่อซื้อรถและใช้บริการกับมาพร", text: "มาพร ออโต้ กรุ๊ป มอบความอุ่นใจให้ลูกค้าตั้งแต่วันแรกที่เดินเข้ามาหาเรา จนถึงทุกวันที่คุณใช้รถ — เพราะเรามุ่งมั่นดูแลลูกค้าด้วยใจ เราพร้อมดูแลคุณต่อไปตลอดทาง" },
             ].map(({ icon: Icon, ...c }, i) => (
               <ScrollFx key={c.title} effect="fade-up" delay={i * 0.08} className="rounded-2xl border border-white/10 bg-gradient-to-br from-[#17181c] to-[#111215] p-7">
                 <div className="flex items-center gap-3">
@@ -238,51 +222,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ================= BODY & PAINT ================= */}
-      <section className="pb-16 sm:pb-20">
-        <div className="container-page">
-          <ScrollFx effect="fade-up" className="grid overflow-hidden rounded-[28px] border border-white/10 bg-[#141518] lg:grid-cols-2">
-            <div className="relative min-h-[300px] lg:min-h-full">
-              <Image src={IMG.service} alt="ศูนย์บริการมาตรฐานซ่อมตัวถังและสี Suzy Fix" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover object-[40%_50%]" />
-            </div>
-            <div className="p-7 sm:p-10">
-              <Eyebrow>Body &amp; Paint · Full Service</Eyebrow>
-              <h2 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl">ศูนย์ซ่อมตัวถังและสี<br />แบบมืออาชีพ</h2>
-              <p className="mt-4 leading-relaxed text-white/60">
-                ศูนย์ซ่อมสีและตัวถัง Suzy Fix งานมาตรฐานโรงงาน ทั้งเคลมประกันและงานเงินสด พร้อมศูนย์บริการสำหรับทุกแบรนด์ในเครือ
-              </p>
-              <ul className="mt-7 grid gap-x-6 gap-y-5 sm:grid-cols-2">
-                {DEPT_ORDER.map((idx) => {
-                  const s = serviceDepartments[idx];
-                  const Icon = DEPT_ICONS[idx];
-                  return (
-                    <li key={s.title} className="flex gap-3">
-                      <Icon className="mt-0.5 h-5 w-5 shrink-0 text-[#FF0000]" strokeWidth={1.8} />
-                      <div>
-                        <p className="font-semibold">{s.title}</p>
-                        <p className="mt-0.5 text-sm leading-relaxed text-white/50">{s.description}</p>
-                      </div>
-                    </li>
-                  );
-                })}
-              </ul>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/body-shop" className="inline-flex items-center gap-2 rounded-xl bg-brand-red-gradient px-5 py-3 text-sm font-bold transition-all hover:brightness-110">
-                  ดูงานซ่อมสีและตัวถัง <ArrowRight className="h-4 w-4" />
-                </Link>
-                <Link href="/service/appointment" className="inline-flex items-center gap-2 rounded-xl border border-white/20 px-5 py-3 text-sm font-bold transition-colors hover:bg-white hover:text-[#0c0d0f]">
-                  นัดหมายเข้าศูนย์
-                </Link>
-              </div>
-            </div>
-          </ScrollFx>
-        </div>
-      </section>
-
       {/* ================= MILESTONES ================= */}
       <section className="border-y border-white/[0.06] bg-[#111215] py-16 sm:py-20">
         <div className="container-page">
-          <SectionTitle center eyebrow="Milestones" title="เส้นทางการเติบโตของเรา" />
+          <SectionTitle center title="เส้นทางการเติบโตของเรา" />
           <div className="relative mt-12">
             <div className="absolute left-0 right-0 top-[18px] hidden h-px bg-gradient-to-r from-transparent via-brand-red/60 to-transparent lg:block" />
             <ol className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 lg:mx-0 lg:grid lg:grid-cols-6 lg:overflow-visible lg:px-0">
@@ -308,7 +251,7 @@ export default function AboutPage() {
       {/* ================= WHY MAPORN + LEADERSHIP ================= */}
       <section className="py-16 sm:py-20">
         <div className="container-page">
-          <SectionTitle center eyebrow="Why Maporn" title="ทำไมลูกค้าไว้วางใจมาพร" />
+          <SectionTitle center title="ทำไมลูกค้าไว้วางใจมาพร" />
           <ScrollFx effect="fade-up" stagger={0.06} className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {values.map((v, i) => {
               const Icon = VALUE_ICONS[i % VALUE_ICONS.length];
@@ -331,7 +274,7 @@ export default function AboutPage() {
           </ScrollFx>
 
           <div className="mt-16 grid items-center gap-6 lg:grid-cols-[0.8fr_1.2fr]">
-            <SectionTitle eyebrow="Leadership" title="ทีมผู้บริหาร" />
+            <SectionTitle title="ทีมผู้บริหาร" />
             <ScrollFx effect="fade-up" className="grid gap-4 sm:grid-cols-2">
               {TEAM.map((m) => (
                 <div key={m.name} className="flex items-center gap-4 rounded-2xl border border-white/10 bg-[#141518] p-5">

@@ -55,7 +55,6 @@ export default function GwmCTA() {
       </div>
 
       <ScrollFx effect="fade-up" className="container-page py-14 sm:py-20 text-center">
-        <p className="text-xs font-bold uppercase tracking-[0.3em] text-brand-red mb-4">Maporn Autogroup · GWM Showroom</p>
         <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
           โชว์รูม GWM by Maporn Autogroup
         </h2>

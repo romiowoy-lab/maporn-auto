@@ -100,10 +100,6 @@ export default function HomePage() {
 
         <div className="relative max-w-[1800px] mx-auto">
           <div className="mb-10 sm:mb-12">
-            <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-brand-red/[0.05] border border-brand-red/20 text-brand-red text-[10px] font-semibold tracking-widest uppercase mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-red animate-pulse mr-2" />
-              Our Brands
-            </div>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-white">
               แบรนด์ที่มาพร ออโต้ กรุ๊ป จัดจำหน่ายและให้บริการ
             </h2>
@@ -199,9 +195,6 @@ export default function HomePage() {
 
         <div className="relative max-w-6xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <span className="inline-block mb-3 rounded-full border border-brand-red/20 bg-brand-red/5 px-3 py-1 text-xs font-bold uppercase tracking-widest text-[#FF0000]">
-              Our Locations
-            </span>
             <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">โชว์รูมและศูนย์บริการ</h2>
             <p className="mt-2 text-sm sm:text-base text-white/65">ครอบคลุมพื้นที่กรุงเทพฯ ปริมณฑล และภาคตะวันออก</p>
 
@@ -287,7 +280,6 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center mb-10">
             {/* Left: heading + feature cards */}
             <div>
-              <span className="text-xs font-bold text-[#FF0000] uppercase tracking-widest">Why Maporn</span>
               <h2 className="text-3xl sm:text-4xl font-black text-white mt-2 mb-6">ทำไมต้องมาพรพาณิชย์</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
@@ -367,7 +359,6 @@ export default function HomePage() {
         <div className="relative max-w-6xl mx-auto">
           <div className="flex items-end justify-between gap-4 mb-10">
             <div>
-              <span className="text-xs font-bold text-[#FF0000] uppercase tracking-widest">Blog &amp; News</span>
               <h2 className="text-2xl sm:text-3xl font-black text-white mt-2">ข่าวสารและบทความ</h2>
             </div>
             <Link href="/news" className="hidden sm:inline-flex items-center gap-1 text-xs font-semibold text-brand-red hover:text-brand-red/80 transition-colors shrink-0">

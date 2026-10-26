@@ -81,9 +81,6 @@ export default function ExploreRange() {
 
         <div className="relative z-10 max-w-[1900px] mx-auto px-4 sm:px-8 lg:px-12 pt-10 sm:pt-14">
           <div className="mb-6">
-            <span className="text-[11px] sm:text-xs font-bold text-brand-red uppercase tracking-[0.12em]">
-              Explore the Range
-            </span>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-white mt-2">
               สำรวจรถยนต์ทุกรุ่น
             </h2>

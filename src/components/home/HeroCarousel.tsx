@@ -123,7 +123,6 @@ export default function HeroCarousel() {
               </div>
 
               <div className="p-4">
-                <p className="text-[#FF0000] text-[10px] font-semibold uppercase tracking-[0.2em]">{slide.eyebrow}</p>
                 <h3 className="mt-1 text-white text-lg font-semibold leading-snug">{slide.title}</h3>
                 <div className="mt-3 flex flex-wrap items-center gap-2">
                   <Link href="/contact" className="btn-red text-[11px] px-3 py-2">สอบถาม</Link>

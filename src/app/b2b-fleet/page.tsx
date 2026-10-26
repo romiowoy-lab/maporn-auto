@@ -21,7 +21,6 @@ export default function B2BFleetPage() {
       <section className="bg-brand-navy text-white py-20 sm:py-28">
         <div className="container-page">
           <ScrollFx effect="fade-up">
-            <p className="section-eyebrow-light mb-4">B2B Fleet Solutions</p>
             <h1 className="text-display text-white max-w-2xl">โซลูชันยานพาหนะสำหรับธุรกิจของคุณ</h1>
             <p className="mt-5 max-w-xl text-white/70 text-sm sm:text-base leading-relaxed">
               Maporn Autogroup พร้อมดูแลฟลีทของธุรกิจคุณตั้งแต่รถส่งพัสดุ รถรับส่งพนักงาน ไปจนถึงการเปลี่ยนผ่านสู่รถยนต์ไฟฟ้าเชิงพาณิชย์

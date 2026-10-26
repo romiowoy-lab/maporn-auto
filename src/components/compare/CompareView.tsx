@@ -58,7 +58,6 @@ function RecommendationCard({ slugA, slugB, context }: { slugA: string; slugB: s
 
   return (
     <div className="card-elevated p-6">
-      <p className="text-[11px] font-semibold text-brand-red uppercase tracking-widest mb-3">คำแนะนำจากผู้เชี่ยวชาญ Maporn</p>
       <p className="font-bold text-brand-navy mb-1">
         {brandA?.name} {a.name} <span className="text-brand-slate font-normal">vs</span> {brandB?.name} {b.name}
       </p>
@@ -259,7 +258,6 @@ export default function CompareView({ initialSlug = "", initialSlug2 = "" }: { i
       )}
 
       <div className="mt-14">
-        <p className="section-eyebrow mb-2">Expert Picks</p>
         <h2 className="text-2xl font-bold text-brand-navy mb-6">คำแนะนำเปรียบเทียบข้ามแบรนด์ยอดนิยม</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {RECOMMENDED_PAIRS.map((pair) => (

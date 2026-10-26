@@ -14,7 +14,6 @@ export default function GwmWhyMaporn() {
     <section className="bg-[#080808] py-20 sm:py-28 border-t border-white/[0.06] lg:hidden">
       <div className="container-page">
         <ScrollFx effect="fade-up">
-          <p className="text-xs font-bold uppercase tracking-[0.3em] text-brand-red">Why Buy With Maporn?</p>
           <h2 className="mt-2 text-2xl sm:text-3xl font-bold text-white">มากกว่าการขายรถ คือการดูแลทุกเส้นทาง</h2>
         </ScrollFx>
 

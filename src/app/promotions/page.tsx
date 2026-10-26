@@ -19,7 +19,6 @@ export default function PromotionsPage() {
   return (
     <div className="container-page py-10 sm:py-14">
       <div className="mb-10">
-        <p className="section-eyebrow mb-2">Promotions</p>
         <h1 className="text-3xl sm:text-4xl font-bold text-brand-navy">โปรโมชั่นทั้งหมด</h1>
         <p className="mt-2 text-brand-slate text-sm max-w-2xl">
           โปรโมชั่นรถใหม่ EV ไฟแนนซ์ แคมเปญพิเศษ ส่วนลด และของแถม จากทั้ง 7 แบรนด์ในเครือ

@@ -11,9 +11,6 @@ export default function TrustSection() {
     <section className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#15161A] p-8 sm:p-12">
       <div className="pointer-events-none absolute -top-20 left-1/2 h-56 w-[480px] -translate-x-1/2 rounded-full bg-brand-red/[0.10] blur-[110px]" />
       <div className="relative mx-auto mb-10 max-w-2xl text-center">
-        <p className="mb-3 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.25em] text-[#FF0000]">
-          <span className="h-px w-8 bg-brand-red" /> Certified Professional <span className="h-px w-8 bg-brand-red" />
-        </p>
         <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white">มั่นใจทุกการทดลองขับกับทีมมืออาชีพ</h2>
         <p className="mt-3 text-sm leading-relaxed text-white/65">
           ทีมที่ปรึกษาการขายของ Maporn Autogroup ผ่านการอบรมหลักสูตร Test Drive &amp; Product Training

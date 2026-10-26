@@ -10,7 +10,6 @@ export const metadata: Metadata = {
 export default function PhotoCreditsPage() {
   return (
     <div className="container-page py-10 sm:py-14 max-w-3xl">
-      <p className="section-eyebrow mb-2">Photo Credits</p>
       <h1 className="text-3xl sm:text-4xl font-bold text-brand-navy">เครดิตภาพ</h1>
       <p className="mt-3 text-brand-slate text-sm leading-relaxed">
         ภาพรถยนต์บนเว็บไซต์นี้ส่วนหนึ่งนำมาจาก Wikimedia Commons ภายใต้สัญญาอนุญาตแบบเปิด (Creative Commons)

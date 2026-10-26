@@ -26,7 +26,6 @@ export default async function NewsPage({
   return (
     <div className="container-page py-10 sm:py-14">
       <div className="mb-8">
-        <p className="section-eyebrow mb-2">News & Updates</p>
         <h1 className="text-3xl sm:text-4xl font-bold text-brand-navy">ข่าวสารและบทความ</h1>
       </div>
 
