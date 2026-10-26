@@ -19,7 +19,8 @@ const NAV_LINKS = [
 // Brand order per client: OJ (OMODA & JAECOO as one slot, shown as "OJ"), GWM, Suzuki, Lepas, Wuling,
 // Farizon, Suzy Fix (NEX hidden for now). Lepas renders bigger (`big: true`): its logo is a thin cursive wordmark.
 const BRAND_STRIP = [
-  { key: "omoda-jaecoo", name: "OJ", href: "/brands/omoda", logos: [] as string[], text: "OJ" },
+  // Official OMODA | JAECOO wordmark — very wide (≈19:1), so it gets its own sizing
+  { key: "omoda-jaecoo", name: "OMODA | JAECOO", href: "/brands/omoda", logos: ["/brand/logos/omoda-jaecoo.svg"], wide: true },
   { key: "gwm", name: "GWM", href: "/brands/gwm", logos: ["/brand/logos/gwm.png"] },
   { key: "suzuki", name: "Suzuki", href: "/brands/suzuki", logos: ["/brand/logos/suzuki.svg"] },
   { key: "lepas", name: "Lepas", href: "/brands/lepas", logos: ["/brand/logos/lepas.png"], big: true },
@@ -31,10 +32,10 @@ const BRAND_STRIP = [
 type BrandItem = (typeof BRAND_STRIP)[number];
 
 function BrandMark({ b, compact }: { b: BrandItem; compact?: boolean }) {
-  if ("text" in b && b.text) {
-    return <span className={`${compact ? "text-[17px]" : "text-[22px]"} font-black leading-none tracking-[0.08em] text-[#101113]`}>{b.text}</span>;
-  }
-  const size = compact ? (b.big ? "h-8 w-[50px]" : "h-6 w-[44px]") : b.big ? "h-10 w-[80px]" : "h-8 w-[64px]";
+  const wide = "wide" in b && b.wide;
+  const size = wide
+    ? compact ? "h-auto w-[150px]" : "h-auto w-[132px] xl:w-[150px]"
+    : compact ? (b.big ? "h-8 w-[50px]" : "h-6 w-[44px]") : b.big ? "h-10 w-[80px]" : "h-8 w-[64px]";
   return <img src={b.logos[0]} alt={b.name} className={`${size} max-w-full object-contain`} />;
 }
 
@@ -221,9 +222,11 @@ export default function Header() {
 
     <div className="lg:hidden border-b border-black/[0.06] bg-white">
       {/* All logos fit the screen width: one equal column each, nothing runs past the edge */}
-      <nav aria-label="แบรนด์รถยนต์" className="grid grid-cols-7 items-center px-1">
+      <nav aria-label="แบรนด์รถยนต์" className="grid grid-cols-4 items-center px-1">
         {BRAND_STRIP.map((b, i) => (
-          <BrandFloat key={b.key} b={b} active={isActive(b)} index={i} compact />
+          <div key={b.key} className={"wide" in b && b.wide ? "col-span-2 flex justify-center" : "flex justify-center"}>
+            <BrandFloat b={b} active={isActive(b)} index={i} compact />
+          </div>
         ))}
       </nav>
     </div>

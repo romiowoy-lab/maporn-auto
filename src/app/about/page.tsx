@@ -160,13 +160,13 @@ export default function AboutPage() {
           <SectionTitle center title={<>แบรนด์ในเครือ Maporn Autogroup</>} sub={`ตัวแทนจำหน่ายอย่างเป็นทางการ ${brandCount} แบรนด์ ครอบคลุมรถยนต์นั่ง รถเพื่อการพาณิชย์ และรถยนต์ไฟฟ้า`} />
           <ScrollFx effect="fade-up" stagger={0.06} className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {groups.map((g) => {
-              const logos = g.slugs.map((s) => getBrand(s)?.logo).filter(Boolean) as string[];
+              const logos = (g.isCombined ? [g.logo] : g.slugs.map((s) => getBrand(s)?.logo)).filter(Boolean) as string[];
               return (
                 <Link key={g.key} href={g.href} className="group flex items-center gap-5 rounded-2xl border border-white/10 bg-[#17181c] p-4 transition-all duration-300 hover:-translate-y-1 hover:border-white/25 hover:bg-[#1c1d22]">
                   <span className="flex h-20 w-32 shrink-0 items-center justify-center gap-2 rounded-xl bg-white px-3">
                     {logos.map((l) => (
                       // eslint-disable-next-line @next/next/no-img-element
-                      <img key={l} src={l} alt="" className={`w-auto object-contain ${logos.length > 1 ? "h-4 max-w-[52px]" : "h-8 max-w-[96px]"}`} />
+                      <img key={l} src={l} alt="" className={g.isCombined ? "h-auto w-full object-contain" : "h-8 w-auto max-w-[96px] object-contain"} />
                     ))}
                   </span>
                   <span className="min-w-0 flex-1">

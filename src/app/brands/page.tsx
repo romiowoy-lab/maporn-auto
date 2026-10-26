@@ -2,7 +2,6 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { Wrench } from "lucide-react";
 import { getBrandGroups } from "@/lib/data/brandGroups";
-import { getBrand } from "@/lib/data/brands";
 
 export const metadata: Metadata = {
   title: "แบรนด์รถยนต์ Suzuki GWM OMODA JAECOO Lepas Wuling Farizon",
@@ -14,7 +13,6 @@ const ORDER = ["omoda-jaecoo", "gwm", "suzuki", "lepas", "wuling", "farizon", "n
 
 export default function BrandsPage() {
   const groups = [...getBrandGroups()].sort((a, b) => ORDER.indexOf(a.key) - ORDER.indexOf(b.key));
-  const jaecoo = getBrand("jaecoo");
 
   return (
     <div className="min-h-screen bg-[#F7F7F5]">
@@ -35,21 +33,11 @@ export default function BrandsPage() {
             >
               <div className="flex h-32 sm:h-36 items-center justify-center gap-4">
                 {g.isCombined ? (
-                  <>
-                    <img
-                      src={g.logo}
-                      alt="OMODA"
-                      className="h-12 sm:h-14 w-auto max-w-[40%] object-contain transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
-                    />
-                    <span className="h-10 w-px bg-black/10" />
-                    {jaecoo?.logo && (
-                      <img
-                        src={jaecoo.logo}
-                        alt="JAECOO"
-                        className="h-12 sm:h-14 w-auto max-w-[40%] object-contain transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
-                      />
-                    )}
-                  </>
+                  <img
+                    src={g.logo}
+                    alt="OMODA | JAECOO"
+                    className="h-auto w-[85%] object-contain transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
+                  />
                 ) : g.logo ? (
                   <img
                     src={g.logo}

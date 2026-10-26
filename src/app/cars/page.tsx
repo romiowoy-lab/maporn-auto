@@ -104,7 +104,7 @@ export default async function CarsPage({
         const value = g.slugs.join(",");
         const active = brand === value || g.slugs.includes(brand);
         return g.isCombined
-          ? { key: g.key, name: "OJ", wordmark: "OJ", href: brandHref(value), active }
+          ? { key: g.key, name: "OMODA | JAECOO", logo: g.logo, wide: true, href: brandHref(value), active }
           : { key: g.key, name: g.name, logo: g.logo, href: brandHref(value), active };
       }),
   ];

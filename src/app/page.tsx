@@ -74,9 +74,9 @@ const VERIFIED_PHONE = new Set(['srinakarin', 'rayong', 'rayong-omoda-jaecoo', '
 // (it's a service sub-brand, not a car) — its own real logo file is used as-is, shown
 // object-contain on a solid tint rather than stretched/cropped like the 7 car photos.
 // Order per client: OJ (OMODA & JAECOO as one card), GWM, Suzuki, Lepas, Wuling, Farizon, Suzy Fix (NEX hidden for now).
-// logoText: a text badge instead of a logo image (OJ has no single combined logo file).
-const BENTO_UNITS: { key: string; tag: string; title: string; href: string; img: string; pos?: string; logo: string | null; logoText?: string; color: string; fit?: 'contain' }[] = [
-  { key: 'oj', tag: 'OJ', title: 'OJ · Feel Alive', href: '/brands/omoda', img: '/brand/jaecoo-j7/road.jpg', pos: '65% 50%', logo: null, logoText: 'OJ', color: '#B8860B' },
+// wide: the OMODA | JAECOO wordmark is ≈19:1, so its badge is sized by width.
+const BENTO_UNITS: { key: string; tag: string; title: string; href: string; img: string; pos?: string; logo: string | null; wide?: boolean; color: string; fit?: 'contain' }[] = [
+  { key: 'oj', tag: 'OJ', title: 'OJ · Feel Alive', href: '/brands/omoda', img: '/brand/jaecoo-j7/road.jpg', pos: '65% 50%', logo: '/brand/logos/omoda-jaecoo.svg', wide: true, color: '#B8860B' },
   { key: 'gwm', tag: 'GWM', title: 'Tank 300 · Tank 500', href: '/brands/gwm', img: '/brand/gwm-tank300/front.jpg', pos: '40% 50%', logo: '/brand/logos/gwm.png', color: '#FF6600' },
   { key: 'suzuki', tag: 'Suzuki', title: 'Way of Life!', href: '/brands/suzuki', img: '/brand/showcase/suzuki.jpg', pos: '20% 50%', logo: '/brand/logos/suzuki.svg', color: '#E30016' },
   { key: 'lepas', tag: 'Lepas', title: 'Drive Your Elegance', href: '/brands/lepas', img: '/brand/lepas-l6/street.jpg', pos: '55% 50%', logo: '/brand/logos/lepas.png', color: '#A0522D' },
@@ -148,14 +148,9 @@ export default function HomePage() {
                   {String(i + 1).padStart(2, "0")}
                 </span>
 
-                {u.logoText && (
-                  <span className="absolute top-5 left-5 flex h-12 items-center rounded-xl border border-white/40 bg-white/90 px-4 shadow-lg backdrop-blur-md transition-all duration-300 group-hover:-translate-y-1 group-hover:bg-white/25">
-                    <span className="text-2xl font-black tracking-tight text-[#101113]">{u.logoText}</span>
-                  </span>
-                )}
                 {u.logo && (
                   <span className="absolute top-5 left-5 flex h-12 items-center rounded-xl border border-white/40 bg-white/90 px-3.5 shadow-lg backdrop-blur-md transition-all duration-300 group-hover:-translate-y-1 group-hover:bg-white/25">
-                    <img src={u.logo} alt={u.tag} className="h-7 w-auto max-w-[100px] object-contain sm:h-8" />
+                    <img src={u.logo} alt={u.tag} className={u.wide ? "h-auto w-[130px] object-contain sm:w-[170px]" : "h-7 w-auto max-w-[100px] object-contain sm:h-8"} />
                   </span>
                 )}
 
