@@ -72,7 +72,7 @@ export default function Footer() {
       <div className="pointer-events-none absolute -top-40 left-1/2 h-72 w-[720px] -translate-x-1/2 rounded-full bg-brand-red/[0.08] blur-[130px]" />
       <div className="container-page relative py-16 sm:py-20 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-12 gap-y-14">
         <div className="col-span-2 lg:col-span-1">
-          <MapornLogo variant="white" className="mb-5 h-14 w-auto" />
+          <MapornLogo variant="white" className="mb-5 h-auto w-full max-w-[220px]" />
           <p className="max-w-xs text-sm text-[#94A3B8] leading-relaxed">
             ตัวแทนจำหน่ายรถยนต์อย่างเป็นทางการ 7 แบรนด์ พร้อมบริการครบวงจรทั่วประเทศไทย
           </p>
