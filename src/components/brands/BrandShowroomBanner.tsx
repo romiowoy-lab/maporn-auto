@@ -55,6 +55,7 @@ export default function BrandShowroomBanner({ slug, slugs, title }: { slug?: str
             </Link>
             <div className="flex flex-col justify-center p-6 sm:p-10">
               <h2 className="mt-2 text-2xl font-extrabold tracking-tight sm:text-3xl">{branch.name}</h2>
+              {branch.hasBodyPaint && <span className="mt-3 inline-block w-fit rounded-full bg-[#F26A1B] px-3 py-1 text-xs font-bold text-white">มีศูนย์ซ่อมสีและตัวถัง</span>}
               <p className="mt-4 flex items-start gap-2 text-sm leading-relaxed text-white/75">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#FF0000]" /> {branch.address}
               </p>
@@ -81,6 +82,7 @@ export default function BrandShowroomBanner({ slug, slugs, title }: { slug?: str
               </Link>
               <div className="flex flex-1 flex-col p-5">
                 <h3 className="text-lg font-extrabold tracking-tight">{branch.name}</h3>
+                {branch.hasBodyPaint && <span className="mt-2 inline-block w-fit rounded-full bg-[#F26A1B] px-2.5 py-0.5 text-[11px] font-bold text-white">มีศูนย์ซ่อมสีและตัวถัง</span>}
                 <p className="mt-2 flex items-start gap-2 text-xs leading-relaxed text-white/70">
                   <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#FF0000]" /> {branch.address}
                 </p>

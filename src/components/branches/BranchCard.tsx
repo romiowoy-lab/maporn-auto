@@ -60,7 +60,10 @@ export default function BranchCard({ branch }: { branch: Branch }) {
         </div>
         <div className="mt-3 flex items-center justify-between text-[11px] text-brand-slate">
           <span>{branch.phone}</span>
-          {branch.isServiceCenter && <span className="text-brand-red font-semibold">มีศูนย์บริการ</span>}
+          <span className="flex items-center gap-1.5">
+            {branch.isServiceCenter && <span className="text-brand-red font-semibold">มีศูนย์บริการ</span>}
+            {branch.hasBodyPaint && <span className="rounded-full bg-[#F26A1B] px-2 py-0.5 text-[10px] font-bold text-white">ซ่อมสีและตัวถัง</span>}
+          </span>
         </div>
       </div>
     </Link>

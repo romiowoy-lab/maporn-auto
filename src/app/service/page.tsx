@@ -28,7 +28,9 @@ function iconFor(title: string) {
 }
 
 export default function ServicePage() {
-  const serviceCenters = branches.filter((b) => b.isServiceCenter && b.slug !== "sriracha" && b.slug !== "lamlukka");
+  // Body & paint shops first (branch flag), then every other showroom
+  const bodyPaintCenters = branches.filter((b) => b.hasBodyPaint);
+  const showroomCenters = branches.filter((b) => b.isShowroom && !b.hasBodyPaint);
 
   return (
     <div className="bg-[#F7F7F5]">
@@ -122,12 +124,27 @@ export default function ServicePage() {
         </div>
       </section>
 
-      {/* SERVICE CENTERS — real branch data, shared BranchCard component (light theme, unchanged) */}
+      {/* SERVICE CENTERS — every branch: body & paint shops first, then the other showrooms */}
       <section id="service-centers" className="bg-white py-14 sm:py-20 scroll-mt-24">
         <div className="container-page">
-          <h2 className="text-2xl font-bold text-brand-navy mb-8">ศูนย์บริการทั่วประเทศ ({serviceCenters.length})</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {serviceCenters.map((b) => (
+          <h2 className="text-2xl font-bold text-brand-navy">ศูนย์บริการทั่วประเทศ ({bodyPaintCenters.length + showroomCenters.length})</h2>
+
+          <div className="mt-8 flex items-center gap-3">
+            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-red/10 text-brand-red"><PaintBucket className="h-5 w-5" /></span>
+            <h3 className="text-lg font-bold text-brand-navy">ศูนย์บริการ + ซ่อมสีและตัวถัง ({bodyPaintCenters.length})</h3>
+          </div>
+          <div className="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {bodyPaintCenters.map((b) => (
+              <BranchCard key={b.slug} branch={b} />
+            ))}
+          </div>
+
+          <div className="mt-12 flex items-center gap-3">
+            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-navy/5 text-brand-navy"><Wrench className="h-5 w-5" /></span>
+            <h3 className="text-lg font-bold text-brand-navy">โชว์รูมและศูนย์บริการ ({showroomCenters.length})</h3>
+          </div>
+          <div className="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {showroomCenters.map((b) => (
               <BranchCard key={b.slug} branch={b} />
             ))}
           </div>

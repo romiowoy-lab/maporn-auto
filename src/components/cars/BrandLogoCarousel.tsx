@@ -5,6 +5,8 @@ export interface BrandChip {
   key: string;
   name: string;
   logo?: string;
+  // text mark for brands shown by name, e.g. "OJ" (OMODA & JAECOO)
+  wordmark?: string;
   href: string;
   active: boolean;
 }
@@ -26,7 +28,9 @@ export default function BrandLogoCarousel({ items }: { items: BrandChip[] }) {
                   : "border-white/10 bg-white/90 opacity-80 hover:opacity-100 hover:-translate-y-0.5"
               }`}
             >
-              {b.logo ? (
+              {b.wordmark ? (
+                <span className="text-2xl font-black tracking-[0.08em] text-[#101113]">{b.wordmark}</span>
+              ) : b.logo ? (
                 <span className="relative block h-8 w-20">
                   <Image src={b.logo} alt={b.name} fill sizes="80px" className="object-contain" />
                 </span>

@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next";
 import { brands } from "@/lib/data/brands";
 import { models } from "@/lib/data/models";
-import { promotions } from "@/lib/data/promotions";
 import { branches } from "@/lib/data/branches";
 import { news } from "@/lib/data/news";
 
@@ -12,7 +11,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}`,                      priority: 1.0, changeFrequency: "daily"   },
     { url: `${BASE_URL}/brands`,               priority: 0.9, changeFrequency: "weekly"  },
     { url: `${BASE_URL}/cars`,                 priority: 0.9, changeFrequency: "weekly"  },
-    { url: `${BASE_URL}/promotions`,           priority: 0.8, changeFrequency: "daily"   },
     { url: `${BASE_URL}/test-drive`,           priority: 0.8, changeFrequency: "monthly" },
     { url: `${BASE_URL}/branches`,             priority: 0.8, changeFrequency: "monthly" },
     { url: `${BASE_URL}/service`,              priority: 0.7, changeFrequency: "monthly" },
@@ -44,12 +42,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const promotionRoutes = promotions.map((p) => ({
-    url: `${BASE_URL}/promotions/${p.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "daily" as const,
-    priority: 0.6,
-  }));
 
   const branchRoutes = branches.map((b) => ({
     url: `${BASE_URL}/branches/${b.slug}`,
@@ -65,5 +57,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  return [...staticRoutes, ...brandRoutes, ...modelRoutes, ...promotionRoutes, ...branchRoutes, ...newsRoutes];
+  return [...staticRoutes, ...brandRoutes, ...modelRoutes, ...branchRoutes, ...newsRoutes];
 }

@@ -4,7 +4,6 @@ import { models } from "@/lib/data/models";
 import CarCardDark from "@/components/cars/CarCardDark";
 import BrandLogoCarousel from "@/components/cars/BrandLogoCarousel";
 import { getBrandGroups } from "@/lib/data/brandGroups";
-import { getBrand } from "@/lib/data/brands";
 import CarFilters from "@/components/cars/CarFilters";
 import CarSort from "@/components/cars/CarSort";
 import { Suspense } from "react";
@@ -15,6 +14,20 @@ export const metadata: Metadata = {
 };
 
 const PAGE_SIZE = 9;
+
+// Only the models each brand page actively promotes (Farizon: every model). Other catalog entries
+// still exist for their own pages and the homepage hero, but are not listed here.
+const PROMOTED = new Set([
+  "jaecoo-6-ev", "jaecoo-6t-ev", "jaecoo-6t-reev", "jaecoo-j7", "jaecoo-5-ev", "jaecoo-5-ev-ultra", "omoda-c5-ev",
+  "gwm-tank-300", "gwm-tank-500", "gwm-poer-sahar-diesel", "gwm-ora-5", "gwm-haval-h6", "gwm-wey-g9",
+  "suzuki-fronx", "suzuki-jimny", "suzuki-carry", "suzuki-xl7",
+  "lepas-l6",
+  "wuling-starlight-darion-ev", "wuling-porta-ev",
+]);
+const listed = models.filter((m) => PROMOTED.has(m.slug) || m.brandSlug === "farizon");
+
+// Brand chips in the client's order; OMODA + JAECOO share one "OJ" chip.
+const CHIP_ORDER = ["omoda-jaecoo", "gwm", "suzuki", "lepas", "wuling", "farizon"];
 
 export default async function CarsPage({
   searchParams,
@@ -39,7 +52,7 @@ export default async function CarsPage({
   const bodyTypes = body ? body.split(",") : [];
   const fuelTypes = fuel ? fuel.split(",") : [];
 
-  const filtered = models.filter((m) => {
+  const filtered = listed.filter((m) => {
     if (brandList.length > 0 && !brandList.includes(m.brandSlug)) return false;
     if (bodyTypes.length > 0 && !bodyTypes.includes(m.bodyType)) return false;
     if (fuelTypes.length > 0 && !fuelTypes.includes(m.fuelType)) return false;
@@ -85,16 +98,15 @@ export default async function CarsPage({
 
   const chips = [
     { key: "all", name: "ทุกแบรนด์", logo: undefined, href: brandHref(""), active: !brand },
-    ...getBrandGroups().flatMap((g) => {
-      if (g.isCombined) {
-        return g.slugs.map((slug) => {
-          const b = getBrand(slug)!;
-          return { key: slug, name: b.name, logo: b.logo, href: brandHref(slug), active: brand === slug };
-        });
-      }
-      const value = g.slugs.join(",");
-      return [{ key: g.key, name: g.name, logo: g.logo, href: brandHref(value), active: brand === value || (g.slugs.length === 1 && brand === g.slugs[0]) }];
-    }),
+    ...[...getBrandGroups()]
+      .sort((a, b) => CHIP_ORDER.indexOf(a.key) - CHIP_ORDER.indexOf(b.key))
+      .map((g) => {
+        const value = g.slugs.join(",");
+        const active = brand === value || g.slugs.includes(brand);
+        return g.isCombined
+          ? { key: g.key, name: "OJ", wordmark: "OJ", href: brandHref(value), active }
+          : { key: g.key, name: g.name, logo: g.logo, href: brandHref(value), active };
+      }),
   ];
 
   return (
@@ -102,7 +114,7 @@ export default async function CarsPage({
       <div className="container-page py-10 sm:py-14">
         <div className="mb-8">
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">รถยนต์ทั้งหมด</h1>
-          <p className="mt-3 text-sm sm:text-base text-white/65">เลือกดูรถยนต์จากทั้ง 7 แบรนด์ในเครือ Maporn Autogroup</p>
+          <p className="mt-3 text-sm sm:text-base text-white/65">เลือกดูรถยนต์รุ่นที่จำหน่ายในเครือ Maporn Autogroup</p>
         </div>
 
         <div className="mb-8">

@@ -233,9 +233,10 @@ export default function HomePage() {
                         className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                         style={{ objectPosition: COVER_POSITION[tile.image ?? BRANCH_COVER[b.slug]] ?? 'center' }}
                       />
-                      {isService && (
-                        <span className="absolute top-3 left-3 rounded-md bg-black/75 px-3 py-1 text-[11px] font-bold text-white backdrop-blur-md">
-                          SERVICE CENTER
+                      {(isService || b.hasBodyPaint) && (
+                        <span className="absolute top-3 left-3 flex flex-wrap gap-1.5">
+                          {isService && <span className="rounded-md bg-black/75 px-3 py-1 text-[11px] font-bold text-white backdrop-blur-md">SERVICE CENTER</span>}
+                          {b.hasBodyPaint && <span className="rounded-md bg-[#F26A1B] px-3 py-1 text-[11px] font-bold text-white">ซ่อมสีและตัวถัง</span>}
                         </span>
                       )}
                     </div>

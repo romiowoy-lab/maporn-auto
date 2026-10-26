@@ -27,7 +27,7 @@ export async function generateMetadata({
   if (!branch) return {};
   const short = branch.name.replace("Maporn Autogroup ", "");
   return {
-    title: `${short} ${branch.province} โชว์รูม${branch.isServiceCenter ? "และศูนย์บริการ" : ""}`,
+    title: `${short} ${branch.province} ${branch.isShowroom ? "โชว์รูม" : ""}${branch.isServiceCenter ? (branch.isShowroom ? "และศูนย์บริการ" : "ศูนย์บริการ") : ""}${branch.hasBodyPaint ? " ซ่อมสีและตัวถัง" : ""}`,
     description: `${branch.name} ที่อยู่ ${branch.address} ดูแผนที่ ${branch.isShowroom ? "นัดทดลองขับ หรือสอบถามฝ่ายขาย" : "นัดหมายเข้ารับบริการ หรือสอบถามฝ่ายบริการ"}`,
   };
 }
@@ -70,6 +70,7 @@ export default async function BranchDetailPage({ params }: { params: Promise<{ s
           <div className="mb-3 flex flex-wrap gap-2">
             {branch.isShowroom && <span className="rounded-full bg-brand-red-gradient px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide text-white">Showroom</span>}
             {branch.isServiceCenter && <span className="rounded-full bg-white px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide text-[#101113]">Service Center</span>}
+            {branch.hasBodyPaint && <span className="rounded-full bg-[#F26A1B] px-3 py-1 text-[11px] font-extrabold tracking-wide text-white">ซ่อมสีและตัวถัง</span>}
           </div>
           <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-6xl">{branch.name}</h1>
           <p className="mt-2 text-sm font-semibold uppercase tracking-[0.2em] text-white/90">{branch.province}</p>

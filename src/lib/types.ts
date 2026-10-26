@@ -74,6 +74,8 @@ export interface Branch {
   brands: string[];
   isShowroom: boolean;
   isServiceCenter: boolean;
+  /** Has a body & paint (ซ่อมสีและตัวถัง) shop on site */
+  hasBodyPaint?: boolean;
   salesContact: string;
   mapQuery: string;
   lineUrl?: string;

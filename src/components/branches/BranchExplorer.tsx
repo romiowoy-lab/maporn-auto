@@ -43,6 +43,7 @@ function BranchWideCard({ b }: { b: Branch }) {
           <div className="absolute left-4 top-4 flex flex-wrap gap-2">
             {b.isShowroom && <span className="rounded-full bg-brand-red-gradient px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide text-white shadow">Showroom</span>}
             {b.isServiceCenter && <span className="rounded-full bg-white px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide text-brand-navy shadow">Service Center</span>}
+            {b.hasBodyPaint && <span className="rounded-full bg-[#F26A1B] px-3 py-1 text-[11px] font-extrabold tracking-wide text-white shadow">ซ่อมสีและตัวถัง</span>}
           </div>
           <div className="absolute bottom-4 left-5 right-5 text-white" style={{ textShadow: "0 2px 10px rgba(0,0,0,0.85), 0 6px 22px rgba(0,0,0,0.6)" }}>
             <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/90">{b.province}</p>
