@@ -91,11 +91,7 @@ export default function AboutPage() {
 
         <div className="container-page relative grid items-center gap-14 pb-12 pt-14 lg:grid-cols-[1.05fr_0.95fr] lg:pb-16 lg:pt-20">
           <ScrollFx effect="fade-up">
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-4 py-1.5 text-xs font-medium text-white/75 backdrop-blur-md">
-              <span className="h-1.5 w-1.5 rounded-full bg-brand-red" />
-              มาพร ออโต้ กรุ๊ป · ก่อตั้ง {company.foundedYear}
-            </span>
-            <h1 className="mt-6 text-[2.6rem] font-black leading-[1.08] tracking-tight sm:text-6xl">
+            <h1 className="text-[2.6rem] font-black leading-[1.08] tracking-tight sm:text-6xl">
               ผู้จัดจำหน่ายรถยนต์
               <br />
               ในเครือ <span className="bg-gradient-to-b from-[#FF0000] to-[#AD0000] bg-clip-text text-transparent">{brandCount} แบรนด์</span>
@@ -123,20 +119,6 @@ export default function AboutPage() {
             <div className="relative overflow-hidden rounded-[28px] border border-white/10 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8)]">
               <div className="relative aspect-[5/4]">
                 <Image src={IMG.hero} alt="ลูกค้าเลือกชมรถในโชว์รูม Maporn Autogroup" fill priority sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover" />
-              </div>
-            </div>
-            <div className="absolute -left-4 top-6 rounded-2xl border border-white/15 bg-[#0c0d0f]/80 px-5 py-4 shadow-xl backdrop-blur-xl sm:-left-8">
-              <p className="text-3xl font-black leading-none">{years}+</p>
-              <p className="mt-1 text-xs text-white/60">ปีแห่งความไว้วางใจ</p>
-            </div>
-            <div className="absolute -bottom-5 right-4 flex items-center gap-3 rounded-2xl border border-white/15 bg-[#0c0d0f]/85 py-3 pl-3 pr-5 shadow-xl backdrop-blur-xl sm:-right-6">
-              <span className="flex h-11 items-center rounded-lg bg-white px-2">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/brand/logos/suzyfix.jpg" alt="Suzy Fix" className="h-7 w-auto" />
-              </span>
-              <div>
-                <p className="text-sm font-bold leading-tight">ศูนย์ซ่อมสีและตัวถัง</p>
-                <p className="text-xs text-white/55">มาตรฐานโรงงาน</p>
               </div>
             </div>
           </ScrollFx>
