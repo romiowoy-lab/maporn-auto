@@ -6,20 +6,21 @@ import { ArrowLeftRight } from "lucide-react";
 import WulingShowroom from "@/components/brands/wuling/WulingShowroom";
 import WulingPortaShowroom from "@/components/brands/wuling/WulingPortaShowroom";
 
+// Porta EV opens first (client request), then Darion EV.
 type View = "darion" | "porta";
 
 const MODEL: Record<View, { label: string; sub: string; sweep: string; glow: string }> = {
-  darion: {
-    label: "DARION EV",
-    sub: "Starlight · 7 Seats MPV",
-    sweep: "linear-gradient(120deg,#0d0c09 0%,#1f1a10 45%,#D8BFA0 100%)",
-    glow: "#D8BFA0",
-  },
   porta: {
     label: "PORTA EV",
     sub: "Electric Commercial Van",
     sweep: "linear-gradient(120deg,#070d14 0%,#0a1c2e 45%,#5B9BD5 100%)",
     glow: "#5B9BD5",
+  },
+  darion: {
+    label: "DARION EV",
+    sub: "Starlight · 7 Seats MPV",
+    sweep: "linear-gradient(120deg,#0d0c09 0%,#1f1a10 45%,#D8BFA0 100%)",
+    glow: "#D8BFA0",
   },
 };
 
@@ -27,8 +28,8 @@ const ease = [0.16, 1, 0.3, 1] as const;
 const safe = (p: Promise<unknown>, ms: number) => Promise.race([p, new Promise((r) => setTimeout(r, ms))]);
 
 export default function WulingShowroomSwitch() {
-  const [view, setView] = useState<View>("darion");
-  const [target, setTarget] = useState<View>("darion");
+  const [view, setView] = useState<View>("porta");
+  const [target, setTarget] = useState<View>("porta");
   const [busy, setBusy] = useState(false);
   const [spin, setSpin] = useState(0);
   const controls = useAnimationControls();
@@ -55,7 +56,7 @@ export default function WulingShowroomSwitch() {
           <motion.span animate={{ rotate: spin }} transition={{ duration: 0.6, ease }} className="hidden text-white/60 sm:inline-flex" aria-hidden="true">
             <ArrowLeftRight className="h-4 w-4" />
           </motion.span>
-          <div className="relative flex rounded-full bg-white/[0.06] p-1" role="tablist" aria-label="สลับรุ่น Wuling Darion EV / Porta EV">
+          <div className="relative flex rounded-full bg-white/[0.06] p-1" role="tablist" aria-label="สลับรุ่น Wuling Porta EV / Darion EV">
             {(Object.keys(MODEL) as View[]).map((v) => {
               const active = target === v;
               return (
