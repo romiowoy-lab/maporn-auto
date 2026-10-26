@@ -145,27 +145,6 @@ const allModels: VehicleModel[] = [
     description: "รถตู้ไฟฟ้าเพื่อการพาณิชย์ ประหยัดค่าพลังงาน เป็นมิตรกับสิ่งแวดล้อม",
     image: "/brand/models/farizon-p5m.jpg",
   },
-  {
-    slug: "farizon-fengchao",
-    brandSlug: "farizon",
-    name: "Fengchao",
-    bodyType: "Pickup",
-    fuelType: "Diesel",
-    startPrice: 749000,
-    isNew: false,
-    isFeatured: false,
-    colors: ["Arctic White", "Graphite Grey", "Amber Orange"],
-    dimensions: { length: 5395, width: 1900, height: 1830, wheelbase: 3200 },
-    warranty: "รับประกัน 3 ปี หรือ 100,000 กม.",
-    safety: ["ถุงลมนิรภัยคู่หน้า", "ABS+EBD", "กล้องมองหลัง"],
-    technology: ["หน้าจอสัมผัส 9 นิ้ว", "Apple CarPlay / Android Auto"],
-    features: ["กระบะบรรทุกอเนกประสงค์", "ยกสูง 4x4"],
-    variants: [
-      { name: "Standard Cab 4x2", price: 749000, engine: "2.0L Turbo Diesel", power: "163 แรงม้า", torque: "405 Nm", transmission: "Manual", seats: 3 },
-      { name: "Double Cab 4x4", price: 899000, engine: "2.0L Turbo Diesel", power: "163 แรงม้า", torque: "405 Nm", transmission: "Automatic", seats: 5 },
-    ],
-    description: "ปิกอัพเพื่อการพาณิชย์ แข็งแกร่ง บรรทุกหนักได้ดี เหมาะกับงานหนัก",
-  },
 
   // ---------- WULING ----------
   {
