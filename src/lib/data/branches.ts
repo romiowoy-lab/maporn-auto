@@ -38,7 +38,7 @@ export const branches: Branch[] = [
     slug: "sriracha",
     name: "Suzuki Maporn ศรีราชา",
     province: "ชลบุรี",
-    address: "22 ถนนสุขุมวิท ตำบลศรีราชา อำเภอศรีราชา ชลบุรี 20110",
+    address: "บริษัท มาพรพาณิชย์ จำกัด ศรีราชา เลขที่ 2/9-2/10 ถนนสุขุมวิท ตำบลศรีราชา อำเภอศรีราชา ชลบุรี 20110",
     phone: "084-298-7897",
     line: "@suzukisriracha",
     lineUrl: "https://lin.ee/plVLw5T",
@@ -48,7 +48,7 @@ export const branches: Branch[] = [
     isShowroom: true,
     isServiceCenter: true,
     salesContact: "ฝ่ายขาย โทร. 086-332-0368",
-    mapQuery: "Suzuki Maporn ศรีราชา ชลบุรี",
+    mapQuery: "มาพรพาณิชย์ ศรีราชา 2/9-2/10 ถนนสุขุมวิท ตำบลศรีราชา อำเภอศรีราชา ชลบุรี 20110",
   },
   {
     slug: "lamlukka",
