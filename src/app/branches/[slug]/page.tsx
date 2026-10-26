@@ -28,7 +28,7 @@ export async function generateMetadata({
   const short = branch.name.replace("Maporn Autogroup ", "");
   return {
     title: `${short} ${branch.province} โชว์รูม${branch.isServiceCenter ? "และศูนย์บริการ" : ""}`,
-    description: `${branch.name} ที่อยู่ ${branch.address} ดูแผนที่ นัดทดลองขับ หรือสอบถามฝ่ายขาย`,
+    description: `${branch.name} ที่อยู่ ${branch.address} ดูแผนที่ ${branch.isShowroom ? "นัดทดลองขับ หรือสอบถามฝ่ายขาย" : "นัดหมายเข้ารับบริการ หรือสอบถามฝ่ายบริการ"}`,
   };
 }
 
@@ -118,7 +118,7 @@ export default async function BranchDetailPage({ params }: { params: Promise<{ s
           )}
 
           <div className="flex flex-wrap gap-3 pt-2">
-            <Link href={`/test-drive?branch=${branch.slug}`} className="btn-red">จองทดลองขับที่สาขานี้</Link>
+            {branch.isShowroom && <Link href={`/test-drive?branch=${branch.slug}`} className="btn-red">จองทดลองขับที่สาขานี้</Link>}
             {branch.isServiceCenter && (
               <Link href={`/service/appointment?branch=${branch.slug}`} className="inline-flex items-center justify-center rounded-md border border-white/30 px-6 py-3.5 text-sm font-medium transition-colors hover:bg-white hover:text-[#101113]">นัดหมายเข้าศูนย์บริการ</Link>
             )}

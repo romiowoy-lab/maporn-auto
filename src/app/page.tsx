@@ -57,7 +57,7 @@ const BRANCH_BRAND_TILES: { label: string; branchSlug: string; image?: string; r
   { label: 'OJ ระยอง', branchSlug: 'rayong-omoda-jaecoo', image: branchCover['rayong-omoda-jaecoo'].src, region: 'east' },
   { label: 'Lepas ระยอง', branchSlug: 'rayong-lepas', image: branchCover['rayong-lepas'].src, region: 'east' },
   { label: 'Wuling ระยอง', branchSlug: 'rayong-wuling', image: branchCover['rayong-wuling'].src, region: 'east' },
-  { label: 'Suzy Fix มีนบุรี', branchSlug: 'minburi', image: '/brand/branches/suzy-fix/entrance.webp', region: 'bangkok' },
+  { label: 'Suzy Fix มีนบุรี', branchSlug: 'suzy-fix', image: '/brand/branches/suzy-fix/entrance.webp', region: 'bangkok' },
 ];
 
 const BRANCH_REGIONS: { key: 'bangkok' | 'east'; label: string }[] = [
@@ -67,7 +67,7 @@ const BRANCH_REGIONS: { key: 'bangkok' | 'east'; label: string }[] = [
 
 // Only these branches' phone numbers are verified against a real source (the legacy Suzuki
 // site). The others' phones are still placeholders, so they are not shown on the cards.
-const VERIFIED_PHONE = new Set(['srinakarin', 'rayong', 'rayong-omoda-jaecoo', 'rayong-lepas', 'farizon-srinakarin']);
+const VERIFIED_PHONE = new Set(['srinakarin', 'rayong', 'rayong-omoda-jaecoo', 'rayong-lepas', 'farizon-srinakarin', 'suzy-fix']);
 
 
 // 8 real photos/logos for this highlight grid (public/brand/highlight/) — uniform 4-col x
