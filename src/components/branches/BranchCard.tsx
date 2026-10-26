@@ -8,7 +8,6 @@ import { branchCover, branchGallery } from "@/lib/data/branchPhotos";
 // Real showroom / service-centre photos, one per branch (public/brand/branches/).
 // Client cover photo first, else the gallery's first photo (src/lib/data/branchPhotos.ts).
 export const BRANCH_PHOTO: Record<string, string> = {
-  minburi: "/brand/branches/minburi.jpg",
   ...Object.fromEntries(Object.entries(branchGallery).map(([slug, photos]) => [slug, photos[0].src])),
   ...Object.fromEntries(Object.entries(branchCover).map(([slug, c]) => [slug, c.src])),
 };

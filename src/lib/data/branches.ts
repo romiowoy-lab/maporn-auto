@@ -143,20 +143,6 @@ export const branches: Branch[] = [
     salesContact: "ฝ่ายบริการ โทร. 098-350-9494",
     mapQuery: "Suzy Fix 2 ถนนสามวา แขวงมีนบุรี เขตมีนบุรี กรุงเทพมหานคร 10510",
   },
-  {
-    slug: "minburi",
-    name: "Maporn Autogroup สาขามีนบุรี",
-    province: "กรุงเทพมหานคร",
-    address: "456 ถนนสีหบุรานุกิจ แขวงมีนบุรี เขตมีนบุรี กรุงเทพมหานคร 10510",
-    phone: "02-322-3663-5",
-    line: "@mapornsuzuki",
-    hours: "วันจันทร์ - เสาร์ 08:00 - 17:00 น.",
-    brands: ["suzuki"],
-    isShowroom: true,
-    isServiceCenter: true,
-    salesContact: "ฝ่ายขาย โทร. 02-322-3663-5",
-    mapQuery: "Maporn Autogroup มีนบุรี กรุงเทพมหานคร",
-  },
 ];
 
 export const serviceOfferings: ServiceOffering[] = [

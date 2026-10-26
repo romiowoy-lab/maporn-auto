@@ -28,7 +28,6 @@ import {
 // galleries in src/lib/data/branchPhotos.ts).
 const BRANCH_COVER: Record<string, string> = {
   srinakarin: '/brand/branches/srinakarin/exterior-dusk.webp',
-  minburi: '/brand/branches/minburi.jpg',
   lamlukka: '/brand/branches/lamlukka/exterior-team.webp',
   sriracha: '/brand/branches/sriracha/exterior.webp',
   rayong: branchCover.rayong.src,
