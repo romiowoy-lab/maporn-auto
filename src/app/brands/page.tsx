@@ -62,7 +62,7 @@ export default function BrandsPage() {
           {/* Suzy Fix — real Suzuki-official body/paint service center, not a brand, but
               included as its own tile per this page's requested order. */}
           <Link
-            href="/service#suzy-fix"
+            href="/branches/suzy-fix"
             className="brand-tile group relative flex flex-col overflow-hidden rounded-2xl border border-black/[0.06] bg-white p-8 shadow-[0_4px_20px_rgba(0,0,0,0.05)] transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-2 hover:border-brand-red/30 active:scale-[0.98] active:duration-100"
           >
             <div className="flex h-32 sm:h-36 items-center justify-center">

@@ -66,8 +66,8 @@ export default function HeroCarousel() {
       eyebrow: "Suzuki Official Service",
       alt: "Suzy Fix",
       title: "Suzy Fix — ตัวจริงด้านซ่อมสี",
-      detailHref: "/service#suzy-fix",
-      testDriveHref: "/service#suzy-fix",
+      detailHref: "/branches/suzy-fix",
+      testDriveHref: "/branches/suzy-fix",
     },
   ];
 

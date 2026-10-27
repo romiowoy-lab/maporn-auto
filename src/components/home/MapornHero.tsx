@@ -51,7 +51,7 @@ CARS.push({
   override: {
     name: "Body & Paint Center",
     description: "ศูนย์ซ่อมสีและตัวถังมาตรฐาน งานซ่อมเคลม ประกันทุกบริษัท ดูแลโดยทีมช่างมืออาชีพของมาพร ออโต้ กรุ๊ป",
-    href: "/service#suzy-fix",
+    href: "/branches/suzy-fix",
   },
   brandColor: "#E85D2F",
   brandLogo: "/brand/logos/suzyfix.jpg",

@@ -2,7 +2,6 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { Wrench, Settings, PaintBucket, PackageSearch, ShieldCheck, Siren, MapPin } from "lucide-react";
 import { serviceOfferings, branches } from "@/lib/data/branches";
-import SuzyFixGallery from "@/components/service/SuzyFixGallery";
 import { BRANCH_PHOTO, BRANCH_PHOTO_POSITION } from "@/components/branches/BranchCard";
 import ShowroomTile from "@/components/branches/ShowroomTile";
 
@@ -93,28 +92,6 @@ export default function ServicePage() {
               </div>
             );
           })}
-        </div>
-      </section>
-
-      {/* SUZY FIX */}
-      <section id="suzy-fix" className="relative scroll-mt-24 overflow-hidden bg-[#14110F] py-16 sm:py-24 text-white">
-        {/* warm workshop glow, echoing the orange bays in the photos */}
-        <div className="pointer-events-none absolute -top-24 left-1/2 h-[380px] w-[720px] -translate-x-1/2 rounded-full bg-[#F26A1B]/[0.12] blur-[140px]" />
-        <div className="container-page relative">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-            <span className="shrink-0 h-16 w-16 rounded-2xl bg-[#F26A1B] text-white flex items-center justify-center font-black text-xl shadow-[0_10px_30px_rgba(242,106,27,0.35)]">
-              SF
-            </span>
-            <div>
-              <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#FF9A57] mb-1">Suzuki Official Service</p>
-              <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white">Suzy Fix</h2>
-              <p className="mt-3 text-base text-white/85 leading-relaxed max-w-2xl">
-                ศูนย์บริการมาตรฐานภายใต้แบรนด์ Suzuki ดูแลโดยทีมช่างที่ผ่านการรับรองจาก Suzuki โดยตรง
-                พร้อมอะไหล่แท้และมาตรฐานการซ่อมบำรุงเดียวกับโรงงาน
-              </p>
-            </div>
-          </div>
-          <SuzyFixGallery />
         </div>
       </section>
 

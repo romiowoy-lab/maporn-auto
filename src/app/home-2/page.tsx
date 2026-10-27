@@ -145,7 +145,7 @@ export default function HomePage2Demo() {
             ))}
 
             {/* Slot #8 — Maporn Service & Body Paint Center: metallic gold gradient border, balances the 2x4 grid */}
-            <Link href="/service#suzy-fix" className="group relative rounded-xl p-[1.5px] bg-gradient-to-br from-amber-300 via-yellow-500 to-amber-700 transition-transform duration-500 ease-out hover:scale-[1.015]">
+            <Link href="/branches/suzy-fix" className="group relative rounded-xl p-[1.5px] bg-gradient-to-br from-amber-300 via-yellow-500 to-amber-700 transition-transform duration-500 ease-out hover:scale-[1.015]">
               <div className="flex h-full items-center gap-3 rounded-[10px] bg-[#0d1018]/95 backdrop-blur-xl p-2.5 sm:p-3">
                 <div className="relative flex h-16 w-20 sm:h-20 sm:w-24 shrink-0 items-center justify-center overflow-visible">
                   <div className="absolute inset-0 m-auto h-12 w-12 rounded-full bg-amber-400 blur-xl opacity-50 transition-opacity duration-500 group-hover:opacity-80" />

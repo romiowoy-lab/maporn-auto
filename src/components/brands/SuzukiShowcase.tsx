@@ -333,7 +333,7 @@ export default function SuzukiShowcase() {
           </div>
 
           <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-white/50">
-            <Link href="/service#suzy-fix" className="underline-offset-4 hover:text-white hover:underline">ศูนย์ซ่อมสีและตัวถัง Suzy Fix</Link>
+            <Link href="/branches/suzy-fix" className="underline-offset-4 hover:text-white hover:underline">ศูนย์ซ่อมสีและตัวถัง Suzy Fix</Link>
             <Link href="/branches" className="underline-offset-4 hover:text-white hover:underline">สาขาและแผนที่</Link>
           </div>
         </div>
