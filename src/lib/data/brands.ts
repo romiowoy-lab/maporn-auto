@@ -27,7 +27,7 @@ const allBrands: Brand[] = [
     founded: "2021",
     origin: "จีน",
     heroImage: "/brand/models/farizon-van.jpg",
-    logo: "/brand/logos/farizon.png",
+    logo: "/brand/logos/farizon-2026.png",
   },
   {
     slug: "wuling",

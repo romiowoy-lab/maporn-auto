@@ -25,7 +25,7 @@ const BRAND_STRIP = [
   { key: "suzuki", name: "Suzuki", href: "/brands/suzuki", logo: "/brand/logos/header/suzuki.png", ratio: 1.49 },
   { key: "lepas", name: "Lepas", href: "/brands/lepas", logo: "/brand/logos/header/lepas.png", ratio: 3.3 },
   { key: "wuling", name: "Wuling", href: "/brands/wuling", logo: "/brand/logos/header/wuling-2026.png", ratio: 1.47 },
-  { key: "farizon", name: "Farizon", href: "/brands/farizon", logo: "/brand/logos/header/farizon.png", ratio: 1.59 },
+  { key: "farizon", name: "Farizon", href: "/brands/farizon", logo: "/brand/logos/header/farizon-2026.png", ratio: 1.08 },
   { key: "suzyfix", name: "Suzy Fix", href: "/branches/suzy-fix", logo: "/brand/logos/header/suzyfix-2026.png", ratio: 4.75 },
 ];
 
@@ -45,7 +45,7 @@ const MENU_BRANDS = [
 // Equal visual area: width × height is the same for every logo (height capped so square marks don't tower).
 // The OMODA | JAECOO wordmark is so long that equal area would make it unreadable, so it gets a fixed width.
 const LOGO_AREA = 1400;
-const LOGO_MAX_H = 32;
+const LOGO_MAX_H = 36;
 function BrandMark({ b, compact }: { b: BrandItem; compact?: boolean }) {
   let w: number;
   let h: number;
