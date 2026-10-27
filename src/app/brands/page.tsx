@@ -8,8 +8,8 @@ export const metadata: Metadata = {
   description: "รวมแบรนด์รถยนต์ในเครือ Maporn Autogroup OJ (OMODA & JAECOO), GWM, Suzuki, Lepas, Wuling และ Farizon เลือกแบรนด์ ดูรุ่น และจองทดลองขับ",
 };
 
-// Display order per client: OJ, GWM, Suzuki, Lepas, Wuling, Farizon (NEX hidden), Suzy Fix.
-const ORDER = ["omoda-jaecoo", "gwm", "suzuki", "lepas", "wuling", "farizon", "nex"];
+// Display order per client: OJ, GWM, Suzuki, Lepas, Wuling, Farizon, Suzy Fix.
+const ORDER = ["omoda-jaecoo", "gwm", "suzuki", "lepas", "wuling", "farizon"];
 
 export default function BrandsPage() {
   const groups = [...getBrandGroups()].sort((a, b) => ORDER.indexOf(a.key) - ORDER.indexOf(b.key));

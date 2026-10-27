@@ -16,7 +16,7 @@ const NAV_LINKS = [
   { href: "/contact", label: "ติดต่อเรา" },
 ];
 
-// Brand order per client: OMODA | JAECOO, GWM, Suzuki, Lepas, Wuling, Farizon, Suzy Fix (NEX hidden for now).
+// Brand order per client: OMODA | JAECOO, GWM, Suzuki, Lepas, Wuling, Farizon, Suzy Fix.
 // Logos are trimmed copies (public/brand/logos/header/) and `ratio` is each file's width ÷ height, so every
 // mark can be drawn at the same visual area (see BrandMark) instead of the same box.
 const BRAND_STRIP = [
@@ -31,7 +31,7 @@ const BRAND_STRIP = [
 
 type BrandItem = (typeof BRAND_STRIP)[number];
 
-// Menu brand list (text), client order — includes NEX, which is not in the header logo row.
+// Menu brand list (text), client order.
 const MENU_BRANDS = [
   { name: "OMODA | JAECOO", href: "/brands/omoda" },
   { name: "GWM", href: "/brands/gwm" },
@@ -39,7 +39,6 @@ const MENU_BRANDS = [
   { name: "Lepas", href: "/brands/lepas" },
   { name: "Wuling", href: "/brands/wuling" },
   { name: "Farizon", href: "/brands/farizon" },
-  { name: "NEX", href: "/brands/nex" },
   { name: "Suzy Fix", href: "/service#suzy-fix" },
 ];
 

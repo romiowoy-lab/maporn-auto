@@ -18,7 +18,7 @@ export default function PhotoCreditsPage() {
       </p>
 
       <div className="mt-8 divide-y divide-brand-line border border-brand-line rounded-2xl overflow-hidden">
-        {photoCredits.map((c) => {
+        {photoCredits.filter((c) => c.brandSlug !== "nex").map((c) => {
           const brand = c.brandSlug ? getBrand(c.brandSlug) : undefined;
           return (
             <div key={c.fileName} className="p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">

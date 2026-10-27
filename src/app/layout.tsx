@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: `%s | ${company.name}`,
   },
   description:
-    "มาพรพาณิชย์ ตัวแทนจำหน่ายรถยนต์ multi-brand อย่างเป็นทางการ 7 แบรนด์ Suzuki, Farizon, Wuling, Nex, GWM, JAECOO, OMODA และ Lepas โชว์รูมและศูนย์บริการรถ EV กรุงเทพ ระยอง ศรีราชา พร้อมโซลูชันรถบรรทุกไฟฟ้า B2B",
+    "มาพรพาณิชย์ ตัวแทนจำหน่ายรถยนต์ multi-brand อย่างเป็นทางการ 7 แบรนด์ Suzuki, Farizon, Wuling, GWM, JAECOO, OMODA และ Lepas โชว์รูมและศูนย์บริการรถ EV กรุงเทพ ระยอง ศรีราชา พร้อมโซลูชันรถบรรทุกไฟฟ้า B2B",
   keywords: [
     "มาพรพาณิชย์",
     "Maporn Autogroup",

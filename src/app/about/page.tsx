@@ -63,7 +63,7 @@ function SectionTitle({ title, sub, center = false }: { title: React.ReactNode; 
 export default function AboutPage() {
   const years = new Date().getFullYear() - Number(company.foundedYear);
   // Client-set brand order: OJ, GWM, Suzuki, Lepas, Wuling, Farizon
-  const ORDER = ["omoda-jaecoo", "gwm", "suzuki", "lepas", "wuling", "farizon", "nex"];
+  const ORDER = ["omoda-jaecoo", "gwm", "suzuki", "lepas", "wuling", "farizon"];
   const groups = [...getBrandGroups()].sort((x, y) => (ORDER.indexOf(x.key) + 99) % 99 - (ORDER.indexOf(y.key) + 99) % 99);
   const brandCount = groups.length;
   const STATS = [

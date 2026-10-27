@@ -71,7 +71,7 @@ const BRANCH_REGIONS: { key: 'bangkok' | 'east'; label: string }[] = [
 // 2-row grid, no asymmetric "big tile" sizing. Suzy Fix (8th) has no separate large photo
 // (it's a service sub-brand, not a car) — its own real logo file is used as-is, shown
 // object-contain on a solid tint rather than stretched/cropped like the 7 car photos.
-// Order per client: OJ (OMODA & JAECOO as one card), GWM, Suzuki, Lepas, Wuling, Farizon, Suzy Fix (NEX hidden for now).
+// Order per client: OJ (OMODA & JAECOO as one card), GWM, Suzuki, Lepas, Wuling, Farizon, Suzy Fix.
 // wide: the OMODA | JAECOO wordmark is ≈19:1, so its badge is sized by width.
 const BENTO_UNITS: { key: string; tag: string; title: string; href: string; img: string; pos?: string; logo: string | null; wide?: boolean; color: string; fit?: 'contain' }[] = [
   { key: 'oj', tag: 'OJ', title: 'OJ · Feel Alive', href: '/brands/omoda', img: '/brand/jaecoo-j7/road.jpg', pos: '65% 50%', logo: '/brand/logos/omoda-jaecoo.svg', wide: true, color: '#B8860B' },
