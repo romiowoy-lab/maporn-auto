@@ -26,7 +26,7 @@ const BRAND_STRIP = [
   { key: "lepas", name: "Lepas", href: "/brands/lepas", logo: "/brand/logos/header/lepas.png", ratio: 3.3 },
   { key: "wuling", name: "Wuling", href: "/brands/wuling", logo: "/brand/logos/header/wuling.png", ratio: 1.54 },
   { key: "farizon", name: "Farizon", href: "/brands/farizon", logo: "/brand/logos/header/farizon.png", ratio: 1.59 },
-  { key: "suzyfix", name: "Suzy Fix", href: "/branches/suzy-fix", logo: "/brand/logos/header/suzyfix.png", ratio: 1 },
+  { key: "suzyfix", name: "Suzy Fix", href: "/branches/suzy-fix", logo: "/brand/logos/header/suzyfix.png", ratio: 4.75 },
 ];
 
 type BrandItem = (typeof BRAND_STRIP)[number];

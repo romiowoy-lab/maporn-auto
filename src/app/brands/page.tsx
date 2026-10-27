@@ -1,6 +1,5 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { Wrench } from "lucide-react";
 import { getBrandGroups } from "@/lib/data/brandGroups";
 
 export const metadata: Metadata = {
@@ -66,7 +65,8 @@ export default function BrandsPage() {
             className="brand-tile group relative flex flex-col overflow-hidden rounded-2xl border border-black/[0.06] bg-white p-8 shadow-[0_4px_20px_rgba(0,0,0,0.05)] transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-2 hover:border-brand-red/30 active:scale-[0.98] active:duration-100"
           >
             <div className="flex h-32 sm:h-36 items-center justify-center">
-              <Wrench className="h-14 w-14 sm:h-16 sm:w-16 text-brand-red transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/brand/logos/suzyfix.png" alt="Suzy Fix" className="h-auto w-[70%] object-contain transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105" />
             </div>
             <div className="mt-2 border-t border-black/[0.06] pt-4">
               <div className="flex items-center justify-between">
