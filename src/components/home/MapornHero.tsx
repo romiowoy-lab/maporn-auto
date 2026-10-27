@@ -10,8 +10,9 @@ import { getBrand } from "@/lib/data/brands";
 
 // One flagship model per brand (full-scene photo + motion clip each), followed by the Suzy Fix slide.
 const SPOTLIGHT_SLUGS = [
-  // Order (client request): OJ (JAECOO, OMODA), GWM, Lepas, Wuling, Farizon — Suzy Fix draft slide appended below.
-  { slug: "jaecoo-j7", badge: "ADVENTURE SUV", heroImg: "/brand/models/jaecoo-j7-dust-hero.jpg", video: "/brand/video/jaecoo-j7-hero-motion.mp4", scene: true, imagePosition: "62% 40%", noOverlay: true },
+  // Order (client request): OJ (JAECOO 6T REEV, OMODA), GWM, Lepas, Wuling, Farizon — Suzy Fix draft slide appended below.
+  // JAECOO 6T REEV replaces the J7 SHS slide (client clip "Extreme U Turn Pro Master"); the brand label already reads JAECOO, so the red line shows just "6T REEV".
+  { slug: "jaecoo-6t-reev", badge: "RANGE EXTENDED SUV", heroImg: "/brand/jaecoo-6t-reev/hero.webp", video: "/brand/video/jaecoo-6t-reev-u-turn.mp4", scene: true, imagePosition: "center", override: { name: "6T REEV", description: "SUV ไฟฟ้าขยายระยะทาง (REEV) ขับไฟฟ้าล้วน 190 กม. ระยะทางรวมสูงสุด 800 กม. (NEDC) 4WD ULTRA 428 แรงม้า 0-100 ใน 5.5 วินาที", href: "/cars/jaecoo-6t-reev" } },
   { slug: "omoda-5", badge: "SMART CROSSOVER", heroImg: "/brand/studio/omoda-studio.jpg", video: "/brand/video/omoda-5-hero-motion.mp4", scene: true, imagePosition: "center" },
   { slug: "gwm-tank-300", badge: "OFF-ROAD SUV", heroImg: "/brand/studio/gwm-tank300-forest-hero.jpg", video: "/brand/video/gwm-tank300-diesel.mp4", scene: true },
   { slug: "lepas-l6", badge: "PREMIUM LIFESTYLE EV", heroImg: "/brand/models/lepas-l6-studio-sharp.jpg", video: "/brand/video/lepas-l6-hero-full.mp4", scene: true, noOverlay: true },
@@ -58,7 +59,7 @@ CARS.push({
 });
 
 // Clips that actually contain an audio track (the other hero clips are silent files).
-const CLIPS_WITH_AUDIO = new Set(["/brand/video/suzuki-fronx-iconic-drive.mp4", "/brand/video/gwm-tank300-diesel.mp4"]);
+const CLIPS_WITH_AUDIO = new Set(["/brand/video/suzuki-fronx-iconic-drive.mp4", "/brand/video/gwm-tank300-diesel.mp4", "/brand/video/jaecoo-6t-reev-u-turn.mp4"]);
 
 export default function MapornHero() {
   const [selected, setSelected] = useState(0);
