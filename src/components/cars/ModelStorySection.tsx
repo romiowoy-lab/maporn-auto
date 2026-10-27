@@ -43,7 +43,7 @@ export default function ModelStorySection({
         <div className="mt-6 grid gap-3">
           {points.map((p) => (
             <div key={p} className="flex items-center gap-3 rounded-xl border border-white/10 bg-[#1C1E22] px-4 py-3">
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-red/20 text-[#FF0000]">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-red/20 text-[#FF4D4D]">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="h-4 w-4">
                   <path d="m5 13 4 4L19 7" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>

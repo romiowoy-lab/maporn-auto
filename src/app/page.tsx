@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import MapornHero from '@/components/home/MapornHero';
 // Hidden for now (see section 2.75 below) — uncomment both to bring it back
 // import ExploreRange from '@/components/home/ExploreRange';
@@ -10,6 +9,7 @@ import ScrollFx from '@/components/ui/ScrollFx';
 import { branches } from '@/lib/data/branches';
 import { news, NEWS_CATEGORY_LABEL } from '@/lib/data/news';
 import { branchCover } from '@/lib/data/branchPhotos';
+import ShowroomTile from '@/components/branches/ShowroomTile';
 import { formatDateTH } from '@/lib/utils';
 import {
   MapPin,
@@ -21,7 +21,6 @@ import {
   ChevronRight,
   ArrowRight,
   Newspaper,
-  Phone,
 } from 'lucide-react';
 
 // Real per-branch showroom photos, one for each of the 5 real branches (public/brand/branches/;
@@ -66,7 +65,6 @@ const BRANCH_REGIONS: { key: 'bangkok' | 'east'; label: string }[] = [
 
 // Only these branches' phone numbers are verified against a real source (the legacy Suzuki
 // site). The others' phones are still placeholders, so they are not shown on the cards.
-const VERIFIED_PHONE = new Set(['srinakarin', 'rayong', 'rayong-omoda-jaecoo', 'rayong-lepas', 'farizon-srinakarin', 'suzy-fix']);
 
 
 // 8 real photos/logos for this highlight grid (public/brand/highlight/) — uniform 4-col x
@@ -77,12 +75,12 @@ const VERIFIED_PHONE = new Set(['srinakarin', 'rayong', 'rayong-omoda-jaecoo', '
 // wide: the OMODA | JAECOO wordmark is ≈19:1, so its badge is sized by width.
 const BENTO_UNITS: { key: string; tag: string; title: string; href: string; img: string; pos?: string; logo: string | null; wide?: boolean; color: string; fit?: 'contain' }[] = [
   { key: 'oj', tag: 'OJ', title: 'OJ · Feel Alive', href: '/brands/omoda', img: '/brand/jaecoo-j7/road.jpg', pos: '65% 50%', logo: '/brand/logos/omoda-jaecoo.svg', wide: true, color: '#B8860B' },
-  { key: 'gwm', tag: 'GWM', title: 'Tank 300 · Tank 500', href: '/brands/gwm', img: '/brand/gwm-tank300/front.jpg', pos: '40% 50%', logo: '/brand/logos/gwm.png', color: '#FF6600' },
-  { key: 'suzuki', tag: 'Suzuki', title: 'Way of Life!', href: '/brands/suzuki', img: '/brand/showcase/suzuki.jpg', pos: '20% 50%', logo: '/brand/logos/suzuki.svg', color: '#E30016' },
-  { key: 'lepas', tag: 'Lepas', title: 'Drive Your Elegance', href: '/brands/lepas', img: '/brand/lepas-l6/street.jpg', pos: '55% 50%', logo: '/brand/logos/lepas.png', color: '#A0522D' },
-  { key: 'wuling', tag: 'Wuling', title: 'Enjoy the Ride', href: '/brands/wuling', img: '/brand/wuling-darion/front34.jpg', pos: '35% 50%', logo: '/brand/logos/wuling.png', color: '#C8102E' },
-  { key: 'farizon', tag: 'Farizon', title: 'Beyond Logistics', href: '/brands/farizon', img: '/brand/models/farizon-van.jpg', pos: '50% 55%', logo: '/brand/logos/farizon.png', color: '#005BAC' },
-  { key: 'suzyfix', tag: 'Suzy Fix', title: 'ศูนย์ซ่อมสีและตัวถังมาตรฐาน', href: '/service#suzy-fix', img: '/brand/suzyfix/suzyfix-mechanic.jpg', pos: '50% 40%', logo: null, color: '#E85D2F' },
+  { key: 'gwm', tag: 'GWM', title: 'Tank 300 · Tank 500', href: '/brands/gwm', img: '/brand/gwm-tank300/front.jpg', pos: '40% 50%', logo: '/brand/logos/header/gwm.png', color: '#FF6600' },
+  { key: 'suzuki', tag: 'Suzuki', title: 'Way of Life!', href: '/brands/suzuki', img: '/brand/showcase/suzuki.jpg', pos: '20% 50%', logo: '/brand/logos/header/suzuki.png', color: '#E30016' },
+  { key: 'lepas', tag: 'Lepas', title: 'Drive Your Elegance', href: '/brands/lepas', img: '/brand/lepas-l6/street.jpg', pos: '55% 50%', logo: '/brand/logos/header/lepas.png', color: '#A0522D' },
+  { key: 'wuling', tag: 'Wuling', title: 'Enjoy the Ride', href: '/brands/wuling', img: '/brand/wuling-darion/front34.jpg', pos: '35% 50%', logo: '/brand/logos/header/wuling.png', color: '#C8102E' },
+  { key: 'farizon', tag: 'Farizon', title: 'Beyond Logistics', href: '/brands/farizon', img: '/brand/models/farizon-van.jpg', pos: '50% 55%', logo: '/brand/logos/header/farizon.png', color: '#005BAC' },
+  { key: 'suzyfix', tag: 'Suzy Fix', title: 'ศูนย์ซ่อมสีและตัวถังมาตรฐาน', href: '/service#suzy-fix', img: '/brand/suzyfix/suzyfix-mechanic.jpg', pos: '50% 40%', logo: '/brand/logos/header/suzyfix.png', color: '#E85D2F' },
 ];
 
 export default function HomePage() {
@@ -154,17 +152,8 @@ export default function HomePage() {
                   </span>
                 )}
 
-                <div className="absolute inset-x-0 bottom-0 p-6 sm:p-7">
-                  <span
-                    className="mb-2 inline-block rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-white opacity-0 -translate-y-1.5 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0"
-                    style={{ backgroundColor: u.color }}
-                  >
-                    {u.tag}
-                  </span>
-                  <span
-                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold transition-all duration-300 group-hover:gap-2.5"
-                    style={{ color: u.color }}
-                  >
+                <div className="absolute inset-x-0 bottom-0 flex justify-start p-6 text-left sm:p-7">
+                  <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#FF4D4D] transition-all duration-300 group-hover:gap-2.5">
                     ดูรายละเอียดเพิ่มเติม
                     <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </span>
@@ -214,54 +203,8 @@ export default function HomePage() {
           <div key={branchTab} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {BRANCH_BRAND_TILES.filter((t) => branchTab === 'all' || t.region === branchTab).map((tile) => {
               const b = branches.find((br) => br.slug === tile.branchSlug)!;
-              const isService = tile.label.startsWith('Suzy Fix');
-              return (
-                <div
-                  key={`${tile.branchSlug}-${tile.label}`}
-                  className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-[#1C1E22] shadow-[0_10px_30px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-                >
-                  <Link href={`/branches/${b.slug}`} className="block">
-                    <div className="relative aspect-[16/10] overflow-hidden bg-white/5">
-                      <img
-                        src={tile.image ?? BRANCH_COVER[b.slug]}
-                        alt={tile.label}
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        style={{ objectPosition: COVER_POSITION[tile.image ?? BRANCH_COVER[b.slug]] ?? 'center' }}
-                      />
-                      {isService && (
-                        <span className="absolute top-3 left-3 rounded-md bg-black/75 px-3 py-1 text-[11px] font-bold text-white backdrop-blur-md">
-                          SERVICE CENTER
-                        </span>
-                      )}
-                    </div>
-                    <div className="p-6 pb-4">
-                      <h3 className="mb-3 text-lg font-bold text-white transition-colors group-hover:text-brand-red">{tile.label}</h3>
-                      <div className="space-y-2.5 text-xs text-white/65">
-                        <div className="flex items-start gap-2.5">
-                          <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-red" />
-                          <span className="leading-relaxed">{b.address}</span>
-                        </div>
-                        {VERIFIED_PHONE.has(b.slug) && (
-                          <div className="flex items-center gap-2.5">
-                            <Phone className="h-4 w-4 shrink-0 text-brand-red" />
-                            <span>{b.phone}</span>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  </Link>
-                  <div className="p-6 pt-0">
-                    <a
-                      href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(b.mapQuery)}`}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-brand-red/15 bg-brand-red/5 py-2.5 text-xs font-bold text-brand-red transition-colors hover:bg-brand-red hover:text-white"
-                    >
-                      <MapPin className="h-4 w-4" /> นำทางด้วย Google Maps
-                    </a>
-                  </div>
-                </div>
-              );
+              const img = tile.image ?? BRANCH_COVER[b.slug];
+              return <ShowroomTile key={`${tile.branchSlug}-${tile.label}`} branch={b} label={tile.label} image={img} position={COVER_POSITION[img]} />;
             })}
           </div>
         </div>
@@ -286,7 +229,7 @@ export default function HomePage() {
                   const Icon = f.icon;
                   return (
                     <div key={f.title} className="p-5 bg-[#1C1E22] rounded-xl border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.3)]">
-                      <div className="w-10 h-10 mb-3 flex items-center justify-center rounded-lg bg-brand-red/10 text-brand-red text-sm font-black">
+                      <div className="w-10 h-10 mb-3 flex items-center justify-center rounded-lg bg-brand-red/10 text-[#FF4D4D] text-sm font-black">
                         {Icon ? <Icon className="w-5 h-5" /> : f.badge}
                       </div>
                       <h3 className="font-bold text-white mb-1">{f.title}</h3>
@@ -338,7 +281,7 @@ export default function HomePage() {
                   </div>
                   <div className="flex items-center justify-between gap-2 px-5 py-4">
                     <span className="text-base font-bold text-white leading-snug">{p.title}</span>
-                    <ChevronRight className="w-5 h-5 text-white/30 shrink-0 group-hover:text-brand-red group-hover:translate-x-0.5 transition-all" />
+                    <ChevronRight className="w-5 h-5 text-white/30 shrink-0 group-hover:text-[#FF4D4D] group-hover:translate-x-0.5 transition-all" />
                   </div>
                 </Link>
               );
@@ -356,7 +299,7 @@ export default function HomePage() {
             <div>
               <h2 className="text-2xl sm:text-3xl font-black text-white mt-2">ข่าวสารและบทความ</h2>
             </div>
-            <Link href="/news" className="hidden sm:inline-flex items-center gap-1 text-xs font-semibold text-brand-red hover:text-brand-red/80 transition-colors shrink-0">
+            <Link href="/news" className="hidden sm:inline-flex items-center gap-1 text-xs font-semibold text-[#FF4D4D] hover:text-[#FF4D4D]/80 transition-colors shrink-0">
               ดูบทความทั้งหมด
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
@@ -376,7 +319,7 @@ export default function HomePage() {
                     {n.image ? (
                       <img src={n.image} alt={n.imageAlt ?? n.title} className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
                     ) : (
-                      <Newspaper className="w-8 h-8 text-brand-red/40" />
+                      <Newspaper className="w-8 h-8 text-[#FF4D4D]/40" />
                     )}
                     <span className="absolute top-3 left-3 text-[10px] font-bold px-2 py-0.5 rounded bg-brand-red-gradient text-white">
                       {NEWS_CATEGORY_LABEL[n.category] ?? n.category}
@@ -386,7 +329,7 @@ export default function HomePage() {
                     <span className="text-[11px] text-white/65">{formatDateTH(n.publishDate)}</span>
                     <h3 className="text-sm font-bold text-white mt-1.5 leading-snug line-clamp-2">{n.title}</h3>
                     <p className="text-xs text-white/65 mt-2 leading-relaxed line-clamp-2 flex-1">{n.excerpt}</p>
-                    <span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-brand-red group-hover:text-brand-red/80 transition-colors">
+                    <span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-[#FF4D4D] group-hover:text-[#FF4D4D]/80 transition-colors">
                       อ่านเพิ่มเติม
                       <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
                     </span>

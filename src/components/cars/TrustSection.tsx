@@ -22,7 +22,7 @@ export default function TrustSection() {
           const Icon = p.icon;
           return (
             <div key={p.title} className="rounded-2xl border border-white/10 bg-[#1C1E22] p-6 text-center shadow-[0_10px_30px_rgba(0,0,0,0.3)]">
-              <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-brand-red/15 text-[#FF0000]">
+              <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-brand-red/15 text-[#FF4D4D]">
                 <Icon className="h-6 w-6" strokeWidth={1.7} />
               </span>
               <h3 className="mt-4 font-bold text-white">{p.title}</h3>

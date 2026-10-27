@@ -8,10 +8,7 @@ import { MapPin, Clock, Phone, MessageCircle, Navigation } from "lucide-react";
 import { BRANCH_PHOTO, BRANCH_PHOTO_POSITION } from "@/components/branches/BranchCard";
 import BranchGallery from "@/components/branches/BranchGallery";
 import { branchGallery } from "@/lib/data/branchPhotos";
-import { company } from "@/lib/data/company";
 
-// Branches with verified phone/LINE; others fall back to head office.
-const VERIFIED_CONTACT = new Set(["srinakarin", "rayong", "rayong-omoda-jaecoo", "rayong-lepas", "farizon-srinakarin", "sriracha", "lamlukka", "suzy-fix"]);
 
 export function generateStaticParams() {
   return branches.map((b) => ({ slug: b.slug }));
@@ -46,9 +43,9 @@ export default async function BranchDetailPage({ params }: { params: Promise<{ s
     openingHours: branch.hours,
   };
 
-  const verified = VERIFIED_CONTACT.has(branch.slug);
-  const phone = verified ? branch.phone : company.phone;
-  const lineHref = branch.lineUrl ?? null;
+  // Every branch shows its own CRM phone and LINE OA
+  const phone = branch.phone;
+  const lineHref = branch.lineUrl ?? `https://line.me/R/ti/p/${branch.line}`;
   const photo = BRANCH_PHOTO[branch.slug];
   const gallery = branchGallery[branch.slug];
   const short = branch.name.replace("Maporn Autogroup ", "");
@@ -81,17 +78,17 @@ export default async function BranchDetailPage({ params }: { params: Promise<{ s
         {/* Info */}
         <div className="space-y-4">
           <div className="flex items-start gap-3 rounded-2xl border border-white/10 bg-[#1C1E22] p-5">
-            <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-[#FF0000]" />
+            <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-[#FF4D4D]" />
             <div><p className="text-xs text-white/50">ที่อยู่</p><p className="mt-1 text-sm leading-relaxed text-white">{branch.address}</p></div>
           </div>
           <div className="flex items-start gap-3 rounded-2xl border border-white/10 bg-[#1C1E22] p-5">
-            <Clock className="mt-0.5 h-5 w-5 shrink-0 text-[#FF0000]" />
+            <Clock className="mt-0.5 h-5 w-5 shrink-0 text-[#FF4D4D]" />
             <div><p className="text-xs text-white/50">เวลาทำการ</p><p className="mt-1 text-sm leading-relaxed text-white">{branch.hours}</p></div>
           </div>
           <div className="rounded-2xl border border-white/10 bg-[#1C1E22] p-5">
-            <p className="text-xs text-white/50">{verified ? "ติดต่อสาขา" : "ติดต่อสอบถาม (สำนักงานใหญ่)"}</p>
-            <a href={`tel:${phone.replace(/[^0-9+]/g, "")}`} className="mt-1 flex items-center gap-2 text-3xl font-extrabold tracking-tight hover:text-[#FF0000]">
-              <Phone className="h-6 w-6 text-[#FF0000]" /> {phone}
+            <p className="text-xs text-white/50">ติดต่อสาขา</p>
+            <a href={`tel:${phone.replace(/[^0-9+]/g, "")}`} className="mt-1 flex items-center gap-2 text-3xl font-extrabold tracking-tight hover:text-[#FF4D4D]">
+              <Phone className="h-6 w-6 text-[#FF4D4D]" /> {phone}
             </a>
             <div className={`mt-4 grid gap-2 ${lineHref ? "grid-cols-2" : "grid-cols-1"}`}>
               <a href={`tel:${phone.replace(/[^0-9+]/g, "")}`} className="flex items-center justify-center gap-2 rounded-xl border border-white/20 py-3 text-sm font-bold transition-colors hover:bg-white hover:text-[#101113]"><Phone className="h-4 w-4" /> โทร</a>

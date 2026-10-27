@@ -3,7 +3,7 @@ export const company = {
   legalName: "บริษัท มาพรพาณิชย์ จำกัด",
   taxId: "0105531023081",
   domain: "www.mapornautogroup.com",
-  hqAddress: "เลขที่ 2 ซอยมาพร ถนนศรีนครินทร์ แขวงหนองบอน เขตประเวศ กรุงเทพฯ 10250",
+  hqAddress: "เลขที่ 2 ซอยมาพร ถนนศรีนครินทร์ แขวงหนองบอน เขตประเวศ กรุงเทพมหานคร 10250",
   phone: "02-322-3663-5",
   salesPhone: "062-459-1542",
   email: "info@mapornautogroup.com",

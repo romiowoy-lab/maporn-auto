@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ArrowUpRight, Eye, HeartHandshake, ShieldCheck, LayoutGrid, Wrench, Users, Check } from "lucide-react";
-import { company, companyTimeline, companyValues } from "@/lib/data/company";
+import { ArrowRight, ArrowUpRight, Eye, HeartHandshake } from "lucide-react";
+import { company, companyTimeline } from "@/lib/data/company";
 import { getBrand } from "@/lib/data/brands";
 import { getBrandGroups } from "@/lib/data/brandGroups";
 import ScrollFx from "@/components/ui/ScrollFx";
@@ -20,7 +20,6 @@ export const metadata: Metadata = {
     "Maporn Autogroup (มาพรพาณิชย์) ผู้จัดจำหน่ายรถยนต์อย่างเป็นทางการในเครือ 6 แบรนด์ พร้อมศูนย์ซ่อมตัวถังและสีแบบมืออาชีพ ดำเนินธุรกิจมาตั้งแต่ปี 1988",
 };
 
-const VALUE_ICONS = [ShieldCheck, LayoutGrid, Wrench, Users];
 
 const TEAM = [
   { name: "นางทิพย์รัตน์ โอภาสรังสรรค์", initial: "ท", role: "ประธานกรรมการบริหาร" },
@@ -67,13 +66,6 @@ export default function AboutPage() {
   const ORDER = ["omoda-jaecoo", "gwm", "suzuki", "lepas", "wuling", "farizon", "nex"];
   const groups = [...getBrandGroups()].sort((x, y) => (ORDER.indexOf(x.key) + 99) % 99 - (ORDER.indexOf(y.key) + 99) % 99);
   const brandCount = groups.length;
-  const values = companyValues.map((v) => ({ ...v, description: v.description.replace(/\d+ แบรนด์/, `${brandCount} แบรนด์`) }));
-  const standards = [
-    `ผู้จัดจำหน่ายอย่างเป็นทางการ ${brandCount} แบรนด์`,
-    `ดำเนินธุรกิจมากว่า ${years} ปี`,
-    "ศูนย์ซ่อมสีและตัวถังมาตรฐาน Suzy Fix",
-    "ศูนย์ติดตั้งแก๊ส LPG ได้รับใบอนุญาตกรมการขนส่งทางบก",
-  ];
   const STATS = [
     { value: `${years}+`, label: "ปีแห่งความไว้วางใจ" },
     { value: String(brandCount), label: "แบรนด์ในเครือ" },
@@ -104,14 +96,6 @@ export default function AboutPage() {
               {company.legalName} ดูแลลูกค้ามากว่า {years} ปี ครบตั้งแต่การเลือกซื้อรถใหม่ ไฟแนนซ์ ศูนย์บริการ
               จนถึงงานซ่อมสีและตัวถังมาตรฐานโรงงาน
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/brands" className="inline-flex items-center gap-2 rounded-xl bg-brand-red-gradient px-6 py-3.5 text-sm font-bold shadow-[0_14px_34px_-12px_rgba(255,0,0,0.7)] transition-all hover:-translate-y-0.5 hover:brightness-110">
-                แบรนด์ในเครือ <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link href="/body-shop" className="inline-flex items-center gap-2 rounded-xl border border-white/20 px-6 py-3.5 text-sm font-bold transition-colors hover:bg-white hover:text-[#0c0d0f]">
-                ศูนย์ซ่อมตัวถังและสี
-              </Link>
-            </div>
           </ScrollFx>
 
           <ScrollFx effect="fade-up" delay={0.1} className="relative mx-auto w-full max-w-xl lg:mx-0">
@@ -124,6 +108,36 @@ export default function AboutPage() {
           </ScrollFx>
         </div>
 
+      </section>
+
+      {/* ================= VISION / MISSION ================= */}
+      <section className="pb-10">
+        <div className="container-page">
+          <div className="grid gap-4 md:grid-cols-2">
+            {[
+              { icon: Eye, label: "Vision", title: "วิสัยทัศน์", lead: null as string | null, text: "มาพร ออโต้ กรุ๊ป มุ่งมั่นพัฒนาธุรกิจเพื่อเป็นเครือข่ายตัวแทนจำหน่ายรถยนต์ที่ดูแลลูกค้าทั่วประเทศ พร้อมศูนย์บริการสำหรับในกรุงเทพฯ และภาคตะวันออก (ระยอง จันทบุรี ตราด ชลบุรี) ที่ให้ความอุ่นใจแก่ลูกค้าตลอดการเป็นเจ้าของรถ ไม่ใช่แค่วันที่ซื้อ" },
+              { icon: HeartHandshake, label: "Mission", title: "พันธกิจ", lead: "อุ่นใจเมื่อซื้อรถและใช้บริการกับมาพร", text: "มาพร ออโต้ กรุ๊ป มอบความอุ่นใจให้ลูกค้าตั้งแต่วันแรกที่เดินเข้ามาหาเรา จนถึงทุกวันที่คุณใช้รถ — เพราะเรามุ่งมั่นดูแลลูกค้าด้วยใจ เราพร้อมดูแลคุณต่อไปตลอดทาง" },
+            ].map(({ icon: Icon, ...c }, i) => (
+              <ScrollFx key={c.title} effect="fade-up" delay={i * 0.08} className="rounded-2xl border border-white/10 bg-gradient-to-br from-[#17181c] to-[#111215] p-7">
+                <div className="flex items-center gap-3">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-red/15 text-[#FF4D4D]">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-white/40">{c.label}</p>
+                    <h3 className="text-lg font-bold">{c.title}</h3>
+                  </div>
+                </div>
+                {c.lead && <p className="mt-4 font-semibold text-[#FF4D4D]">&ldquo;{c.lead}&rdquo;</p>}
+                <p className="mt-3 text-sm leading-relaxed text-white/60">{c.text}</p>
+              </ScrollFx>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= STATS ================= */}
+      <section>
         <div className="container-page relative pb-16">
           <ScrollFx effect="fade-up" className="grid grid-cols-2 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] lg:grid-cols-4">
             {STATS.map((s, i) => (
@@ -155,52 +169,11 @@ export default function AboutPage() {
                     <span className="block font-bold">{g.name}</span>
                     <span className="mt-0.5 block truncate text-sm italic text-white/50">{g.tagline}</span>
                   </span>
-                  <ArrowUpRight className="h-5 w-5 shrink-0 text-white/30 transition-colors group-hover:text-[#FF0000]" />
+                  <ArrowUpRight className="h-5 w-5 shrink-0 text-white/30 transition-colors group-hover:text-[#FF4D4D]" />
                 </Link>
               );
             })}
           </ScrollFx>
-        </div>
-      </section>
-
-      {/* ================= STORY + VISION / MISSION ================= */}
-      <section className="py-16 sm:py-20">
-        <div className="container-page grid gap-12 lg:grid-cols-2 lg:gap-16">
-          <ScrollFx effect="fade-up">
-            <SectionTitle title={<>{years} ปีบนเส้นทาง<br />แห่งความไว้วางใจ</>} />
-            <p className="mt-6 leading-relaxed text-white/65">
-              มาพรพาณิชย์เริ่มต้นธุรกิจตัวแทนจำหน่ายรถยนต์ในปี {company.foundedYear} และเติบโตเป็น Maporn Autogroup ในวันนี้
-              เรารวมแบรนด์รถยนต์ชั้นนำไว้ในเครือเดียว พร้อมศูนย์บริการและศูนย์ซ่อมสีตัวถังที่ดูแลรถของคุณได้ครบในที่เดียว
-            </p>
-            <figure className="mt-8 border-l-2 border-brand-red pl-6">
-              <blockquote className="text-2xl font-semibold leading-snug">&ldquo;{company.motto}&rdquo;</blockquote>
-              <figcaption className="mt-4 flex items-center gap-4">
-                <MapornLogo variant="white" className="h-7 w-auto" />
-                <span className="text-sm text-white/50">{company.servicePhilosophy}</span>
-              </figcaption>
-            </figure>
-          </ScrollFx>
-
-          <div className="space-y-4">
-            {[
-              { icon: Eye, label: "Vision", title: "วิสัยทัศน์", lead: null as string | null, text: "มาพร ออโต้ กรุ๊ป มุ่งมั่นพัฒนาธุรกิจเพื่อเป็นเครือข่ายตัวแทนจำหน่ายรถยนต์ที่ดูแลลูกค้าทั่วประเทศ พร้อมศูนย์บริการสำหรับในกรุงเทพฯ และภาคตะวันออก (ระยอง จันทบุรี ตราด ชลบุรี) ที่ให้ความอุ่นใจแก่ลูกค้าตลอดการเป็นเจ้าของรถ ไม่ใช่แค่วันที่ซื้อ" },
-              { icon: HeartHandshake, label: "Mission", title: "พันธกิจ", lead: "อุ่นใจเมื่อซื้อรถและใช้บริการกับมาพร", text: "มาพร ออโต้ กรุ๊ป มอบความอุ่นใจให้ลูกค้าตั้งแต่วันแรกที่เดินเข้ามาหาเรา จนถึงทุกวันที่คุณใช้รถ — เพราะเรามุ่งมั่นดูแลลูกค้าด้วยใจ เราพร้อมดูแลคุณต่อไปตลอดทาง" },
-            ].map(({ icon: Icon, ...c }, i) => (
-              <ScrollFx key={c.title} effect="fade-up" delay={i * 0.08} className="rounded-2xl border border-white/10 bg-gradient-to-br from-[#17181c] to-[#111215] p-7">
-                <div className="flex items-center gap-3">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-red/15 text-[#FF0000]">
-                    <Icon className="h-5 w-5" />
-                  </span>
-                  <div>
-                    <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-white/40">{c.label}</p>
-                    <h3 className="text-lg font-bold">{c.title}</h3>
-                  </div>
-                </div>
-                {c.lead && <p className="mt-4 font-semibold text-[#FF0000]">&ldquo;{c.lead}&rdquo;</p>}
-                <p className="mt-3 text-sm leading-relaxed text-white/60">{c.text}</p>
-              </ScrollFx>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -218,7 +191,7 @@ export default function AboutPage() {
                     <span className="h-3 w-3 rounded-full bg-brand-red ring-4 ring-[#111215]" />
                   </span>
                   <div className="h-full rounded-2xl border border-white/10 bg-[#17181c] p-5 lg:mt-4">
-                    <p className="text-2xl font-black text-[#FF0000]">{t.year}</p>
+                    <p className="text-2xl font-black text-[#FF4D4D]">{t.year}</p>
                     <h3 className="mt-2 font-bold leading-snug">{t.title}</h3>
                     <p className="mt-1.5 text-xs leading-relaxed text-white/55">{t.description}</p>
                   </div>
@@ -230,32 +203,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ================= WHY MAPORN + LEADERSHIP ================= */}
+      {/* ================= LEADERSHIP ================= */}
       <section className="py-16 sm:py-20">
         <div className="container-page">
-          <SectionTitle center title="ทำไมลูกค้าไว้วางใจมาพร" />
-          <ScrollFx effect="fade-up" stagger={0.06} className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {values.map((v, i) => {
-              const Icon = VALUE_ICONS[i % VALUE_ICONS.length];
-              return (
-                <div key={v.title} className="rounded-2xl border border-white/10 bg-[#141518] p-6 transition-colors hover:border-white/25">
-                  <Icon className="h-6 w-6 text-[#FF0000]" strokeWidth={1.8} />
-                  <h3 className="mt-5 font-bold">{v.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-white/55">{v.description}</p>
-                </div>
-              );
-            })}
-          </ScrollFx>
-
-          <ScrollFx effect="fade-up" className="mt-6 flex flex-wrap justify-center gap-x-8 gap-y-3 rounded-2xl border border-white/10 px-6 py-5">
-            {standards.map((s) => (
-              <span key={s} className="inline-flex items-center gap-2 text-sm text-white/75">
-                <Check className="h-4 w-4 text-[#FF0000]" strokeWidth={3} /> {s}
-              </span>
-            ))}
-          </ScrollFx>
-
-          <div className="mt-16 grid items-center gap-6 lg:grid-cols-[0.8fr_1.2fr]">
+          {/* "ทำไมลูกค้าไว้วางใจมาพร" (values + standards) hidden for now at the client's request */}
+          <div className="grid items-center gap-6 lg:grid-cols-[0.8fr_1.2fr]">
             <SectionTitle title="ทีมผู้บริหาร" />
             <ScrollFx effect="fade-up" className="grid gap-4 sm:grid-cols-2">
               {TEAM.map((m) => (

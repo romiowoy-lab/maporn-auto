@@ -180,7 +180,7 @@ export default function MapornHero() {
             {car.model.isNew && !car.override ? "ALL-NEW " : ""}
             {getBrandLabel(car.model.brandSlug).toUpperCase()}
             <br />
-            <span className="text-brand-red">{(car.override?.name ?? car.model.name).toUpperCase()}</span>
+            <span className="text-[#FF4D4D]">{(car.override?.name ?? car.model.name).toUpperCase()}</span>
           </h1>
 
           <p className={`mt-5 max-w-md text-sm sm:text-base leading-relaxed font-medium ${car.noOverlay ? "text-white/95" : "text-white/70"}`}>

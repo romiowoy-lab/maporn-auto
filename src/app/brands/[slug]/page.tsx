@@ -76,7 +76,7 @@ export async function generateMetadata({
 export default async function BrandDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const brand = getBrand(slug);
-  if (!brand || brand.hidden) notFound();
+  if (!brand) notFound();
 
   const brandModels = getModelsByBrand(brand.slug);
   const featured = brandModels.filter((m) => m.isFeatured).slice(0, 3);

@@ -1,16 +1,12 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Clock, Phone, MessageCircle, ExternalLink, Navigation } from "lucide-react";
 import { Branch } from "@/lib/types";
 import { company } from "@/lib/data/company";
 import { BRANCH_PHOTO, BRANCH_PHOTO_POSITION } from "@/components/branches/BranchCard";
 
-const VERIFIED_CONTACT = new Set([
-  "srinakarin", "rayong", "rayong-omoda-jaecoo", "rayong-lepas", "farizon-srinakarin", "sriracha", "lamlukka", "suzy-fix",
-]);
 
 function mapsHref(mapQuery: string) {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery)}`;
@@ -25,9 +21,9 @@ function FacebookGlyph({ className = "" }: { className?: string }) {
 }
 
 function BranchWideCard({ b }: { b: Branch }) {
-  const verified = VERIFIED_CONTACT.has(b.slug);
-  const phone = verified ? b.phone : company.phone;
-  const lineHref = b.lineUrl ?? null;
+  // Every showroom shows its own CRM phone and LINE OA
+  const phone = b.phone;
+  const lineHref: string | null = b.lineUrl ?? `https://line.me/R/ti/p/${b.line}`;
   const mapsUrl = b.googleMapsUrl ?? mapsHref(b.mapQuery);
   const photo = BRANCH_PHOTO[b.slug];
   // Keep the brand: several Rayong showrooms share an address, so "Maporn ระยอง" alone looks duplicated
@@ -39,14 +35,9 @@ function BranchWideCard({ b }: { b: Branch }) {
         {/* Photo */}
         <div className="relative min-h-[260px] lg:min-h-full">
           {photo && <Image src={photo} alt={b.name} fill sizes="(min-width: 1024px) 28vw, 100vw" className="object-cover" style={{ objectPosition: BRANCH_PHOTO_POSITION[b.slug] ?? "center" }} />}
-          <div className="absolute left-4 top-4 flex flex-wrap gap-2">
-            {b.isShowroom && <span className="rounded-full bg-brand-red-gradient px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide text-white shadow">Showroom</span>}
-            {b.isServiceCenter && <span className="rounded-full bg-white px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide text-brand-navy shadow">Service Center</span>}
-            {b.hasBodyPaint && <span className="rounded-full bg-[#F26A1B] px-3 py-1 text-[11px] font-extrabold tracking-wide text-white shadow">ซ่อมสีและตัวถัง</span>}
-          </div>
-          <div className="absolute bottom-4 left-5 right-5 text-white" style={{ textShadow: "0 2px 10px rgba(0,0,0,0.85), 0 6px 22px rgba(0,0,0,0.6)" }}>
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/90">{b.province}</p>
-            <h3 className="mt-1 text-xl font-extrabold leading-tight sm:text-2xl">{short}</h3>
+          {/* Red name band across the bottom of the photo */}
+          <div className="absolute inset-x-0 bottom-0 bg-brand-red-gradient px-5 py-3 text-white">
+            <h3 className="text-xl font-extrabold leading-tight sm:text-2xl">{short}</h3>
           </div>
         </div>
 
@@ -61,7 +52,7 @@ function BranchWideCard({ b }: { b: Branch }) {
             <p className="text-sm leading-relaxed text-brand-navy">{b.hours}</p>
           </div>
           <div className="rounded-xl border border-black/[0.06] bg-white p-4">
-            <p className="text-[11px] font-semibold text-brand-slate">{verified ? "ติดต่อสาขา" : "ติดต่อสอบถาม (สำนักงานใหญ่)"}</p>
+            <p className="text-[11px] font-semibold text-brand-slate">ติดต่อสาขา</p>
             <a href={`tel:${phone.replace(/[^0-9+]/g, "")}`} className="mt-1 flex items-center gap-2 text-2xl font-extrabold tracking-tight text-brand-navy hover:text-brand-red">
               <Phone className="h-5 w-5 text-brand-red" />
               {phone}
@@ -109,22 +100,16 @@ function BranchWideCard({ b }: { b: Branch }) {
               เปิดใน Maps <ExternalLink className="h-3.5 w-3.5" />
             </a>
           </div>
-          <div className="grid gap-2 p-4 sm:grid-cols-2">
+          <div className="p-4">
             <a
               href={mapsUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-navy px-4 py-3 text-sm font-bold text-white transition-colors hover:bg-brand-red"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-navy px-4 py-3 text-sm font-bold text-white transition-colors hover:bg-brand-red"
             >
               <Navigation className="h-4 w-4" />
-              เปิดเส้นทาง Google Maps
+              Google Map
             </a>
-            <Link
-              href={`/test-drive?branch=${b.slug}`}
-              className="inline-flex items-center justify-center rounded-xl border border-brand-navy/20 px-4 py-3 text-sm font-bold text-brand-navy transition-colors hover:border-brand-red hover:text-brand-red"
-            >
-              นัดหมายเข้าชม
-            </Link>
           </div>
         </div>
       </div>

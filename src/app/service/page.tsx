@@ -1,10 +1,10 @@
-import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { Wrench, Settings, PaintBucket, PackageSearch, ShieldCheck, Siren, MapPin } from "lucide-react";
 import { serviceOfferings, branches } from "@/lib/data/branches";
 import SuzyFixGallery from "@/components/service/SuzyFixGallery";
-import BranchCard from "@/components/branches/BranchCard";
+import { BRANCH_PHOTO, BRANCH_PHOTO_POSITION } from "@/components/branches/BranchCard";
+import ShowroomTile from "@/components/branches/ShowroomTile";
 
 export const metadata: Metadata = {
   title: "ศูนย์บริการและซ่อมสีตัวถัง Suzy Fix",
@@ -59,12 +59,6 @@ export default function ServicePage() {
             ทีมช่างผู้เชี่ยวชาญที่ผ่านการอบรมมาตรฐานจากทุกแบรนด์ พร้อมอะไหล่แท้และอุปกรณ์ตรวจเช็กทันสมัย
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              href="/service/appointment"
-              className="inline-flex items-center gap-2 rounded-xl bg-brand-red-gradient px-6 py-3.5 text-sm font-bold text-white shadow-[0_8px_20px_-6px_rgba(255,0,0,0.5)] transition-all hover:brightness-110"
-            >
-              นัดหมายเข้าศูนย์บริการ
-            </Link>
             <a
               href="#service-centers"
               className="inline-flex items-center gap-2 rounded-xl border border-white/25 bg-white/10 px-6 py-3.5 text-sm font-bold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:border-white/40"
@@ -124,28 +118,29 @@ export default function ServicePage() {
         </div>
       </section>
 
-      {/* SERVICE CENTERS — every branch: body & paint shops first, then the other showrooms */}
-      <section id="service-centers" className="bg-white py-14 sm:py-20 scroll-mt-24">
+      {/* SERVICE CENTERS — same dark showroom cards as the homepage; body & paint shops first */}
+      <section id="service-centers" className="bg-[#101113] py-14 sm:py-20 scroll-mt-24 text-white">
         <div className="container-page">
-          <h2 className="text-2xl font-bold text-brand-navy">ศูนย์บริการทั่วประเทศ ({bodyPaintCenters.length + showroomCenters.length})</h2>
+          <h2 className="text-3xl font-black tracking-tight sm:text-4xl">ศูนย์บริการทั่วประเทศ</h2>
+          <p className="mt-2 text-sm text-white/65 sm:text-base">{bodyPaintCenters.length + showroomCenters.length} สาขา ครอบคลุมกรุงเทพฯ ปริมณฑล และภาคตะวันออก</p>
 
-          <div className="mt-8 flex items-center gap-3">
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-red/10 text-brand-red"><PaintBucket className="h-5 w-5" /></span>
-            <h3 className="text-lg font-bold text-brand-navy">ศูนย์บริการ + ซ่อมสีและตัวถัง ({bodyPaintCenters.length})</h3>
+          <div className="mt-10 flex items-center gap-3">
+            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 text-[#FF4D4D]"><PaintBucket className="h-5 w-5" /></span>
+            <h3 className="text-lg font-bold">ศูนย์บริการ + ซ่อมสีและตัวถัง ({bodyPaintCenters.length})</h3>
           </div>
-          <div className="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="mt-5 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {bodyPaintCenters.map((b) => (
-              <BranchCard key={b.slug} branch={b} />
+              <ShowroomTile key={b.slug} branch={b} label={b.name.replace("Maporn ", "")} image={BRANCH_PHOTO[b.slug]} position={BRANCH_PHOTO_POSITION[b.slug]} />
             ))}
           </div>
 
           <div className="mt-12 flex items-center gap-3">
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-navy/5 text-brand-navy"><Wrench className="h-5 w-5" /></span>
-            <h3 className="text-lg font-bold text-brand-navy">โชว์รูมและศูนย์บริการ ({showroomCenters.length})</h3>
+            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 text-white"><Wrench className="h-5 w-5" /></span>
+            <h3 className="text-lg font-bold">โชว์รูมและศูนย์บริการ ({showroomCenters.length})</h3>
           </div>
-          <div className="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="mt-5 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {showroomCenters.map((b) => (
-              <BranchCard key={b.slug} branch={b} />
+              <ShowroomTile key={b.slug} branch={b} label={b.name.replace("Maporn ", "")} image={BRANCH_PHOTO[b.slug]} position={BRANCH_PHOTO_POSITION[b.slug]} />
             ))}
           </div>
         </div>

@@ -3,8 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Phone, Calendar, Menu, X, ChevronDown } from "lucide-react";
-import { company } from "@/lib/data/company";
+import { Menu, X, ChevronDown } from "lucide-react";
 import MapornLogo from "@/components/ui/MapornLogo";
 
 const NAV_LINKS = [
@@ -12,6 +11,7 @@ const NAV_LINKS = [
   { href: "/brands", label: "แบรนด์ที่มาพร ออโต้ กรุ๊ป จัดจำหน่าย" },
   { href: "/service", label: "ศูนย์บริการ/ซ่อมสีและตัวถัง" },
   { href: "/branches", label: "โชว์รูม & สาขา" },
+  { href: "/news", label: "บทความ" },
   { href: "/about", label: "เกี่ยวกับเรา" },
   { href: "/contact", label: "ติดต่อเรา" },
 ];
@@ -30,6 +30,18 @@ const BRAND_STRIP = [
 ];
 
 type BrandItem = (typeof BRAND_STRIP)[number];
+
+// Menu brand list (text), client order — includes NEX, which is not in the header logo row.
+const MENU_BRANDS = [
+  { name: "OMODA | JAECOO", href: "/brands/omoda" },
+  { name: "GWM", href: "/brands/gwm" },
+  { name: "Suzuki", href: "/brands/suzuki" },
+  { name: "Lepas", href: "/brands/lepas" },
+  { name: "Wuling", href: "/brands/wuling" },
+  { name: "Farizon", href: "/brands/farizon" },
+  { name: "NEX", href: "/brands/nex" },
+  { name: "Suzy Fix", href: "/service#suzy-fix" },
+];
 
 // Equal visual area: width × height is the same for every logo (height capped so square marks don't tower).
 // The OMODA | JAECOO wordmark is so long that equal area would make it unreadable, so it gets a fixed width.
@@ -153,21 +165,15 @@ export default function Header() {
                       <ChevronDown className={`h-5 w-5 transition-transform duration-300 ${brandsOpen ? "rotate-180" : ""}`} />
                     </button>
                     {brandsOpen && (
-                      <div className="mt-6 grid max-w-3xl grid-cols-3 gap-x-2 gap-y-6 sm:grid-cols-4 lg:grid-cols-7">
-                        {BRAND_STRIP.map((b) => (
+                      <div className="mt-4 ml-1 flex flex-col space-y-3 border-l border-black/10 pl-5">
+                        {MENU_BRANDS.map((b) => (
                           <Link
-                            key={b.key}
+                            key={b.name}
                             href={b.href}
                             onClick={() => setOpen(false)}
-                            className="group flex flex-col items-center gap-2"
+                            className="w-fit text-base font-medium text-brand-slate transition-colors hover:text-brand-red"
                           >
-                            <span className="flex h-10 items-center transition-transform duration-300 ease-out group-hover:-translate-y-1.5">
-                              <BrandMark b={b} />
-                            </span>
-                            <span className="h-1 w-10 rounded-[50%] bg-black/10 blur-[3px] transition-all duration-300 group-hover:w-12" />
-                            <span className="text-[11px] font-semibold tracking-wide text-brand-slate transition-colors group-hover:text-brand-red">
-                              {b.key === "suzyfix" ? "ซ่อมสี/ตัวถัง" : b.name}
-                            </span>
+                            {b.name}
                           </Link>
                         ))}
                       </div>
@@ -191,24 +197,6 @@ export default function Header() {
             })}
           </nav>
 
-          <div className="mt-10 flex flex-wrap gap-3">
-            <a
-              href={`tel:${company.salesPhone}`}
-              className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full border border-black/10 bg-black/[0.02] text-brand-navy text-xs font-semibold"
-            >
-              <Phone className="w-3.5 h-3.5" />
-              <span>โทรสอบถาม</span>
-            </a>
-            <a
-              href={company.lineUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-brand-red-gradient text-white text-xs font-bold shadow-sm"
-            >
-              <Calendar className="w-3.5 h-3.5" />
-              <span>ทดลองขับ</span>
-            </a>
-          </div>
         </div>
       )}
     </header>

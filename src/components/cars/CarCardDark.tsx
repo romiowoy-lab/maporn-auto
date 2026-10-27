@@ -78,7 +78,7 @@ export default function CarCardDark({ model, index }: { model: VehicleModel; ind
           </span>
           {range && (
             <span className="flex items-center gap-1 rounded-full border border-white/15 bg-black/50 px-2.5 py-1 text-[10px] font-semibold text-white backdrop-blur-md">
-              <Gauge className="h-3 w-3 text-[#FF0000]" />
+              <Gauge className="h-3 w-3 text-[#FF4D4D]" />
               {range}
             </span>
           )}
@@ -102,7 +102,7 @@ export default function CarCardDark({ model, index }: { model: VehicleModel; ind
       </div>
 
       <div className="flex flex-1 flex-col p-5">
-        <p className="text-[11px] font-semibold uppercase tracking-widest text-[#FF0000]">{brand?.name}</p>
+        <p className="text-[11px] font-semibold uppercase tracking-widest text-[#FF4D4D]">{brand?.name}</p>
         <h3 className="mt-1 text-2xl font-bold text-white">{model.name}</h3>
         <p className="mt-1 text-xs text-white/55">{model.bodyType}</p>
         <div className="mt-4 border-t border-white/10 pt-4">
