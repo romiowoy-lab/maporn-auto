@@ -296,7 +296,7 @@ export default function AboutPage() {
                 <div className="flex items-center gap-2">
                   {[
                     { href: company.facebook, label: "Facebook", Icon: FacebookIcon },
-                    { href: `https://line.me/ti/p/${company.line}`, label: "LINE", Icon: LineIcon },
+                    { href: company.lineUrl, label: "LINE", Icon: LineIcon },
                     { href: company.instagram, label: "Instagram", Icon: InstagramIcon },
                   ].map(({ href, label, Icon }) => (
                     <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label} className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-brand-red hover:bg-brand-red hover:text-white">

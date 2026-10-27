@@ -36,7 +36,7 @@ const GROUP_VIDEOS: Record<string, string> = {
 export default function HeroCarousel() {
   const groups = getBrandGroups();
   const telHref = `tel:${company.salesPhone}`;
-  const lineHref = `https://line.me/ti/p/${company.line}`;
+  const lineHref = company.lineUrl;
 
   const unordered: Slide[] = [
     {

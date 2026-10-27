@@ -8,6 +8,8 @@ export const company = {
   salesPhone: "062-459-1542",
   email: "info@mapornautogroup.com",
   line: "@mapornautogroup",
+  // LINE OA Maporn Auto Group (add-friend link)
+  lineUrl: "https://line.me/R/ti/p/@mapornautogroup",
   facebook: "https://facebook.com/MapornAutogroup",
   instagram: "https://instagram.com/mapornautogroup",
   youtube: "https://youtube.com/@MapornAutogroup",

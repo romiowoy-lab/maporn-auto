@@ -16,27 +16,37 @@ const NAV_LINKS = [
   { href: "/contact", label: "ติดต่อเรา" },
 ];
 
-// Brand order per client: OJ (OMODA & JAECOO as one slot, shown as "OJ"), GWM, Suzuki, Lepas, Wuling,
-// Farizon, Suzy Fix (NEX hidden for now). Lepas renders bigger (`big: true`): its logo is a thin cursive wordmark.
+// Brand order per client: OMODA | JAECOO, GWM, Suzuki, Lepas, Wuling, Farizon, Suzy Fix (NEX hidden for now).
+// Logos are trimmed copies (public/brand/logos/header/) and `ratio` is each file's width ÷ height, so every
+// mark can be drawn at the same visual area (see BrandMark) instead of the same box.
 const BRAND_STRIP = [
-  // Official OMODA | JAECOO wordmark — very wide (≈19:1), so it gets its own sizing
-  { key: "omoda-jaecoo", name: "OMODA | JAECOO", href: "/brands/omoda", logos: ["/brand/logos/omoda-jaecoo.svg"], wide: true },
-  { key: "gwm", name: "GWM", href: "/brands/gwm", logos: ["/brand/logos/gwm.png"] },
-  { key: "suzuki", name: "Suzuki", href: "/brands/suzuki", logos: ["/brand/logos/suzuki.svg"] },
-  { key: "lepas", name: "Lepas", href: "/brands/lepas", logos: ["/brand/logos/lepas.png"], big: true },
-  { key: "wuling", name: "Wuling", href: "/brands/wuling", logos: ["/brand/logos/wuling.png"] },
-  { key: "farizon", name: "Farizon", href: "/brands/farizon", logos: ["/brand/logos/farizon.png"] },
-  { key: "suzyfix", name: "Suzy Fix", href: "/service#suzy-fix", logos: ["/brand/logos/suzyfix.jpg"] },
+  { key: "omoda-jaecoo", name: "OMODA | JAECOO", href: "/brands/omoda", logo: "/brand/logos/omoda-jaecoo.svg", ratio: 18.82, wide: true },
+  { key: "gwm", name: "GWM", href: "/brands/gwm", logo: "/brand/logos/header/gwm.png", ratio: 4.89 },
+  { key: "suzuki", name: "Suzuki", href: "/brands/suzuki", logo: "/brand/logos/header/suzuki.png", ratio: 1.49 },
+  { key: "lepas", name: "Lepas", href: "/brands/lepas", logo: "/brand/logos/header/lepas.png", ratio: 3.3 },
+  { key: "wuling", name: "Wuling", href: "/brands/wuling", logo: "/brand/logos/header/wuling.png", ratio: 1.54 },
+  { key: "farizon", name: "Farizon", href: "/brands/farizon", logo: "/brand/logos/header/farizon.png", ratio: 1.59 },
+  { key: "suzyfix", name: "Suzy Fix", href: "/service#suzy-fix", logo: "/brand/logos/header/suzyfix.png", ratio: 1 },
 ];
 
 type BrandItem = (typeof BRAND_STRIP)[number];
 
+// Equal visual area: width × height is the same for every logo (height capped so square marks don't tower).
+// The OMODA | JAECOO wordmark is so long that equal area would make it unreadable, so it gets a fixed width.
+const LOGO_AREA = 1400;
+const LOGO_MAX_H = 32;
 function BrandMark({ b, compact }: { b: BrandItem; compact?: boolean }) {
-  const wide = "wide" in b && b.wide;
-  const size = wide
-    ? compact ? "h-auto w-[150px]" : "h-auto w-[132px] xl:w-[150px]"
-    : compact ? (b.big ? "h-8 w-[50px]" : "h-6 w-[44px]") : b.big ? "h-10 w-[80px]" : "h-8 w-[64px]";
-  return <img src={b.logos[0]} alt={b.name} className={`${size} max-w-full object-contain`} />;
+  let w: number;
+  let h: number;
+  if ("wide" in b && b.wide) {
+    w = 150;
+    h = w / b.ratio;
+  } else {
+    const k = compact ? 0.82 : 1;
+    h = Math.min(LOGO_MAX_H, Math.sqrt(LOGO_AREA / b.ratio)) * k;
+    w = h * b.ratio;
+  }
+  return <img src={b.logo} alt={b.name} width={Math.round(w)} height={Math.round(h)} style={{ width: w, height: h }} className="max-w-full object-contain" />;
 }
 
 // Floating brand logo: no box. Each logo bobs gently on its own soft shadow; on hover it lifts,
@@ -47,7 +57,7 @@ function BrandFloat({ b, active, index, compact }: { b: BrandItem; active: boole
       href={b.href}
       title={b.key === "suzyfix" ? "ศูนย์ซ่อมสีและตัวถัง Suzy Fix" : `ดูรุ่นรถ ${b.name}`}
       aria-current={active ? "page" : undefined}
-      className={`brand-float group relative flex min-w-0 flex-col items-center justify-center ${compact ? "h-14 px-0" : "h-16 shrink px-1.5 xl:px-3"}`}
+      className={`brand-float group relative flex min-w-0 flex-col items-center justify-center ${compact ? "h-14 px-0" : "h-16 shrink px-0"}`}
       style={{ ["--d" as string]: `${index * -0.45}s` }}
     >
       <span className="brand-float-mark flex h-9 max-w-full items-center transition-transform duration-300 ease-out group-hover:-translate-y-1.5">
@@ -82,7 +92,7 @@ export default function Header() {
         </Link>
 
         {/* Center: floating brand logos (no boxes), full colour, static. */}
-        <nav aria-label="แบรนด์รถยนต์" className="hidden lg:flex flex-1 min-w-0 items-center justify-center-safe gap-0 overflow-x-clip xl:gap-2">
+        <nav aria-label="แบรนด์รถยนต์" className="hidden lg:flex flex-1 min-w-0 items-center justify-evenly gap-3 overflow-x-clip">
           {BRAND_STRIP.map((b, i) => (
             <BrandFloat key={b.key} b={b} active={isActive(b)} index={i} />
           ))}
@@ -107,23 +117,6 @@ export default function Header() {
 
         {/* Right: actions */}
         <div className="flex items-center gap-2 ml-auto lg:ml-0">
-          <a
-            href={`tel:${company.salesPhone}`}
-            className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg border border-black/10 bg-black/[0.02] text-brand-navy text-xs font-semibold transition-colors hover:bg-black/[0.05] hover:border-black/20"
-          >
-            <Phone className="w-3.5 h-3.5" />
-            <span className="lg:hidden xl:inline">โทรสอบถาม</span>
-          </a>
-          <a
-            href={`https://line.me/ti/p/${company.line}`}
-            target="_blank"
-            rel="noreferrer"
-            className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-brand-red-gradient hover:brightness-110 text-white text-xs font-bold shadow-sm transition-all"
-          >
-            <Calendar className="w-3.5 h-3.5" />
-            <span>ทดลองขับ</span>
-          </a>
-
           {/* Menu toggle — full site nav (kept on every breakpoint since the desktop bar
               above only carries brand quick-links, not the หน้าแรก/บริการ/ฯลฯ page links) */}
           <button
@@ -207,7 +200,7 @@ export default function Header() {
               <span>โทรสอบถาม</span>
             </a>
             <a
-              href={`https://line.me/ti/p/${company.line}`}
+              href={company.lineUrl}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-brand-red-gradient text-white text-xs font-bold shadow-sm"

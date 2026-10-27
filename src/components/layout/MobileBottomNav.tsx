@@ -1,25 +1,29 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { Phone, MessageCircle } from "lucide-react";
 import { company } from "@/lib/data/company";
+
+// Brand glyphs (LINE and Facebook marks), drawn white on each brand's own colour.
+function LineIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
+    </svg>
+  );
+}
 
 function FacebookIcon({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
       <path d="M14 8.5h2V5.5h-2c-1.93 0-3.5 1.57-3.5 3.5v1.5H8.5v3H10.5V22h3v-8.5H15.83l.5-3H13.5V9c0-.28.22-.5.5-.5Z" />
     </svg>
   );
 }
 
-// Floating round contact buttons, persistent on every page (replaces the old
-// full-width bottom CTA bar). TikTok was requested too but there's no real
-// TikTok link anywhere in company data, so it's left out rather than faked —
-// add it here once a real URL exists.
+// Floating contact buttons on every page: LINE OA Maporn Auto Group and the Maporn Group Facebook page.
 const ACTIONS = [
-  { key: "call", href: `tel:${company.salesPhone}`, label: "โทร", icon: Phone },
-  { key: "line", href: `https://line.me/ti/p/${company.line}`, label: "แอดไลน์", icon: MessageCircle },
-  { key: "facebook", href: company.facebook, label: "Facebook", icon: FacebookIcon },
+  { key: "line", href: company.lineUrl, label: "LINE Maporn Auto Group", icon: LineIcon, bg: "#06C755", iconClass: "h-7 w-7" },
+  { key: "facebook", href: company.facebook, label: "Facebook Maporn Group", icon: FacebookIcon, bg: "#1877F2", iconClass: "h-7 w-7" },
 ];
 
 export default function MobileBottomNav() {
@@ -28,21 +32,21 @@ export default function MobileBottomNav() {
   if (pathname === "/home-2") return null;
 
   return (
-    <div className="fixed right-3 bottom-24 lg:bottom-6 z-40 flex flex-col gap-2">
+    <div className="fixed right-3 bottom-24 z-40 flex flex-col gap-3 sm:right-4 lg:bottom-6">
       {ACTIONS.map((a) => {
         const Icon = a.icon;
-        const external = a.href.startsWith("http");
         return (
           <a
             key={a.key}
             href={a.href}
-            target={external ? "_blank" : undefined}
-            rel={external ? "noreferrer" : undefined}
+            target="_blank"
+            rel="noreferrer"
             aria-label={a.label}
             title={a.label}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white/95 text-brand-red shadow-md transition-all hover:border-brand-red/40 hover:shadow-xl hover:scale-105"
+            className="flex h-14 w-14 items-center justify-center rounded-full text-white shadow-[0_8px_24px_rgba(0,0,0,0.35)] ring-2 ring-white/90 transition-all hover:scale-110 hover:shadow-[0_12px_30px_rgba(0,0,0,0.45)]"
+            style={{ backgroundColor: a.bg }}
           >
-            <Icon className="h-4 w-4" />
+            <Icon className={a.iconClass} />
           </a>
         );
       })}

@@ -197,14 +197,14 @@ export default function MapornHero() {
             {car.model.brandSlug !== "suzyfix" && (
               <Link
                 href={`/test-drive?model=${car.model.slug}`}
-                className="inline-flex items-center gap-2 rounded-lg border border-white/25 bg-white/5 px-6 py-3.5 text-sm font-semibold tracking-wide text-white backdrop-blur-sm transition-all hover:bg-white/10 hover:border-white/40"
+                className="inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3.5 text-sm font-bold tracking-wide text-[#101113] shadow-[0_8px_24px_-6px_rgba(0,0,0,0.6)] transition-all hover:-translate-y-0.5 hover:bg-white/90"
               >
                 ทดลองขับ
               </Link>
             )}
             <Link
               href="/service/appointment"
-              className="inline-flex items-center gap-2 rounded-lg border border-white/15 px-6 py-3.5 text-sm font-semibold tracking-wide text-white/80 transition-all hover:text-white hover:border-white/40"
+              className="inline-flex items-center gap-2 rounded-lg border border-white/60 bg-[#101113]/85 px-6 py-3.5 text-sm font-bold tracking-wide text-white shadow-[0_8px_24px_-6px_rgba(0,0,0,0.6)] backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-white hover:bg-[#101113]"
             >
               <Wrench className="h-4 w-4" />
               นัดหมายเช็คระยะ/ สีและตัวถัง

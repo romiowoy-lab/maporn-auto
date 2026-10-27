@@ -57,7 +57,7 @@ const SOCIAL_LINKS = [
   { href: company.facebook, label: "Facebook" },
   { href: company.instagram, label: "Instagram" },
   { href: company.youtube, label: "YouTube" },
-  { href: `https://line.me/ti/p/${company.line}`, label: "Line" },
+  { href: company.lineUrl, label: "Line" },
 ];
 
 export default function Footer() {

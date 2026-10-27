@@ -71,7 +71,7 @@ export default function B2BFleetPage() {
               <p className="font-semibold text-brand-navy">โทร: {company.salesPhone}</p>
               <p className="font-semibold text-brand-navy">
                 Line:{" "}
-                <Link href={`https://line.me/ti/p/${company.line}`} target="_blank" className="hover:text-brand-red">
+                <Link href={company.lineUrl} target="_blank" className="hover:text-brand-red">
                   {company.line}
                 </Link>
               </p>
