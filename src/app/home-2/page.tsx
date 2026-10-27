@@ -27,7 +27,6 @@ const IS_CUTOUT: Record<string, boolean> = { suzuki: true };
 
 export default function HomePage2Demo() {
   const brandGroups = getBrandGroups();
-  const yearsTrusted = new Date().getFullYear() - Number(company.foundedYear);
 
   return (
     <div className="w-full overflow-x-hidden bg-[#0a0d14] text-[#f5f5f4]">
@@ -51,7 +50,7 @@ export default function HomePage2Demo() {
 
             <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-white/[0.03] backdrop-blur-md border border-amber-500/25 text-amber-400 text-[10px] font-semibold tracking-widest uppercase mb-5">
               <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse mr-2" />
-              {yearsTrusted}+ ปีแห่งความไว้วางใจ
+              กว่า 40 ปีแห่งความไว้วางใจ
             </div>
 
             <h1 className="text-3xl sm:text-4xl xl:text-5xl font-extrabold tracking-tight leading-[1.08] text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-600 drop-shadow-[0_0_28px_rgba(212,175,55,0.35)]">
@@ -60,7 +59,7 @@ export default function HomePage2Demo() {
               AUTO GROUP
             </h1>
             <p className="text-white/70 text-sm mt-3 max-w-xs leading-relaxed">
-              ผู้นำด้านยานยนต์และศูนย์บริการครบวงจร ตลอด {yearsTrusted} ปี ตัวแทนจำหน่ายอย่างเป็นทางการ 7 แบรนด์ชั้นนำ
+              ผู้นำด้านยานยนต์และศูนย์บริการครบวงจร กว่า 40 ปี ตัวแทนจำหน่ายอย่างเป็นทางการ 7 แบรนด์ชั้นนำ
             </p>
 
             <div className="flex flex-col sm:flex-row gap-2.5 mt-6 max-w-sm">
@@ -82,8 +81,7 @@ export default function HomePage2Demo() {
             <div className="flex items-stretch gap-0 max-w-xs mt-8">
               <div className="pr-4">
                 <p className="text-xl font-black text-transparent bg-clip-text bg-gradient-to-b from-amber-200 to-amber-500">
-                  {yearsTrusted}
-                  <span>+</span>
+                  กว่า 40
                 </p>
                 <p className="text-[9px] text-white/40 mt-0.5">ปีในธุรกิจ</p>
               </div>

@@ -61,13 +61,12 @@ function SectionTitle({ title, sub, center = false }: { title: React.ReactNode; 
 }
 
 export default function AboutPage() {
-  const years = new Date().getFullYear() - Number(company.foundedYear);
   // Client-set brand order: OJ, GWM, Suzuki, Lepas, Wuling, Farizon
   const ORDER = ["omoda-jaecoo", "gwm", "suzuki", "lepas", "wuling", "farizon"];
   const groups = [...getBrandGroups()].sort((x, y) => (ORDER.indexOf(x.key) + 99) % 99 - (ORDER.indexOf(y.key) + 99) % 99);
   const brandCount = groups.length;
   const STATS = [
-    { value: `${years}+`, label: "ปีแห่งความไว้วางใจ" },
+    { value: "กว่า 40 ปี", label: "แห่งความไว้วางใจ" },
     { value: String(brandCount), label: "แบรนด์ในเครือ" },
     { value: String(company.branchCount), label: "สาขาโชว์รูม" },
     { value: String(company.serviceCenterCount), label: "ศูนย์บริการ" },
@@ -93,7 +92,7 @@ export default function AboutPage() {
               พร้อมศูนย์ซ่อมตัวถังและสีแบบมืออาชีพ
             </p>
             <p className="mt-5 max-w-lg leading-relaxed text-white/60">
-              {company.legalName} ดูแลลูกค้ามากว่า {years} ปี ครบตั้งแต่การเลือกซื้อรถใหม่ ไฟแนนซ์ ศูนย์บริการ
+              {company.legalName} ดูแลลูกค้ามากว่า 40 ปี ครบตั้งแต่การเลือกซื้อรถใหม่ ไฟแนนซ์ ศูนย์บริการ
               จนถึงงานซ่อมสีและตัวถังมาตรฐานโรงงาน
             </p>
           </ScrollFx>
