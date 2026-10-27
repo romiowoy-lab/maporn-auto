@@ -7,6 +7,7 @@ import Image from "next/image";
 import { MapPin, Clock, Phone, MessageCircle, Navigation } from "lucide-react";
 import { BRANCH_PHOTO, BRANCH_PHOTO_POSITION } from "@/components/branches/BranchCard";
 import BranchGallery from "@/components/branches/BranchGallery";
+import { telHref } from "@/lib/utils";
 import { branchGallery } from "@/lib/data/branchPhotos";
 
 
@@ -87,14 +88,19 @@ export default async function BranchDetailPage({ params }: { params: Promise<{ s
           </div>
           <div className="rounded-2xl border border-white/10 bg-[#1C1E22] p-5">
             <p className="text-xs text-white/50">ติดต่อสาขา</p>
-            <a href={`tel:${phone.replace(/[^0-9+]/g, "")}`} className="mt-1 flex items-center gap-2 text-3xl font-extrabold tracking-tight hover:text-[#FF4D4D]">
+            <a href={telHref(phone)} className="mt-1 flex items-center gap-2 text-3xl font-extrabold tracking-tight hover:text-[#FF4D4D]">
               <Phone className="h-6 w-6 text-[#FF4D4D]" /> {phone}
             </a>
-            <div className={`mt-4 grid gap-2 ${lineHref ? "grid-cols-2" : "grid-cols-1"}`}>
-              <a href={`tel:${phone.replace(/[^0-9+]/g, "")}`} className="flex items-center justify-center gap-2 rounded-xl border border-white/20 py-3 text-sm font-bold transition-colors hover:bg-white hover:text-[#101113]"><Phone className="h-4 w-4" /> โทร</a>
-              {lineHref && (
-                <a href={lineHref} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 rounded-xl border border-white/20 py-3 text-sm font-bold transition-colors hover:bg-white hover:text-[#101113]"><MessageCircle className="h-4 w-4" /> LINE</a>
-              )}
+            {branch.extraPhones?.map((x) => (
+              <a key={x.phone} href={telHref(x.phone)} className="mt-2 flex items-center justify-between gap-3 text-sm text-white/65 hover:text-white">
+                <span>{x.label}</span>
+                <span className="font-bold text-white">{x.phone}</span>
+              </a>
+            ))}
+            <div className="mt-4 grid grid-cols-3 gap-2">
+              <a href={telHref(phone)} className="flex items-center justify-center gap-2 rounded-xl border border-white/20 py-3 text-sm font-bold transition-colors hover:bg-white hover:text-[#101113]"><Phone className="h-4 w-4" /> โทร</a>
+              <a href={lineHref} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 rounded-xl border border-white/20 py-3 text-sm font-bold transition-colors hover:bg-white hover:text-[#101113]"><MessageCircle className="h-4 w-4" /> LINE</a>
+              <a href={branch.facebookUrl ?? "#"} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 rounded-xl border border-white/20 py-3 text-sm font-bold transition-colors hover:bg-white hover:text-[#101113]">Facebook</a>
             </div>
           </div>
 

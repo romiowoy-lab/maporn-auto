@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, ArrowUpRight, Eye, HeartHandshake } from "lucide-react";
 import { company, companyTimeline } from "@/lib/data/company";
+import { telHref } from "@/lib/utils";
 import { getBrand } from "@/lib/data/brands";
 import { getBrandGroups } from "@/lib/data/brandGroups";
 import ScrollFx from "@/components/ui/ScrollFx";
@@ -240,7 +241,7 @@ export default function AboutPage() {
                   <Link href="/contact" className="inline-flex items-center gap-2 rounded-xl bg-brand-red-gradient px-6 py-3.5 text-sm font-bold transition-all hover:-translate-y-0.5 hover:brightness-110">
                     ติดต่อเรา <ArrowRight className="h-4 w-4" />
                   </Link>
-                  <a href={`tel:${company.phone.replace(/[^0-9]/g, "").slice(0, 9)}`} className="inline-flex items-center rounded-xl border border-white/20 px-6 py-3.5 text-sm font-bold transition-colors hover:bg-white hover:text-[#0c0d0f]">
+                  <a href={telHref(company.phone)} className="inline-flex items-center rounded-xl border border-white/20 px-6 py-3.5 text-sm font-bold transition-colors hover:bg-white hover:text-[#0c0d0f]">
                     โทร {company.phone}
                   </a>
                 </div>

@@ -80,6 +80,10 @@ export interface Branch {
   mapQuery: string;
   lineUrl?: string;
   googleMapsUrl?: string;
+  /** The branch's own Facebook page */
+  facebookUrl?: string;
+  /** Department numbers besides the main line, e.g. body & paint, parts */
+  extraPhones?: { label: string; phone: string }[];
   branchCode?: string;
 }
 

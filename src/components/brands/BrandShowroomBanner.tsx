@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Phone, Navigation, MessageCircle } from "lucide-react";
 import type { Branch } from "@/lib/types";
+import { telHref } from "@/lib/utils";
 import { getBranch } from "@/lib/data/branches";
 import { branchCover, branchGallery } from "@/lib/data/branchPhotos";
 
@@ -16,7 +17,6 @@ function photoFor(slug: string) {
 }
 
 const mapsUrl = (b: Branch) => b.googleMapsUrl ?? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(b.mapQuery)}`;
-const telOf = (b: Branch) => b.phone.replace(/[^0-9+]/g, "");
 
 function Actions({ branch, compact }: { branch: Branch; compact?: boolean }) {
   const btn = compact ? "py-2.5 text-xs" : "py-3 text-sm";
@@ -59,7 +59,7 @@ export default function BrandShowroomBanner({ slug, slugs, title }: { slug?: str
               <p className="mt-4 flex items-start gap-2 text-sm leading-relaxed text-white/75">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#FF4D4D]" /> {branch.address}
               </p>
-              <a href={`tel:${telOf(branch)}`} className="mt-4 flex items-center gap-2 text-2xl font-extrabold tracking-tight hover:text-[#FF4D4D]">
+              <a href={telHref(branch.phone)} className="mt-4 flex items-center gap-2 text-2xl font-extrabold tracking-tight hover:text-[#FF4D4D]">
                 <Phone className="h-5 w-5 text-[#FF4D4D]" /> {branch.phone}
               </a>
               <Actions branch={branch} />
@@ -86,7 +86,7 @@ export default function BrandShowroomBanner({ slug, slugs, title }: { slug?: str
                 <p className="mt-2 flex items-start gap-2 text-xs leading-relaxed text-white/70">
                   <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#FF4D4D]" /> {branch.address}
                 </p>
-                <a href={`tel:${telOf(branch)}`} className="mt-3 flex items-center gap-2 text-lg font-extrabold hover:text-[#FF4D4D]">
+                <a href={telHref(branch.phone)} className="mt-3 flex items-center gap-2 text-lg font-extrabold hover:text-[#FF4D4D]">
                   <Phone className="h-4 w-4 text-[#FF4D4D]" /> {branch.phone}
                 </a>
                 <Actions branch={branch} compact />

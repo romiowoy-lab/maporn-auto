@@ -4,13 +4,15 @@ export const company = {
   taxId: "0105531023081",
   domain: "www.mapornautogroup.com",
   hqAddress: "เลขที่ 2 ซอยมาพร ถนนศรีนครินทร์ แขวงหนองบอน เขตประเวศ กรุงเทพมหานคร 10250",
-  phone: "02-322-3663-5",
-  salesPhone: "062-459-1542",
+  // Maporn Group central number (Social media bible)
+  phone: "099-226-4741",
+  salesPhone: "099-226-4741",
   email: "info@mapornautogroup.com",
   line: "@mapornautogroup",
   // LINE OA Maporn Auto Group (add-friend link)
   lineUrl: "https://line.me/R/ti/p/@mapornautogroup",
-  facebook: "https://facebook.com/MapornAutogroup",
+  // Maporn Group - มาพรกรุ๊ป
+  facebook: "https://www.facebook.com/profile.php?id=61569211525303",
   instagram: "https://instagram.com/mapornautogroup",
   youtube: "https://youtube.com/@MapornAutogroup",
   officeHours: "จันทร์ - เสาร์ 08:00 - 17:00 น.",

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { MapPin, Clock, Phone, MessageCircle, ExternalLink, Navigation } from "lucide-react";
 import { Branch } from "@/lib/types";
 import { company } from "@/lib/data/company";
+import { telHref } from "@/lib/utils";
 import { BRANCH_PHOTO, BRANCH_PHOTO_POSITION } from "@/components/branches/BranchCard";
 
 
@@ -53,14 +54,20 @@ function BranchWideCard({ b }: { b: Branch }) {
           </div>
           <div className="rounded-xl border border-black/[0.06] bg-white p-4">
             <p className="text-[11px] font-semibold text-brand-slate">ติดต่อสาขา</p>
-            <a href={`tel:${phone.replace(/[^0-9+]/g, "")}`} className="mt-1 flex items-center gap-2 text-2xl font-extrabold tracking-tight text-brand-navy hover:text-brand-red">
+            <a href={telHref(phone)} className="mt-1 flex items-center gap-2 text-2xl font-extrabold tracking-tight text-brand-navy hover:text-brand-red">
               <Phone className="h-5 w-5 text-brand-red" />
               {phone}
             </a>
+            {b.extraPhones?.map((x) => (
+              <a key={x.phone} href={telHref(x.phone)} className="mt-1.5 flex items-center justify-between gap-3 text-sm text-brand-slate hover:text-brand-red">
+                <span>{x.label}</span>
+                <span className="font-bold text-brand-navy">{x.phone}</span>
+              </a>
+            ))}
           </div>
 
           <div className="mt-auto grid grid-cols-3 gap-2 pt-1">
-            <a href={`tel:${phone.replace(/[^0-9+]/g, "")}`} className="flex flex-col items-center gap-1 rounded-xl border border-sky-100 bg-sky-50 py-3 text-[11px] font-bold text-sky-800 transition-colors hover:bg-sky-100">
+            <a href={telHref(phone)} className="flex flex-col items-center gap-1 rounded-xl border border-sky-100 bg-sky-50 py-3 text-[11px] font-bold text-sky-800 transition-colors hover:bg-sky-100">
               <Phone className="h-5 w-5" />
               โทร
             </a>
@@ -75,7 +82,7 @@ function BranchWideCard({ b }: { b: Branch }) {
                 LINE
               </span>
             )}
-            <a href={company.facebook} target="_blank" rel="noreferrer" className="flex flex-col items-center gap-1 rounded-xl border border-blue-100 bg-blue-50 py-3 text-[11px] font-bold text-blue-800 transition-colors hover:bg-blue-100">
+            <a href={b.facebookUrl ?? company.facebook} target="_blank" rel="noreferrer" className="flex flex-col items-center gap-1 rounded-xl border border-blue-100 bg-blue-50 py-3 text-[11px] font-bold text-blue-800 transition-colors hover:bg-blue-100">
               <FacebookGlyph className="h-5 w-5" />
               Facebook
             </a>
