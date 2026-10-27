@@ -101,7 +101,7 @@ export default function WulingShowroomSwitch() {
       >
         <span className="flex h-24 items-center rounded-2xl bg-white px-10 shadow-2xl sm:h-28">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/brand/logos/wuling.png" alt="" className="h-9 w-auto sm:h-11" />
+          <img src="/brand/logos/wuling-2026.png" alt="" className="h-9 w-auto sm:h-11" />
         </span>
         <span className="text-2xl font-extrabold uppercase tracking-[0.2em] text-white sm:text-4xl" style={{ textShadow: "0 2px 12px rgba(0,0,0,0.6)" }}>
           {MODEL[target].label}

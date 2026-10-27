@@ -38,7 +38,7 @@ export default function WulingNav() {
           <span className="h-7 w-px bg-white/25" />
           <span className="flex h-8 items-center rounded-md bg-white px-2.5">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/brand/logos/wuling.png" alt="Wuling" className="h-5 w-auto object-contain" />
+            <img src="/brand/logos/wuling-2026.png" alt="Wuling" className="h-7 w-auto object-contain" />
           </span>
         </div>
 

@@ -55,7 +55,7 @@ CARS.push({
     href: "/branches/suzy-fix",
   },
   brandColor: "#E85D2F",
-  brandLogo: "/brand/logos/suzyfix.png",
+  brandLogo: "/brand/logos/suzyfix-2026.png",
 });
 
 // Clips that actually contain an audio track (the other hero clips are silent files).

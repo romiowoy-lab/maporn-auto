@@ -41,7 +41,7 @@ const allBrands: Brand[] = [
     founded: "2002",
     origin: "จีน",
     heroImage: "/brand/brands-hero/wuling.jpg",
-    logo: "/brand/logos/wuling.png",
+    logo: "/brand/logos/wuling-2026.png",
   },
   {
     slug: "nex",
@@ -114,7 +114,7 @@ const allBrands: Brand[] = [
     founded: "2024",
     origin: "จีน",
     heroImage: "/brand/brands-hero/lepas-l6-launch-poster.jpg",
-    logo: "/brand/logos/lepas.png",
+    logo: "/brand/logos/header/lepas.png",
   },
 ];
 

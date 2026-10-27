@@ -24,9 +24,9 @@ const BRAND_STRIP = [
   { key: "gwm", name: "GWM", href: "/brands/gwm", logo: "/brand/logos/header/gwm.png", ratio: 4.89 },
   { key: "suzuki", name: "Suzuki", href: "/brands/suzuki", logo: "/brand/logos/header/suzuki.png", ratio: 1.49 },
   { key: "lepas", name: "Lepas", href: "/brands/lepas", logo: "/brand/logos/header/lepas.png", ratio: 3.3 },
-  { key: "wuling", name: "Wuling", href: "/brands/wuling", logo: "/brand/logos/header/wuling.png", ratio: 1.54 },
+  { key: "wuling", name: "Wuling", href: "/brands/wuling", logo: "/brand/logos/header/wuling-2026.png", ratio: 1.47 },
   { key: "farizon", name: "Farizon", href: "/brands/farizon", logo: "/brand/logos/header/farizon.png", ratio: 1.59 },
-  { key: "suzyfix", name: "Suzy Fix", href: "/branches/suzy-fix", logo: "/brand/logos/header/suzyfix.png", ratio: 4.75 },
+  { key: "suzyfix", name: "Suzy Fix", href: "/branches/suzy-fix", logo: "/brand/logos/header/suzyfix-2026.png", ratio: 4.75 },
 ];
 
 type BrandItem = (typeof BRAND_STRIP)[number];

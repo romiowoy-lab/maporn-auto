@@ -66,7 +66,7 @@ export default function BrandsPage() {
           >
             <div className="flex h-32 sm:h-36 items-center justify-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/brand/logos/suzyfix.png" alt="Suzy Fix" className="h-auto w-[70%] object-contain transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105" />
+              <img src="/brand/logos/suzyfix-2026.png" alt="Suzy Fix" className="h-auto w-[70%] object-contain transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105" />
             </div>
             <div className="mt-2 border-t border-black/[0.06] pt-4">
               <div className="flex items-center justify-between">

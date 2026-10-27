@@ -78,9 +78,9 @@ const BENTO_UNITS: { key: string; tag: string; title: string; href: string; img:
   { key: 'gwm', tag: 'GWM', title: 'Tank 300 · Tank 500', href: '/brands/gwm', img: '/brand/home-cards/gwm-ora-5.webp', pos: '50% 60%', logo: '/brand/logos/header/gwm.png', color: '#FF6600' },
   { key: 'suzuki', tag: 'Suzuki', title: 'Way of Life!', href: '/brands/suzuki', img: '/brand/home-cards/suzuki-fronx.webp', pos: '50% 20%', logo: '/brand/logos/header/suzuki.png', color: '#E30016' },
   { key: 'lepas', tag: 'Lepas', title: 'Drive Your Elegance', href: '/brands/lepas', img: '/brand/home-cards/lepas-l6.webp', pos: '40% 65%', logo: '/brand/logos/header/lepas.png', color: '#A0522D' },
-  { key: 'wuling', tag: 'Wuling', title: 'Enjoy the Ride', href: '/brands/wuling', img: '/brand/home-cards/wuling-eksion.webp', pos: '50% 60%', logo: '/brand/logos/header/wuling.png', color: '#C8102E' },
+  { key: 'wuling', tag: 'Wuling', title: 'Enjoy the Ride', href: '/brands/wuling', img: '/brand/home-cards/wuling-eksion.webp', pos: '50% 60%', logo: '/brand/logos/header/wuling-2026.png', color: '#C8102E' },
   { key: 'farizon', tag: 'Farizon', title: 'Beyond Logistics', href: '/brands/farizon', img: '/brand/home-cards/farizon-sv.webp', pos: '50% 60%', logo: '/brand/logos/header/farizon.png', color: '#005BAC' },
-  { key: 'suzyfix', tag: 'Suzy Fix', title: 'ศูนย์ซ่อมสีและตัวถังมาตรฐาน', href: '/branches/suzy-fix', img: '/brand/home-cards/suzyfix.webp', pos: '88% 50%', logo: '/brand/logos/header/suzyfix.png', color: '#E85D2F' },
+  { key: 'suzyfix', tag: 'Suzy Fix', title: 'ศูนย์ซ่อมสีและตัวถังมาตรฐาน', href: '/branches/suzy-fix', img: '/brand/home-cards/suzyfix.webp', pos: '88% 50%', logo: '/brand/logos/header/suzyfix-2026.png', color: '#E85D2F' },
 ];
 
 export default function HomePage() {
