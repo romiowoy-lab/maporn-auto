@@ -434,7 +434,7 @@ const allModels: VehicleModel[] = [
     // Specs and trim prices below were taken from a GWM dealer's Tank 300 page
     // (gwmamornratchada.com/tank-300, Sep 2026) at the client's request. Not yet confirmed
     // against Maporn's own price list.
-    startPrice: 1649000,
+    startPrice: 1049000,
     isNew: true,
     isFeatured: true,
     colors: ["ส้ม (ใหม่)", "ดำ", "เทา", "ขาว"],
@@ -465,8 +465,10 @@ const allModels: VehicleModel[] = [
       "ระบบปรับอากาศอัตโนมัติ 2 โซน กรองอากาศ PM2.5",
     ],
     variants: [
-      { name: "PRO", price: 1649000, engine: "เบนซิน 2.0L เทอร์โบ + มอเตอร์ไฟฟ้า เกียร์ 9 สปีด", power: "เครื่องยนต์ 244 แรงม้า + มอเตอร์ 106 แรงม้า", torque: "380 Nm (เครื่องยนต์) + 268 Nm (มอเตอร์)", transmission: "Automatic", seats: 5 },
-      { name: "ULTRA", price: 1799000, engine: "เบนซิน 2.0L เทอร์โบ + มอเตอร์ไฟฟ้า เกียร์ 9 สปีด", power: "เครื่องยนต์ 244 แรงม้า + มอเตอร์ 106 แรงม้า", torque: "380 Nm (เครื่องยนต์) + 268 Nm (มอเตอร์)", transmission: "Automatic", seats: 5 },
+      { name: "TANK 300 2.4T ULTRA 4WD Forest Phantom", price: 1349000, engine: "2.4T", power: "สอบถามที่โชว์รูม", torque: "สอบถามที่โชว์รูม", transmission: "Automatic", seats: 5 },
+      { name: "TANK 300 2.4T ULTRA 4WD", price: 1299000, campaignPrice: 1279000, engine: "2.4T", power: "สอบถามที่โชว์รูม", torque: "สอบถามที่โชว์รูม", transmission: "Automatic", seats: 5 },
+      { name: "TANK 300 2.4T ULTRA 2WD", price: 1199000, campaignPrice: 1179000, engine: "2.4T", power: "สอบถามที่โชว์รูม", torque: "สอบถามที่โชว์รูม", transmission: "Automatic", seats: 5 },
+      { name: "TANK 300 2.4T PRO", price: 1049000, campaignPrice: 1029000, engine: "2.4T", power: "สอบถามที่โชว์รูม", torque: "สอบถามที่โชว์รูม", transmission: "Automatic", seats: 5 },
     ],
     description: "SUV ออฟโรดไฮบริด เบนซิน 2.0 เทอร์โบ + มอเตอร์ไฟฟ้า เกียร์ 9 สปีด 4WD อัจฉริยะ โหมดขับขี่ 7 แบบ ล็อกเฟืองขับ 3 จุด",
     image: "/brand/models/gwm-tank-300.jpg",
@@ -480,7 +482,7 @@ const allModels: VehicleModel[] = [
     // Specs from the official GWM Thailand page (gwm.co.th/th/models/tank-500-3t-diesel, Sep 2026)
     // and the dimension slide supplied by the client. The page shows only a starting price
     // (1,669,000 baht) — per-trim prices are not published there.
-    startPrice: 1669000,
+    startPrice: 1419000,
     isNew: true,
     isFeatured: true,
     colors: ["Black Warrior", "Hamilton White", "Crystal Gray"],
@@ -512,7 +514,15 @@ const allModels: VehicleModel[] = [
       "หลังคาซันรูฟพาโนรามิค",
     ],
     variants: [
-      { name: "Black Warrior / Ultra (2WD · 4WD)", price: 1669000, engine: "ดีเซล 3.0T เกียร์ 9 สปีด", power: "231 แรงม้า (170 kW) ที่ 3,200 รอบ/นาที", torque: "620 Nm ที่ 1,400-2,400 รอบ/นาที", transmission: "Automatic", seats: 7 },
+      { name: "TANK 500 Diesel 4WD ULTRA Black Warrior", price: 1699000, campaignPrice: 1679000, engine: "ดีเซล", power: "สอบถามที่โชว์รูม", torque: "สอบถามที่โชว์รูม", transmission: "Automatic", seats: 7 },
+      { name: "TANK 500 2.4T ULTRA 4WD", price: 1669000, campaignPrice: 1649000, engine: "2.4T", power: "สอบถามที่โชว์รูม", torque: "สอบถามที่โชว์รูม", transmission: "Automatic", seats: 7 },
+      { name: "TANK 500 Diesel 2WD ULTRA Black Warrior", price: 1599000, campaignPrice: 1579000, engine: "ดีเซล", power: "สอบถามที่โชว์รูม", torque: "สอบถามที่โชว์รูม", transmission: "Automatic", seats: 7 },
+      { name: "TANK 500 2.4T ULTRA", price: 1569000, campaignPrice: 1549000, engine: "2.4T", power: "สอบถามที่โชว์รูม", torque: "สอบถามที่โชว์รูม", transmission: "Automatic", seats: 7 },
+      { name: "TANK 500 2.4T PRO", price: 1419000, campaignPrice: 1399000, engine: "2.4T", power: "สอบถามที่โชว์รูม", torque: "สอบถามที่โชว์รูม", transmission: "Automatic", seats: 7 },
+      { name: "TANK 500 3.0T 4WD ULTRA Black Warrior", price: 1799000, engine: "3.0T", power: "สอบถามที่โชว์รูม", torque: "สอบถามที่โชว์รูม", transmission: "Automatic", seats: 7 },
+      { name: "TANK 500 3.0T ULTRA 4WD", price: 1769000, engine: "3.0T", power: "สอบถามที่โชว์รูม", torque: "สอบถามที่โชว์รูม", transmission: "Automatic", seats: 7 },
+      { name: "TANK 500 3.0T 2WD ULTRA Black Warrior", price: 1699000, engine: "3.0T", power: "สอบถามที่โชว์รูม", torque: "สอบถามที่โชว์รูม", transmission: "Automatic", seats: 7 },
+      { name: "TANK 500 3.0T ULTRA", price: 1669000, engine: "3.0T", power: "สอบถามที่โชว์รูม", torque: "สอบถามที่โชว์รูม", transmission: "Automatic", seats: 7 },
     ],
     description: "SUV ออฟโรดดีเซล 3.0T 231 แรงม้า แรงบิด 620 Nm เกียร์อัตโนมัติ 9 สปีด ระบบขับเคลื่อน 4 ล้อเกียร์ฝาก ห้องโดยสารเงียบระดับผู้บริหาร",
     image: "/brand/models/gwm-tank-500.jpg",
@@ -568,7 +578,7 @@ const allModels: VehicleModel[] = [
     name: "ORA 5",
     bodyType: "SUV",
     fuelType: "Hybrid",
-    startPrice: 709000,
+    startPrice: 669000,
     isNew: true,
     isFeatured: false,
     colors: ["Mountain Grey", "Ivory White", "Onyx Black", "Emerald Green"],
@@ -598,8 +608,10 @@ const allModels: VehicleModel[] = [
       "กันสะเทือนอิสระหน้า-หลัง",
     ],
     variants: [
-      { name: "PRO", price: 709000, engine: "ไฮบริด 1.5L เทอร์โบ + มอเตอร์ 10-in-1", power: "223 แรงม้า (รวม)", torque: "476 Nm (รวม)", transmission: "Automatic", seats: 5 },
-      { name: "ULTRA", price: 729000, engine: "ไฮบริด 1.5L เทอร์โบ + มอเตอร์ 10-in-1", power: "223 แรงม้า (รวม)", torque: "476 Nm (รวม)", transmission: "Automatic", seats: 5 },
+      { name: "ORA 5 HEV PRO", price: 729000, campaignPrice: 709000, engine: "ไฮบริด 1.5L เทอร์โบ + มอเตอร์ 10-in-1", power: "223 แรงม้า (รวม)", torque: "476 Nm (รวม)", transmission: "Automatic", seats: 5 },
+      { name: "ORA 5 HEV ULTRA", price: 799000, campaignPrice: 779000, engine: "ไฮบริด 1.5L เทอร์โบ + มอเตอร์ 10-in-1", power: "223 แรงม้า (รวม)", torque: "476 Nm (รวม)", transmission: "Automatic", seats: 5 },
+      { name: "ORA 5 BEV PRO", price: 669000, campaignPrice: 649000, engine: "ไฟฟ้า 100% (BEV)", power: "สอบถามที่โชว์รูม", torque: "สอบถามที่โชว์รูม", transmission: "Automatic", seats: 5 },
+      { name: "ORA 5 BEV ULTRA", price: 739000, campaignPrice: 719000, engine: "ไฟฟ้า 100% (BEV)", power: "สอบถามที่โชว์รูม", torque: "สอบถามที่โชว์รูม", transmission: "Automatic", seats: 5 },
     ],
     description: "SUV ไฮบริดแห่งยุคใหม่ เครื่องยนต์ + มอเตอร์ 10-in-1 กำลังรวม 223 แรงม้า 476 Nm จอ 14.6 นิ้ว Coffee OS 3 ถุงลม 6 จุด ระบบความปลอดภัย 10 รายการ",
     image: "/brand/gwm-ora5/hero-front.png",

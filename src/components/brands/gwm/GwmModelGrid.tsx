@@ -10,7 +10,7 @@ const GWM_MODELS = [
     body: "SUV",
     fuelLabel: "Hybrid",
     fuelColor: "#FF7A1A",
-    price: 1649000,
+    price: 1049000,
     img: "/brand/gwm-cards/tank-300.png",
   },
   {
@@ -20,7 +20,7 @@ const GWM_MODELS = [
     body: "SUV",
     fuelLabel: "Diesel",
     fuelColor: "#5a5f65",
-    price: 2299000,
+    price: 1419000,
     img: "/brand/gwm-cards/tank-500.png",
   },
   {
@@ -40,7 +40,7 @@ const GWM_MODELS = [
     body: "SUV",
     fuelLabel: "Hybrid",
     fuelColor: "#1A6B42",
-    price: 709000,
+    price: 669000,
     img: "/brand/gwm-cards/ora-5.png",
   },
   {

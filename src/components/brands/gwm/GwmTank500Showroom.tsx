@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { Check, Zap, Gauge, Monitor, Volume2, Mountain, Sofa, ShieldCheck } from "lucide-react";
 import Stat from "@/components/brands/wuling/Stat";
 import { formatTHB } from "@/lib/utils";
+import GwmPriceList from "@/components/brands/gwm/GwmPriceList";
 import { getModel } from "@/lib/data/models";
 import MapornLogo from "@/components/ui/MapornLogo";
 import BrandHeroCTA from "@/components/brands/BrandHeroCTA";
@@ -375,23 +376,13 @@ function Trims() {
       <div className="flex flex-col justify-center gap-6 bg-[#26282b] p-6 sm:p-10 lg:p-12">
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-white/50">Model</p>
-          <h3 className="mt-1 text-2xl font-bold uppercase tracking-tight text-white sm:text-3xl">GWM Tank 500 3.0T Diesel</h3>
+          <h3 className="mt-1 text-2xl font-bold uppercase tracking-tight text-white sm:text-3xl">GWM Tank 500</h3>
           <p className="mt-2 text-lg font-extrabold text-white">
             เริ่มต้น {m ? formatTHB(m.startPrice) : ""}
           </p>
-          <p className="text-[11px] text-white/45">ราคาเริ่มต้นตามเว็บไซต์ GWM ประเทศไทย · สอบถามราคาแต่ละรุ่นย่อยที่โชว์รูม</p>
         </div>
 
-        <div>
-          <p className="mb-2 text-xs uppercase tracking-[0.2em] text-white/50">รุ่นย่อย</p>
-          <div className="grid grid-cols-2 gap-2">
-            {["Black Warrior 4WD", "Black Warrior 2WD", "Ultra 4WD", "Ultra 2WD"].map((t) => (
-              <span key={t} className="rounded-lg border border-white/12 bg-[#1C1E22] px-3 py-2.5 text-center text-xs font-bold text-white/85" style={{ borderColor: "rgba(255,255,255,0.12)" }}>
-                {t}
-              </span>
-            ))}
-          </div>
-        </div>
+        <GwmPriceList variants={m?.variants ?? []} accent={ACCENT} />
 
         <div>
           <p className="mb-2 text-xs uppercase tracking-[0.2em] text-white/50">สีตัวถัง</p>

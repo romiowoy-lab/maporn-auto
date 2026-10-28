@@ -24,8 +24,9 @@ export default function VariantTiles({ modelSlug, variants }: { modelSlug: strin
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">รุ่นย่อย</p>
             <h3 className="mt-1 text-xl font-bold text-white">{v.name}</h3>
             <p className="mt-3 text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-brand-red-soft">
-              {formatTHB(v.price)}
+              {formatTHB(v.campaignPrice ?? v.price)}
             </p>
+            {v.campaignPrice && <p className="mt-1 text-xs text-white/50">ราคาแคมเปญ · ปกติ <span className="line-through">{formatTHB(v.price)}</span></p>}
 
             <ul className="mt-5 flex-1 space-y-2.5 text-sm">
               {[

@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { Check, Zap, Gauge, Cog, Monitor, ShieldCheck, Mountain, Sofa } from "lucide-react";
 import Stat from "@/components/brands/wuling/Stat";
 import { getModel } from "@/lib/data/models";
-import { formatTHB } from "@/lib/utils";
+import GwmPriceList from "@/components/brands/gwm/GwmPriceList";
 import MapornLogo from "@/components/ui/MapornLogo";
 import BrandHeroCTA from "@/components/brands/BrandHeroCTA";
 
@@ -366,15 +366,7 @@ function Trims() {
           <h3 className="mt-1 text-2xl font-bold uppercase tracking-tight text-white sm:text-3xl">GWM Tank 300</h3>
         </div>
 
-        <div className="grid gap-3 sm:grid-cols-2">
-          {variants.map((v) => (
-            <div key={v.name} className="rounded-xl border border-white/10 bg-[#1C1E22] p-4">
-              <p className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: ACCENT }}>{v.name}</p>
-              <p className="mt-1 text-xl font-extrabold text-white">{formatTHB(v.price)}</p>
-              <p className="mt-1 text-[11px] text-white/50">ราคาอ้างอิง · สอบถามราคาล่าสุดที่โชว์รูม</p>
-            </div>
-          ))}
-        </div>
+        <GwmPriceList variants={variants} accent={ACCENT} />
 
         <div>
           <p className="mb-2 text-xs uppercase tracking-[0.2em] text-white/50">สีตัวถัง</p>

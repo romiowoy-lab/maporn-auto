@@ -21,7 +21,10 @@ export interface Brand {
 
 export interface Variant {
   name: string;
+  /** MSRP */
   price: number;
+  /** Current central campaign price, when one is running */
+  campaignPrice?: number;
   engine: string;
   power: string;
   torque: string;

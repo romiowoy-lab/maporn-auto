@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { Check, Zap, Gauge, Monitor, ShieldCheck, Leaf, Cpu } from "lucide-react";
 import Stat from "@/components/brands/wuling/Stat";
 import { getModel } from "@/lib/data/models";
-import { formatTHB } from "@/lib/utils";
+import GwmPriceList from "@/components/brands/gwm/GwmPriceList";
 import MapornLogo from "@/components/ui/MapornLogo";
 import BrandHeroCTA from "@/components/brands/BrandHeroCTA";
 
@@ -416,18 +416,10 @@ function Trims() {
       <div className="flex flex-col justify-center gap-6 bg-[#0d1a12] p-6 sm:p-10 lg:p-12">
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-white/50">Model</p>
-          <h3 className="mt-1 text-2xl font-bold uppercase tracking-tight text-white sm:text-3xl">GWM ORA 5 HEV</h3>
+          <h3 className="mt-1 text-2xl font-bold uppercase tracking-tight text-white sm:text-3xl">GWM ORA 5 HEV · BEV</h3>
         </div>
 
-        <div className="grid gap-3 sm:grid-cols-2">
-          {variants.map((v) => (
-            <div key={v.name} className="rounded-xl border border-white/10 bg-[#080f0a] p-4">
-              <p className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: ACCENT }}>{v.name}</p>
-              <p className="mt-1 text-xl font-extrabold text-white">{formatTHB(v.price)}</p>
-              <p className="mt-1 text-[11px] text-white/50">ราคาอ้างอิง · สอบถามราคาล่าสุดที่โชว์รูม</p>
-            </div>
-          ))}
-        </div>
+        <GwmPriceList variants={variants} accent={ACCENT} />
 
         <div>
           <p className="mb-2 text-xs uppercase tracking-[0.2em] text-white/50">สีตัวถัง</p>

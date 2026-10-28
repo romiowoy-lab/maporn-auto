@@ -20,7 +20,7 @@ export default function VariantTable({ variants }: { variants: Variant[] }) {
           {variants.map((v, i) => (
             <tr key={v.name} className={i % 2 ? "bg-white/[0.03]" : ""}>
               <td className="whitespace-nowrap px-4 py-3 font-semibold text-white">{v.name}</td>
-              <td className="whitespace-nowrap px-4 py-3 font-bold text-[#FF0000]">{formatTHB(v.price)}</td>
+              <td className="whitespace-nowrap px-4 py-3">{v.campaignPrice ? (<><span className="block text-xs text-white/45 line-through">{formatTHB(v.price)}</span><span className="font-bold text-[#FF4D4D]">{formatTHB(v.campaignPrice)}</span></>) : (<span className="font-bold text-[#FF4D4D]">{formatTHB(v.price)}</span>)}</td>
               <td className="whitespace-nowrap px-4 py-3 text-white/70">{v.engine}</td>
               <td className="whitespace-nowrap px-4 py-3 text-white/70">{v.power}</td>
               <td className="whitespace-nowrap px-4 py-3 text-white/70">{v.torque}</td>
