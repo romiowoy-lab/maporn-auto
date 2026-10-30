@@ -31,10 +31,10 @@ export default function WulingCTA() {
             >
               ขอใบเสนอราคา
             </Link>
-            <a href="tel:023223663"
+            <a href="tel:0647494989"
               className="rounded-lg border border-white/40 bg-[#101114]/50 px-7 py-3 text-xs font-bold uppercase tracking-[0.12em] text-white backdrop-blur-sm transition-all hover:bg-white hover:text-[#101114]"
             >
-              โทร 02-322-3663-5</a>
+              โทร 064-749-4989</a>
           </div>
           <p className="mt-4 text-[11px] text-white/60">*ภาพประกอบเพื่อการนำเสนอเท่านั้น รายละเอียดอาจแตกต่างจากรถจริง</p>
         </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
@@ -9,7 +10,8 @@ import { formatTHB } from "@/lib/utils";
 
 // Left: lifestyle image "Move with confidence". Right: model card (price + equipment).
 export default function WulingConfidence() {
-  const { model, images } = darion;
+  const { model, images, colors } = darion;
+  const [color, setColor] = useState(0);
   return (
     <section id="experience" className="scroll-mt-24 grid lg:grid-cols-2 border-t border-white/[0.06] bg-[#101114]">
       <div className="relative min-h-[380px] lg:min-h-[460px] overflow-hidden">
@@ -28,7 +30,24 @@ export default function WulingConfidence() {
       </div>
 
       <div className="flex flex-col justify-center gap-8 bg-[#26272b] p-6 sm:p-10 lg:p-12">
-        <ImageSlot src={images.modelCar} label="Darion EV — ภาพรุ่น" className="aspect-[16/9] w-full rounded-2xl" fit="contain" />
+        <div>
+          <ImageSlot src={colors[color]?.image ?? images.modelCar} label={`Darion EV สี ${colors[color]?.name ?? ""}`} className="aspect-[2/1] w-full" fit="contain" />
+          <div className="mt-4 flex flex-wrap items-center gap-2" role="tablist" aria-label="เลือกสีรถ">
+            {colors.map((c, i) => (
+              <button
+                key={c.name}
+                type="button"
+                role="tab"
+                aria-selected={i === color}
+                onClick={() => setColor(i)}
+                className={`flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs text-white transition-colors ${i === color ? "border-[#D8BFA0]" : "border-white/20 hover:border-white/60"}`}
+              >
+                <span className="h-3.5 w-3.5 rounded-full border border-white/40" style={{ backgroundColor: c.swatch }} />
+                {c.name}
+              </button>
+            ))}
+          </div>
+        </div>
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-white/50">Model</p>
           <h3 className="mt-1 text-2xl sm:text-3xl font-bold uppercase tracking-tight text-white">Starlight Darion EV</h3>

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -45,6 +46,7 @@ function CheckList({ items }: { items: string[] }) {
 export default function WulingPortaShowroom() {
   const { images } = porta;
   const perfIcons = [Zap, Gauge, Timer, BatteryCharging];
+  const [angle, setAngle] = useState(0);
 
   return (
     <div className="bg-[#101114]">
@@ -196,7 +198,23 @@ export default function WulingPortaShowroom() {
       {/* VARIANTS & PRICE */}
       <section className="border-t border-white/[0.06] bg-[#101114] py-14 sm:py-20">
         <div className="container-page grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
-          <ImageSlot src={images.studio} label="Porta EV — สี Polar White" className="aspect-[630/487] w-full rounded-2xl" />
+          <div className="rounded-2xl bg-gradient-to-b from-[#1f2024] to-[#141518] p-4 sm:p-6">
+            <ImageSlot src={porta.angles[angle].image} label={`Porta EV — ${porta.angles[angle].label}`} className="aspect-[16/10] w-full" fit="contain" />
+            <div className="mt-4 flex flex-wrap justify-center gap-2" role="tablist" aria-label="มุมมองรถ">
+              {porta.angles.map((a, i) => (
+                <button
+                  key={a.label}
+                  type="button"
+                  role="tab"
+                  aria-selected={i === angle}
+                  onClick={() => setAngle(i)}
+                  className={`rounded-full border px-4 py-1.5 text-xs font-semibold text-white transition-colors ${i === angle ? "border-[#5B9BD5] bg-[#5B9BD5]/15" : "border-white/20 hover:border-white/60"}`}
+                >
+                  {a.label}
+                </button>
+              ))}
+            </div>
+          </div>
 
           <div>
             <motion.div {...reveal}>

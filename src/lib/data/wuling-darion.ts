@@ -1,5 +1,5 @@
 // Wuling Starlight Darion EV — single source of truth for the /brands/wuling showroom.
-// Specs sourced from autospinn.com (Mar 2026). Photography: Maporn Autogroup + AutoLifeThailand.
+// Specs sourced from autospinn.com (Mar 2026). Photography: Wuling studio renders supplied by the client (Oct 2026).
 
 export interface DarionCallout {
   title: string;
@@ -36,24 +36,25 @@ export interface DarionData {
     features: string[];
   };
   variants: { name: string; price: number }[];
+  colors: { name: string; swatch: string; image: string }[];
 }
 
 export const darion: DarionData = {
   images: {
     heroBanner: null,
-    hero: "/brand/wuling-darion/darion-hero.jpg",
-    design: "/brand/wuling-darion/darion-headlight.jpg",
-    callouts: "/brand/wuling-darion/darion-night.jpg",
-    interior: "/brand/wuling-darion/darion-cockpit.jpg",
-    specsCar: "/brand/wuling-darion/darion-white.jpg",
-    lifestyle: "/brand/wuling-darion/darion-captain.jpg",
-    modelCar: "/brand/wuling-darion/darion-rear34.jpg",
-    cta: "/brand/wuling-darion/darion-hero.jpg",
-    headlight: "/brand/wuling-darion/darion-headlight.jpg",
-    wheel: "/brand/wuling-darion/darion-wheel.jpg",
-    screen: "/brand/wuling-darion/darion-screen.jpg",
-    captain: "/brand/wuling-darion/darion-captain.jpg",
-    cargo: "/brand/wuling-darion/darion-cargo.jpg",
+    hero: "/brand/wuling-darion/v2/hero.webp",
+    design: "/brand/wuling-darion/v2/design.webp",
+    callouts: "/brand/wuling-darion/v2/callouts.webp",
+    interior: "/brand/wuling-darion/v2/interior.webp",
+    specsCar: "/brand/wuling-darion/v2/specs.webp",
+    lifestyle: "/brand/wuling-darion/v2/lifestyle.webp",
+    modelCar: "/brand/wuling-darion/v2/color-white.webp",
+    cta: "/brand/wuling-darion/v2/cta.webp",
+    headlight: "/brand/wuling-darion/v2/design.webp",
+    wheel: null,
+    screen: null,
+    captain: "/brand/wuling-darion/v2/interior.webp",
+    cargo: null,
   },
   callouts: {
     left: [
@@ -90,6 +91,12 @@ export const darion: DarionData = {
   variants: [
     { name: "Comfort", price: 839000 },
     { name: "Premium", price: 899000 },
+  ],
+  colors: [
+    { name: "Frosty White", swatch: "#E9EBF0", image: "/brand/wuling-darion/v2/color-white.webp" },
+    { name: "Haze Grey", swatch: "#CFC4B8", image: "/brand/wuling-darion/v2/color-grey.webp" },
+    { name: "Orchid Purple", swatch: "#3B2340", image: "/brand/wuling-darion/v2/color-purple.webp" },
+    { name: "Starry Black", swatch: "#111214", image: "/brand/wuling-darion/v2/color-black.webp" },
   ],
 };
 

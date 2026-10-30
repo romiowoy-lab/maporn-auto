@@ -156,7 +156,7 @@ const allModels: VehicleModel[] = [
     startPrice: 839000,
     isNew: true,
     isFeatured: true,
-    colors: ["Starry Black", "Arctic White", "Moonlight Silver", "Deep Blue"],
+    colors: ["Frosty White", "Haze Grey", "Orchid Purple", "Starry Black"],
     dimensions: { length: 4910, width: 1870, height: 1770, wheelbase: 2910 },
     battery: "69.2 kWh Lithium-ion",
     range: "540 กม. (CLTC)",
@@ -169,7 +169,7 @@ const allModels: VehicleModel[] = [
       { name: "Premium", price: 899000, engine: "มอเตอร์ไฟฟ้า 150 kW FWD", power: "201 แรงม้า", torque: "310 Nm", transmission: "Single-speed", seats: 7 },
     ],
     description: "MPV ไฟฟ้า 7 ที่นั่ง ประตูสไลด์ Captain Seat วิ่งไกล 540 กม. (CLTC) รับประกัน 8 ปี",
-    image: "/brand/wuling-darion/darion-hero.jpg",
+    image: "/brand/wuling-darion/v2/color-white.webp",
   },
   {
     slug: "wuling-porta-ev",
@@ -193,7 +193,7 @@ const allModels: VehicleModel[] = [
       { name: "Premium", price: 629000, engine: "มอเตอร์ไฟฟ้า 75 kW RWD", power: "102 แรงม้า", torque: "180 Nm", transmission: "Single-speed", seats: 2 },
     ],
     description: "รถตู้ทึบไฟฟ้า 100% เพื่อการพาณิชย์ พื้นที่บรรทุก 6.5 ลบ.ม. บรรทุก 1.2 ตัน วิ่งไกล 400 กม. (CLTC) ต้นทุนเพียง 0.56 บาท/กม.",
-    image: "/brand/wuling-porta/porta-studio.jpg",
+    image: "/brand/wuling-porta/porta-34.webp",
   },
   {
     slug: "wuling-air-ev",

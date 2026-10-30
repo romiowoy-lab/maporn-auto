@@ -5,7 +5,7 @@
 export const porta = {
   images: {
     banner: "/brand/wuling-porta/porta-banner.webp",
-    studio: "/brand/wuling-porta/porta-studio.jpg",
+    studio: "/brand/wuling-porta/porta-34.webp",
     city: "/brand/wuling-porta/porta-city.jpg",
     capacity: "/brand/wuling-porta/porta-capacity.jpg",
     frontDetail: "/brand/wuling-porta/porta-front-detail.jpg",
@@ -54,4 +54,10 @@ export const porta = {
     { name: "Premium", price: 629000, perks: ["ประกันภัยชั้น 1 ระยะเวลา 1 ปี"] },
   ],
   color: "Polar White",
+  // Studio renders supplied by the client (Oct 2026)
+  angles: [
+    { label: "ด้านหน้า", image: "/brand/wuling-porta/porta-34.webp" },
+    { label: "มุม 3/4", image: "/brand/wuling-porta/porta-front.webp" },
+    { label: "ด้านข้าง", image: "/brand/wuling-porta/porta-side.webp" },
+  ],
 };

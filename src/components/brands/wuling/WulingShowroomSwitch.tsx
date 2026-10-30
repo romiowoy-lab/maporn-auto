@@ -5,9 +5,10 @@ import { motion, useAnimationControls } from "framer-motion";
 import { ArrowLeftRight } from "lucide-react";
 import WulingShowroom from "@/components/brands/wuling/WulingShowroom";
 import WulingPortaShowroom from "@/components/brands/wuling/WulingPortaShowroom";
+import WulingEksionShowroom from "@/components/brands/wuling/WulingEksionShowroom";
 
-// Porta EV opens first (client request), then Darion EV.
-type View = "darion" | "porta";
+// Porta EV opens first (client request), then Darion EV, then Eksion EV.
+type View = "darion" | "porta" | "eksion";
 
 const MODEL: Record<View, { label: string; sub: string; sweep: string; glow: string }> = {
   porta: {
@@ -21,6 +22,12 @@ const MODEL: Record<View, { label: string; sub: string; sweep: string; glow: str
     sub: "Starlight · 7 Seats MPV",
     sweep: "linear-gradient(120deg,#0d0c09 0%,#1f1a10 45%,#D8BFA0 100%)",
     glow: "#D8BFA0",
+  },
+  eksion: {
+    label: "EKSION EV",
+    sub: "Electric SUV",
+    sweep: "linear-gradient(120deg,#080b12 0%,#111c33 45%,#7FA7E8 100%)",
+    glow: "#7FA7E8",
   },
 };
 
@@ -56,7 +63,7 @@ export default function WulingShowroomSwitch() {
           <motion.span animate={{ rotate: spin }} transition={{ duration: 0.6, ease }} className="hidden text-white/60 sm:inline-flex" aria-hidden="true">
             <ArrowLeftRight className="h-4 w-4" />
           </motion.span>
-          <div className="relative flex rounded-full bg-white/[0.06] p-1" role="tablist" aria-label="สลับรุ่น Wuling Porta EV / Darion EV">
+          <div className="relative flex rounded-full bg-white/[0.06] p-1" role="tablist" aria-label="สลับรุ่น Wuling Porta EV / Darion EV / Eksion EV">
             {(Object.keys(MODEL) as View[]).map((v) => {
               const active = target === v;
               return (
@@ -66,7 +73,7 @@ export default function WulingShowroomSwitch() {
                   role="tab"
                   aria-selected={active}
                   onClick={() => switchTo(v)}
-                  className={`relative z-10 min-w-[80px] rounded-full px-3 py-2 text-xs font-extrabold uppercase tracking-[0.08em] transition-colors duration-300 sm:min-w-[110px] sm:px-4 sm:tracking-[0.12em] sm:text-sm ${
+                  className={`relative z-10 min-w-[72px] rounded-full px-2.5 py-2 text-[11px] font-extrabold uppercase tracking-[0.08em] transition-colors duration-300 sm:min-w-[110px] sm:px-4 sm:tracking-[0.12em] sm:text-sm ${
                     active ? "text-[#101114]" : "text-white/70 hover:text-white"
                   }`}
                 >
@@ -88,7 +95,7 @@ export default function WulingShowroomSwitch() {
 
       {/* Showroom content */}
       <motion.div key={view} initial={{ opacity: 0.4 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }}>
-        {view === "darion" ? <WulingShowroom /> : <WulingPortaShowroom />}
+        {view === "darion" ? <WulingShowroom /> : view === "eksion" ? <WulingEksionShowroom /> : <WulingPortaShowroom />}
       </motion.div>
 
       {/* Full-screen wipe overlay */}
