@@ -19,7 +19,7 @@ const mapsHref = (b: Branch) => b.googleMapsUrl ?? `https://www.google.com/maps/
 function BranchCard({ b }: { b: Branch }) {
   const photo = BRANCH_PHOTO[b.slug];
   // Keep the brand: several Rayong showrooms share an address, so "Maporn ระยอง" alone looks duplicated
-  const short = b.name.replace("Maporn Autogroup ", "");
+  const short = b.name.replace("Maporn Autogroup ", "").replace("Maporn", "มาพร");
 
   return (
     <article className="flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#1C1E22] shadow-[0_10px_30px_rgba(0,0,0,0.35)] transition-transform duration-300 hover:-translate-y-1">

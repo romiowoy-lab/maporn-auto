@@ -45,12 +45,12 @@ export default function LepasNav() {
     >
       <div className="container-page flex h-14 items-center justify-between gap-4">
         <div className="flex items-center gap-2.5 shrink-0">
-          <span className="flex h-9 items-center rounded-md bg-white px-2.5 py-1">
+          <span className="flex h-9 items-center rounded-md bg-white px-3 py-2">
             <Image
-              src="/brand/logos/lepas-maporn-rayong.png"
-              alt="Lepas Maporn Rayong"
-              width={1577}
-              height={472}
+              src="/brand/logos/header/lepas.png"
+              alt="Lepas"
+              width={360}
+              height={109}
               className="h-full w-auto object-contain"
             />
           </span>
