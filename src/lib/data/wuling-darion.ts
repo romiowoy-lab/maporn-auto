@@ -47,7 +47,7 @@ export const darion: DarionData = {
     callouts: "/brand/wuling-darion/v2/callouts.webp",
     interior: "/brand/wuling-darion/v2/interior.webp",
     specsCar: "/brand/wuling-darion/v2/specs.webp",
-    lifestyle: "/brand/wuling-darion/v2/lifestyle.webp",
+    lifestyle: "/brand/wuling-darion/v2/photo-sky.webp",
     modelCar: "/brand/wuling-darion/v2/color-white.webp",
     cta: "/brand/wuling-darion/v2/cta.webp",
     headlight: "/brand/wuling-darion/v2/design.webp",

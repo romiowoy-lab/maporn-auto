@@ -4,6 +4,7 @@ import WulingDesign from "@/components/brands/wuling/WulingDesign";
 import WulingInterior from "@/components/brands/wuling/WulingInterior";
 import WulingConfidence from "@/components/brands/wuling/WulingConfidence";
 import WulingCTA from "@/components/brands/wuling/WulingCTA";
+import WulingSafety from "@/components/brands/wuling/WulingSafety";
 
 export default function WulingShowroom() {
   return (
@@ -12,6 +13,7 @@ export default function WulingShowroom() {
       <WulingHero />
       <WulingDesign />
       <WulingInterior />
+      <WulingSafety />
       <WulingConfidence />
       <WulingCTA />
     </div>

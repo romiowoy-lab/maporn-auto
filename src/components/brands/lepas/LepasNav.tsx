@@ -6,6 +6,7 @@ import Image from "next/image";
 
 const SECTIONS = [
   { id: "hero", label: "L6" },
+  { id: "price", label: "Price" },
   { id: "design", label: "Design" },
   { id: "interior", label: "Interior" },
   { id: "technology", label: "Technology" },
