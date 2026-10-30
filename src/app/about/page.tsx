@@ -115,10 +115,10 @@ export default function AboutPage() {
         <div className="container-page">
           <div className="grid gap-4 md:grid-cols-2">
             {[
-              { icon: Eye, label: "Vision", title: "วิสัยทัศน์", lead: null as string | null, text: "มาพร ออโต้ กรุ๊ป มุ่งมั่นพัฒนาธุรกิจเพื่อเป็นเครือข่ายตัวแทนจำหน่ายรถยนต์ที่ดูแลลูกค้าทั่วประเทศ พร้อมศูนย์บริการสำหรับในกรุงเทพฯ และภาคตะวันออก (ระยอง จันทบุรี ตราด ชลบุรี) ที่ให้ความอุ่นใจแก่ลูกค้าตลอดการเป็นเจ้าของรถ ไม่ใช่แค่วันที่ซื้อ" },
-              { icon: HeartHandshake, label: "Mission", title: "พันธกิจ", lead: "อุ่นใจเมื่อซื้อรถและใช้บริการกับมาพร", text: "มาพร ออโต้ กรุ๊ป มอบความอุ่นใจให้ลูกค้าตั้งแต่วันแรกที่เดินเข้ามาหาเรา จนถึงทุกวันที่คุณใช้รถ — เพราะเรามุ่งมั่นดูแลลูกค้าด้วยใจ เราพร้อมดูแลคุณต่อไปตลอดทาง" },
+              { icon: Eye, label: "Vision", title: "วิสัยทัศน์", lead: null as string | null, text: "" },
+              { icon: HeartHandshake, label: "Mission", title: "พันธกิจ", lead: null, text: "" },
             ].map(({ icon: Icon, ...c }, i) => (
-              <ScrollFx key={c.title} effect="fade-up" delay={i * 0.08} className="rounded-2xl border border-white/10 bg-gradient-to-br from-[#17181c] to-[#111215] p-7">
+              <ScrollFx key={c.title} effect="fade-up" delay={i * 0.08} className="min-h-[190px] rounded-2xl border border-white/10 bg-gradient-to-br from-[#17181c] to-[#111215] p-7">
                 <div className="flex items-center gap-3">
                   <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-red/15 text-[#FF4D4D]">
                     <Icon className="h-5 w-5" />
@@ -129,7 +129,7 @@ export default function AboutPage() {
                   </div>
                 </div>
                 {c.lead && <p className="mt-4 font-semibold text-[#FF4D4D]">&ldquo;{c.lead}&rdquo;</p>}
-                <p className="mt-3 text-sm leading-relaxed text-white/60">{c.text}</p>
+                {c.text && <p className="mt-3 text-sm leading-relaxed text-white/60">{c.text}</p>}
               </ScrollFx>
             ))}
           </div>
@@ -167,7 +167,6 @@ export default function AboutPage() {
                   </span>
                   <span className="min-w-0 flex-1">
                     <span className="block font-bold">{g.name}</span>
-                    <span className="mt-0.5 block truncate text-sm italic text-white/50">{g.tagline}</span>
                   </span>
                   <ArrowUpRight className="h-5 w-5 shrink-0 text-white/30 transition-colors group-hover:text-[#FF4D4D]" />
                 </Link>
