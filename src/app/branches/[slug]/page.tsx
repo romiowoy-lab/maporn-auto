@@ -7,6 +7,7 @@ import Image from "next/image";
 import { MapPin, Clock, Phone, MessageCircle, Navigation } from "lucide-react";
 import { BRANCH_PHOTO, BRANCH_PHOTO_POSITION } from "@/components/branches/BranchCard";
 import BranchGallery from "@/components/branches/BranchGallery";
+import SuzyFixCraft from "@/components/branches/SuzyFixCraft";
 import { telHref } from "@/lib/utils";
 import { branchGallery } from "@/lib/data/branchPhotos";
 
@@ -140,6 +141,7 @@ export default async function BranchDetailPage({ params }: { params: Promise<{ s
         </div>
       </div>
 
+      {branch.slug === "suzy-fix" && <SuzyFixCraft />}
       {gallery && <BranchGallery photos={gallery} title={`บรรยากาศสาขา ${short}`} />}
     </div>
   );
