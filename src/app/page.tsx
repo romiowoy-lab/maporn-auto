@@ -74,13 +74,13 @@ const BRANCH_REGIONS: { key: 'bangkok' | 'east'; label: string }[] = [
 // Card photos supplied by marketing (public/brand/home-cards/). Order per client: OJ (OMODA & JAECOO as one card), GWM, Suzuki, Lepas, Wuling, Farizon, Suzy Fix.
 // fit 'full': landscape photo shown whole, over a blurred copy of itself filling the portrait card.
 // wide: the OMODA | JAECOO wordmark is ≈19:1, so its badge is sized by width.
-const BENTO_UNITS: { key: string; tag: string; title: string; href: string; img: string; pos?: string; logo: string | null; wide?: boolean; color: string; fit?: 'contain' | 'full' }[] = [
+const BENTO_UNITS: { key: string; tag: string; title: string; href: string; img: string; pos?: string; logo: string | null; wide?: boolean; logoClass?: string; color: string; fit?: 'contain' | 'full' }[] = [
   { key: 'oj', tag: 'OJ', title: 'OJ · Feel Alive', href: '/brands/omoda', img: '/brand/home-cards/oj-jaecoo-5-ev.webp', pos: '50% 60%', logo: '/brand/logos/omoda-jaecoo.svg', wide: true, color: '#B8860B' },
   { key: 'gwm', tag: 'GWM', title: 'Tank 300 · Tank 500', href: '/brands/gwm', img: '/brand/home-cards/gwm-ora-5.webp', pos: '50% 60%', logo: '/brand/logos/header/gwm.png', color: '#FF6600' },
-  { key: 'suzuki', tag: 'Suzuki', title: 'Way of Life!', href: '/brands/suzuki', img: '/brand/home-cards/suzuki-fronx.webp', pos: '50% 20%', logo: '/brand/logos/header/suzuki.png', color: '#E30016' },
-  { key: 'lepas', tag: 'Lepas', title: 'Drive Your Elegance', href: '/brands/lepas', img: '/brand/home-cards/lepas-l6.webp', pos: '40% 65%', logo: '/brand/logos/header/lepas.png', color: '#A0522D' },
-  { key: 'wuling', tag: 'Wuling', title: 'Enjoy the Ride', href: '/brands/wuling', img: '/brand/home-cards/wuling-eksion.webp', pos: '50% 60%', logo: '/brand/logos/header/wuling-2026.png', color: '#C8102E' },
-  { key: 'farizon', tag: 'Farizon', title: 'Beyond Logistics', href: '/brands/farizon', img: '/brand/home-cards/farizon-sv.webp', pos: '50% 60%', logo: '/brand/logos/header/farizon-2026.png', color: '#005BAC' },
+  { key: 'suzuki', tag: 'Suzuki', title: 'Way of Life!', href: '/brands/suzuki', img: '/brand/home-cards/suzuki-fronx-car.webp', pos: '50% 60%', logo: '/brand/logos/header/suzuki.png', color: '#E30016' },
+  { key: 'lepas', tag: 'Lepas', title: 'Drive Your Elegance', href: '/brands/lepas', img: '/brand/home-cards/lepas-l6.webp', pos: '40% 65%', logo: '/brand/logos/header/lepas.png', logoClass: 'mx-2.5 h-auto w-[80px] object-contain', color: '#A0522D' },
+  { key: 'wuling', tag: 'Wuling', title: 'Enjoy the Ride', href: '/brands/wuling', img: '/brand/home-cards/wuling-eksion.webp', pos: '50% 60%', logo: '/brand/logos/header/wuling-horizontal.png', color: '#C8102E' },
+  { key: 'farizon', tag: 'Farizon', title: 'Beyond Logistics', href: '/brands/farizon', img: '/brand/home-cards/farizon-sv.webp', pos: '50% 60%', logo: '/brand/logos/header/farizon-horizontal.png', color: '#005BAC' },
   { key: 'suzyfix', tag: 'Suzy Fix', title: 'ศูนย์ซ่อมสีและตัวถังมาตรฐาน', href: '/branches/suzy-fix', img: '/brand/home-cards/suzyfix-team.webp', pos: 'center', logo: '/brand/logos/header/suzyfix-2026.png', color: '#E85D2F', fit: 'full' },
 ];
 
@@ -154,7 +154,7 @@ export default function HomePage() {
 
                 {u.logo && (
                   <span className="absolute top-5 left-5 flex h-12 items-center rounded-xl border border-white/40 bg-white/90 px-3.5 shadow-lg backdrop-blur-md transition-all duration-300 group-hover:-translate-y-1 group-hover:bg-white/25">
-                    <img src={u.logo} alt={u.tag} className={u.wide ? "h-auto w-[130px] object-contain sm:w-[170px]" : "h-7 w-auto max-w-[100px] object-contain sm:h-8"} />
+                    <img src={u.logo} alt={u.tag} className={u.logoClass ?? (u.wide ? "h-auto w-[130px] object-contain sm:w-[170px]" : "h-7 w-auto max-w-[100px] object-contain sm:h-8")} />
                   </span>
                 )}
 

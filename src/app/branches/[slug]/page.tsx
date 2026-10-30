@@ -79,10 +79,13 @@ export default async function BranchDetailPage({ params }: { params: Promise<{ s
       <div className="container-page grid gap-8 py-12 sm:py-16 lg:grid-cols-[1fr_1.1fr]">
         {/* Info */}
         <div className="space-y-4">
-          <div className="flex items-start gap-3 rounded-2xl border border-white/10 bg-[#1C1E22] p-5">
-            <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-[#FF4D4D]" />
-            <div><p className="text-xs text-white/50">ที่อยู่</p><p className="mt-1 text-sm leading-relaxed text-white">{branch.address}</p></div>
-          </div>
+          {/* Suzy Fix: the map card already names the address */}
+          {branch.slug !== "suzy-fix" && (
+            <div className="flex items-start gap-3 rounded-2xl border border-white/10 bg-[#1C1E22] p-5">
+              <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-[#FF4D4D]" />
+              <div><p className="text-xs text-white/50">ที่อยู่</p><p className="mt-1 text-sm leading-relaxed text-white">{branch.address}</p></div>
+            </div>
+          )}
           <div className="flex items-start gap-3 rounded-2xl border border-white/10 bg-[#1C1E22] p-5">
             <Clock className="mt-0.5 h-5 w-5 shrink-0 text-[#FF4D4D]" />
             <div><p className="text-xs text-white/50">เวลาทำการ</p><p className="mt-1 text-sm leading-relaxed text-white">{branch.hours}</p></div>
