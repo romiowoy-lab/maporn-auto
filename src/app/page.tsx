@@ -318,7 +318,7 @@ export default function HomePage() {
               .map((n) => (
                 <Link
                   key={n.slug}
-                  href={`/news/${n.slug}`}
+                  href={`/blog/${n.slug}`}
                   className="group flex flex-col overflow-hidden rounded-xl border border-white/10 bg-[#1C1E22] shadow-[0_10px_30px_rgba(0,0,0,0.35)] transition-all duration-300 hover:border-brand-red/40 hover:-translate-y-1"
                 >
                   <div className="relative h-44 w-full overflow-hidden bg-gradient-to-br from-brand-red/15 via-[#1C1E22] to-[#25282D] flex items-center justify-center">

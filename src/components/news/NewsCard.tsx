@@ -9,7 +9,7 @@ export default function NewsCard({ article }: { article: NewsArticle }) {
   const label = NEWS_CATEGORY_LABEL[article.category] ?? article.category;
   return (
     <Link
-      href={`/news/${article.slug}`}
+      href={`/blog/${article.slug}`}
       className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#1C1E22] transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:shadow-[0_24px_48px_-16px_rgba(0,0,0,0.6)]"
     >
       {article.image ? (

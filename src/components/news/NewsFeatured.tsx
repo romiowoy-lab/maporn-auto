@@ -8,7 +8,7 @@ import { formatDateTH } from "@/lib/utils";
 export default function NewsFeatured({ article }: { article: NewsArticle }) {
   const label = NEWS_CATEGORY_LABEL[article.category] ?? article.category;
   return (
-    <Link href={`/news/${article.slug}`} className="group grid md:grid-cols-2 gap-6 md:gap-10 items-center">
+    <Link href={`/blog/${article.slug}`} className="group grid md:grid-cols-2 gap-6 md:gap-10 items-center">
       {article.image ? (
         <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-white/10 bg-white/5 md:rounded-3xl">
           <Image src={article.image} alt={article.imageAlt ?? article.title} fill priority sizes="(min-width: 768px) 50vw, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
