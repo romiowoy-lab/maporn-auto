@@ -159,7 +159,8 @@ export default function HomePage() {
                 )}
 
                 <div className="absolute inset-x-0 bottom-0 flex justify-start p-6 text-left sm:p-7">
-                  <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-brand-red transition-all duration-300 group-hover:gap-2.5">
+                  {/* CI red gradient pill with white text: readable over any card photo */}
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-red-gradient px-4 py-2 text-xs font-bold text-white shadow-[0_8px_20px_-6px_rgba(255,0,0,0.6)] transition-all duration-300 group-hover:gap-2.5 group-hover:brightness-110 sm:px-5 sm:py-2.5 sm:text-sm">
                     ดูรายละเอียดเพิ่มเติม
                     <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </span>
@@ -168,7 +169,7 @@ export default function HomePage() {
             ))}
           </ScrollFx>
           <style>{`
-            .business-card:hover { border-color: var(--accent); box-shadow: 0 20px 40px -12px var(--accent); }
+            .business-card:hover { border-color: var(--brand-red); box-shadow: 0 20px 40px -12px rgba(255, 0, 0, 0.55); }
           `}</style>
         </div>
       </section>
