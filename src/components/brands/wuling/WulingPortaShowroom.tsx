@@ -220,7 +220,7 @@ export default function WulingPortaShowroom() {
             <motion.div {...reveal}>
               <Eyebrow>Models &amp; Price</Eyebrow>
               <h2 className="mt-3 text-3xl sm:text-4xl font-bold uppercase tracking-tight text-white">ราคาจำหน่าย</h2>
-              <p className="mt-2 text-sm text-white/60">สีตัวถัง: {porta.color} (สีขาว)</p>
+              <p className="mt-2 text-sm text-white/60">สีรถยนต์ภายนอก: {porta.color} (สีขาว)</p>
             </motion.div>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2">

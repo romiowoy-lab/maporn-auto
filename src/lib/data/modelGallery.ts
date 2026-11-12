@@ -73,7 +73,7 @@ export const MODEL_GALLERY: Record<string, GalleryImage[]> = {
     { src: "/brand/gwm-ora5/surround-camera.jpg", label: "กล้องรอบทิศทาง 360°", sublabel: "360° Camera" },
     { src: "/brand/gwm-ora5/charging.png", label: "การชาร์จ", sublabel: "Charging" },
     { src: "/brand/gwm-ora5/safety-airbags.jpg", label: "ถุงลมนิรภัย 6 ใบ", sublabel: "Safety Airbags" },
-    { src: "/brand/gwm-ora5/colors.jpg", label: "สีตัวถัง", sublabel: "Color Options" },
+    { src: "/brand/gwm-ora5/colors.jpg", label: "สีรถยนต์ภายนอก", sublabel: "Color Options" },
   ],
   "gwm-haval-h6": [
     { src: "/brand/gwm-haval-h6/hero.jpg", label: "GWM Haval H6", sublabel: "Key Visual" },

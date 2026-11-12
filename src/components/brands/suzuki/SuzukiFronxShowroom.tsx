@@ -400,7 +400,7 @@ function Trims() {
         </div>
 
         <div>
-          <p className="mb-2 text-xs uppercase tracking-[0.2em] text-white/50">สีตัวถัง (8 สี)</p>
+          <p className="mb-2 text-xs uppercase tracking-[0.2em] text-white/50">สีรถยนต์ภายนอก (8 สี)</p>
           <div className="flex flex-wrap gap-2">
             {COLORS.map((c) => (
               <span key={c.code} className="flex items-center gap-2 rounded-full border border-white/15 px-3 py-1.5 text-xs text-white/80">

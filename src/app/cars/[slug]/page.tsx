@@ -156,7 +156,7 @@ export default async function CarDetailPage({ params }: { params: Promise<{ slug
               </div>
 
               <div className="mt-6">
-                <h3 className="mb-2 text-sm font-bold text-white">สีตัวถังที่มีให้เลือก</h3>
+                <h3 className="mb-2 text-sm font-bold text-white">สีรถยนต์ภายนอกที่มีให้เลือก</h3>
                 <div className="flex flex-wrap gap-2">
                   {model.colors.map((c) => (
                     <span key={c} className="rounded-full border border-white/20 px-3 py-1.5 text-xs text-white/75">

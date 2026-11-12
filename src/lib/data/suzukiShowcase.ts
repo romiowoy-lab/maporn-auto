@@ -44,7 +44,7 @@ export const SUZUKI_MODELS: SuzukiShowcaseModel[] = [
     stats: [
       { value: "6", label: "ถุงลมนิรภัย" },
       { value: "9\"", label: "จอสัมผัส" },
-      { value: "8", label: "สีตัวถัง" },
+      { value: "8", label: "สีรถยนต์ภายนอก" },
     ],
     highlights: [
       "เครื่องยนต์ K15C DUALJET พร้อมเทคโนโลยี SHVS (ISG + แบตเตอรี่ลิเธียมไอออน) และระบบ Auto Start/Stop",

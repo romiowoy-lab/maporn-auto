@@ -364,7 +364,7 @@ function Trims() {
       <div className="border-b border-white/[0.06] bg-[#0c0d0e] py-10 sm:py-14">
         <div className="container-page">
           <p className="mb-8 text-center text-xs font-bold uppercase tracking-[0.25em]" style={{ color: ACCENT }}>
-            สีตัวถัง — เลือกสีที่ชื่นชอบ
+            สีรถยนต์ภายนอก — เลือกสีที่ชื่นชอบ
           </p>
           <div className="relative mx-auto aspect-[16/9] max-w-2xl overflow-hidden rounded-2xl bg-[#f5f5f3]">
             {COLORS.map((c, i) => (
