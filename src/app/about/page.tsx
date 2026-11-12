@@ -52,6 +52,16 @@ function InstagramIcon({ className = "" }: { className?: string }) {
   );
 }
 
+// Glowing red milestone dot (Brand Book "Our History" style): soft halo around a bright core.
+function GlowDot() {
+  return (
+    <span className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center" aria-hidden>
+      <span className="absolute inset-0 rounded-full bg-[radial-gradient(circle,rgba(255,0,0,0.75)_0%,rgba(255,0,0,0.35)_40%,rgba(255,0,0,0)_70%)] blur-[2px]" />
+      <span className="h-4 w-4 rounded-full bg-brand-red shadow-[0_0_18px_6px_rgba(255,0,0,0.65)]" />
+    </span>
+  );
+}
+
 function SectionTitle({ title, sub, center = false }: { title: React.ReactNode; sub?: string; center?: boolean }) {
   return (
     <div className={center ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}>
@@ -177,28 +187,60 @@ export default function AboutPage() {
       </section>
 
       {/* ================= MILESTONES ================= */}
-      <section className="border-y border-white/[0.06] bg-[#111215] py-16 sm:py-20">
+      {/* Brand Book "Our History": a red line with glowing dots. Desktop snakes 5 milestones
+          left→right, turns down at the right edge and runs back right→left for the rest;
+          mobile is a vertical line. Row 1 has a fixed height so the turn lands on row 2's dots. */}
+      <section className="border-y border-white/[0.06] bg-black py-16 sm:py-20">
         <div className="container-page">
           <SectionTitle center title="เส้นทางการเติบโตของเรา" />
-          <div className="relative mt-12">
-            <div className="absolute left-0 right-0 top-[18px] hidden h-px bg-gradient-to-r from-transparent via-brand-red/60 to-transparent lg:block" />
-            <ol className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 lg:mx-0 lg:grid lg:grid-cols-6 lg:overflow-visible lg:px-0">
-              {companyTimeline.map((t) => (
-                <li key={t.year} className="relative w-[72%] shrink-0 snap-start sm:w-[40%] lg:w-auto">
-                  <span className="relative z-10 mx-auto hidden h-9 w-9 items-center justify-center lg:flex">
-                    <span className="absolute h-5 w-5 rounded-full bg-brand-red/25" />
-                    <span className="h-3 w-3 rounded-full bg-brand-red ring-4 ring-[#111215]" />
-                  </span>
-                  <div className="h-full rounded-2xl border border-white/10 bg-[#17181c] p-5 lg:mt-4">
-                    <p className="text-2xl font-black text-brand-red">{t.year}</p>
-                    <h3 className="mt-2 font-bold leading-snug">{t.title}</h3>
-                    <p className="mt-1.5 text-xs leading-relaxed text-white/55">{t.description}</p>
-                  </div>
-                </li>
-              ))}
+
+          {/* Desktop */}
+          <ScrollFx effect="fade-up" className="relative mx-auto mt-14 hidden max-w-6xl lg:block">
+            {/* top run from the first dot to the turn */}
+            {/* column 1 centre = 10% minus a share of the 4 × 16px gaps */}
+            <div className="absolute left-[calc(10%-6.4px)] right-[50%] top-[19px] h-[3px] bg-brand-red" />
+            {/* turn: top-right-bottom border from the middle column (centre = 50%) out to the right edge;
+                height = row 1 (200px) + row 2 margin (24px) + half a dot (20px) - top offset - half the border */}
+            <div className="absolute left-[50%] right-0 top-[19px] h-[227px] rounded-r-[28px] border-y-[3px] border-r-[3px] border-brand-red" />
+            <ol className="relative grid grid-cols-5 gap-x-4">
+              {companyTimeline.map((t, i) => {
+                const row2 = i >= 5;
+                // Row 2 runs back from column 5 toward column 1.
+                const col = row2 ? 5 - (i - 5) : i + 1;
+                return (
+                  <li
+                    key={i}
+                    style={{ gridColumnStart: col, gridRowStart: row2 ? 2 : 1 }}
+                    className={`flex flex-col items-center text-center ${row2 ? "mt-6" : "h-[200px]"}`}
+                  >
+                    <GlowDot />
+                    <p className="mt-4 text-xl font-extrabold tracking-tight xl:text-2xl">{t.period}</p>
+                    <div className="mt-2 space-y-2.5">
+                      {t.items.map((item) => (
+                        <p key={item} className="text-sm leading-snug text-white/75">{item}</p>
+                      ))}
+                    </div>
+                  </li>
+                );
+              })}
             </ol>
-            <p className="mt-3 text-center text-xs text-white/40 lg:hidden">ปัดเพื่อดูปีถัดไป →</p>
-          </div>
+          </ScrollFx>
+
+          {/* Mobile / tablet */}
+          <ol className="relative mx-auto mt-10 max-w-md lg:hidden">
+            <span className="absolute bottom-5 left-[19px] top-5 w-[3px] bg-brand-red" />
+            {companyTimeline.map((t, i) => (
+              <li key={i} className="relative flex gap-4 pb-7 last:pb-0">
+                <GlowDot />
+                <div className="pt-1.5">
+                  <p className="text-lg font-extrabold tracking-tight">{t.period}</p>
+                  {t.items.map((item) => (
+                    <p key={item} className="mt-1 text-sm leading-snug text-white/75">{item}</p>
+                  ))}
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 

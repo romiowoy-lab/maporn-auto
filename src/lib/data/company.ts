@@ -30,13 +30,16 @@ export const serviceDepartments = [
   { title: "ศูนย์ติดตั้งแก๊สรถยนต์ (LPG)", description: "ศูนย์ติดตั้งแก๊สรถยนต์ที่ได้รับใบอนุญาตจากกรมการขนส่งทางบก" },
 ];
 
-export const companyTimeline = [
-  { year: "1988", title: "ก่อตั้งบริษัท", description: "เริ่มต้นธุรกิจตัวแทนจำหน่ายรถยนต์ซูซูกิในประเทศไทย ในนาม บริษัท มาพรพาณิชย์ จำกัด ด้วยรถรุ่นแรก Suzuki Caribian" },
-  { year: "1998", title: "ขยายสาขาแรกในต่างจังหวัด", description: "เปิดโชว์รูมสาขาชลบุรี รองรับตลาดภาคตะวันออก" },
-  { year: "2012", title: "เพิ่มแบรนด์ในเครือ", description: "ขยายไลน์อัพเป็นหลายแบรนด์ พร้อมศูนย์บริการมาตรฐาน Suzy Fix" },
-  { year: "2020", title: "ก้าวสู่ยุครถยนต์ไฟฟ้า", description: "นำเข้าแบรนด์รถยนต์ไฟฟ้า Wuling สู่ตลาดไทย" },
-  { year: "2024", title: "รวมหลายแบรนด์ภายใต้เครือเดียว", description: "รวมแบรนด์ Suzuki, Farizon, OMODA, JAECOO, Lepas, Wuling และ GWM ภายใต้เครือเดียว" },
-  { year: "2026", title: "กว่า 40 ปีแห่งความไว้วางใจ", description: "ดำเนินธุรกิจมากว่า 40 ปี พร้อมเปิดให้บริการ 5 สาขา 5 ศูนย์บริการทั่วประเทศไทย" },
+// "Our History" from the Maporn Brand Book (Oct 2026), in chronological order.
+export const companyTimeline: { period: string; items: string[] }[] = [
+  { period: "1988–ปัจจุบัน", items: ["ก่อตั้งตัวแทนจำหน่าย SUZUKI"] },
+  { period: "2012–2021", items: ["ขยายสาขา SUZUKI เทพารักษ์"] },
+  { period: "2017–2023", items: ["ขยายสาขา SUZUKI มีนบุรี"] },
+  { period: "2023–ปัจจุบัน", items: ["เปิด SUZYFIX"] },
+  { period: "2024–ปัจจุบัน", items: ["ขยายสาขา SUZUKI ระยอง"] },
+  { period: "2024–ปัจจุบัน", items: ["เปิดตัวรถไฟฟ้าเชิงพาณิชย์ FARIZON"] },
+  { period: "2025–ปัจจุบัน", items: ["ขยายธุรกิจ OMODA JAECOO ระยอง"] },
+  { period: "2026–ปัจจุบัน", items: ["ขยายสาขา SUZUKI ศรีราชา", "ขยายธุรกิจ GWM กทม", "ขยายธุรกิจ WULING, LEPAS ระยอง"] },
 ];
 
 export const companyValues = [
