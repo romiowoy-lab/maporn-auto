@@ -3,9 +3,9 @@
 :root {
   --background: #f6f6f5;
   --foreground: #1a1b1c;
-  --brand-navy: #0f172a;
-  --brand-navy-soft: #1e293b;
-  /* Maporn Auto Group CI (CI-Maporn-logo.pdf): red #FF0000, dark red #AD0000, grey #A7A9AC */
+  --brand-navy: #000000; /* CI black (Brand Book Oct 2026) */
+  --brand-navy-soft: #1a1a1a;
+  /* Maporn Auto Group CI (Brand Book Oct 2026): red #FF0000, dark red #AD0000, grey #A7A9AC, white #FFFFFF, black #000000 */
   --brand-red: #ff0000;
   --brand-red-soft: #ad0000;
   --brand-red-gradient: linear-gradient(180deg, #ff0000 0%, #ad0000 100%);

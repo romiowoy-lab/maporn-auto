@@ -4,8 +4,8 @@ import type { Branch } from "@/lib/types";
 import { telHref } from "@/lib/utils";
 
 // Dark showroom card (homepage + service page): photo, name, address, CRM phone and LINE OA,
-// with working call / LINE / Google Maps buttons. Red on dark uses #FF4D4D for legibility.
-export const RED_ON_DARK = "#FF4D4D";
+// with working call / LINE / Google Maps buttons. Red on dark uses CI red #FF0000 (passes WCAG AA on the dark tiles).
+export const RED_ON_DARK = "#FF0000";
 
 export const lineHref = (b: Branch) => b.lineUrl ?? `https://line.me/R/ti/p/${b.line}`;
 export const mapsHref = (b: Branch) => b.googleMapsUrl ?? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(b.mapQuery)}`;

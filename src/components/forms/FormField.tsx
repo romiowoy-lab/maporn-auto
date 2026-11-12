@@ -12,7 +12,7 @@ export function TextField({
   return (
     <label className="block">
       <span className="block text-sm font-medium text-brand-navy mb-1.5">
-        {label} {required && <span className="text-red-600">*</span>}
+        {label} {required && <span className="text-brand-red">*</span>}
       </span>
       <input required={required} className={baseInput} {...props} />
     </label>
@@ -28,7 +28,7 @@ export function SelectField({
   return (
     <label className="block">
       <span className="block text-sm font-medium text-brand-navy mb-1.5">
-        {label} {required && <span className="text-red-600">*</span>}
+        {label} {required && <span className="text-brand-red">*</span>}
       </span>
       <select required={required} className={baseInput} {...props}>
         {children}
@@ -45,7 +45,7 @@ export function TextAreaField({
   return (
     <label className="block">
       <span className="block text-sm font-medium text-brand-navy mb-1.5">
-        {label} {required && <span className="text-red-600">*</span>}
+        {label} {required && <span className="text-brand-red">*</span>}
       </span>
       <textarea required={required} rows={4} className={baseInput} {...props} />
     </label>
@@ -77,7 +77,7 @@ export function ConsentCheckbox({
         <Link href="/pdpa" target="_blank" className="underline text-brand-navy font-medium">
           PDPA
         </Link>{" "}
-        เพื่อให้บริษัทติดต่อกลับ <span className="text-red-600">*</span>
+        เพื่อให้บริษัทติดต่อกลับ <span className="text-brand-red">*</span>
       </span>
     </label>
   );
@@ -86,7 +86,7 @@ export function ConsentCheckbox({
 export function ErrorBanner({ message }: { message: string }) {
   if (!message) return null;
   return (
-    <div className="rounded-lg bg-red-50 border border-red-200 text-red-700 text-sm px-4 py-3">{message}</div>
+    <div className="rounded-lg bg-brand-red/5 border border-brand-red/30 text-brand-red-soft text-sm px-4 py-3">{message}</div>
   );
 }
 

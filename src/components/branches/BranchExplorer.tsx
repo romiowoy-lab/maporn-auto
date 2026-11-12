@@ -11,7 +11,7 @@ import { BRANCH_PHOTO, BRANCH_PHOTO_POSITION } from "@/components/branches/Branc
 // /branches — a calm grid of showroom cards: photo with the red name band, then only what people need
 // to act (address, hours, phone) and three buttons. The map, Facebook and department numbers live on
 // each branch's own page ("ดูรายละเอียดสาขา").
-const RED = "#FF4D4D";
+const RED = "#FF0000";
 
 const lineHref = (b: Branch) => b.lineUrl ?? `https://line.me/R/ti/p/${b.line}`;
 const mapsHref = (b: Branch) => b.googleMapsUrl ?? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(b.mapQuery)}`;
@@ -50,7 +50,7 @@ function BranchCard({ b }: { b: Branch }) {
             <span>{b.hours}</span>
           </li>
           <li>
-            <a href={telHref(b.phone)} className="flex items-center gap-3 text-xl font-extrabold tracking-tight text-white hover:text-[#FF4D4D]">
+            <a href={telHref(b.phone)} className="flex items-center gap-3 text-xl font-extrabold tracking-tight text-white hover:text-brand-red">
               <Phone className="h-4 w-4 shrink-0" style={{ color: RED }} />
               {b.phone}
             </a>

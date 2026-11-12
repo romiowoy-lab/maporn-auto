@@ -120,7 +120,7 @@ export default function AboutPage() {
             ].map(({ icon: Icon, ...c }, i) => (
               <ScrollFx key={c.title} effect="fade-up" delay={i * 0.08} className="min-h-[190px] rounded-2xl border border-white/10 bg-gradient-to-br from-[#17181c] to-[#111215] p-7">
                 <div className="flex items-center gap-3">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-red/15 text-[#FF4D4D]">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-red/15 text-brand-red">
                     <Icon className="h-5 w-5" />
                   </span>
                   <div>
@@ -128,7 +128,7 @@ export default function AboutPage() {
                     <h3 className="text-lg font-bold">{c.title}</h3>
                   </div>
                 </div>
-                {c.lead && <p className="mt-4 font-semibold text-[#FF4D4D]">&ldquo;{c.lead}&rdquo;</p>}
+                {c.lead && <p className="mt-4 font-semibold text-brand-red">&ldquo;{c.lead}&rdquo;</p>}
                 {c.text && <p className="mt-3 text-sm leading-relaxed text-white/60">{c.text}</p>}
               </ScrollFx>
             ))}
@@ -168,7 +168,7 @@ export default function AboutPage() {
                   <span className="min-w-0 flex-1">
                     <span className="block font-bold">{g.name}</span>
                   </span>
-                  <ArrowUpRight className="h-5 w-5 shrink-0 text-white/30 transition-colors group-hover:text-[#FF4D4D]" />
+                  <ArrowUpRight className="h-5 w-5 shrink-0 text-white/30 transition-colors group-hover:text-brand-red" />
                 </Link>
               );
             })}
@@ -190,7 +190,7 @@ export default function AboutPage() {
                     <span className="h-3 w-3 rounded-full bg-brand-red ring-4 ring-[#111215]" />
                   </span>
                   <div className="h-full rounded-2xl border border-white/10 bg-[#17181c] p-5 lg:mt-4">
-                    <p className="text-2xl font-black text-[#FF4D4D]">{t.year}</p>
+                    <p className="text-2xl font-black text-brand-red">{t.year}</p>
                     <h3 className="mt-2 font-bold leading-snug">{t.title}</h3>
                     <p className="mt-1.5 text-xs leading-relaxed text-white/55">{t.description}</p>
                   </div>

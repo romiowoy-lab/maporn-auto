@@ -102,7 +102,7 @@ export default function ServicePage() {
           <p className="mt-2 text-sm text-white/65 sm:text-base">{bodyPaintCenters.length + showroomCenters.length} สาขา ครอบคลุมกรุงเทพฯ ปริมณฑล และภาคตะวันออก</p>
 
           <div className="mt-10 flex items-center gap-3">
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 text-[#FF4D4D]"><PaintBucket className="h-5 w-5" /></span>
+            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 text-brand-red"><PaintBucket className="h-5 w-5" /></span>
             <h3 className="text-lg font-bold">ศูนย์บริการ + ซ่อมสีและตัวถัง ({bodyPaintCenters.length})</h3>
           </div>
           <div className="mt-5 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

@@ -22,8 +22,8 @@ export default function NewsFeatured({ article }: { article: NewsArticle }) {
         />
       )}
       <div>
-        <p className="text-[11px] font-bold uppercase tracking-widest text-[#FF4D4D]">{label}</p>
-        <h3 className="mt-2 text-2xl sm:text-3xl font-bold leading-tight text-white group-hover:text-[#FF4D4D] transition-colors">
+        <p className="text-[11px] font-bold uppercase tracking-widest text-brand-red">{label}</p>
+        <h3 className="mt-2 text-2xl sm:text-3xl font-bold leading-tight text-white group-hover:text-brand-red transition-colors">
           {article.title}
         </h3>
         <p className="mt-3 text-sm leading-relaxed text-white/65 line-clamp-3">{article.excerpt}</p>

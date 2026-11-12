@@ -82,18 +82,18 @@ export default async function BranchDetailPage({ params }: { params: Promise<{ s
           {/* Suzy Fix: the map card already names the address */}
           {branch.slug !== "suzy-fix" && (
             <div className="flex items-start gap-3 rounded-2xl border border-white/10 bg-[#1C1E22] p-5">
-              <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-[#FF4D4D]" />
+              <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-brand-red" />
               <div><p className="text-xs text-white/50">ที่อยู่</p><p className="mt-1 text-sm leading-relaxed text-white">{branch.address}</p></div>
             </div>
           )}
           <div className="flex items-start gap-3 rounded-2xl border border-white/10 bg-[#1C1E22] p-5">
-            <Clock className="mt-0.5 h-5 w-5 shrink-0 text-[#FF4D4D]" />
+            <Clock className="mt-0.5 h-5 w-5 shrink-0 text-brand-red" />
             <div><p className="text-xs text-white/50">เวลาทำการ</p><p className="mt-1 text-sm leading-relaxed text-white">{branch.hours}</p></div>
           </div>
           <div className="rounded-2xl border border-white/10 bg-[#1C1E22] p-5">
             <p className="text-xs text-white/50">ติดต่อสาขา</p>
-            <a href={telHref(phone)} className="mt-1 flex items-center gap-2 text-3xl font-extrabold tracking-tight hover:text-[#FF4D4D]">
-              <Phone className="h-6 w-6 text-[#FF4D4D]" /> {phone}
+            <a href={telHref(phone)} className="mt-1 flex items-center gap-2 text-3xl font-extrabold tracking-tight hover:text-brand-red">
+              <Phone className="h-6 w-6 text-brand-red" /> {phone}
             </a>
             {branch.extraPhones?.map((x) => (
               <a key={x.phone} href={telHref(x.phone)} className="mt-2 flex items-center justify-between gap-3 text-sm text-white/65 hover:text-white">

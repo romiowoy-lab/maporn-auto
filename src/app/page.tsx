@@ -159,7 +159,7 @@ export default function HomePage() {
                 )}
 
                 <div className="absolute inset-x-0 bottom-0 flex justify-start p-6 text-left sm:p-7">
-                  <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#FF4D4D] transition-all duration-300 group-hover:gap-2.5">
+                  <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-brand-red transition-all duration-300 group-hover:gap-2.5">
                     ดูรายละเอียดเพิ่มเติม
                     <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </span>
@@ -235,7 +235,7 @@ export default function HomePage() {
                   const Icon = f.icon;
                   return (
                     <div key={f.title} className="p-5 bg-[#1C1E22] rounded-xl border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.3)]">
-                      <div className="w-10 h-10 mb-3 flex items-center justify-center rounded-lg bg-brand-red/10 text-[#FF4D4D] text-sm font-black">
+                      <div className="w-10 h-10 mb-3 flex items-center justify-center rounded-lg bg-brand-red/10 text-brand-red text-sm font-black">
                         {Icon ? <Icon className="w-5 h-5" /> : f.badge}
                       </div>
                       <h3 className="font-bold text-white mb-1">{f.title}</h3>
@@ -287,7 +287,7 @@ export default function HomePage() {
                   </div>
                   <div className="flex items-center justify-between gap-2 px-5 py-4">
                     <span className="text-base font-bold text-white leading-snug">{p.title}</span>
-                    <ChevronRight className="w-5 h-5 text-white/30 shrink-0 group-hover:text-[#FF4D4D] group-hover:translate-x-0.5 transition-all" />
+                    <ChevronRight className="w-5 h-5 text-white/30 shrink-0 group-hover:text-brand-red group-hover:translate-x-0.5 transition-all" />
                   </div>
                 </Link>
               );
@@ -305,7 +305,7 @@ export default function HomePage() {
             <div>
               <h2 className="text-2xl sm:text-3xl font-black text-white mt-2">ข่าวสารและบทความ</h2>
             </div>
-            <Link href="/news" className="hidden sm:inline-flex items-center gap-1 text-xs font-semibold text-[#FF4D4D] hover:text-[#FF4D4D]/80 transition-colors shrink-0">
+            <Link href="/news" className="hidden sm:inline-flex items-center gap-1 text-xs font-semibold text-brand-red hover:text-brand-red/80 transition-colors shrink-0">
               ดูบทความทั้งหมด
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
@@ -325,7 +325,7 @@ export default function HomePage() {
                     {n.image ? (
                       <img src={n.image} alt={n.imageAlt ?? n.title} className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
                     ) : (
-                      <Newspaper className="w-8 h-8 text-[#FF4D4D]/40" />
+                      <Newspaper className="w-8 h-8 text-brand-red/40" />
                     )}
                     <span className="absolute top-3 left-3 text-[10px] font-bold px-2 py-0.5 rounded bg-brand-red-gradient text-white">
                       {NEWS_CATEGORY_LABEL[n.category] ?? n.category}
@@ -335,7 +335,7 @@ export default function HomePage() {
                     <span className="text-[11px] text-white/65">{formatDateTH(n.publishDate)}</span>
                     <h3 className="text-sm font-bold text-white mt-1.5 leading-snug line-clamp-2">{n.title}</h3>
                     <p className="text-xs text-white/65 mt-2 leading-relaxed line-clamp-2 flex-1">{n.excerpt}</p>
-                    <span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-[#FF4D4D] group-hover:text-[#FF4D4D]/80 transition-colors">
+                    <span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-brand-red group-hover:text-brand-red/80 transition-colors">
                       อ่านเพิ่มเติม
                       <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
                     </span>

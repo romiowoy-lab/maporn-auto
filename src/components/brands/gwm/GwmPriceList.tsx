@@ -17,7 +17,7 @@ export default function GwmPriceList({ variants }: { variants: Variant[]; accent
             <li key={v.name} className="grid grid-cols-[1fr_auto_auto] items-center gap-x-4 px-4 py-3">
               <span className="text-sm font-semibold text-white">{v.name}</span>
               <span className={`w-24 text-right text-sm ${v.campaignPrice ? "text-white/45 line-through" : "font-bold text-white"}`}>{formatTHB(v.price)}</span>
-              <span className="w-24 text-right text-sm font-extrabold" style={{ color: v.campaignPrice ? "#FF4D4D" : undefined }}>
+              <span className="w-24 text-right text-sm font-extrabold" style={{ color: v.campaignPrice ? "#FF0000" : undefined }}>
                 {v.campaignPrice ? formatTHB(v.campaignPrice) : ""}
               </span>
             </li>

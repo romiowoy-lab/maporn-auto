@@ -20,8 +20,8 @@ export default function NewsCard({ article }: { article: NewsArticle }) {
         <PlaceholderImage label={label} sublabel={formatDateTH(article.publishDate)} colorHex="#1F7A4D" className="aspect-[16/9]" />
       )}
       <div className="flex flex-1 flex-col p-4 sm:p-5">
-        <p className="text-[11px] font-semibold uppercase tracking-wide text-[#FF4D4D]">{label}</p>
-        <h3 className="mt-1 line-clamp-2 font-bold text-white transition-colors group-hover:text-[#FF4D4D]">{article.title}</h3>
+        <p className="text-[11px] font-semibold uppercase tracking-wide text-brand-red">{label}</p>
+        <h3 className="mt-1 line-clamp-2 font-bold text-white transition-colors group-hover:text-brand-red">{article.title}</h3>
         <p className="mt-2 line-clamp-2 flex-1 text-xs text-white/60">{article.excerpt}</p>
         <p className="mt-3 text-[11px] text-white/45">{formatDateTH(article.publishDate)}</p>
       </div>
