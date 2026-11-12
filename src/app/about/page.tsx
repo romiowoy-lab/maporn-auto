@@ -18,7 +18,7 @@ const IMG = {
 export const metadata: Metadata = {
   title: "เกี่ยวกับเรา ผู้จัดจำหน่ายรถยนต์ในเครือ 6 แบรนด์ พร้อมศูนย์ซ่อมตัวถังและสี",
   description:
-    "Maporn Autogroup (มาพรพาณิชย์) ผู้จัดจำหน่ายรถยนต์อย่างเป็นทางการในเครือ 6 แบรนด์ พร้อมศูนย์ซ่อมตัวถังและสีแบบมืออาชีพ ดำเนินธุรกิจมาตั้งแต่ปี 1988",
+    "Maporn Auto Group (มาพร ออโต้ กรุ๊ป) ผู้แทนจำหน่ายรถยนต์มากถึง 7 แบรนด์ พร้อมศูนย์บริการครบวงจร (เช็คระยะ ซ่อมสีและตัวถัง) ให้บริการในธุรกิจนี้มานานถึงกว่า 40 ปี",
 };
 
 
@@ -102,10 +102,18 @@ export default function AboutPage() {
               <span className="h-[3px] w-10 rounded-full bg-brand-red-gradient" />
               พร้อมศูนย์ซ่อมตัวถังและสีแบบมืออาชีพ
             </p>
-            <p className="mt-5 max-w-lg leading-relaxed text-white/60">
-              {company.legalName} ดูแลลูกค้ามากว่า 40 ปี ครบตั้งแต่การเลือกซื้อรถใหม่ ไฟแนนซ์ ศูนย์บริการ
-              จนถึงงานซ่อมสีและตัวถังมาตรฐานโรงงาน
-            </p>
+            <div className="mt-6 max-w-lg">
+              <p className="text-lg font-bold">Maporn Auto Group</p>
+              <p className="font-semibold text-white/80">มาพร ออโต้ กรุ๊ป</p>
+              <p className="mt-3 leading-relaxed text-white/60">
+                ผู้แทนจำหน่ายรถยนต์มากถึง 7 แบรนด์ พร้อมศูนย์บริการครบวงจร (เช็คระยะ ซ่อมสีและตัวถัง)
+                ให้บริการในธุรกิจนี้มานานถึงกว่า 40 ปี
+              </p>
+            </div>
+            <div className="mt-7 max-w-lg border-l-[3px] border-brand-red pl-5">
+              <p className="text-xl font-extrabold tracking-tight sm:text-2xl">Every Journey Matter</p>
+              <p className="mt-1 font-semibold text-brand-red">ดูแลด้วยใจ อุ่นใจทุกเส้นทาง</p>
+            </div>
           </ScrollFx>
 
           <ScrollFx effect="fade-up" delay={0.1} className="relative mx-auto w-full max-w-xl lg:mx-0">
@@ -125,8 +133,20 @@ export default function AboutPage() {
         <div className="container-page">
           <div className="grid gap-4 md:grid-cols-2">
             {[
-              { icon: Eye, label: "Vision", title: "วิสัยทัศน์", lead: null as string | null, text: "" },
-              { icon: HeartHandshake, label: "Mission", title: "พันธกิจ", lead: null, text: "" },
+              {
+                icon: Eye,
+                label: "Vision",
+                title: "วิสัยทัศน์",
+                lead: null as string | null,
+                text: "มาพร ออโต้ กรุ๊ป มุ่งมั่นพัฒนาธุรกิจเพื่อเป็นเครือข่ายตัวแทนจำหน่ายรถยนต์ที่ดูแลลูกค้าทั่วประเทศ พร้อมศูนย์บริการสำหรับในกรุงเทพฯและภาคตะวันออก (ระยอง จันทบุรี ตราด ชลบุรี) ที่ให้ความอุ่นใจแก่ลูกค้าตลอดการเป็นเจ้าของรถ ไม่ใช่แค่วันที่ซื้อ",
+              },
+              {
+                icon: HeartHandshake,
+                label: "Mission",
+                title: "พันธกิจ",
+                lead: "อุ่นใจเมื่อซื้อรถและใช้บริการกับมาพร",
+                text: "มาพร ออโต้ กรุ๊ป มอบความอุ่นใจให้ลูกค้าตั้งแต่วันแรกที่เดินเข้ามาหาเรา จนถึงทุกวันที่คุณใช้รถ — เพราะเรามุ่งมั่นดูแลลูกค้าด้วยใจ เราพร้อมดูแลคุณต่อไปตลอดทาง",
+              },
             ].map(({ icon: Icon, ...c }, i) => (
               <ScrollFx key={c.title} effect="fade-up" delay={i * 0.08} className="min-h-[190px] rounded-2xl border border-white/10 bg-gradient-to-br from-[#17181c] to-[#111215] p-7">
                 <div className="flex items-center gap-3">
