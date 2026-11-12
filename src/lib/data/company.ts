@@ -35,7 +35,7 @@ export const companyTimeline: { period: string; items: string[] }[] = [
   { period: "1988–ปัจจุบัน", items: ["ก่อตั้งตัวแทนจำหน่าย SUZUKI"] },
   { period: "2012–2021", items: ["ขยายสาขา SUZUKI เทพารักษ์"] },
   { period: "2017–2023", items: ["ขยายสาขา SUZUKI มีนบุรี"] },
-  { period: "2023–ปัจจุบัน", items: ["เปิด SUZYFIX"] },
+  { period: "2023–ปัจจุบัน", items: ["เปิด SUZYFIX", "เริ่มธุรกิจรถยนต์ไฟฟ้าเชิงพาณิชย์"] },
   { period: "2024–ปัจจุบัน", items: ["ขยายสาขา SUZUKI ระยอง"] },
   { period: "2024–ปัจจุบัน", items: ["เปิดตัวรถไฟฟ้าเชิงพาณิชย์ FARIZON"] },
   { period: "2025–ปัจจุบัน", items: ["ขยายธุรกิจ OMODA JAECOO ระยอง"] },
