@@ -43,6 +43,7 @@ const schemas: Record<string, () => object> = {
           author: { "@type": "Organization", name: "ทีมบริการหลังการขาย Maporn Auto Group" },
           publisher: { "@type": "Organization", name: "Maporn Auto Group", url: SITE },
           mainEntityOfPage: `${SITE}/blog/service-center-maporn`,
+          image: `${SITE}/images/og/service-center-maporn.jpg`,
         },
         {
           "@type": "AutoRepair",
@@ -64,6 +65,16 @@ const schemas: Record<string, () => object> = {
         branchRepair("sriracha", "Maporn Auto Group สาขาศรีราชา"),
       ].filter(Boolean),
     };
+  },
+};
+
+// Per-article head tags from the agency brief (title is used as-is, without the site suffix).
+export const articleSeo: Record<string, { title: string; ogDescription: string; ogImage: string }> = {
+  "service-center-maporn": {
+    title: "ศูนย์บริการรถยนต์ Maporn | เช็คระยะ ซ่อมสีตัวถัง อะไหล่แท้",
+    ogDescription:
+      "ศูนย์บริการรถยนต์มาพร ครบ 6 บริการหลัก เช็คระยะ ซ่อมทั่วไป ซ่อมสีตัวถัง อะไหล่แท้ ช่วยเหลือฉุกเฉิน 24 ชม. นัดหมายได้ทุกสาขา",
+    ogImage: "/images/og/service-center-maporn.jpg",
   },
 };
 

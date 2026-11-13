@@ -315,6 +315,8 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[...news]
               .sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime())
+              // Pinned first on the homepage at the client's request.
+              .sort((a, b) => Number(b.slug === "service-center-maporn") - Number(a.slug === "service-center-maporn"))
               .slice(0, 3)
               .map((n) => (
                 <Link

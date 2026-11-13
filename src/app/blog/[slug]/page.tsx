@@ -9,7 +9,7 @@ import PlaceholderImage from "@/components/ui/PlaceholderImage";
 import NewsCard from "@/components/news/NewsCard";
 import ArticleBody from "@/components/news/ArticleBody";
 import { formatDateTH } from "@/lib/utils";
-import { getArticleSchema } from "@/lib/data/articleSchema";
+import { getArticleSchema, articleSeo } from "@/lib/data/articleSchema";
 import type { NewsArticle } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
@@ -34,6 +34,23 @@ export async function generateMetadata({
   const { slug } = await params;
   const article = getAnyArticle(slug);
   if (!article) return {};
+  const seo = articleSeo[slug];
+  if (seo) {
+    return {
+      title: { absolute: seo.title },
+      description: article.excerpt,
+      alternates: { canonical: `/blog/${slug}` },
+      openGraph: {
+        type: "article",
+        title: seo.title,
+        description: seo.ogDescription,
+        url: `/blog/${slug}`,
+        locale: "th_TH",
+        images: [{ url: seo.ogImage, width: 1200, height: 630, alt: article.imageAlt ?? article.title }],
+      },
+      twitter: { title: seo.title, description: seo.ogDescription, images: [seo.ogImage] },
+    };
+  }
   return {
     title: article.title,
     description: article.excerpt,
