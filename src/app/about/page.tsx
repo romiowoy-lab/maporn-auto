@@ -16,7 +16,7 @@ const IMG = {
 };
 
 export const metadata: Metadata = {
-  title: "เกี่ยวกับเรา ผู้จัดจำหน่ายรถยนต์ในเครือ 6 แบรนด์ พร้อมศูนย์ซ่อมตัวถังและสี",
+  title: "เกี่ยวกับเรา ผู้จัดจำหน่ายรถยนต์ในเครือ 7 แบรนด์ พร้อมศูนย์ซ่อมตัวถังและสี",
   description:
     "Maporn Auto Group (มาพร ออโต้ กรุ๊ป) ผู้แทนจำหน่ายรถยนต์มากถึง 7 แบรนด์ พร้อมศูนย์บริการครบวงจร (เช็คระยะ ซ่อมสีและตัวถัง) ให้บริการในธุรกิจนี้มานานถึงกว่า 40 ปี",
 };
@@ -75,7 +75,8 @@ export default function AboutPage() {
   // Client-set brand order: OJ, GWM, Suzuki, Lepas, Wuling, Farizon
   const ORDER = ["omoda-jaecoo", "gwm", "suzuki", "lepas", "wuling", "farizon"];
   const groups = [...getBrandGroups()].sort((x, y) => (ORDER.indexOf(x.key) + 99) % 99 - (ORDER.indexOf(y.key) + 99) % 99);
-  const brandCount = groups.length;
+  // Count OMODA and JAECOO as two brands (7 total, per the client brief).
+  const brandCount = groups.reduce((n, g) => n + g.slugs.length, 0);
   const STATS = [
     { value: "กว่า 40 ปี", label: "แห่งความไว้วางใจ" },
     { value: String(brandCount), label: "แบรนด์ในเครือ" },
