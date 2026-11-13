@@ -9,6 +9,7 @@ import PlaceholderImage from "@/components/ui/PlaceholderImage";
 import NewsCard from "@/components/news/NewsCard";
 import ArticleBody from "@/components/news/ArticleBody";
 import { formatDateTH } from "@/lib/utils";
+import { getArticleSchema } from "@/lib/data/articleSchema";
 import type { NewsArticle } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
@@ -52,9 +53,11 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
   const allArticles = getAllArticles();
   const related = allArticles.filter((n) => n.slug !== article.slug && n.category === article.category).slice(0, 3);
   const label = NEWS_CATEGORY_LABEL[article.category] ?? article.category;
+  const schema = getArticleSchema(slug);
 
   return (
     <div className="bg-[#101113] text-white">
+    {schema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />}
     <div className="container-page py-10 sm:py-14">
       <nav className="text-xs text-white/50 mb-6 flex items-center gap-1.5">
         <Link href="/blog" className="hover:text-white">
