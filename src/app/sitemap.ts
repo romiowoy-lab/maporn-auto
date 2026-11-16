@@ -3,6 +3,9 @@ import { brands } from "@/lib/data/brands";
 import { models } from "@/lib/data/models";
 import { branches } from "@/lib/data/branches";
 import { news } from "@/lib/data/news";
+import { listManagedArticles } from "@/lib/data/managed-articles";
+
+export const dynamic = "force-dynamic";
 
 const BASE_URL = "https://www.mapornautogroup.com";
 
@@ -18,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/finance`,              priority: 0.7, changeFrequency: "monthly" },
     { url: `${BASE_URL}/quotation`,            priority: 0.7, changeFrequency: "monthly" },
     { url: `${BASE_URL}/about`,               priority: 0.6, changeFrequency: "monthly" },
-    { url: `${BASE_URL}/news`,                 priority: 0.6, changeFrequency: "weekly"  },
+    { url: `${BASE_URL}/blog`,                 priority: 0.6, changeFrequency: "weekly"  },
     { url: `${BASE_URL}/contact`,              priority: 0.6, changeFrequency: "monthly" },
     { url: `${BASE_URL}/compare`,              priority: 0.5, changeFrequency: "weekly"  },
     { url: `${BASE_URL}/privacy-policy`,       priority: 0.3, changeFrequency: "yearly"  },
@@ -42,7 +45,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-
   const branchRoutes = branches.map((b) => ({
     url: `${BASE_URL}/branches/${b.slug}`,
     lastModified: new Date(),
@@ -50,12 +52,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  const newsRoutes = news.map((n) => ({
-    url: `${BASE_URL}/news/${n.slug}`,
+  // Static articles → /blog canonical
+  const staticArticleRoutes = news.map((n) => ({
+    url: `${BASE_URL}/blog/${n.slug}`,
     lastModified: new Date(n.publishDate),
     changeFrequency: "monthly" as const,
     priority: 0.5,
   }));
 
-  return [...staticRoutes, ...brandRoutes, ...modelRoutes, ...branchRoutes, ...newsRoutes];
+  // Managed articles (from data/articles.json) — only published ones
+  const managedArticleRoutes = listManagedArticles()
+    .filter((a) => a.published)
+    .map((a) => ({
+      url: `${BASE_URL}/blog/${a.slug}`,
+      lastModified: new Date(a.publishDate),
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
+    }));
+
+  return [...staticRoutes, ...brandRoutes, ...modelRoutes, ...branchRoutes, ...staticArticleRoutes, ...managedArticleRoutes];
 }
