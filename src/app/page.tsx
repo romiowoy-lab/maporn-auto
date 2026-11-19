@@ -260,7 +260,7 @@ export default function HomePage() {
           {/* 6-item grid — bigger, image-forward cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              { title: 'Our Story เรื่องราวของเรา', icon: History, href: '/about', img: '/brand/maporn-our-story-v2.webp' },
+              { title: 'Our Story เรื่องราวของเรา', icon: History, href: '/about', img: '/brand/maporn-showroom-spare2.webp' },
               { title: 'ตัวจริงรถบุคคล & พาณิชย์', icon: Car, href: '/brands', img: '/brand/maporn-multi-brand-lineup.webp' },
               { title: 'Location ค้นหาโชว์รูมและศูนย์บริการ', icon: MapPin, href: '/branches', img: '/brand/maporn-brands-coverage-map.webp' },
               { title: 'ตัวจริงด้านซ่อมสี & ตัวถัง', icon: Wrench, href: '/service', img: '/brand/maporn-bodyshop.jpg' },
