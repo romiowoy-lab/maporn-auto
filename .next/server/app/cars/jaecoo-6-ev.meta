@@ -1,0 +1,39 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/cars/layout,_N_T_/cars/[slug]/layout,_N_T_/cars/[slug]/page,_N_T_/cars/jaecoo-6-ev"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/cars/$d$slug/__PAGE__"
+  ],
+  "prefetchHints": {
+    "hints": 64,
+    "slots": {
+      "children": {
+        "hints": 96,
+        "slots": {
+          "children": {
+            "hints": 96,
+            "slots": {
+              "children": {
+                "hints": 160,
+                "slots": null
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "routeCache": {
+    "key": "/route-cache/APP_PAGE/a77eb6e92b5a051f893ea381e97cf1e13b4671e918559235f9605f4850d49559/$/cars/jaecoo-6-ev",
+    "owner": {
+      "kind": "APP_PAGE",
+      "sourceRoute": "/cars/[slug]/page"
+    },
+    "isFallback": false
+  }
+}

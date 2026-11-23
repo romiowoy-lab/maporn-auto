@@ -1,0 +1,3 @@
+module.exports=[33354,(a,b,c)=>{"use strict";c._=function(a){return a&&a.__esModule?a:{default:a}}},68114,a=>{"use strict";a.s(["e",0,function(a){return new Intl.DateTimeFormat("th-TH",{year:"numeric",month:"long",day:"numeric"}).format(new Date(a))},"f",0,function(a){return new Intl.NumberFormat("th-TH",{style:"currency",currency:"THB",maximumFractionDigits:0}).format(a)},"A",0,function(a){let b=a.split(",")[0].trim().replace(/(\d{4})-\d$/,"$1");return`tel:${b.replace(/[^0-9+]/g,"")}`}])}];
+
+//# sourceMappingURL=_0mbrbd5577073._.js.map

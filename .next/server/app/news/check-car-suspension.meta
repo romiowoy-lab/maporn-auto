@@ -1,0 +1,39 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/news/layout,_N_T_/news/[slug]/layout,_N_T_/news/[slug]/page,_N_T_/news/check-car-suspension"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/news/$d$slug/__PAGE__"
+  ],
+  "prefetchHints": {
+    "hints": 64,
+    "slots": {
+      "children": {
+        "hints": 96,
+        "slots": {
+          "children": {
+            "hints": 96,
+            "slots": {
+              "children": {
+                "hints": 160,
+                "slots": null
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "routeCache": {
+    "key": "/route-cache/APP_PAGE/b1d03f4b4711fa20598671aee2cd9be5e97ac1f3f5d5453c5df4b462318287c7/$/news/check-car-suspension",
+    "owner": {
+      "kind": "APP_PAGE",
+      "sourceRoute": "/news/[slug]/page"
+    },
+    "isFallback": false
+  }
+}

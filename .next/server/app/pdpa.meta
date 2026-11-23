@@ -1,0 +1,34 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/pdpa/layout,_N_T_/pdpa/page,_N_T_/pdpa"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/pdpa/__PAGE__"
+  ],
+  "prefetchHints": {
+    "hints": 64,
+    "slots": {
+      "children": {
+        "hints": 96,
+        "slots": {
+          "children": {
+            "hints": 160,
+            "slots": null
+          }
+        }
+      }
+    }
+  },
+  "routeCache": {
+    "key": "/route-cache/APP_PAGE/97269d995c09ced72aad50a228f6a149d9e0fd512b4919027ce9c2ba5db22d1f/$/pdpa",
+    "owner": {
+      "kind": "APP_PAGE",
+      "sourceRoute": "/pdpa/page"
+    },
+    "isFallback": false
+  }
+}

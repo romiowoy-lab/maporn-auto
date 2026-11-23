@@ -1,0 +1,34 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/our-people/layout,_N_T_/our-people/page,_N_T_/our-people"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/our-people/__PAGE__"
+  ],
+  "prefetchHints": {
+    "hints": 64,
+    "slots": {
+      "children": {
+        "hints": 96,
+        "slots": {
+          "children": {
+            "hints": 160,
+            "slots": null
+          }
+        }
+      }
+    }
+  },
+  "routeCache": {
+    "key": "/route-cache/APP_PAGE/07298518bb138df0ca281af164faaf1b7257793fd35e83b77d9dc334fac17288/$/our-people",
+    "owner": {
+      "kind": "APP_PAGE",
+      "sourceRoute": "/our-people/page"
+    },
+    "isFallback": false
+  }
+}

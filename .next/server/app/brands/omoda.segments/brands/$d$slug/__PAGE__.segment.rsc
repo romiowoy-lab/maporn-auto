@@ -1,0 +1,34 @@
+2:"$Sreact.fragment"
+3:"/_next/static/chunks/1h2vhw-5czf0y.js"
+4:"/_next/static/chunks/2yhbr2424p3el.js"
+5:I[39756,["$3","$4"],"default"]
+6:I[37457,["$3","$4"],"default"]
+d:"/_next/static/chunks/3_u9awy3zqv9g.js"
+e:"/_next/static/chunks/2dbujdnk-nx0m.js"
+f:"/_next/static/chunks/1ofrzf_q22urp.js"
+10:"/_next/static/chunks/2ea28fooiouk3.js"
+11:"/_next/static/chunks/3h5l9zi18mmlm.js"
+12:I[4581,["$3","$4","$d","$e","$f","$10","$11"],"default"]
+13:I[97367,["$3","$4"],"OutletBoundary"]
+14:"$Sreact.suspense"
+17:"ViewportBoundary"
+18:I[97367,["$3","$4"],"$17"]
+19:"MetadataBoundary"
+1a:I[97367,["$3","$4"],"$19"]
+1b:I[27201,["$3","$4"],"IconMark"]
+8:X
+8:C
+9:X
+c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"หน้าแรก\",\"item\":\"https://www.mapornautogroup.com/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"แบรนด์รถยนต์\",\"item\":\"https://www.mapornautogroup.com/brands\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"OMODA\",\"item\":\"https://www.mapornautogroup.com/brands/omoda\"}]},{\"@type\":\"ItemList\",\"name\":\"รถยนต์ OMODA ที่ Maporn Autogroup\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"url\":\"https://www.mapornautogroup.com/cars/omoda-5\",\"name\":\"OMODA 5\"},{\"@type\":\"ListItem\",\"position\":2,\"url\":\"https://www.mapornautogroup.com/cars/omoda-c5-ev\",\"name\":\"OMODA C5 EV\"}]}]}"}}],["$","$L12",null,{}]],[["$","script","script-0",{"src":"/_next/static/chunks/3_u9awy3zqv9g.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/2dbujdnk-nx0m.js","async":true}],["$","script","script-2",{"src":"/_next/static/chunks/1ofrzf_q22urp.js","async":true}],["$","script","script-3",{"src":"/_next/static/chunks/2ea28fooiouk3.js","async":true}],["$","script","script-4",{"src":"/_next/static/chunks/3h5l9zi18mmlm.js","async":true}]],["$","$L13",null,{"children":["$","$14",null,{"name":"Next.MetadataOutlet","children":"$@15"}]}]]}],"p":"$@16","v":null,"s":"$9"}}]]
+a:[["children",{"s":{"n":"slug","t":"d","k":"omoda","s":[]},"h":96,"d":{"r":["$","$2","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","template":["$","$L6",null,{}]}]]}],"p":"$@b","v":"$8","s":"$9"},"c":"$Qc"}]]
+1:[["children",{"s":"brands","h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","template":["$","$L6",null,{}]}]]}],"p":"$@7","v":"$8","s":"$9"},"c":"$Qa"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L18",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L1a",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$14",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"OMODA C5 EV และ JAECOO J7 SHS ตัวแทนจำหน่าย ทดลองขับ ขอใบเสนอราคา | Maporn Autogroup"}],["$","meta","1",{"name":"description","content":"OMODA C5 EV ครอสโอเวอร์ไฟฟ้า 100% 211 แรงม้า วิ่งไกล 422 กม. (NEDC) เริ่มต้น 709,000 บาท พร้อม JAECOO J7 SHS, JAECOO 5 EV, JAECOO 6 EV, 6T EV และ 6T REEV ดูสเปก สี และจองทดลองขับกับ Maporn Autogroup"}],["$","meta","2",{"name":"keywords","content":"มาพรพาณิชย์,Maporn Autogroup,ตัวแทนจำหน่ายรถยนต์ multi-brand,โชว์รูม GWM ระยอง ศรีราชา,ศูนย์บริการรถ EV กรุงเทพ,รถบรรทุกไฟฟ้า B2B,Suzuki,Farizon,Wuling,JAECOO OMODA,รถยนต์ไฟฟ้า,ทดลองขับ"}],["$","meta","3",{"name":"robots","content":"index, follow"}],["$","link","4",{"rel":"canonical","href":"https://www.mapornautogroup.com/brands/jaecoo"}],["$","meta","5",{"name":"google-site-verification","content":"75fFsNNE-JHOhqjMySD3NT4zEwMD49YR_j70OA-ykfs"}],["$","meta","6",{"property":"og:title","content":"OMODA C5 EV และ JAECOO J7 SHS ตัวแทนจำหน่าย ทดลองขับ ขอใบเสนอราคา"}],["$","meta","7",{"property":"og:description","content":"OMODA C5 EV ครอสโอเวอร์ไฟฟ้า 100% 211 แรงม้า วิ่งไกล 422 กม. (NEDC) เริ่มต้น 709,000 บาท พร้อม JAECOO J7 SHS, JAECOO 5 EV, JAECOO 6 EV, 6T EV และ 6T REEV ดูสเปก สี และจองทดลองขับกับ Maporn Autogroup"}],["$","meta","8",{"property":"og:url","content":"https://www.mapornautogroup.com/brands/jaecoo"}],["$","meta","9",{"property":"og:locale","content":"th_TH"}],["$","meta","10",{"property":"og:image","content":"https://www.mapornautogroup.com/brand/omoda-c5/hero.jpg"}],["$","meta","11",{"property":"og:image:alt","content":"OMODA"}],["$","meta","12",{"property":"og:type","content":"website"}],["$","meta","13",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","14",{"name":"twitter:title","content":"OMODA C5 EV และ JAECOO J7 SHS ตัวแทนจำหน่าย ทดลองขับ ขอใบเสนอราคา"}],["$","meta","15",{"name":"twitter:description","content":"OMODA C5 EV ครอสโอเวอร์ไฟฟ้า 100% 211 แรงม้า วิ่งไกล 422 กม. (NEDC) เริ่มต้น 709,000 บาท พร้อม JAECOO J7 SHS, JAECOO 5 EV, JAECOO 6 EV, 6T EV และ 6T REEV ดูสเปก สี และจองทดลองขับกับ Maporn Autogroup"}],["$","meta","16",{"name":"twitter:image","content":"https://www.mapornautogroup.com/brand/omoda-c5/hero.jpg"}],["$","link","17",{"rel":"icon","href":"/icon.svg?icon.1xg5yv8wsub9c.svg","sizes":"any","type":"image/svg+xml"}],["$","link","18",{"rel":"apple-touch-icon","href":"/apple-icon.png?apple-icon.17uq909qmulz-.png","sizes":"180x180","type":"image/png"}],["$","$L1b","19",{}]]}]}],null]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"p":"$@1c","v":null,"s":"$9"}},"a":"$@1d","u":"$@1e","b":"f8oEGwneDBbhRQx1EBwfb"}
+15:null
+1e:true
+9:300
+9:C
+1d:0
+b:"$undefined"
+7:"$undefined"
+1c:"$undefined"
+16:"$undefined"

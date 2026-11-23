@@ -1,0 +1,40 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/brands/layout,_N_T_/brands/[slug]/layout,_N_T_/brands/[slug]/page,_N_T_/brands/farizon"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/_index",
+    "/brands/$d$slug/__PAGE__"
+  ],
+  "prefetchHints": {
+    "hints": 0,
+    "slots": {
+      "children": {
+        "hints": 64,
+        "slots": {
+          "children": {
+            "hints": 96,
+            "slots": {
+              "children": {
+                "hints": 160,
+                "slots": null
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "routeCache": {
+    "key": "/route-cache/APP_PAGE/1b4a3d56c521e2ad39b811685fc0f11dc6a8d5e9898e24c8244a97d499ebfcdb/$/brands/farizon",
+    "owner": {
+      "kind": "APP_PAGE",
+      "sourceRoute": "/brands/[slug]/page"
+    },
+    "isFallback": false
+  }
+}

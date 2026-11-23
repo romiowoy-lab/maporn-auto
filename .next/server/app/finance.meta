@@ -1,0 +1,34 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/finance/layout,_N_T_/finance/page,_N_T_/finance"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/finance/__PAGE__"
+  ],
+  "prefetchHints": {
+    "hints": 64,
+    "slots": {
+      "children": {
+        "hints": 96,
+        "slots": {
+          "children": {
+            "hints": 160,
+            "slots": null
+          }
+        }
+      }
+    }
+  },
+  "routeCache": {
+    "key": "/route-cache/APP_PAGE/6166881a310a3d56f42affcdabf43e266be5875cde12c03e74d0fbb1fb669f05/$/finance",
+    "owner": {
+      "kind": "APP_PAGE",
+      "sourceRoute": "/finance/page"
+    },
+    "isFallback": false
+  }
+}

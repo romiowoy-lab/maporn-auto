@@ -1,0 +1,39 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/branches/layout,_N_T_/branches/[slug]/layout,_N_T_/branches/[slug]/page,_N_T_/branches/rayong-omoda-jaecoo"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/branches/$d$slug/__PAGE__"
+  ],
+  "prefetchHints": {
+    "hints": 64,
+    "slots": {
+      "children": {
+        "hints": 96,
+        "slots": {
+          "children": {
+            "hints": 96,
+            "slots": {
+              "children": {
+                "hints": 160,
+                "slots": null
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "routeCache": {
+    "key": "/route-cache/APP_PAGE/f0fe88c452e9183a176b54c3b356e0a4d6596ec4b11bc716fb3984041f3083fe/$/branches/rayong-omoda-jaecoo",
+    "owner": {
+      "kind": "APP_PAGE",
+      "sourceRoute": "/branches/[slug]/page"
+    },
+    "isFallback": false
+  }
+}

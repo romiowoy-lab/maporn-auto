@@ -1,0 +1,23 @@
+{
+  "pages": {},
+  "app": {
+    "[project]/src/app/_not-found/page": [
+      "static/media/88d27ed53b0e2b99-s.p.0i_3uaypf58iu.woff2",
+      "static/media/b595f62d5a019468-s.p.0hwi9_9hwu_ow.woff2",
+      "static/media/f7af28faa8f5de6c-s.p.17uyqh1z65ij2.woff2",
+      "static/media/aa30bce4d9e280ae-s.p.3vomj4ys718n3.woff2",
+      "static/media/ee260ded08fe844a-s.p.3j785ygmx2sxp.woff2",
+      "static/media/ad80f934d0ba4cc5-s.p.3y48j16vw3ns0.woff2",
+      "static/media/e7ecce081583ba2c-s.p.3-cnw-vwwbh1_.woff2",
+      "static/media/e594111a537d683e-s.p.3btzg3pbxiu1o.woff2",
+      "static/media/7073fd279eded816-s.p.3zj8sbbtpwle6.woff2",
+      "static/media/8255a21fc7b55f7c-s.p.1j3epi4sx1jkp.woff2",
+      "static/media/7a660029f6be2aaa-s.p.3qn7s-j_rzsfw.woff2",
+      "static/media/b27f4577309d3d0e-s.p.2mye7a10bd_rx.woff2",
+      "static/media/3562b7b180c37f33-s.p.1jpt8e9q-b8sg.woff2",
+      "static/media/4bef80830ed243d4-s.p.3octkzoya_hav.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pagesUsingSizeAdjust": false
+}

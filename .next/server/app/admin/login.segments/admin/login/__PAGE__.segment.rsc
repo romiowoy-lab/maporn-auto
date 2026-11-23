@@ -1,0 +1,50 @@
+1:"$Sreact.fragment"
+3:"/_next/static/chunks/1h2vhw-5czf0y.js"
+4:"/_next/static/chunks/2yhbr2424p3el.js"
+5:I[3374,["$3","$4"],"default"]
+:HL["/_next/static/chunks/2y1n-x_7---og.css","style"]
+:HL["/_next/static/chunks/3yz3y8kscu8hs.css","style"]
+2:T1000,{"@context":"https://schema.org","@type":"AutoDealer","name":"Maporn Autogroup","legalName":"บริษัท มาพรพาณิชย์ จำกัด","url":"https://www.mapornautogroup.com","logo":"https://www.mapornautogroup.com/Maporn.png","image":"https://www.mapornautogroup.com/Maporn.png","telephone":"099-226-4741","email":"info@mapornautogroup.com","taxID":"0105531023081","address":{"@type":"PostalAddress","streetAddress":"เลขที่ 2 ซอยมาพร ถนนศรีนครินทร์ แขวงหนองบอน เขตประเวศ กรุงเทพมหานคร 10250","addressCountry":"TH"},"department":[{"@type":"AutomotiveBusiness","name":"Suzuki Maporn ศรีนครินทร์","telephone":"02-322-3663-5","address":{"@type":"PostalAddress","streetAddress":"เลขที่ 2 ซอยมาพร ถนนศรีนครินทร์ แขวงหนองบอน เขตประเวศ กรุงเทพมหานคร 10250","addressRegion":"กรุงเทพมหานคร","addressCountry":"TH"}},{"@type":"AutomotiveBusiness","name":"Suzuki Maporn ระยอง","telephone":"090-983-8863","address":{"@type":"PostalAddress","streetAddress":"เลขที่ 333 หมู่ที่ 4 ตำบลทับมา อำเภอเมืองระยอง จังหวัดระยอง 21000","addressRegion":"ระยอง","addressCountry":"TH"}},{"@type":"AutomotiveBusiness","name":"Suzuki Maporn ศรีราชา","address":{"@type":"PostalAddress","streetAddress":"เลขที่ 2/9-2/10 ถนนสุขุมวิท ตำบลศรีราชา อำเภอศรีราชา จังหวัดชลบุรี 20110","addressRegion":"ชลบุรี","addressCountry":"TH"}},{"@type":"AutomotiveBusiness","name":"GWM Maporn ลำลูกกา","address":{"@type":"PostalAddress","streetAddress":"เลขที่ 13/10 หมู่ที่ 6 ตำบลบึงคำพร้อย อำเภอลำลูกกา จังหวัดปทุมธานี 12150","addressRegion":"ปทุมธานี","addressCountry":"TH"}},{"@type":"AutomotiveBusiness","name":"Farizon Maporn Auto Tech ศรีนครินทร์","address":{"@type":"PostalAddress","streetAddress":"เลขที่ 1292 ถนนศรีนครินทร์ แขวงสวนหลวง เขตสวนหลวง กรุงเทพมหานคร 10250","addressRegion":"กรุงเทพมหานคร","addressCountry":"TH"}},{"@type":"AutomotiveBusiness","name":"OJ Maporn ระยอง","address":{"@type":"PostalAddress","streetAddress":"เลขที่ 333 หมู่ที่ 4 ตำบลทับมา อำเภอเมืองระยอง จังหวัดระยอง 21000","addressRegion":"ระยอง","addressCountry":"TH"}},{"@type":"AutomotiveBusiness","name":"Lepas Maporn ระยอง","address":{"@type":"PostalAddress","streetAddress":"เลขที่ 333 หมู่ที่ 4 ตำบลทับมา อำเภอเมืองระยอง จังหวัดระยอง 21000","addressRegion":"ระยอง","addressCountry":"TH"}},{"@type":"AutomotiveBusiness","name":"Wuling Maporn ระยอง","address":{"@type":"PostalAddress","streetAddress":"เลขที่ 333 หมู่ที่ 4 ตำบลทับมา อำเภอเมืองระยอง จังหวัดระยอง 21000","addressRegion":"ระยอง","addressCountry":"TH"}},{"@type":"AutomotiveBusiness","name":"Suzy Fix ศูนย์ซ่อมสีและตัวถัง มีนบุรี","address":{"@type":"PostalAddress","streetAddress":"เลขที่ 2 ถนนสามวา แขวงมีนบุรี เขตมีนบุรี กรุงเทพมหานคร 10510","addressRegion":"กรุงเทพมหานคร","addressCountry":"TH"}}]}b:X
+12:X
+12:C
+13:[["children",{"s":"__PAGE__","h":160,"d":{"r":"$L14","p":"$@15","v":null,"s":"$b"}}]]
+f:[["children",{"s":"login","h":96,"d":{"r":"$L10","p":"$@11","v":"$12","s":"$b"},"c":"$Q13"}]]
+c:[["children",{"s":"admin","h":96,"d":{"r":"$Ld","p":"$@e","v":null,"s":"$b"},"c":"$Qf"}]]
+0:{"t":{"t":{"s":"","h":80,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/2y1n-x_7---og.css","precedence":"next"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/3yz3y8kscu8hs.css","precedence":"next"}],["$","script","script-0",{"src":"/_next/static/chunks/1h2vhw-5czf0y.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/2yhbr2424p3el.js","async":true}]],["$","html",null,{"lang":"th","className":"h-full antialiased MsfFAW_variable","children":["$","body",null,{"className":"min-h-full flex flex-col font-sans","children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}],["$","$L5",null,{}],["$","main",null,{"className":"flex-1","children":"$L6"}],"$L7","$L8","$L9"]}]}]]}],"p":"$@a","v":null,"s":"$b"},"c":"$Qc"},"h":{"r":"$L16","p":"$@17","v":null,"s":"$b"}},"a":"$@18","u":"$@19","b":"f8oEGwneDBbhRQx1EBwfb"}
+1a:I[39756,["$3","$4"],"default"]
+1b:I[37457,["$3","$4"],"default"]
+1c:I[22016,["$3","$4"],""]
+1d:I[58234,["$3","$4"],"default"]
+1e:I[85399,["$3","$4"],"default"]
+1f:I[3681,["$3","$4"],"default"]
+20:I[47257,["$3","$4"],"ClientPageRoot"]
+21:"/_next/static/chunks/37g80sdrknnk5.js"
+22:I[1182,["$3","$4","$21"],"default"]
+25:I[97367,["$3","$4"],"OutletBoundary"]
+26:"$Sreact.suspense"
+28:"ViewportBoundary"
+29:I[97367,["$3","$4"],"$28"]
+2a:"MetadataBoundary"
+2b:I[97367,["$3","$4"],"$2a"]
+2c:I[27201,["$3","$4"],"IconMark"]
+:HL["/brand/maporn-logo-red.svg","image"]
+6:["$","$L1a",null,{"parallelRouterKey":"children","template":["$","$L1b",null,{}],"notFound":[["$","div",null,{"className":"flex min-h-[70vh] items-center justify-center bg-[#F7F7F5] px-4 py-20","children":["$","div",null,{"className":"text-center","children":[["$","img",null,{"src":"/brand/maporn-logo-red.svg","alt":"Maporn Auto Group","width":999,"height":241,"className":"mx-auto h-14 w-auto sm:h-16"}],["$","p",null,{"className":"mt-10 text-6xl font-black tracking-tight text-brand-navy sm:text-7xl","children":"404"}],["$","h1",null,{"className":"mt-3 text-xl font-bold text-brand-navy sm:text-2xl","children":"ไม่พบหน้าที่คุณค้นหา"}],["$","p",null,{"className":"mt-2 text-sm text-brand-slate","children":"หน้านี้อาจถูกย้ายหรือไม่มีอยู่แล้ว"}],["$","div",null,{"className":"mt-8 flex flex-wrap justify-center gap-3","children":[["$","$L1c",null,{"href":"/","className":"rounded-lg bg-brand-red-gradient px-6 py-3 text-sm font-bold text-white transition-all hover:brightness-110","children":"กลับหน้าแรก"}],["$","$L1c",null,{"href":"/brands","className":"rounded-lg border border-black/15 px-6 py-3 text-sm font-semibold text-brand-navy transition-colors hover:bg-black/[0.04]","children":"ดูแบรนด์ทั้งหมด"}]]}]]}]}],[]]}]
+7:["$","$L1d",null,{}]
+8:["$","$L1e",null,{}]
+9:["$","$L1f",null,{}]
+d:["$","$1","c",{"children":[null,["$","div",null,{"className":"min-h-screen bg-[#101113] text-white font-sans","children":["$","$L1a",null,{"parallelRouterKey":"children","template":["$","$L1b",null,{}]}]}]]}]
+10:["$","$1","c",{"children":[null,["$","$L1a",null,{"parallelRouterKey":"children","template":["$","$L1b",null,{}]}]]}]
+14:["$","$1","c",{"children":[["$","$L20",null,{"Component":"$22","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@23","$@24"]}}],[["$","script","script-0",{"src":"/_next/static/chunks/37g80sdrknnk5.js","async":true}]],["$","$L25",null,{"children":["$","$26",null,{"name":"Next.MetadataOutlet","children":"$@27"}]}]]}]
+16:["$","$1","h",{"children":[null,["$","$L29",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L2b",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$26",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Admin | Maporn Autogroup | Maporn Autogroup"}],["$","meta","1",{"name":"description","content":"มาพรพาณิชย์ ตัวแทนจำหน่ายรถยนต์ multi-brand อย่างเป็นทางการ 7 แบรนด์ Suzuki, Farizon, Wuling, GWM, JAECOO, OMODA และ Lepas โชว์รูมและศูนย์บริการรถ EV กรุงเทพ ระยอง ศรีราชา พร้อมโซลูชันรถบรรทุกไฟฟ้า B2B"}],["$","meta","2",{"name":"keywords","content":"มาพรพาณิชย์,Maporn Autogroup,ตัวแทนจำหน่ายรถยนต์ multi-brand,โชว์รูม GWM ระยอง ศรีราชา,ศูนย์บริการรถ EV กรุงเทพ,รถบรรทุกไฟฟ้า B2B,Suzuki,Farizon,Wuling,JAECOO OMODA,รถยนต์ไฟฟ้า,ทดลองขับ"}],["$","meta","3",{"name":"robots","content":"noindex, nofollow"}],["$","meta","4",{"name":"google-site-verification","content":"75fFsNNE-JHOhqjMySD3NT4zEwMD49YR_j70OA-ykfs"}],["$","meta","5",{"property":"og:title","content":"Maporn Autogroup | ตัวแทนจำหน่ายรถยนต์ Multi-Brand 7 แบรนด์"}],["$","meta","6",{"property":"og:description","content":"ตัวแทนจำหน่ายรถยนต์อย่างเป็นทางการ 7 แบรนด์ พร้อมบริการครบวงจรทั่วประเทศ"}],["$","meta","7",{"property":"og:site_name","content":"Maporn Autogroup"}],["$","meta","8",{"property":"og:locale","content":"th_TH"}],["$","meta","9",{"property":"og:image","content":"https://www.mapornautogroup.com/Maporn.png"}],["$","meta","10",{"property":"og:image:width","content":"225"}],["$","meta","11",{"property":"og:image:height","content":"225"}],["$","meta","12",{"property":"og:image:alt","content":"Maporn Autogroup"}],["$","meta","13",{"property":"og:type","content":"website"}],["$","meta","14",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","15",{"name":"twitter:title","content":"Maporn Autogroup | ตัวแทนจำหน่ายรถยนต์ Multi-Brand 7 แบรนด์"}],["$","meta","16",{"name":"twitter:description","content":"ตัวแทนจำหน่ายรถยนต์อย่างเป็นทางการ 7 แบรนด์ พร้อมบริการครบวงจรทั่วประเทศ"}],["$","meta","17",{"name":"twitter:image","content":"https://www.mapornautogroup.com/Maporn.png"}],["$","meta","18",{"name":"twitter:image:alt","content":"Maporn Autogroup"}],["$","meta","19",{"name":"twitter:image:width","content":"225"}],["$","meta","20",{"name":"twitter:image:height","content":"225"}],["$","link","21",{"rel":"icon","href":"/icon.svg?icon.1xg5yv8wsub9c.svg","sizes":"any","type":"image/svg+xml"}],["$","link","22",{"rel":"apple-touch-icon","href":"/apple-icon.png?apple-icon.17uq909qmulz-.png","sizes":"180x180","type":"image/png"}],["$","$L2c","23",{}]]}]}],null]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
+23:{}
+24:"$14:props:children:0:props:serverProvidedParams:params"
+27:null
+19:true
+b:300
+b:C
+18:0
+11:"$undefined"
+e:"$undefined"
+17:"$undefined"
+15:"$undefined"
+a:"$undefined"
