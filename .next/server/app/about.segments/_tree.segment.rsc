@@ -25,6 +25,7 @@
 :HL["/brand/maporn-logo-white.svg","image"]
 :HL["/brand/logos/wuling-2026.png","image"]
 :HL["/brand/logos/farizon-2026.png","image"]
+:HL["/brand/history/maporn-history-2025.webp","image"]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"about","h":96,"c":"$Q2"}]]
-0:{"b":"x2FKQ2NZmqpJiKml4mnMJ","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"WTpDHhGk-5dFLrOEhzZkZ","t":{"t":{"s":"","h":80,"c":"$Q1"}}}

@@ -39,7 +39,7 @@ export const companyTimeline: { period: string; items: string[]; logo?: string }
   { period: "2023–ปัจจุบัน", items: ["เปิด SUZYFIX"] },
   { period: "2024–ปัจจุบัน", items: ["ขยายสาขา SUZUKI ระยอง"] },
   { period: "2024–ปัจจุบัน", items: ["เปิดตัวรถไฟฟ้าเชิงพาณิชย์ FARIZON"] },
-  { period: "2025–ปัจจุบัน", items: ["ขยายธุรกิจ OMODA JAECOO ระยอง"] },
+  { period: "2025–ปัจจุบัน", items: ["ขยายธุรกิจ OMODA JAECOO ระยอง"], logo: "/brand/history/maporn-history-2025.webp" },
   { period: "2026–ปัจจุบัน", items: ["ขยายสาขา SUZUKI ศรีราชา", "ขยายธุรกิจ GWM ลำลูกกา", "ขยายธุรกิจ WULING, LEPAS ระยอง"] },
 ];
 
