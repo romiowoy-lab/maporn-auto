@@ -10,7 +10,7 @@ export const company = {
   email: "info@mapornautogroup.com",
   line: "@mapornautogroup",
   // LINE OA Maporn Auto Group (add-friend link)
-  lineUrl: "https://line.me/R/ti/p/@mapornautogroup",
+  lineUrl: "https://lin.ee/zt4TKs1",
   // Maporn Group - มาพรกรุ๊ป
   facebook: "https://www.facebook.com/profile.php?id=61569211525303",
   instagram: "https://instagram.com/mapornautogroup",
