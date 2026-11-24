@@ -246,16 +246,16 @@ export default function AboutPage() {
                   <li
                     key={i}
                     style={{ gridColumnStart: col, gridRowStart: row2 ? 2 : 1 }}
-                    className={`flex flex-col items-center text-center ${row2 ? "mt-6" : "h-[200px]"}`}
+                    className={`relative flex flex-col items-center text-center ${row2 ? "mt-6" : "h-[200px]"}`}
                   >
-                    <GlowDot />
-                    {/* Row-2 logo box — appears between dot and year (Brand Book: 2025 Maporn Auto Group) */}
+                    {/* Row-2 logo floats ABOVE the second red line, in the gap between rows */}
                     {row2 && t.logo && (
-                      <div className="mt-3 flex items-center justify-center rounded-xl bg-white px-3 py-2 shadow-[0_4px_16px_rgba(0,0,0,0.5)]">
+                      <div className="absolute left-1/2 z-10 -translate-x-1/2 -top-14 flex items-center justify-center rounded-xl bg-white px-3 py-2 shadow-[0_4px_16px_rgba(0,0,0,0.5)]">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img src={t.logo} alt="" className="max-h-10 max-w-[80px] object-contain" />
                       </div>
                     )}
+                    <GlowDot />
                     <p className="mt-4 text-xl font-extrabold tracking-tight xl:text-2xl">{t.period}</p>
                     <div className="mt-2 space-y-2.5">
                       {t.items.map((item) => (
