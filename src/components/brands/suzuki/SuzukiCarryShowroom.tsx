@@ -91,7 +91,7 @@ function Nav() {
   }, []);
 
   return (
-    <div className="sticky top-[7.5rem] z-40 -mb-16 px-3 pt-2 sm:px-6">
+    <div className="sticky top-[8rem] z-[59] -mb-16 px-3 pt-2 sm:px-6">
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-4 rounded-2xl border border-white/15 bg-white/[0.08] px-4 shadow-[0_8px_32px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:px-6">
         <div className="flex shrink-0 items-center gap-3">
           <MapornLogo variant="white" className="h-6 w-auto sm:h-7" />

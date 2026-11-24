@@ -272,8 +272,8 @@ input, select, textarea {
   }
 }
 
-/* Never allow sideways page scroll on phones (intentional bleed sections are clipped) */
-html,
-body {
+/* Never allow sideways page scroll on phones (intentional bleed sections are clipped).
+   overflow-x: clip stays on html only — adding it to body breaks position: sticky in Chromium. */
+html {
   overflow-x: clip;
 }

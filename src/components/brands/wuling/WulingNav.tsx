@@ -31,7 +31,7 @@ export default function WulingNav() {
   }, []);
 
   return (
-    <div className="sticky top-[4.5rem] z-40 -mb-16 px-3 sm:px-6 pt-2">
+    <div className="sticky top-[8rem] z-[59] -mb-16 px-3 sm:px-6 pt-2">
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-4 rounded-2xl border border-white/15 bg-white/[0.08] px-4 sm:px-6 shadow-[0_8px_32px_rgba(0,0,0,0.35)] backdrop-blur-xl">
         <div className="flex items-center gap-3 shrink-0">
           <MapornLogo variant="white" className="h-6 w-auto sm:h-7" />
