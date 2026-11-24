@@ -31,14 +31,15 @@ export const serviceDepartments = [
 ];
 
 // "Our History" from the Maporn Brand Book (Oct 2026), in chronological order.
-export const companyTimeline: { period: string; items: string[] }[] = [
+// logo = path relative to /public; set to undefined until the logo file is added.
+export const companyTimeline: { period: string; items: string[]; logo?: string }[] = [
   { period: "1988–ปัจจุบัน", items: ["ก่อตั้งตัวแทนจำหน่าย SUZUKI ศรีนครินทร์"] },
   { period: "2012–2021", items: ["ขยายสาขา SUZUKI เทพารักษ์"] },
   { period: "2017–2023", items: ["ขยายสาขา SUZUKI มีนบุรี"] },
   { period: "2023–ปัจจุบัน", items: ["เปิด SUZYFIX"] },
   { period: "2024–ปัจจุบัน", items: ["ขยายสาขา SUZUKI ระยอง"] },
   { period: "2024–ปัจจุบัน", items: ["เปิดตัวรถไฟฟ้าเชิงพาณิชย์ FARIZON"] },
-  { period: "2025–ปัจจุบัน", items: ["ขยายธุรกิจ OMODA JAECOO ระยอง"] },
+  { period: "2025–ปัจจุบัน", items: ["ขยายธุรกิจ OMODA JAECOO ระยอง"], logo: "/brand/maporn-logo-red.svg" },
   { period: "2026–ปัจจุบัน", items: ["ขยายสาขา SUZUKI ศรีราชา", "ขยายธุรกิจ GWM ลำลูกกา", "ขยายธุรกิจ WULING, LEPAS ระยอง"] },
 ];
 

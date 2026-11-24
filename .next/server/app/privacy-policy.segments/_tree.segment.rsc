@@ -1,5 +1,5 @@
 :HL["/_next/static/chunks/2y1n-x_7---og.css","style"]
-:HL["/_next/static/chunks/2ucvn7sj0y18c.css","style"]
+:HL["/_next/static/chunks/0s_38us8866o4.css","style"]
 :HL["/_next/static/media/3562b7b180c37f33-s.p.1jpt8e9q-b8sg.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/4bef80830ed243d4-s.p.3octkzoya_hav.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/7073fd279eded816-s.p.3zj8sbbtpwle6.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
@@ -17,4 +17,4 @@
 :HL["/brand/maporn-logo-red.svg","image"]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"privacy-policy","h":96,"c":"$Q2"}]]
-0:{"b":"hcDUF-7wldWbJmU5gChYf","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"L1I8L7fjIuZ9nmxk1J-i1","t":{"t":{"s":"","h":80,"c":"$Q1"}}}

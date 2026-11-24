@@ -209,25 +209,38 @@ export default function AboutPage() {
       </section>
 
       {/* ================= MILESTONES ================= */}
-      {/* Brand Book "Our History": a red line with glowing dots. Desktop snakes 5 milestones
-          left→right, turns down at the right edge and runs back right→left for the rest;
-          mobile is a vertical line. Row 1 has a fixed height so the turn lands on row 2's dots. */}
+      {/* Brand Book "Our History": logo strip above row-1 dots, snake timeline below.
+          Row 1 left-to-right, snake turns right, row 2 runs right-to-left. */}
       <section className="border-y border-white/[0.06] bg-black py-16 sm:py-20">
         <div className="container-page">
-          <SectionTitle center title="เส้นทางการเติบโตของเรา" />
+          <SectionTitle center title="OUR HISTORY" />
 
           {/* Desktop */}
           <ScrollFx effect="fade-up" className="relative mx-auto mt-14 hidden max-w-6xl lg:block">
-            {/* top run from the first dot to the turn */}
-            {/* column 1 centre = 10% minus a share of the 4 × 16px gaps */}
-            <div className="absolute left-[calc(10%-6.4px)] right-[50%] top-[19px] h-[3px] bg-brand-red" />
-            {/* turn: top-right-bottom border from the middle column (centre = 50%) out to the right edge;
-                height = row 1 (200px) + row 2 margin (24px) + half a dot (20px) - top offset - half the border */}
-            <div className="absolute left-[50%] right-0 top-[19px] h-[227px] rounded-r-[28px] border-y-[3px] border-r-[3px] border-brand-red" />
+            {/* Logo strip — same grid as the ol below; only renders a box when logo is set */}
+            <div className="mb-4 grid grid-cols-5 gap-x-4">
+              {companyTimeline.slice(0, 5).map((t, i) => (
+                <div key={i} className="flex h-20 items-end justify-center pb-2">
+                  {t.logo && (
+                    <div className="flex items-center justify-center rounded-xl bg-white px-3 py-2 shadow-[0_4px_16px_rgba(0,0,0,0.5)]">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={t.logo} alt="" className="max-h-12 max-w-[88px] object-contain" />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Logo strip (h-20=80px) + mb-4 (16px) = 96px above the ol.
+                Glow-dot centre = 96 + 20 = 116px → red lines sit at top-[116px].
+                Snake height: row-1 (200px) + mt-6 (24px) + dot-centre (20px) = 244px above row-2 dot;
+                turn height = 244 − 20 (from line to end) = 224px. */}
+            <div className="absolute left-[calc(10%-6.4px)] right-[50%] top-[116px] h-[3px] bg-brand-red" />
+            <div className="absolute left-[50%] right-0 top-[116px] h-[224px] rounded-r-[28px] border-y-[3px] border-r-[3px] border-brand-red" />
+
             <ol className="relative grid grid-cols-5 gap-x-4">
               {companyTimeline.map((t, i) => {
                 const row2 = i >= 5;
-                // Row 2 runs back from column 5 toward column 1.
                 const col = row2 ? 5 - (i - 5) : i + 1;
                 return (
                   <li
@@ -236,6 +249,13 @@ export default function AboutPage() {
                     className={`flex flex-col items-center text-center ${row2 ? "mt-6" : "h-[200px]"}`}
                   >
                     <GlowDot />
+                    {/* Row-2 logo box — appears between dot and year (Brand Book: 2025 Maporn Auto Group) */}
+                    {row2 && t.logo && (
+                      <div className="mt-3 flex items-center justify-center rounded-xl bg-white px-3 py-2 shadow-[0_4px_16px_rgba(0,0,0,0.5)]">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={t.logo} alt="" className="max-h-10 max-w-[80px] object-contain" />
+                      </div>
+                    )}
                     <p className="mt-4 text-xl font-extrabold tracking-tight xl:text-2xl">{t.period}</p>
                     <div className="mt-2 space-y-2.5">
                       {t.items.map((item) => (
@@ -255,6 +275,12 @@ export default function AboutPage() {
               <li key={i} className="relative flex gap-4 pb-7 last:pb-0">
                 <GlowDot />
                 <div className="pt-1.5">
+                  {t.logo && (
+                    <div className="mb-2 inline-flex items-center rounded-lg bg-white px-2 py-1.5 shadow-sm">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={t.logo} alt="" className="max-h-8 max-w-[70px] object-contain" />
+                    </div>
+                  )}
                   <p className="text-lg font-extrabold tracking-tight">{t.period}</p>
                   {t.items.map((item) => (
                     <p key={item} className="mt-1 text-sm leading-snug text-white/75">{item}</p>
