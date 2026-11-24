@@ -22,9 +22,9 @@ export const metadata: Metadata = {
 };
 
 
-const TEAM = [
-  { name: "นางทิพย์รัตน์ โอภาสรังสรรค์", initial: "ท", role: "ประธานกรรมการบริหาร" },
+const TEAM: { name: string; initial: string; role: string; photo?: string; center?: boolean }[] = [
   { name: "นายทวีศักดิ์ โอภาสรังสรรค์", initial: "ท", role: "กรรมการผู้จัดการ" },
+  { name: "นางทิพย์รัตน์ โอภาสรังสรรค์", initial: "ท", role: "ประธานกรรมการบริหาร", center: true },
   { name: "พุตมินาท อัศวิภาส", initial: "พ", role: "Director of Sale" },
 ];
 
@@ -269,21 +269,38 @@ export default function AboutPage() {
       {/* ================= LEADERSHIP ================= */}
       <section className="py-16 sm:py-20">
         <div className="container-page">
-          {/* "ทำไมลูกค้าไว้วางใจมาพร" (values + standards) hidden for now at the client's request */}
-          <div className="grid items-center gap-6 lg:grid-cols-[0.8fr_1.2fr]">
-            <SectionTitle title="ทีมผู้บริหาร" />
-            <ScrollFx effect="fade-up" className="grid gap-4 sm:grid-cols-2">
-              {TEAM.map((m) => (
-                <div key={m.name} className="flex items-center gap-4 rounded-2xl border border-white/10 bg-[#141518] p-5">
-                  <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-brand-red-gradient text-xl font-black shadow-[0_10px_24px_-8px_rgba(255,0,0,0.7)]">{m.initial}</span>
-                  <div>
-                    <p className="font-bold">{m.name}</p>
-                    <p className="mt-0.5 text-sm text-white/50">{m.role}</p>
-                  </div>
+          <SectionTitle center title="ทีมผู้บริหาร" />
+          <ScrollFx effect="fade-up" stagger={0.07} className="mt-12 grid gap-6 sm:grid-cols-3">
+            {TEAM.map((m) => (
+              <div
+                key={m.name}
+                className={`flex flex-col items-center rounded-2xl border p-7 text-center transition-all ${
+                  m.center
+                    ? "border-brand-red/40 bg-gradient-to-b from-[#1f1215] to-[#141518] shadow-[0_0_48px_-12px_rgba(255,0,0,0.35)]"
+                    : "border-white/10 bg-[#141518]"
+                }`}
+              >
+                {/* Avatar circle — swap the <span> for <Image> once a photo is available */}
+                <div className={`relative overflow-hidden rounded-full ${m.center ? "h-32 w-32" : "h-28 w-28"}`}>
+                  {m.photo ? (
+                    <Image src={m.photo} alt={m.name} fill className="object-cover object-top" sizes="128px" />
+                  ) : (
+                    <span
+                      className={`flex h-full w-full items-center justify-center bg-brand-red-gradient font-black ${
+                        m.center
+                          ? "text-4xl shadow-[0_14px_36px_-8px_rgba(255,0,0,0.8)]"
+                          : "text-3xl shadow-[0_10px_24px_-8px_rgba(255,0,0,0.6)]"
+                      }`}
+                    >
+                      {m.initial}
+                    </span>
+                  )}
                 </div>
-              ))}
-            </ScrollFx>
-          </div>
+                <p className={`mt-5 font-bold leading-snug ${m.center ? "text-lg" : ""}`}>{m.name}</p>
+                <p className="mt-1 text-sm text-white/50">{m.role}</p>
+              </div>
+            ))}
+          </ScrollFx>
         </div>
       </section>
 

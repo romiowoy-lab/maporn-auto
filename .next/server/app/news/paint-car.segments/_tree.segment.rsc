@@ -1,5 +1,5 @@
 :HL["/_next/static/chunks/2y1n-x_7---og.css","style"]
-:HL["/_next/static/chunks/2o_b8442lmj7j.css","style"]
+:HL["/_next/static/chunks/2ucvn7sj0y18c.css","style"]
 :HL["/_next/static/media/3562b7b180c37f33-s.p.1jpt8e9q-b8sg.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/4bef80830ed243d4-s.p.3octkzoya_hav.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/7073fd279eded816-s.p.3zj8sbbtpwle6.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
@@ -18,4 +18,4 @@
 3:[["children",{"s":"__PAGE__","h":160}]]
 2:[["children",{"s":{"n":"slug","t":"d","k":"paint-car","s":[]},"h":96,"c":"$Q3"}]]
 1:[["children",{"s":"news","h":96,"c":"$Q2"}]]
-0:{"b":"fdWJv99fEVyNzbTJ5VdEu","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"hcDUF-7wldWbJmU5gChYf","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
