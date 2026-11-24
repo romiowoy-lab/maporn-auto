@@ -35,7 +35,7 @@ function parsePower(power: string): number {
 // Curated cross-brand pairs — every fact below is computed live from real
 // models.ts data (price/power/fuel), not hardcoded opinion copy.
 const RECOMMENDED_PAIRS: { slugA: string; slugB: string; context: string }[] = [
-  { slugA: "gwm-tank-300", slugB: "jaecoo-j7", context: "สาย SUV ออฟโรดสไตล์บึกบึน" },
+  { slugA: "gwm-tank-300", slugB: "gwm-tank-500", context: "สาย SUV ออฟโรดสไตล์บึกบึน" },
   { slugA: "suzuki-fronx", slugB: "wuling-air-ev", context: "รถในเมืองงบประหยัด" },
   { slugA: "wuling-cortez", slugB: "farizon-sv", context: "รถครอบครัว/ธุรกิจที่ต้องการพื้นที่" },
 ];

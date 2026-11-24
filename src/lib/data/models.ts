@@ -715,32 +715,6 @@ const allModels: VehicleModel[] = [
 
   // ---------- JAECOO ----------
   {
-    slug: "jaecoo-j7",
-    brandSlug: "jaecoo",
-    name: "J7 SHS",
-    bodyType: "SUV",
-    fuelType: "Hybrid",
-    // Price is NOT in the official brochure — carried over from the earlier catalog, still to be confirmed.
-    startPrice: 899000,
-    isNew: true,
-    isFeatured: true,
-    // Specs below are from the official OMODA & JAECOO Thailand brochure (JAECOO 7 SHS, Nov 2025).
-    colors: ["Olive Grey (Black Roof)", "Carbon Black", "Khaki White", "Moonlight Silver (Black Roof)"],
-    dimensions: { length: 4500, width: 1865, height: 1670, wheelbase: 2672 },
-    battery: "18.3 kWh (แบตเตอรี่ไฟฟ้าแรงสูง)",
-    range: "ระยะทางรวมทั้งระบบ 1,300 กม. · ไฟฟ้าล้วน 106 กม. (NEDC)",
-    warranty: "ตามเงื่อนไขของผู้ผลิต (สอบถามที่โชว์รูม)",
-    safety: ["ADAS 19 ฟังก์ชัน (เฉพาะรุ่น Max)", "ถุงลมนิรภัยหน้า/ข้าง/หัวเข่า/interseat/ม่านลม", "กล้องรอบทิศทาง 540 องศา (เฉพาะรุ่น Max)"],
-    technology: ["จอกลาง 14.8 นิ้ว (Max) / 13.2 นิ้ว (Dynamic)", "จอมาตรวัด 10.25 นิ้ว", "เครื่องเสียง SONY 8 ลำโพง (เฉพาะรุ่น Max)", "ชาร์จมือถือไร้สาย 50 วัตต์ (เฉพาะรุ่น Max)"],
-    features: ["Super Hybrid System (SHS) เครื่องยนต์ 1.5 เทอร์โบ + มอเตอร์ไฟฟ้า", "หลังคาพาโนรามิคซันรูฟ (เฉพาะรุ่น Max)", "ระบบกรองอากาศ N95", "อัตราเร่ง 0-100 กม./ชม. ใน 8.5 วินาที ความเร็วสูงสุดโดยประมาณ 180 กม./ชม.", "พื้นที่บรรทุกสัมภาระ 500 ลิตร ระยะต่ำสุดจากพื้น 174 มม.", "แผ่นปิดสัมภาระพร้อมจอรับภาพโปรเจคเตอร์แบบม้วนเก็บ (รุ่น Max)", "รองรับชาร์จ AC สูงสุด 6.6 kW / DC สูงสุด 40 kW"],
-    variants: [
-      { name: "Dynamic", price: 899000, engine: "1.5L Turbo + มอเตอร์ไฟฟ้า (SHS)", power: "เครื่องยนต์ 143 แรงม้า + มอเตอร์ 204 แรงม้า", torque: "215 Nm (เครื่องยนต์) + 310 Nm (มอเตอร์)", transmission: "Automatic", seats: 5 },
-      { name: "Max", price: 999000, engine: "1.5L Turbo + มอเตอร์ไฟฟ้า (SHS)", power: "เครื่องยนต์ 143 แรงม้า + มอเตอร์ 204 แรงม้า", torque: "215 Nm (เครื่องยนต์) + 310 Nm (มอเตอร์)", transmission: "Automatic", seats: 5 },
-    ],
-    description: "SUV ไฮบริด Super Hybrid System ระยะทางรวมสูงสุด 1,300 กม. (NEDC) ไฟฟ้าล้วน 106 กม. อัตราสิ้นเปลือง 30.35 กม./ลิตร",
-    image: "/brand/models/jaecoo-j7.jpg",
-  },
-  {
     slug: "jaecoo-5-ev",
     brandSlug: "jaecoo",
     name: "JAECOO 5 EV",

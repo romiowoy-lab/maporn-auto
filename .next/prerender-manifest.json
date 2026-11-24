@@ -626,7 +626,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 126146,
+      "htmlSize": 124870,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -682,7 +682,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 125137,
+      "htmlSize": 124641,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -1074,7 +1074,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 141150,
+      "htmlSize": 140414,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -1102,7 +1102,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 142992,
+      "htmlSize": 141953,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -1130,7 +1130,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 149954,
+      "htmlSize": 149218,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -1158,7 +1158,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 144131,
+      "htmlSize": 143352,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -1186,7 +1186,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 149928,
+      "htmlSize": 148889,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -1201,34 +1201,6 @@
       "initialRevalidateSeconds": false,
       "srcRoute": "/cars/[slug]",
       "dataRoute": "/cars/jaecoo-6t-reev.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/cars/jaecoo-j7": {
-      "routeType": "page",
-      "response": "complete",
-      "compute": "static",
-      "htmlSize": 151297,
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/cars/[slug]",
-      "dataRoute": "/cars/jaecoo-j7.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",

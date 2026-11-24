@@ -32,13 +32,13 @@ const BRAND_SEO: Record<string, { title: string; description: string; image: str
     image: "/brand/studio/gwm-tank300-forest-hero.jpg",
   },
   jaecoo: {
-    title: "JAECOO J7 SHS และ OMODA C5 EV ตัวแทนจำหน่าย ทดลองขับ ขอใบเสนอราคา",
-    description: "JAECOO J7 SHS ไฮบริด วิ่งไกลสูงสุด 1,300 กม. (NEDC) JAECOO 5 EV, JAECOO 6 EV, JAECOO 6T EV, JAECOO 6T REEV และ OMODA C5 EV ไฟฟ้า 100% เริ่มต้น 699,000 บาท ดูสเปก อุปกรณ์ สี และจองทดลองขับกับ Maporn Autogroup",
-    image: "/brand/studio3/jaecoo-j7-shs-exterior.jpg",
+    title: "JAECOO 6, JAECOO 5 และ OMODA C5 EV ตัวแทนจำหน่าย ทดลองขับ ขอใบเสนอราคา",
+    description: "JAECOO 6 EV, JAECOO 6T EV, JAECOO 6T REEV, JAECOO 5 EV และ OMODA C5 EV ไฟฟ้า 100% เริ่มต้น 699,000 บาท ดูสเปก อุปกรณ์ สี และจองทดลองขับกับ Maporn Autogroup",
+    image: "/brand/omoda-c5/hero.jpg",
   },
   omoda: {
-    title: "OMODA C5 EV และ JAECOO J7 SHS ตัวแทนจำหน่าย ทดลองขับ ขอใบเสนอราคา",
-    description: "OMODA C5 EV ครอสโอเวอร์ไฟฟ้า 100% 211 แรงม้า วิ่งไกล 422 กม. (NEDC) เริ่มต้น 709,000 บาท พร้อม JAECOO J7 SHS, JAECOO 5 EV, JAECOO 6 EV, 6T EV และ 6T REEV ดูสเปก สี และจองทดลองขับกับ Maporn Autogroup",
+    title: "OMODA C5 EV, JAECOO 6 และ JAECOO 5 ตัวแทนจำหน่าย ทดลองขับ ขอใบเสนอราคา",
+    description: "OMODA C5 EV ครอสโอเวอร์ไฟฟ้า 100% 211 แรงม้า วิ่งไกล 422 กม. (NEDC) เริ่มต้น 709,000 บาท พร้อม JAECOO 5 EV, JAECOO 6 EV, 6T EV และ 6T REEV ดูสเปก สี และจองทดลองขับกับ Maporn Autogroup",
     image: "/brand/omoda-c5/hero.jpg",
   },
 };

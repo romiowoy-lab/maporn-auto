@@ -21,7 +21,6 @@ export default function VehicleShowcase() {
     featuredOf("wuling"),
     "nex-bev-pickup",
     "omoda-5",
-    "jaecoo-j7",
     "lepas-l6",
   ].filter((slug): slug is string => Boolean(slug));
 

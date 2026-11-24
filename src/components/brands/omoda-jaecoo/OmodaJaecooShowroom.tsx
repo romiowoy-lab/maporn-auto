@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { motion, useAnimationControls } from "framer-motion";
 import { ArrowLeftRight } from "lucide-react";
-import JaecooShowroom from "@/components/brands/jaecoo/JaecooShowroom";
 import JaecooEvShowroom, { type JaecooEvData } from "@/components/brands/jaecoo/JaecooEvShowroom";
 import { j5 } from "@/lib/data/jaecoo-j5";
 import { j6 } from "@/lib/data/jaecoo-j6";
@@ -19,7 +18,7 @@ import BrandShowroomBanner from "@/components/brands/BrandShowroomBanner";
 // Switching plays a full-screen brand "swipe" (sweeps in, swaps the page underneath, sweeps out).
 // JAECOO 6 and JAECOO 5 are families: their tab carries a second row to pick the sub-model.
 
-type View = "jaecoo" | "j5" | "j6" | "omoda";
+type View = "j5" | "j6" | "omoda";
 
 const FAMILY: Partial<Record<View, { name: string; models: { data: JaecooEvData; label: string; note: string }[] }>> = {
   j6: {
@@ -45,13 +44,6 @@ const BRAND: Record<View, { label: string; short: string; logo: string; sweep: s
     short: "J6",
     logo: "/brand/logos/jaecoo.svg",
     sweep: "linear-gradient(120deg,#101418 0%,#26302f 45%,#C8B27A 100%)",
-    glow: "#C8B27A",
-  },
-  jaecoo: {
-    label: "JAECOO J7",
-    short: "J7",
-    logo: "/brand/logos/jaecoo.svg",
-    sweep: "linear-gradient(120deg,#1a1b1f 0%,#3b3626 45%,#C8B27A 100%)",
     glow: "#C8B27A",
   },
   j5: {
@@ -107,7 +99,7 @@ export default function OmodaJaecooShowroom() {
           <motion.span animate={{ rotate: spin }} transition={{ duration: 0.6, ease }} className="hidden text-white/60 sm:inline-flex" aria-hidden="true">
             <ArrowLeftRight className="h-4 w-4" />
           </motion.span>
-          <div className="relative flex rounded-full bg-white/[0.06] p-1" role="tablist" aria-label="สลับรุ่น JAECOO 6 / JAECOO J7 / JAECOO 5 / OMODA C5 EV">
+          <div className="relative flex rounded-full bg-white/[0.06] p-1" role="tablist" aria-label="สลับรุ่น JAECOO 6 / JAECOO 5 / OMODA C5 EV">
             {(Object.keys(BRAND) as View[]).map((v) => {
               const active = target === v;
               return (
@@ -169,9 +161,7 @@ export default function OmodaJaecooShowroom() {
 
       {/* The swipe overlay covers the swap, so the new page simply fades in underneath it */}
       <motion.div key={view} initial={{ opacity: 0.4 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }}>
-        {view === "jaecoo" ? (
-          <JaecooShowroom />
-        ) : view === "j5" ? (
+        {view === "j5" ? (
           <JaecooEvShowroom key={FAMILY.j5!.models[subIndex].data.id} data={FAMILY.j5!.models[subIndex].data} subNav />
         ) : view === "j6" ? (
           <JaecooEvShowroom key={FAMILY.j6!.models[subIndex].data.id} data={FAMILY.j6!.models[subIndex].data} subNav />
