@@ -25,6 +25,7 @@ export const metadata: Metadata = {
 const TEAM = [
   { name: "นางทิพย์รัตน์ โอภาสรังสรรค์", initial: "ท", role: "ประธานกรรมการบริหาร" },
   { name: "นายทวีศักดิ์ โอภาสรังสรรค์", initial: "ท", role: "กรรมการผู้จัดการ" },
+  { name: "พุตมินาท อัศวิภาส", initial: "พ", role: "Director of Sale" },
 ];
 
 // Lucide in this project has no Facebook/Instagram glyphs (same as MobileBottomNav).
@@ -113,7 +114,7 @@ export default function AboutPage() {
             </div>
             <div className="mt-7 max-w-lg border-l-[3px] border-brand-red pl-5">
               <p className="text-xl font-extrabold tracking-tight sm:text-2xl">Every Journey Matter</p>
-              <p className="mt-1 font-semibold text-brand-red">ดูแลด้วยใจ อุ่นใจทุกเส้นทาง</p>
+              <p className="mt-1 font-semibold text-brand-red">บริการด้วยใจ อุ่นใจทุกการเดินทาง</p>
             </div>
           </ScrollFx>
 
