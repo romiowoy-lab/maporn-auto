@@ -19,9 +19,12 @@
 :HL["/brand/logos/gwm.png","image"]
 :HL["/brand/logos/suzuki.svg","image"]
 :HL["/brand/logos/header/lepas.png","image"]
+:HL["/brand/history/maporn-history-1988.webp","image"]
+:HL["/brand/history/maporn-history-2012.webp","image"]
+:HL["/brand/history/maporn-history-2017.webp","image"]
 :HL["/brand/maporn-logo-white.svg","image"]
 :HL["/brand/logos/wuling-2026.png","image"]
 :HL["/brand/logos/farizon-2026.png","image"]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"about","h":96,"c":"$Q2"}]]
-0:{"b":"L1I8L7fjIuZ9nmxk1J-i1","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"x2FKQ2NZmqpJiKml4mnMJ","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
