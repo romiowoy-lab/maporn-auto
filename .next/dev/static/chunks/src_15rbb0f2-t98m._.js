@@ -1,4 +1,4 @@
-(()=>{"use strict";(globalThis["TURBOPACK"] || (globalThis["TURBOPACK"] = [])).push([typeof document === "object" ? document.currentScript : undefined,
+(globalThis["TURBOPACK"] || (globalThis["TURBOPACK"] = [])).push([typeof document === "object" ? document.currentScript : undefined,
 "[project]/src/app/page.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
@@ -536,12 +536,20 @@ function HomePage() {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                                className: "text-3xl sm:text-4xl font-black text-white mt-2 mb-6",
-                                                children: "ทำไมต้องมาพรพาณิชย์"
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "text-[10px] font-bold uppercase tracking-[0.28em] text-white/40 mb-2",
+                                                children: "WHY CHOOSE US • CORPORATE PROFILE"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/page.tsx",
                                                 lineNumber: 228,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                                className: "text-3xl sm:text-4xl font-black text-white mt-1 mb-6",
+                                                children: "บริษัท มาพร พาณิชย์ จำกัด"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/app/page.tsx",
+                                                lineNumber: 229,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -580,12 +588,12 @@ function HomePage() {
                                                                     className: "w-5 h-5"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/page.tsx",
-                                                                    lineNumber: 240,
+                                                                    lineNumber: 241,
                                                                     columnNumber: 33
                                                                 }, this) : f.badge
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/page.tsx",
-                                                                lineNumber: 239,
+                                                                lineNumber: 240,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -593,7 +601,7 @@ function HomePage() {
                                                                 children: f.title
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/page.tsx",
-                                                                lineNumber: 242,
+                                                                lineNumber: 243,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -601,19 +609,19 @@ function HomePage() {
                                                                 children: f.text
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/page.tsx",
-                                                                lineNumber: 243,
+                                                                lineNumber: 244,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, f.title, true, {
                                                         fileName: "[project]/src/app/page.tsx",
-                                                        lineNumber: 238,
+                                                        lineNumber: 239,
                                                         columnNumber: 21
                                                     }, this);
                                                 })
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/page.tsx",
-                                                lineNumber: 229,
+                                                lineNumber: 230,
                                                 columnNumber: 15
                                             }, this)
                                         ]
@@ -623,19 +631,71 @@ function HomePage() {
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "rounded-2xl overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.45)]",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                            src: "/brand/maporn-lobby-illustrated.jpg",
-                                            alt: "โชว์รูม Maporn Trading",
-                                            className: "w-full aspect-[1024/586] lg:aspect-auto lg:h-full object-cover transition-transform duration-500 hover:scale-105"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/app/page.tsx",
-                                            lineNumber: 252,
-                                            columnNumber: 15
-                                        }, this)
+                                        className: "flex flex-col gap-4",
+                                        children: [
+                                            {
+                                                en: "VISION",
+                                                th: "วิสัยทัศน์",
+                                                lead: null,
+                                                text: "มาพร ออโต้ กรุ๊ป มุ่งมั่นพัฒนาธุรกิจเพื่อเป็นเครือข่ายตัวแทนจำหน่ายรถยนต์ที่ดูแลลูกค้าทั่วประเทศ พร้อมศูนย์บริการสำหรับในกรุงเทพฯ และภาคตะวันออก ที่ให้ความอุ่นใจแก่ลูกค้าตลอดการเป็นเจ้าของรถ ไม่ใช่แค่วันที่ซื้อ"
+                                            },
+                                            {
+                                                en: "MISSION",
+                                                th: "พันธกิจ",
+                                                lead: "อุ่นใจเมื่อซื้อรถและใช้บริการกับมาพร",
+                                                text: "มาพร ออโต้ กรุ๊ป มอบความอุ่นใจให้ลูกค้าตั้งแต่วันแรกที่เดินเข้ามาหาเรา จนถึงทุกวันที่คุณใช้รถ เพราะเรามุ่งมั่นดูแลลูกค้าด้วยใจ เราพร้อมดูแลคุณต่อไปตลอดทาง"
+                                            }
+                                        ].map((c)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "relative flex-1 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-6 pl-7 backdrop-blur-md",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "absolute bottom-0 left-0 top-0 w-[3px] rounded-l-2xl bg-brand-red"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/app/page.tsx",
+                                                        lineNumber: 269,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        className: "mb-1 text-[10px] font-bold uppercase tracking-[0.28em] text-white/40",
+                                                        children: [
+                                                            c.en,
+                                                            " | ",
+                                                            c.th
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/src/app/page.tsx",
+                                                        lineNumber: 270,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    c.lead && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        className: "mb-2 font-semibold text-brand-red",
+                                                        children: [
+                                                            "“",
+                                                            c.lead,
+                                                            "”"
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/src/app/page.tsx",
+                                                        lineNumber: 271,
+                                                        columnNumber: 30
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        className: "text-sm leading-relaxed text-white/65",
+                                                        children: c.text
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/app/page.tsx",
+                                                        lineNumber: 272,
+                                                        columnNumber: 19
+                                                    }, this)
+                                                ]
+                                            }, c.en, true, {
+                                                fileName: "[project]/src/app/page.tsx",
+                                                lineNumber: 265,
+                                                columnNumber: 17
+                                            }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/page.tsx",
-                                        lineNumber: 251,
+                                        lineNumber: 252,
                                         columnNumber: 13
                                     }, this)
                                 ]
@@ -651,19 +711,19 @@ function HomePage() {
                                         title: 'Our Story เรื่องราวของเรา',
                                         icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$rotate$2d$ccw$2d$clock$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__History$3e$__["History"],
                                         href: '/about',
-                                        img: '/brand/maporn-showroom.webp'
+                                        img: '/brand/maporn-showroom-spare2.webp'
                                     },
                                     {
                                         title: 'ตัวจริงรถบุคคล & พาณิชย์',
                                         icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$car$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Car$3e$__["Car"],
                                         href: '/brands',
-                                        img: '/brand/maporn-cars-lineup.webp'
+                                        img: '/brand/maporn-brands-coverage-map.webp'
                                     },
                                     {
                                         title: 'Location ค้นหาโชว์รูมและศูนย์บริการ',
                                         icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__["MapPin"],
                                         href: '/branches',
-                                        img: '/brand/maporn-brands-map.webp'
+                                        img: '/brand/maporn-location-map.webp'
                                     },
                                     {
                                         title: 'ตัวจริงด้านซ่อมสี & ตัวถัง',
@@ -698,14 +758,14 @@ function HomePage() {
                                                         className: "h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/page.tsx",
-                                                        lineNumber: 278,
+                                                        lineNumber: 296,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "absolute inset-0 bg-gradient-to-t from-black/70 via-black/5 to-transparent"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/page.tsx",
-                                                        lineNumber: 283,
+                                                        lineNumber: 301,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -713,20 +773,20 @@ function HomePage() {
                                                         children: idx + 1
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/page.tsx",
-                                                        lineNumber: 284,
+                                                        lineNumber: 302,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Icon, {
                                                         className: "absolute bottom-3 left-3 w-6 h-6 text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/page.tsx",
-                                                        lineNumber: 287,
+                                                        lineNumber: 305,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/page.tsx",
-                                                lineNumber: 277,
+                                                lineNumber: 295,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -737,32 +797,32 @@ function HomePage() {
                                                         children: p.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/page.tsx",
-                                                        lineNumber: 290,
+                                                        lineNumber: 308,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
                                                         className: "w-5 h-5 text-white/30 shrink-0 group-hover:text-brand-red group-hover:translate-x-0.5 transition-all"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/page.tsx",
-                                                        lineNumber: 291,
+                                                        lineNumber: 309,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/page.tsx",
-                                                lineNumber: 289,
+                                                lineNumber: 307,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, idx, true, {
                                         fileName: "[project]/src/app/page.tsx",
-                                        lineNumber: 272,
+                                        lineNumber: 290,
                                         columnNumber: 17
                                     }, this);
                                 })
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.tsx",
-                                lineNumber: 261,
+                                lineNumber: 279,
                                 columnNumber: 11
                             }, this)
                         ]
@@ -784,7 +844,7 @@ function HomePage() {
                         className: "absolute -bottom-10 left-1/4 w-[420px] h-[280px] bg-brand-red/[0.05] blur-[110px] rounded-full pointer-events-none"
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 302,
+                        lineNumber: 320,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -799,12 +859,12 @@ function HomePage() {
                                             children: "ข่าวสารและบทความ"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/page.tsx",
-                                            lineNumber: 307,
+                                            lineNumber: 325,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/page.tsx",
-                                        lineNumber: 306,
+                                        lineNumber: 324,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -816,19 +876,19 @@ function HomePage() {
                                                 className: "w-3.5 h-3.5"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/page.tsx",
-                                                lineNumber: 311,
+                                                lineNumber: 329,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/page.tsx",
-                                        lineNumber: 309,
+                                        lineNumber: 327,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/page.tsx",
-                                lineNumber: 305,
+                                lineNumber: 323,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -850,13 +910,13 @@ function HomePage() {
                                                         loading: "lazy"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/page.tsx",
-                                                        lineNumber: 329,
+                                                        lineNumber: 347,
                                                         columnNumber: 23
                                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$newspaper$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Newspaper$3e$__["Newspaper"], {
                                                         className: "w-8 h-8 text-brand-red/40"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/page.tsx",
-                                                        lineNumber: 331,
+                                                        lineNumber: 349,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -864,13 +924,13 @@ function HomePage() {
                                                         children: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$data$2f$news$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["NEWS_CATEGORY_LABEL"][n.category] ?? n.category
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/page.tsx",
-                                                        lineNumber: 333,
+                                                        lineNumber: 351,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/page.tsx",
-                                                lineNumber: 327,
+                                                lineNumber: 345,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -881,7 +941,7 @@ function HomePage() {
                                                         children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["formatDateTH"])(n.publishDate)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/page.tsx",
-                                                        lineNumber: 338,
+                                                        lineNumber: 356,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -889,7 +949,7 @@ function HomePage() {
                                                         children: n.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/page.tsx",
-                                                        lineNumber: 339,
+                                                        lineNumber: 357,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -897,7 +957,7 @@ function HomePage() {
                                                         children: n.excerpt
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/page.tsx",
-                                                        lineNumber: 340,
+                                                        lineNumber: 358,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -908,42 +968,42 @@ function HomePage() {
                                                                 className: "w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/page.tsx",
-                                                                lineNumber: 343,
+                                                                lineNumber: 361,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/page.tsx",
-                                                        lineNumber: 341,
+                                                        lineNumber: 359,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/page.tsx",
-                                                lineNumber: 337,
+                                                lineNumber: 355,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, n.slug, true, {
                                         fileName: "[project]/src/app/page.tsx",
-                                        lineNumber: 322,
+                                        lineNumber: 340,
                                         columnNumber: 17
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.tsx",
-                                lineNumber: 315,
+                                lineNumber: 333,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 304,
+                        lineNumber: 322,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 301,
+                lineNumber: 319,
                 columnNumber: 7
             }, this)
         ]
@@ -4018,75 +4078,6 @@ const allModels = [
     },
     // ---------- JAECOO ----------
     {
-        slug: "jaecoo-j7",
-        brandSlug: "jaecoo",
-        name: "J7 SHS",
-        bodyType: "SUV",
-        fuelType: "Hybrid",
-        // Price is NOT in the official brochure — carried over from the earlier catalog, still to be confirmed.
-        startPrice: 899000,
-        isNew: true,
-        isFeatured: true,
-        // Specs below are from the official OMODA & JAECOO Thailand brochure (JAECOO 7 SHS, Nov 2025).
-        colors: [
-            "Olive Grey (Black Roof)",
-            "Carbon Black",
-            "Khaki White",
-            "Moonlight Silver (Black Roof)"
-        ],
-        dimensions: {
-            length: 4500,
-            width: 1865,
-            height: 1670,
-            wheelbase: 2672
-        },
-        battery: "18.3 kWh (แบตเตอรี่ไฟฟ้าแรงสูง)",
-        range: "ระยะทางรวมทั้งระบบ 1,300 กม. · ไฟฟ้าล้วน 106 กม. (NEDC)",
-        warranty: "ตามเงื่อนไขของผู้ผลิต (สอบถามที่โชว์รูม)",
-        safety: [
-            "ADAS 19 ฟังก์ชัน (เฉพาะรุ่น Max)",
-            "ถุงลมนิรภัยหน้า/ข้าง/หัวเข่า/interseat/ม่านลม",
-            "กล้องรอบทิศทาง 540 องศา (เฉพาะรุ่น Max)"
-        ],
-        technology: [
-            "จอกลาง 14.8 นิ้ว (Max) / 13.2 นิ้ว (Dynamic)",
-            "จอมาตรวัด 10.25 นิ้ว",
-            "เครื่องเสียง SONY 8 ลำโพง (เฉพาะรุ่น Max)",
-            "ชาร์จมือถือไร้สาย 50 วัตต์ (เฉพาะรุ่น Max)"
-        ],
-        features: [
-            "Super Hybrid System (SHS) เครื่องยนต์ 1.5 เทอร์โบ + มอเตอร์ไฟฟ้า",
-            "หลังคาพาโนรามิคซันรูฟ (เฉพาะรุ่น Max)",
-            "ระบบกรองอากาศ N95",
-            "อัตราเร่ง 0-100 กม./ชม. ใน 8.5 วินาที ความเร็วสูงสุดโดยประมาณ 180 กม./ชม.",
-            "พื้นที่บรรทุกสัมภาระ 500 ลิตร ระยะต่ำสุดจากพื้น 174 มม.",
-            "แผ่นปิดสัมภาระพร้อมจอรับภาพโปรเจคเตอร์แบบม้วนเก็บ (รุ่น Max)",
-            "รองรับชาร์จ AC สูงสุด 6.6 kW / DC สูงสุด 40 kW"
-        ],
-        variants: [
-            {
-                name: "Dynamic",
-                price: 899000,
-                engine: "1.5L Turbo + มอเตอร์ไฟฟ้า (SHS)",
-                power: "เครื่องยนต์ 143 แรงม้า + มอเตอร์ 204 แรงม้า",
-                torque: "215 Nm (เครื่องยนต์) + 310 Nm (มอเตอร์)",
-                transmission: "Automatic",
-                seats: 5
-            },
-            {
-                name: "Max",
-                price: 999000,
-                engine: "1.5L Turbo + มอเตอร์ไฟฟ้า (SHS)",
-                power: "เครื่องยนต์ 143 แรงม้า + มอเตอร์ 204 แรงม้า",
-                torque: "215 Nm (เครื่องยนต์) + 310 Nm (มอเตอร์)",
-                transmission: "Automatic",
-                seats: 5
-            }
-        ],
-        description: "SUV ไฮบริด Super Hybrid System ระยะทางรวมสูงสุด 1,300 กม. (NEDC) ไฟฟ้าล้วน 106 กม. อัตราสิ้นเปลือง 30.35 กม./ลิตร",
-        image: "/brand/models/jaecoo-j7.jpg"
-    },
-    {
         slug: "jaecoo-5-ev",
         brandSlug: "jaecoo",
         name: "JAECOO 5 EV",
@@ -4819,8 +4810,8 @@ const news = [
         content: [
             "รถ EV ที่เคยจมน้ำยังไม่ควรชาร์จหรือเปิดระบบขับเคลื่อนจนกว่าช่าง EV จะตรวจ แบตเตอรี่ไม่ได้เสียทุกคัน ส่วนประกันจ่ายหรือไม่ขึ้นกับความคุ้มครองและผลตรวจในกรมธรรม์จริง"
         ],
-        image: "/blog/ev-flooded-battery-cover.jpg",
-        imageAlt: "ช่าง GWM ตรวจเช็กแบตเตอรี่และระบบไฟฟ้าแรงสูง EV ORA 5 หลังรถจมน้ำ",
+        image: "/blog/ev-flooded-insurance-claim-cover.jpg",
+        imageAlt: "ช่างและลูกค้ากำลังแจ้งเคลมประกันรถ EV หลังจมน้ำ โดยมีรถ Lepas L6 Jaecoo J5 และ ORA 5 เปื้อนโคลนอยู่เบื้องหลัง",
         author: "ทีมบริการหลังการขาย Maporn Auto Group",
         publishDate: "2026-11-19",
         tags: [
@@ -5083,14 +5074,85 @@ const news = [
         ],
         body: [
             {
-                p: "ศูนย์บริการรถยนต์มาพร ออโต้ กรุ๊ป ครบ 6 บริการหลักในที่เดียว เช็คระยะ ซ่อมทั่วไป ซ่อมสีตัวถัง อะไหล่แท้ ช่วยเหลือฉุกเฉิน 24 ชม. และห้องรับรองทุกสาขา รองรับทุกแบรนด์ในเครือ Suzuki, GWM, OMODA, JAECOO, Lepas, Wuling และ Farizon ด้วยทีมช่างผ่านการอบรมตามมาตรฐานผู้ผลิต"
+                p: "รถยนต์คันหนึ่งใช้กันไม่ปีสองปี โดยเฉลี่ยคนไทยเปลี่ยนรถทุก 5–8 ปี ระหว่างนั้นรถต้องผ่านมือช่างสิบครั้งเป็นอย่างน้อย สิ่งที่สำคัญคือการหาศูนย์บริการที่น่าเชื่อถือ ไว้ใจได้ ไม่ใช่แค่ซ่อมเป็นแต่ต้องซื่อตรง บอกอาการจริง ให้คำแนะนำอย่างมืออาชีพ และไม่บอกราคาเกินจริง นอกจากนี้ความสะดวกสบายและตรงต่อเวลายังเป็นอีกปัจจัยหนึ่งที่ลูกค้าต้องการ"
             },
             {
-                h: "9 สาขา ครอบคลุมกรุงเทพฯ และปริมณฑล",
+                p: "มาพร ออโต้ กรุ๊ป เราอยู่ในธุรกิจรถยนต์มาแล้วกว่า 40 ปี จากโชว์รูมแห่งแรกบนถนนศรีนครินทร์ ตอนนี้เราได้ขยายธุรกิจออกไปถึง 8 โชว์รูม 9 ศูนย์บริการเช็กระยะ และ 6 ศูนย์ซ่อมสีและตัวถัง เราให้ความสำคัญกับการดูแลลูกค้าครบวงจรตั้งแต่วันแรกที่ออกรถกับเรา จนถึงวันที่ถึงกำหนดเช็กระยะ รวมไปถึงการซ่อมต่างๆ บทความนี้สรุป 6 บริการหลักของทั้ง 9 ศูนย์บริการของมาพร ออโต้ กรุ๊ป ที่ให้บริการสำหรับรถยี่ห้อ Suzuki, GWM, OMODA, JAECOO, Lepas, Wuling และ Farizon"
+            },
+            {
+                h: "1. ตรวจเช็กและบำรุงรักษาตามระยะทาง",
                 level: 2
             },
             {
-                p: "ศูนย์บริการมาพรให้บริการที่ศรีนครินทร์ (สำนักงานใหญ่) มีนบุรี ลำลูกกา ศรีราชา และระยอง พร้อมให้คำปรึกษาและนัดหมายได้ทุกสาขา โทร. 02-322-3663-5"
+                p: "น้ำมันเครื่อง ไส้กรอง ผ้าเบรก แบตเตอรี่ ยาง ของเหลว — รายการเหล่านี้ดูธรรมดา แต่ถ้าละเลยไม่นำรถมาเข้าเช็กตามระยะที่กำหนด ค่าซ่อมครั้งเดียวอาจแพงกว่าค่าเช็กระยะทั้งปี ที่ศูนย์บริการมาพร เราเช็คตามมาตรฐานของแต่ละแบรนด์ ใช้อะไหล่แท้ และมีบันทึกประวัติการเข้าศูนย์ไว้ครบ เพื่อให้สิทธิ์รับประกันของคุณยังอยู่ครบทุกข้อ"
+            },
+            {
+                p: "สำหรับรถไฮบริดและรถไฟฟ้า รายการตรวจเช็กต่างจากรถเครื่องยนต์ดีเซลหรือเบนซิน ทีมช่างของเราผ่านการอบรมมาตรฐานจากทุกแบรนด์ที่เราจำหน่าย จึงตรวจระบบไฟฟ้าแรงสูง เบรก และซอฟต์แวร์ได้โดยไม่ต้องส่งต่อที่อื่น"
+            },
+            {
+                h: "2. ซ่อมทั่วไปโดยช่างผู้เชี่ยวชาญ",
+                level: 2
+            },
+            {
+                p: "เครื่องยนต์ ช่วงล่าง ระบบไฟฟ้า เกียร์ แอร์ — เมื่อรถมีอาการผิดปกติ สิ่งแรกที่เราทำคือวินิจฉัยให้ถูก หากมีการเปลี่ยนอะไหล่เราใช้อะไหล่แท้ โดยช่างของมาพร ออโต้ กรุ๊ป ได้รับการเทรนจากแบรนด์โดยตรง มั่นใจได้ในความชำนาญ นอกจากนี้ เมื่อนำรถมาเข้าศูนย์บริการกับเรา เราจะมีการถ่ายรูปรถก่อนและหลังซ่อม ส่งอัปเดตให้ลูกค้าทาง Line OA พร้อมอธิบายจุดที่ต้องซ่อมอย่างละเอียดทุกครั้ง"
+            },
+            {
+                h: "3. ซ่อมสีและตัวถังได้มาตรฐาน",
+                level: 2
+            },
+            {
+                p: "รอยเฉี่ยว ชนหนัก สีลอก หรือน้ำท่วม งานซ่อมสีและตัวถังเป็นงานฝีมือล้วนๆ ที่มาพร ออโต้ กรุ๊ป เรามีมาตรฐานการซ่อมที่ได้รับการตรวจสอบรับรองจากทางแบรนด์โดยตรง ตั้งแต่การเคาะตัวถัง ผสมสีด้วยระบบคอมพิวเตอร์ ไปจนถึงการขัดเงา ตรวจ QC ก่อนส่งมอบ พร้อมรับประกันงานซ่อมทุกคัน โดยเรามีศูนย์ซ่อมสีและตัวถัง 6 สาขา ได้แก่ Suzuki ศรีนครินทร์ ระยอง, OMODA JAECOO ระยอง, Lepas ระยอง, Wuling ระยอง และ SuzyFix อู่ซ่อมรถ Suzuki"
+            },
+            {
+                h: "4. อะไหล่แท้ทุกแบรนด์",
+                level: 2
+            },
+            {
+                p: "เมื่อนำรถมาเข้ารับบริการกับมาพร ออโต้ กรุ๊ป เราใช้อะไหล่แท้ของทุกแบรนด์ที่เราเป็นตัวแทนจำหน่าย พร้อมบริการจัดส่งด่วนสำหรับอะไหล่ที่สาขาไม่มีพร้อม"
+            },
+            {
+                h: "5. ช่วยเหลือฉุกเฉิน 24 ชั่วโมง",
+                level: 2
+            },
+            {
+                p: "รถดับกลางทางไม่เลือกเวลา มาพร ออโต้ กรุ๊ป เป็นตัวแทนจำหน่ายอย่างเป็นทางการของ Suzuki, GWM, OMODA, JAECOO, Lepas, Wuling และ Farizon หากประสบปัญหารถดับกลางทาง สามารถติดต่อได้ตลอด 24 ชม. ทางเราจะเป็นตัวกลางติดต่อทางแบรนด์ให้เข้าไปช่วยเหลืออย่างทันท่วงที (อยู่ภายใต้เงื่อนไขของแต่ละแบรนด์)"
+            },
+            {
+                h: "6. ห้องรับรองสะดวกสบาย บริการครบครันในทุกศูนย์บริการ",
+                level: 2
+            },
+            {
+                p: "มาพร ออโต้ กรุ๊ป ให้ความสำคัญกับการบริการลูกค้าเป็นอันดับแรก เราจึงจัดเตรียมห้องรับรองที่สะดวกสบายสำหรับลูกค้าที่รอรับรถ พร้อมบริการเครื่องดื่ม ของว่าง และ Wi-Fi ทั้งยังดูแลบรรยากาศภายในห้องรับรองให้น่านั่ง สะอาด และอบอุ่นอยู่เสมอ"
+            },
+            {
+                h: "วันเข้ารับบริการที่มาพร เป็นอย่างไร",
+                level: 2
+            },
+            {
+                p: "เมื่อรถของคุณมาถึง เจ้าหน้าที่จะตรวจสอบข้อมูลในระบบ พร้อมสอบถามรายละเอียดและความต้องการในการเข้ารับบริการ จากนั้นจะให้คำแนะนำเกี่ยวกับการซ่อมหรือการเช็กระยะ สรุปรายการงานที่ต้องดำเนินการ ประเมินค่าใช้จ่ายเบื้องต้น และจัดทำเอกสารรับรถให้ลูกค้า"
+            },
+            {
+                p: "หลังจากนั้น ทีมช่างจะทำการตรวจสภาพรถเบื้องต้นอย่างละเอียด หากพบปัญหาหรือรายการซ่อมเพิ่มเติมนอกเหนือจากที่แจ้งไว้ พนักงานจะติดต่อขออนุมัติจากลูกค้าก่อนดำเนินการทุกครั้ง นอกจากนี้ เรายังมีบริการส่งภาพความคืบหน้าระหว่างการซ่อมผ่าน Line OA เพื่อให้ลูกค้าสามารถติดตามสถานะรถได้อย่างต่อเนื่อง"
+            },
+            {
+                p: "เพื่อความสะดวก รวดเร็ว และช่วยให้เราสามารถส่งมอบรถได้ตามเวลาที่กำหนด เราขอแนะนำให้ลูกค้าโทรนัดหมายล่วงหน้าก่อนเข้ารับบริการทุกครั้ง"
+            },
+            {
+                h: "ไม่ว่าจะเข้ารับบริการที่สาขาใด มาตรฐานเดียวกัน",
+                level: 2
+            },
+            {
+                p: "ไม่ว่าจะเข้ารับบริการที่สาขาใดใน 9 สาขาศูนย์บริการของเรา (Suzuki ศรีนครินทร์, Suzuki ระยอง, Suzuki ศรีราชา, GWM ลำลูกกา, OMODA JAECOO ระยอง, Lepas ระยอง, Wuling ระยอง, Farizon ศรีนครินทร์ และ SuzyFix อู่ซ่อม Suzuki มีนบุรี) คุณจะได้รับมาตรฐานการดูแลเดียวกัน เพราะเราเชื่อว่าความเชื่อมั่นของลูกค้าคือสิ่งที่สำคัญที่สุด"
+            },
+            {
+                p: "หากมีข้อสงสัยเกี่ยวกับรถของคุณ สามารถโทรเข้ามาปรึกษาเราได้ฟรีเสมอ แม้ในวันที่รถยังไม่มีปัญหาก็ตาม"
+            },
+            {
+                h: "ศูนย์บริการใกล้คุณ",
+                level: 2
+            },
+            {
+                p: "ศรีนครินทร์ (สำนักงานใหญ่): 2 ซอยมาพร ถนนศรีนครินทร์ ประเวศ กรุงเทพฯ โทร. 02-322-3663-5 | มีนบุรี: 456 ถนนสีหบุรานุกิจ มีนบุรี กรุงเทพฯ โทร. 02-322-3663-5 | ลำลูกกา: 13/10 หมู่ที่ 6 บึงคำพร้อย ลำลูกกา ปทุมธานี โทร. 082-829-9961 | ระยอง: 333 หมู่ 4 ต.ทับมา อ.เมือง ระยอง โทร. 090-983-8863 | ศรีราชา: 22 ถนนสุขุมวิท ศรีราชา ชลบุรี โทร. 090-983-8863"
             }
         ]
     },
@@ -5113,25 +5175,101 @@ const news = [
         ],
         body: [
             {
-                p: "รถยนต์ไฟฟ้า (EV) มีวิธีดูแลรักษาที่ต่างจากรถน้ำมันทั่วไป โดยเฉพาะเรื่องแบตเตอรี่ซึ่งเป็นหัวใจสำคัญของรถ การดูแลที่ถูกต้องช่วยยืดอายุการใช้งานและประหยัดค่าซ่อมในระยะยาว"
+                p: "หลายคนอาจมองว่ารถยนต์ไฟฟ้ามีราคาจับต้องได้มากขึ้น แต่สิ่งที่หลายคนยังกังวลคือค่าใช้จ่ายในการเปลี่ยนแบตเตอรี่ ซึ่งถือเป็นหนึ่งในชิ้นส่วนที่มีมูลค่าสูงที่สุดของรถ EV ข่าวดีคือ แบตเตอรี่รถยนต์ไฟฟ้ารุ่นใหม่ถูกพัฒนาให้มีอายุการใช้งานยาวนานและทนทานกว่าที่เคย โดยประสิทธิภาพและอายุการใช้งานจะยิ่งดีขึ้นหากได้รับการดูแลอย่างเหมาะสม"
+            },
+            {
+                p: "บทความนี้รวบรวมวิธีดูแลรถ EV ง่ายๆ ที่เจ้าของรถสามารถนำไปใช้ได้ทันทีในชีวิตประจำวัน ช่วยยืดอายุแบตเตอรี่ ลดความเสี่ยงของค่าใช้จ่ายในอนาคต และทำให้รถพร้อมใช้งานได้อย่างเต็มประสิทธิภาพ"
+            },
+            {
+                h: "เริ่มที่หัวใจของรถ: แบตเตอรี่",
+                level: 2
+            },
+            {
+                p: "แบตเตอรี่รถยนต์ไฟฟ้าเป็นเหมือนสมาร์ทโฟนเครื่องใหญ่ ยิ่งถูกใช้งานหนักในอุณหภูมิสูง ยิ่งเสื่อมเร็ว วิธีถนอมที่ช่างและค่ายรถทั่วโลกยืนยันตรงกันมีอยู่ 4 ข้อหลัก"
+            },
+            {
+                p: "1. รักษาระดับแบตเตอรี่ให้อยู่ในช่วง 20–80% เมื่อใช้งานประจำวัน สำหรับการใช้งานทั่วไป ไม่จำเป็นต้องชาร์จแบตเตอรี่เต็ม 100% ทุกครั้ง การรักษาระดับประจุในช่วงประมาณ 20–80% ช่วยลดความเครียดของเซลล์แบตเตอรี่และชะลอการเสื่อมสภาพในระยะยาว ทั้งนี้หากต้องเดินทางไกล การชาร์จเต็ม 100% ตามความจำเป็นก็สามารถทำได้"
+            },
+            {
+                p: "2. ใช้ DC Fast Charge เท่าที่จำเป็น การชาร์จเร็วแบบ DC Fast Charge เป็นตัวช่วยที่สะดวกเมื่อต้องเดินทางไกลหรือมีเวลาจำกัด แต่การใช้งานบ่อยครั้งอาจทำให้แบตเตอรี่ได้รับความร้อนสะสมมากกว่าการชาร์จแบบ AC ดังนั้นหากเป็นการใช้งานประจำวัน การชาร์จแบบ AC ที่บ้านหรือที่ทำงานจะช่วยถนอมแบตเตอรี่ได้ดีกว่า"
+            },
+            {
+                p: "3. หลีกเลี่ยงความร้อนสะสม อุณหภูมิสูงเป็นหนึ่งในปัจจัยสำคัญที่ส่งผลต่ออายุการใช้งานของแบตเตอรี่ EV หากเป็นไปได้ ควรจอดรถในที่ร่มหรือในอาคาร และหากต้องจอดรถทิ้งไว้นานหลายสัปดาห์ ควรเหลือระดับแบตเตอรี่ไว้ประมาณ 40–60%"
+            },
+            {
+                p: "4. ชาร์จรถในช่วงที่อุณหภูมิไม่ร้อนจัด แม้ว่ารถ EV รุ่นใหม่จะมีระบบจัดการอุณหภูมิแบตเตอรี่ที่มีประสิทธิภาพ แต่การชาร์จรถในช่วงที่อากาศไม่ร้อนจัด เช่น ช่วงเย็นหรือกลางคืน สามารถช่วยลดความร้อนสะสมของแบตเตอรี่ได้ โดยเฉพาะในประเทศไทยที่มีอากาศร้อนตลอดทั้งปี"
+            },
+            {
+                h: "ระบบเบรก: ดูแลน้อยลง แต่ไม่ควรมองข้าม",
+                level: 2
+            },
+            {
+                p: "รถยนต์ไฟฟ้าใช้ระบบเบรกแบบฟื้นพลังงาน (Regenerative Braking) ซึ่งช่วยชะลอรถและเปลี่ยนพลังงานกลับไปเก็บในแบตเตอรี่ ทำให้ผ้าเบรกและจานเบรกสึกหรอน้อยกว่ารถยนต์เครื่องยนต์สันดาปทั่วไป"
+            },
+            {
+                p: "อย่างไรก็ตาม การใช้งานเบรกที่น้อยลงอาจทำให้จานเบรกเกิดสนิมหรือมีคราบสะสมได้ จึงควรตรวจสอบระบบเบรกตามระยะอย่างสม่ำเสมอ รวมถึงเปลี่ยนน้ำมันเบรกตามกำหนด เนื่องจากน้ำมันเบรกสามารถดูดซับความชื้นจากอากาศได้"
+            },
+            {
+                h: "ยาง: สิ่งที่รถ EV ใช้งานหนักกว่าที่คิด",
+                level: 2
+            },
+            {
+                p: "หนึ่งในชิ้นส่วนที่สึกหรอเร็วกว่าที่หลายคนคาดคือยางรถยนต์ เนื่องจากรถ EV มีชุดแบตเตอรี่ขนาดใหญ่ทำให้น้ำหนักรถมากกว่ารถยนต์ทั่วไป อีกทั้งมอเตอร์ไฟฟ้ายังสามารถส่งแรงบิดได้ทันทีตั้งแต่ออกตัว ส่งผลให้ยางรับภาระมากขึ้น"
+            },
+            {
+                p: "การตรวจสอบแรงดันลมยางอย่างน้อยเดือนละครั้ง และสลับยางตามระยะที่ผู้ผลิตกำหนด หรือประมาณทุก 10,000 กิโลเมตร จะช่วยให้ยางสึกอย่างสม่ำเสมอและยืดอายุการใช้งาน"
+            },
+            {
+                h: "ของเหลวและระบบขับเคลื่อนที่หลายคนมักลืมดูแล",
+                level: 2
+            },
+            {
+                p: "แม้รถ EV จะไม่มีน้ำมันเครื่องให้เปลี่ยน แต่ยังมีของเหลวและชิ้นส่วนสำคัญที่ต้องดูแล เช่น น้ำหล่อเย็นสำหรับแบตเตอรี่และระบบอิเล็กทรอนิกส์กำลัง รวมถึงของเหลวในระบบส่งกำลังหรือเฟืองทดในรถบางรุ่น"
+            },
+            {
+                p: "อีกเรื่องที่ไม่ควรมองข้ามคือซอฟต์แวร์ภายในรถ ปัจจุบันรถ EV จำนวนมากได้รับการอัปเดตระบบอยู่เสมอ ไม่ว่าจะเป็นระบบจัดการแบตเตอรี่ ระบบชาร์จไฟ ระบบเบรก หรือระบบช่วยเหลือการขับขี่ (ADAS) การตรวจสอบและติดตั้งอัปเดตล่าสุดตามคำแนะนำของผู้ผลิตจึงเป็นส่วนหนึ่งของการบำรุงรักษา"
+            },
+            {
+                h: "อาการแบบไหนที่ควรเข้าศูนย์บริการทันที",
+                level: 2
+            },
+            {
+                p: "สัญญาณที่ควรให้ความสำคัญ เช่น ระยะทางวิ่งต่อการชาร์จลดลงอย่างเห็นได้ชัดภายในระยะเวลาไม่นาน ใช้เวลาชาร์จนานกว่าปกติ หรือพบปัญหาการชาร์จไม่สมบูรณ์ รวมถึงกรณีที่มีไฟเตือนเกี่ยวกับระบบแบตเตอรี่หรือระบบไฟฟ้าปรากฏขึ้น หากพบอาการดังกล่าว ควรนัดหมายเข้าศูนย์บริการเพื่อตรวจสอบโดยเร็ว"
+            },
+            {
+                p: "ส่วนกรณีที่พบกลิ่นไหม้ ควันผิดปกติ หรือเสียงผิดปกติรุนแรงจากบริเวณใต้ท้องรถหรือชุดแบตเตอรี่ ควรจอดรถในพื้นที่ปลอดภัยทันที หลีกเลี่ยงการใช้งานต่อ และติดต่อศูนย์บริการหรือบริการช่วยเหลือฉุกเฉินโดยเร็วที่สุด เพราะระบบไฟฟ้าแรงดันสูงและแบตเตอรี่ไม่ควรได้รับการตรวจสอบหรือแก้ไขด้วยตนเอง"
+            },
+            {
+                h: "เช็กระยะรถ EV ต่างจากรถน้ำมันอย่างไร",
+                level: 2
+            },
+            {
+                p: "รถยนต์เครื่องยนต์สันดาปมักต้องเข้าศูนย์บริการทุก 10,000 กิโลเมตร เพื่อตรวจเช็กและเปลี่ยนน้ำมันเครื่องเป็นหลัก ขณะที่รถยนต์ไฟฟ้าไม่มีรายการบำรุงรักษาส่วนนี้ ทำให้การเช็กระยะมุ่งเน้นไปที่การตรวจสอบสุขภาพแบตเตอรี่ ระบบเบรก ยาง ช่วงล่าง ระบบหล่อเย็น รวมถึงการอัปเดตซอฟต์แวร์"
+            },
+            {
+                p: "มาพร ออโต้ กรุ๊ป เป็นตัวแทนจำหน่ายและศูนย์บริการรถยนต์พลังงานไฟฟ้าแบรนด์ GWM, OMODA, JAECOO, Lepas, Wuling พร้อมทีมช่างที่ผ่านการอบรมและรับรองมาตรฐานจากผู้ผลิตโดยตรง สามารถให้คำแนะนำและดูแลรถได้อย่างครบวงจร ไม่ว่าจะเป็นการเช็กระยะ ซ่อมบำรุง ตรวจสอบสุขภาพแบตเตอรี่ หรือให้คำปรึกษาด้านการใช้งานรถยนต์ไฟฟ้า สามารถโทรนัดเพื่อตรวจเช็กระยะได้ที่ทุกศูนย์บริการ โทร. 02-322-3663-5"
+            },
+            {
+                h: "คำถามที่พบบ่อย",
+                level: 2
             },
             {
                 h: "ชาร์จแบตเตอรี่เท่าไรดีที่สุด?",
-                level: 2
+                level: 3
             },
             {
                 p: "เพื่อช่วยยืดอายุแบตเตอรี่ ควรรักษาระดับการชาร์จให้อยู่ในช่วง 20–80% และไม่จำเป็นต้องชาร์จเต็ม 100% ทุกครั้ง หากต้องจอดรถไว้นาน ควรเหลือแบตเตอรี่ประมาณ 40–60%"
             },
             {
-                h: "ชาร์จ DC Fast Charge บ่อย ๆ ทำให้แบตเตอรี่เสื่อมเร็วไหม?",
-                level: 2
+                h: "ชาร์จ DC บ่อยๆ ทำให้แบตเตอรี่เสื่อมเร็วไหม?",
+                level: 3
             },
             {
                 p: "การชาร์จแบบ DC Fast Charge เป็นประจำอาจส่งผลต่ออายุการใช้งานแบตเตอรี่ในระยะยาว เนื่องจากเกิดความร้อนสูงกว่า จึงเหมาะสำหรับการเดินทางไกลหรือกรณีจำเป็น ส่วนการชาร์จแบบ AC ควรเป็นทางเลือกหลักสำหรับการใช้งานประจำวัน"
             },
             {
-                h: "รถ EV ต้องเข้าเช็กระยะหรือไม่?",
-                level: 2
+                h: "รถ EV ต้องเช็กระยะหรือไม่?",
+                level: 3
             },
             {
                 p: "แม้รถ EV จะไม่มีน้ำมันเครื่องให้เปลี่ยน แต่ยังจำเป็นต้องเข้ารับการตรวจเช็กตามระยะ โดยเน้นที่สุขภาพแบตเตอรี่ ระบบเบรก ยาง ช่วงล่าง และการอัปเดตซอฟต์แวร์ ซึ่งโดยทั่วไปมีค่าใช้จ่ายในการบำรุงรักษาต่ำกว่ารถยนต์เครื่องยนต์สันดาปทั่วไป"
@@ -5157,35 +5295,60 @@ const news = [
         ],
         body: [
             {
-                p: "Suzy Fix คือศูนย์ซ่อมสีและตัวถังมาตรฐานในเครือมาพร ออโต้ กรุ๊ป ผสมสีด้วยระบบคอมพิวเตอร์ให้ตรงสีรถแต่ละคัน พร้อมห้องพ่นสีควบคุมอุณหภูมิและกรองฝุ่น รับประกันงานซ่อมทุกคัน"
+                p: "รถโดนเฉี่ยวในลานจอดห้าง ประตูรถคันข้างเปิดมากระแทก หรือสีตัวถังเสียหายจากน้ำท่วมและการใช้งานในชีวิตประจำวัน เมื่อเจอสถานการณ์เหล่านี้ หลายคนมักเริ่มต้นด้วยการมองหาอู่ที่อยู่ใกล้ที่สุดหรือเสนอราคาที่ถูกที่สุด"
             },
             {
-                h: "ซ่อมสีตัวถังที่ศูนย์มาตรฐานต่างจากอู่ทั่วไปอย่างไร?",
+                p: "แต่สำหรับงานซ่อมสีและตัวถัง คุณภาพของงานไม่ได้ถูกตัดสินในวันที่รับรถกลับบ้าน เพราะรถที่ดูสวยในวันแรก อาจเริ่มแสดงปัญหาในอีกไม่กี่เดือนหรือหลายปีต่อมา ไม่ว่าจะเป็นสีแตกลาย สีลอก สีเพี้ยน หรือพื้นผิวตัวถังที่ไม่เรียบ ส่งผลให้ต้องกลับมาเสียค่าใช้จ่ายในการแก้ไขซ้ำโดยไม่จำเป็น"
+            },
+            {
+                h: "งานซ่อมสีที่ได้มาตรฐาน มี 6 ขั้นตอนสำคัญ",
                 level: 2
             },
             {
-                p: "ศูนย์ซ่อมสีตัวถังมาตรฐานมีขั้นตอนครบ 6 ขั้น ตั้งแต่ประเมินความเสียหาย เคาะปรับรูปทรงตัวถัง ผสมสีด้วยระบบคอมพิวเตอร์ให้ตรงรถคันจริง พ่นสีในห้องพ่นควบคุมอุณหภูมิและกรองฝุ่น ขัดเก็บรายละเอียด และตรวจ QC ก่อนส่งมอบ ทำให้งานสีทนทานในระยะยาว ไม่แตกลายหรือสีเพี้ยนภายหลัง"
+                p: "1. ประเมินความเสียหายอย่างละเอียด: ก่อนเริ่มงานซ่อม ช่างจะตรวจสอบความเสียหายทั้งภายนอกและโครงสร้างที่อยู่ภายใน เพื่อประเมินแนวทางการซ่อม ระยะเวลา และค่าใช้จ่ายได้อย่างถูกต้อง"
             },
             {
-                h: "ซ่อมสีที่ Suzy Fix มีรับประกันงานซ่อมหรือไม่?",
+                p: "2. เคาะและปรับรูปทรงตัวถัง: คุณภาพงานสีเริ่มต้นจากคุณภาพงานตัวถัง หากพื้นผิวไม่เรียบหรือรูปทรงไม่กลับสู่สภาพเดิม ต่อให้ใช้สีคุณภาพดีเพียงใด ความผิดปกติก็ยังสามารถมองเห็นได้เมื่อกระทบแสง"
+            },
+            {
+                p: "3. ผสมสีให้ตรงกับรถคันจริง: แม้จะเป็นรถรุ่นเดียวกันและรหัสสีเดียวกัน แต่สีอาจมีความแตกต่างเล็กน้อยจากอายุการใช้งาน การผสมสีจึงต้องอาศัยทั้งระบบคอมพิวเตอร์และความชำนาญของช่าง"
+            },
+            {
+                p: "4. พ่นสีในห้องพ่นมาตรฐาน: ห้องพ่นสีที่มีระบบควบคุมอุณหภูมิและกรองฝุ่นช่วยลดความเสี่ยงของฝุ่นละอองหรือสิ่งปนเปื้อนที่อาจส่งผลต่อคุณภาพผิวสี"
+            },
+            {
+                p: "5. ขัดเก็บรายละเอียดและประกอบชิ้นส่วน: หลังพ่นสี ชิ้นงานจะได้รับการตรวจสภาพ ขัดเก็บรายละเอียด และประกอบกลับอย่างระมัดระวัง เพื่อให้ความเรียบร้อยใกล้เคียงสภาพเดิมจากโรงงาน"
+            },
+            {
+                p: "6. ตรวจสอบคุณภาพก่อนส่งมอบ (QC): ก่อนส่งมอบรถ จะมีการตรวจสอบคุณภาพงานซ่อมอีกครั้ง เพื่อให้มั่นใจว่ารถพร้อมใช้งานและเป็นไปตามมาตรฐานที่กำหนด"
+            },
+            {
+                h: "สิ่งที่ Suzy Fix แตกต่าง",
                 level: 2
             },
             {
-                p: "มี ทุกคันได้รับการรับประกันคุณภาพงานซ่อมตามเงื่อนไขที่กำหนด หากพบความผิดปกติของผิวสีภายในระยะเวลารับประกัน สามารถติดต่อศูนย์บริการเพื่อเข้ารับการตรวจสอบและแก้ไขได้"
+                p: "Suzy Fix คือศูนย์ซ่อมสีและตัวถังสำหรับรถยนต์ Suzuki โดยเฉพาะ ภายใต้มาตรฐานการทำงานที่ให้ความสำคัญทั้งด้านคุณภาพ ความปลอดภัย และความพึงพอใจของลูกค้า สิ่งที่ลูกค้าจะได้รับ ได้แก่ ทีมช่างที่ผ่านการอบรมตามมาตรฐานของ Suzuki, ระบบผสมสีที่ช่วยให้เฉดสีใกล้เคียงกับสีเดิมของรถมากที่สุด, ห้องพ่นสีและอุปกรณ์ที่ได้มาตรฐาน, การรับประกันคุณภาพงานซ่อมตามเงื่อนไขที่กำหนด และบริการประสานงานด้านประกันภัยเพื่อความสะดวกของลูกค้า"
             },
             {
-                h: "เคลมประกันซ่อมสีตัวถังต้องทำอย่างไร?",
+                h: "เคลมประกันอย่างไรให้สบายใจ",
                 level: 2
             },
             {
-                p: "กรณีเกิดอุบัติเหตุและมีประกันภัยคุ้มครอง ที่ Suzy Fix พร้อมช่วยประสานงานกับบริษัทประกันตั้งแต่ขั้นตอนการเคลมจนถึงการส่งมอบรถ หากรถยังอยู่ในระยะรับประกันจากผู้ผลิต ควรซ่อมกับศูนย์ที่ได้รับการรับรองเพื่อให้การซ่อมเป็นไปตามมาตรฐานที่ผู้ผลิตกำหนด"
+                p: "กรณีเกิดอุบัติเหตุและมีประกันภัยคุ้มครอง บริษัทประกันยังคงพิจารณาความคุ้มครองตามเงื่อนไขของกรมธรรม์ หากรถยังอยู่ในระยะรับประกันจากผู้ผลิต ควรตรวจสอบเงื่อนไขการซ่อมกับศูนย์หรือสถานประกอบการที่ได้รับการรับรอง ที่ Suzy Fix เราพร้อมช่วยประสานงานกับบริษัทประกันตั้งแต่ขั้นตอนการเคลมไปจนถึงการส่งมอบรถ"
             },
             {
-                h: "Suzy Fix อยู่ที่ไหน ติดต่ออย่างไร?",
+                h: "หลังรับรถกลับมา ควรดูแลสีใหม่อย่างไร?",
                 level: 2
             },
             {
-                p: "Suzy Fix มีนบุรี ตั้งอยู่ที่ 456 ถนนสีหบุรานุกิจ แขวงมีนบุรี เขตมีนบุรี กรุงเทพมหานคร โทร. 02-322-3663-5 สามารถส่งภาพความเสียหายของรถเพื่อขอประเมินค่าซ่อมเบื้องต้นได้ฟรี"
+                p: "หลังงานพ่นสีใหม่ ควรหลีกเลี่ยงการขัด เคลือบ หรือใช้น้ำแรงดันสูงในระยะเริ่มต้นตามคำแนะนำของศูนย์บริการ เพื่อให้ชั้นสีและแลกเกอร์เซ็ตตัวได้อย่างสมบูรณ์ หากพบความผิดปกติของผิวสีภายในระยะเวลาการรับประกันงานซ่อม ควรติดต่อศูนย์บริการเพื่อเข้ารับการตรวจสอบและแก้ไขตามเงื่อนไขที่กำหนด"
+            },
+            {
+                h: "Suzy Fix อยู่ที่ไหน?",
+                level: 2
+            },
+            {
+                p: "Suzy Fix มีนบุรี ตั้งอยู่ที่ 456 ถนนสีหบุรานุกิจ แขวงมีนบุรี เขตมีนบุรี กรุงเทพมหานคร โทร. 02-322-3663-5 สนใจประเมินค่าซ่อมเบื้องต้น เพียงส่งภาพความเสียหายของรถมาให้ทีมงานตรวจสอบ เราพร้อมให้คำแนะนำและประเมินเบื้องต้นโดยไม่มีค่าใช้จ่าย"
             }
         ]
     },
@@ -5208,35 +5371,74 @@ const news = [
         ],
         body: [
             {
-                p: "การซื้อรถไฟฟ้าครั้งแรกอาจมีคำถามมากมาย ทั้งเรื่องการชาร์จ แบตเตอรี่ บริการหลังการขาย และ Trade-in รวมคำตอบไว้ที่นี่"
+                p: "รถยนต์ไฟฟ้าในประเทศไทยมีตัวเลือกมากขึ้นทุกปี หลายแบรนด์และหลายรุ่น บางคนเริ่มตัดสินใจจากราคาหรือดีไซน์ แต่การซื้อรถ EV ครั้งแรกมีปัจจัยที่ควรตรวจสอบให้ครบก่อนจอง เพราะค่าใช้จ่ายหลังการซื้อ เช่น ค่าชาร์จ ค่าอะไหล่ และบริการหลังการขาย อาจแตกต่างกันมากในแต่ละแบรนด์"
+            },
+            {
+                h: "เช็กลิสต์ 8 ข้อก่อนจองรถ EV",
+                level: 2
+            },
+            {
+                p: "ข้อ 1 — ศูนย์บริการอยู่ใกล้บ้านหรือที่ทำงานหรือไม่? รถ EV ต้องการช่างที่ผ่านการอบรมเฉพาะและเครื่องมือที่รองรับระบบไฟฟ้าแรงสูง ศูนย์บริการที่ใกล้ที่สุดจึงสำคัญกว่าที่คิด ตรวจสอบรายชื่อและที่ตั้งศูนย์บริการก่อนตัดสินใจซื้อ"
+            },
+            {
+                p: "ข้อ 2 — ระยะวิ่งต่อการชาร์จเต็มรองรับการใช้งานจริงของคุณหรือไม่? ระยะวิ่งที่ระบุในสเปคมักเป็นค่าที่ทดสอบในสภาวะอุดมคติ ระยะวิ่งจริงอาจต่างกันตามการใช้แอร์ น้ำหนักบรรทุก และสภาพถนน ควรประมาณระยะทางที่ใช้จริงต่อวันและเทียบกับสเปคของรถ"
+            },
+            {
+                p: "ข้อ 3 — เงื่อนไขรับประกันแบตเตอรี่เป็นอย่างไร? แต่ละแบรนด์กำหนดทั้งระยะเวลา ระยะทาง และเกณฑ์ประสิทธิภาพขั้นต่ำของแบตเตอรี่ที่แตกต่างกัน ควรอ่านเงื่อนไขจากเอกสารรับประกันจริงก่อนจอง ไม่ใช่ดูแค่ตัวเลขที่โฆษณา"
+            },
+            {
+                p: "ข้อ 4 — อะไหล่และชิ้นส่วนสำรองหาได้ง่ายแค่ไหน? รถ EV มีชิ้นส่วนเฉพาะที่ต้องนำเข้า ตรวจสอบว่าแบรนด์ที่สนใจมีคลังอะไหล่ในประเทศและกระจายถึงสาขาภูมิภาคหรือไม่ เพราะหากต้องรอนำเข้า ระยะเวลาซ่อมจะนานกว่ารถสันดาป"
+            },
+            {
+                p: "ข้อ 5 — ค่าบริการเช็คระยะและบำรุงรักษาอยู่ในระดับใด? รถ EV ไม่มีน้ำมันเครื่องและน้ำมันเกียร์ แต่ยังต้องเช็คระบบห้ามล้อ ยาง ระบบปรับอากาศ และซอฟต์แวร์ตามกำหนด สอบถามค่าบริการล่วงหน้าเพื่อประมาณค่าใช้จ่ายระยะยาว"
+            },
+            {
+                p: "ข้อ 6 — สินเชื่อและโปรโมชันจากศูนย์มีอะไรบ้าง? ดอกเบี้ยและเงื่อนไขสินเชื่อระหว่างธนาคารพาณิชย์กับสินเชื่อผ่านศูนย์อาจต่างกัน รวมถึงโปรโมชันพิเศษที่ศูนย์จัดให้ในบางช่วง ควรเปรียบเทียบยอดผ่อนรวมทั้งหมด ไม่ใช่แค่ค่างวดต่อเดือน"
+            },
+            {
+                p: "ข้อ 7 — การชาร์จที่บ้านเป็นไปได้หรือไม่? ตรวจสอบว่าที่พักรองรับการติดตั้งเครื่องชาร์จ รวมถึงระบบไฟฟ้าในบ้านรองรับหรือไม่ หากอยู่คอนโดหรือบ้านเช่า ควรสอบถามนิติบุคคลหรือเจ้าของก่อน"
+            },
+            {
+                p: "ข้อ 8 — รถเก่า Trade-in ได้หรือไม่ ราคาเป็นอย่างไร? ขอใบประเมิน Trade-in จากหลายแห่งและเปรียบเทียบจากราคารถใหม่สุทธิหลังหักรถเก่า ไม่ใช่แค่ตัวเลขรับซื้อรถเก่าเพียงอย่างเดียว ทีมงานมาพรพร้อมประเมิน Trade-in ได้ทุกสาขา"
             },
             {
                 h: "รถ EV กับ PHEV ต่างกันอย่างไร?",
                 level: 2
             },
             {
-                p: "EV ใช้พลังงานไฟฟ้าจากแบตเตอรี่เพียงอย่างเดียว ส่วน PHEV มีทั้งมอเตอร์ไฟฟ้าและเครื่องยนต์ สามารถชาร์จไฟจากภายนอกได้ และยังใช้เครื่องยนต์เป็นแหล่งพลังงานสำรองเมื่อแบตเตอรี่ลดลง จึงช่วยลดความกังวลเรื่องระยะทางในการเดินทางไกล"
+                p: "EV ใช้พลังงานไฟฟ้าจากแบตเตอรี่เพียงอย่างเดียว ไม่มีเครื่องยนต์สันดาป ส่วน PHEV มีทั้งมอเตอร์ไฟฟ้าและเครื่องยนต์ ชาร์จไฟจากภายนอกได้ และสามารถใช้เครื่องยนต์เป็นแหล่งพลังงานสำรองเมื่อแบตเตอรี่ลดลง PHEV จึงเหมาะกับผู้ที่ใช้รถระยะไกลเป็นประจำหรืออยู่ในพื้นที่ที่สถานีชาร์จยังกระจายตัวไม่ทั่วถึง"
             },
             {
-                h: "ซื้อรถไฟฟ้า จำเป็นต้องติดตั้งเครื่องชาร์จที่บ้านหรือไม่?",
+                h: "ซื้อรถ EV ในภาคตะวันออก ต้องเตรียมอะไรเพิ่ม?",
                 level: 2
             },
             {
-                p: "ไม่จำเป็นต้องติดตั้งก็สามารถใช้งานรถ EV ได้ แต่แนะนำให้มีเครื่องชาร์จที่บ้าน เพราะโดยทั่วไปค่าไฟฟ้าภายในบ้านมักประหยัดกว่าการชาร์จที่สถานีสาธารณะ และยังเพิ่มความสะดวกในการใช้งานประจำวัน สามารถชาร์จรถไว้ข้ามคืนและพร้อมใช้งานได้ทุกเช้า หากไม่สะดวกติดตั้ง ควรตรวจสอบสถานีชาร์จบริเวณบ้าน เส้นทางประจำ และที่ทำงานก่อนตัดสินใจซื้อ"
+                p: "ภาคตะวันออก (ระยอง ชลบุรี ศรีราชา) มีการขยายตัวของสถานีชาร์จในพื้นที่อุตสาหกรรมและทางหลวงหลักต่อเนื่อง แต่ในพื้นที่นิคมอุตสาหกรรมหรือเส้นทางรองบางสายอาจยังมีน้อย ควรสำรวจจุดชาร์จในเส้นทางที่ใช้เป็นประจำก่อนตัดสินใจซื้อ มาพร ออโต้ กรุ๊ป มีศูนย์บริการที่ระยองและศรีราชา พร้อมให้บริการลูกค้าในพื้นที่ภาคตะวันออก"
             },
             {
-                h: "รับประกันแบตเตอรี่รถไฟฟ้านานแค่ไหน?",
+                h: "คำถามที่พบบ่อยก่อนซื้อรถ EV",
                 level: 2
             },
             {
-                p: "ระยะเวลารับประกันแตกต่างกันไปในแต่ละแบรนด์ โดยส่วนใหญ่มักกำหนดทั้งระยะเวลา ระยะทาง และเงื่อนไขด้านประสิทธิภาพของแบตเตอรี่ ควรศึกษารายละเอียดจากเอกสารรับประกันของแต่ละรุ่นก่อนตัดสินใจซื้อ"
+                h: "จำเป็นต้องติดตั้งเครื่องชาร์จที่บ้านหรือไม่?",
+                level: 3
             },
             {
-                h: "มีรถเก่าอยู่ อยาก Trade-in ต้องเริ่มยังไง?",
-                level: 2
+                p: "ไม่จำเป็น แต่แนะนำ เพราะโดยทั่วไปค่าไฟฟ้าในบ้านมักประหยัดกว่าสถานีชาร์จสาธารณะ และสะดวกกว่าในการใช้งานประจำวัน หากไม่สะดวกติดตั้ง ให้ตรวจสอบสถานีชาร์จบริเวณบ้าน เส้นทางประจำ และที่ทำงานก่อน"
             },
             {
-                p: "ขอใบประเมินราคารถจากหลายแห่ง แล้วเปรียบเทียบจากราคารถใหม่สุทธิหลังหักรถเก่าและส่วนลดทั้งหมด ไม่ใช่ดูแค่ราคารับซื้อรถเก่าเพียงอย่างเดียว โดยทีมงานมาพรพร้อมประเมิน Trade-in ได้ทุกสาขา"
+                h: "รับประกันแบตเตอรี่นานแค่ไหน?",
+                level: 3
+            },
+            {
+                p: "ระยะเวลารับประกันแตกต่างกันในแต่ละแบรนด์ โดยส่วนใหญ่กำหนดทั้งระยะเวลาและระยะทาง รวมถึงเกณฑ์ประสิทธิภาพขั้นต่ำ ควรศึกษาเงื่อนไขจากเอกสารรับประกันของแต่ละรุ่นก่อนตัดสินใจซื้อ สอบถามรายละเอียดได้ที่โชว์รูม"
+            },
+            {
+                h: "รถ EV ซ่อมที่อู่ทั่วไปได้ไหม?",
+                level: 3
+            },
+            {
+                p: "งานทั่วไปอย่างยาง เบรก หรือน้ำยาอาจทำได้ที่อู่ทั่วไป แต่งานที่เกี่ยวกับระบบแบตเตอรี่ มอเตอร์ และระบบไฟฟ้าแรงสูง ควรนำเข้าศูนย์บริการที่ผ่านการรับรองจากผู้ผลิต เพื่อความปลอดภัยและการรักษาสิทธิ์รับประกัน"
             }
         ]
     },
@@ -6157,6 +6359,6 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
 }),
-]);})()
+]);
 
 //# sourceMappingURL=src_15rbb0f2-t98m._.js.map

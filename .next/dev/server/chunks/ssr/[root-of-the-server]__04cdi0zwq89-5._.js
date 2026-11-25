@@ -1,5 +1,46 @@
 module.exports = [
-(()=>{"use strict";return[
+"[externals]/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js [external] (next/dist/compiled/next-server/app-page-turbo.runtime.dev.js, cjs)", ((__turbopack_context__, module, exports) => {
+
+var mod = __turbopack_context__.x("next/dist/compiled/next-server/app-page-turbo.runtime.dev.js", () => require("next/dist/compiled/next-server/app-page-turbo.runtime.dev.js"));
+
+module.exports = mod;
+}),
+"[externals]/next/dist/server/app-render/action-async-storage.external.js [external] (next/dist/server/app-render/action-async-storage.external.js, cjs)", ((__turbopack_context__, module, exports) => {
+
+var mod = __turbopack_context__.x("next/dist/server/app-render/action-async-storage.external.js", () => require("next/dist/server/app-render/action-async-storage.external.js"));
+
+module.exports = mod;
+}),
+"[externals]/next/dist/server/app-render/after-task-async-storage.external.js [external] (next/dist/server/app-render/after-task-async-storage.external.js, cjs)", ((__turbopack_context__, module, exports) => {
+
+var mod = __turbopack_context__.x("next/dist/server/app-render/after-task-async-storage.external.js", () => require("next/dist/server/app-render/after-task-async-storage.external.js"));
+
+module.exports = mod;
+}),
+"[externals]/next/dist/server/app-render/dynamic-access-async-storage.external.js [external] (next/dist/server/app-render/dynamic-access-async-storage.external.js, cjs)", ((__turbopack_context__, module, exports) => {
+
+var mod = __turbopack_context__.x("next/dist/server/app-render/dynamic-access-async-storage.external.js", () => require("next/dist/server/app-render/dynamic-access-async-storage.external.js"));
+
+module.exports = mod;
+}),
+"[externals]/next/dist/server/app-render/work-async-storage.external.js [external] (next/dist/server/app-render/work-async-storage.external.js, cjs)", ((__turbopack_context__, module, exports) => {
+
+var mod = __turbopack_context__.x("next/dist/server/app-render/work-async-storage.external.js", () => require("next/dist/server/app-render/work-async-storage.external.js"));
+
+module.exports = mod;
+}),
+"[externals]/next/dist/server/app-render/work-unit-async-storage.external.js [external] (next/dist/server/app-render/work-unit-async-storage.external.js, cjs)", ((__turbopack_context__, module, exports) => {
+
+var mod = __turbopack_context__.x("next/dist/server/app-render/work-unit-async-storage.external.js", () => require("next/dist/server/app-render/work-unit-async-storage.external.js"));
+
+module.exports = mod;
+}),
+"[externals]/next/dist/server/runtime-reacts.external.js [external] (next/dist/server/runtime-reacts.external.js, cjs)", ((__turbopack_context__, module, exports) => {
+
+var mod = __turbopack_context__.x("next/dist/server/runtime-reacts.external.js", () => require("next/dist/server/runtime-reacts.external.js"));
+
+module.exports = mod;
+}),
 "[project]/src/components/layout/CookieConsent.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
@@ -1195,7 +1236,7 @@ const company = {
     email: "info@mapornautogroup.com",
     line: "@mapornautogroup",
     // LINE OA Maporn Auto Group (add-friend link)
-    lineUrl: "https://line.me/R/ti/p/@mapornautogroup",
+    lineUrl: "https://lin.ee/zt4TKs1",
     // Maporn Group - มาพรกรุ๊ป
     facebook: "https://www.facebook.com/profile.php?id=61569211525303",
     instagram: "https://instagram.com/mapornautogroup",
@@ -1229,26 +1270,28 @@ const companyTimeline = [
     {
         period: "1988–ปัจจุบัน",
         items: [
-            "ก่อตั้งตัวแทนจำหน่าย SUZUKI"
-        ]
+            "ก่อตั้งตัวแทนจำหน่าย SUZUKI ศรีนครินทร์"
+        ],
+        logo: "/brand/history/maporn-history-1988.webp"
     },
     {
         period: "2012–2021",
         items: [
             "ขยายสาขา SUZUKI เทพารักษ์"
-        ]
+        ],
+        logo: "/brand/history/maporn-history-2012.webp"
     },
     {
         period: "2017–2023",
         items: [
             "ขยายสาขา SUZUKI มีนบุรี"
-        ]
+        ],
+        logo: "/brand/history/maporn-history-2017.webp"
     },
     {
         period: "2023–ปัจจุบัน",
         items: [
-            "เปิด SUZYFIX",
-            "เริ่มธุรกิจรถยนต์ไฟฟ้าเชิงพาณิชย์"
+            "เปิด SUZYFIX"
         ]
     },
     {
@@ -1267,13 +1310,14 @@ const companyTimeline = [
         period: "2025–ปัจจุบัน",
         items: [
             "ขยายธุรกิจ OMODA JAECOO ระยอง"
-        ]
+        ],
+        logo: "/brand/history/maporn-history-2025.webp"
     },
     {
         period: "2026–ปัจจุบัน",
         items: [
             "ขยายสาขา SUZUKI ศรีราชา",
-            "ขยายธุรกิจ GWM กทม",
+            "ขยายธุรกิจ GWM ลำลูกกา",
             "ขยายธุรกิจ WULING, LEPAS ระยอง"
         ]
     }
@@ -1296,49 +1340,6 @@ const companyValues = [
         description: "ทีมขายและช่างเทคนิคที่ผ่านการอบรมมาตรฐานจากทุกแบรนด์"
     }
 ];
-}),
-]})(),
-"[externals]/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js [external] (next/dist/compiled/next-server/app-page-turbo.runtime.dev.js, cjs)", ((__turbopack_context__, module, exports) => {
-
-var mod = __turbopack_context__.x("next/dist/compiled/next-server/app-page-turbo.runtime.dev.js", () => require("next/dist/compiled/next-server/app-page-turbo.runtime.dev.js"));
-
-module.exports = mod;
-}),
-"[externals]/next/dist/server/app-render/action-async-storage.external.js [external] (next/dist/server/app-render/action-async-storage.external.js, cjs)", ((__turbopack_context__, module, exports) => {
-
-var mod = __turbopack_context__.x("next/dist/server/app-render/action-async-storage.external.js", () => require("next/dist/server/app-render/action-async-storage.external.js"));
-
-module.exports = mod;
-}),
-"[externals]/next/dist/server/app-render/after-task-async-storage.external.js [external] (next/dist/server/app-render/after-task-async-storage.external.js, cjs)", ((__turbopack_context__, module, exports) => {
-
-var mod = __turbopack_context__.x("next/dist/server/app-render/after-task-async-storage.external.js", () => require("next/dist/server/app-render/after-task-async-storage.external.js"));
-
-module.exports = mod;
-}),
-"[externals]/next/dist/server/app-render/dynamic-access-async-storage.external.js [external] (next/dist/server/app-render/dynamic-access-async-storage.external.js, cjs)", ((__turbopack_context__, module, exports) => {
-
-var mod = __turbopack_context__.x("next/dist/server/app-render/dynamic-access-async-storage.external.js", () => require("next/dist/server/app-render/dynamic-access-async-storage.external.js"));
-
-module.exports = mod;
-}),
-"[externals]/next/dist/server/app-render/work-async-storage.external.js [external] (next/dist/server/app-render/work-async-storage.external.js, cjs)", ((__turbopack_context__, module, exports) => {
-
-var mod = __turbopack_context__.x("next/dist/server/app-render/work-async-storage.external.js", () => require("next/dist/server/app-render/work-async-storage.external.js"));
-
-module.exports = mod;
-}),
-"[externals]/next/dist/server/app-render/work-unit-async-storage.external.js [external] (next/dist/server/app-render/work-unit-async-storage.external.js, cjs)", ((__turbopack_context__, module, exports) => {
-
-var mod = __turbopack_context__.x("next/dist/server/app-render/work-unit-async-storage.external.js", () => require("next/dist/server/app-render/work-unit-async-storage.external.js"));
-
-module.exports = mod;
-}),
-"[externals]/next/dist/server/runtime-reacts.external.js [external] (next/dist/server/runtime-reacts.external.js, cjs)", ((__turbopack_context__, module, exports) => {
-
-var mod = __turbopack_context__.x("next/dist/server/runtime-reacts.external.js", () => require("next/dist/server/runtime-reacts.external.js"));
-
-module.exports = mod;
 }),
 ];
 

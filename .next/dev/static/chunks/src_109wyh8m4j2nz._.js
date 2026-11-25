@@ -1,4 +1,4 @@
-(()=>{"use strict";(globalThis["TURBOPACK"] || (globalThis["TURBOPACK"] = [])).push([typeof document === "object" ? document.currentScript : undefined,
+(globalThis["TURBOPACK"] || (globalThis["TURBOPACK"] = [])).push([typeof document === "object" ? document.currentScript : undefined,
 "[project]/src/components/layout/CookieConsent.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
@@ -1267,7 +1267,7 @@ const company = {
     email: "info@mapornautogroup.com",
     line: "@mapornautogroup",
     // LINE OA Maporn Auto Group (add-friend link)
-    lineUrl: "https://line.me/R/ti/p/@mapornautogroup",
+    lineUrl: "https://lin.ee/zt4TKs1",
     // Maporn Group - มาพรกรุ๊ป
     facebook: "https://www.facebook.com/profile.php?id=61569211525303",
     instagram: "https://instagram.com/mapornautogroup",
@@ -1301,26 +1301,28 @@ const companyTimeline = [
     {
         period: "1988–ปัจจุบัน",
         items: [
-            "ก่อตั้งตัวแทนจำหน่าย SUZUKI"
-        ]
+            "ก่อตั้งตัวแทนจำหน่าย SUZUKI ศรีนครินทร์"
+        ],
+        logo: "/brand/history/maporn-history-1988.webp"
     },
     {
         period: "2012–2021",
         items: [
             "ขยายสาขา SUZUKI เทพารักษ์"
-        ]
+        ],
+        logo: "/brand/history/maporn-history-2012.webp"
     },
     {
         period: "2017–2023",
         items: [
             "ขยายสาขา SUZUKI มีนบุรี"
-        ]
+        ],
+        logo: "/brand/history/maporn-history-2017.webp"
     },
     {
         period: "2023–ปัจจุบัน",
         items: [
-            "เปิด SUZYFIX",
-            "เริ่มธุรกิจรถยนต์ไฟฟ้าเชิงพาณิชย์"
+            "เปิด SUZYFIX"
         ]
     },
     {
@@ -1339,13 +1341,14 @@ const companyTimeline = [
         period: "2025–ปัจจุบัน",
         items: [
             "ขยายธุรกิจ OMODA JAECOO ระยอง"
-        ]
+        ],
+        logo: "/brand/history/maporn-history-2025.webp"
     },
     {
         period: "2026–ปัจจุบัน",
         items: [
             "ขยายสาขา SUZUKI ศรีราชา",
-            "ขยายธุรกิจ GWM กทม",
+            "ขยายธุรกิจ GWM ลำลูกกา",
             "ขยายธุรกิจ WULING, LEPAS ระยอง"
         ]
     }
@@ -1372,6 +1375,6 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
 }),
-]);})()
+]);
 
 //# sourceMappingURL=src_109wyh8m4j2nz._.js.map

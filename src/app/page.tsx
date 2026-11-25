@@ -225,7 +225,8 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center mb-10">
             {/* Left: heading + feature cards */}
             <div>
-              <h2 className="text-3xl sm:text-4xl font-black text-white mt-2 mb-6">ทำไมต้องมาพรพาณิชย์</h2>
+              <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-white/40 mb-2">WHY CHOOSE US • CORPORATE PROFILE</p>
+              <h2 className="text-3xl sm:text-4xl font-black text-white mt-1 mb-6">บริษัท มาพร พาณิชย์ จำกัด</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
                   { badge: 'กว่า 40 ปี', title: 'ประสบการณ์ยาวนาน', text: 'ผู้เชี่ยวชาญในธุรกิจจำหน่ายรถยนต์ที่ได้รับความไว้วางใจกว่า 40 ปี' },
@@ -247,13 +248,30 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right: showroom photo */}
-            <div className="rounded-2xl overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.45)]">
-              <img
-                src="/brand/maporn-lobby-illustrated.jpg"
-                alt="โชว์รูม Maporn Trading"
-                className="w-full aspect-[1024/586] lg:aspect-auto lg:h-full object-cover transition-transform duration-500 hover:scale-105"
-              />
+            {/* Right: Vision & Mission */}
+            <div className="flex flex-col gap-4">
+              {[
+                {
+                  en: "VISION", th: "วิสัยทัศน์",
+                  lead: null as string | null,
+                  text: "มาพร ออโต้ กรุ๊ป มุ่งมั่นพัฒนาธุรกิจเพื่อเป็นเครือข่ายตัวแทนจำหน่ายรถยนต์ที่ดูแลลูกค้าทั่วประเทศ พร้อมศูนย์บริการสำหรับในกรุงเทพฯ และภาคตะวันออก ที่ให้ความอุ่นใจแก่ลูกค้าตลอดการเป็นเจ้าของรถ ไม่ใช่แค่วันที่ซื้อ",
+                },
+                {
+                  en: "MISSION", th: "พันธกิจ",
+                  lead: "อุ่นใจเมื่อซื้อรถและใช้บริการกับมาพร",
+                  text: "มาพร ออโต้ กรุ๊ป มอบความอุ่นใจให้ลูกค้าตั้งแต่วันแรกที่เดินเข้ามาหาเรา จนถึงทุกวันที่คุณใช้รถ เพราะเรามุ่งมั่นดูแลลูกค้าด้วยใจ เราพร้อมดูแลคุณต่อไปตลอดทาง",
+                },
+              ].map((c) => (
+                <div
+                  key={c.en}
+                  className="relative flex-1 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-6 pl-7 backdrop-blur-md"
+                >
+                  <div className="absolute bottom-0 left-0 top-0 w-[3px] rounded-l-2xl bg-brand-red" />
+                  <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.28em] text-white/40">{c.en} | {c.th}</p>
+                  {c.lead && <p className="mb-2 font-semibold text-brand-red">&ldquo;{c.lead}&rdquo;</p>}
+                  <p className="text-sm leading-relaxed text-white/65">{c.text}</p>
+                </div>
+              ))}
             </div>
           </div>
 

@@ -1,5 +1,4 @@
 module.exports = [
-(()=>{"use strict";return[
 "[next]/internal/font/google/kanit_763a7b36.js [app-rsc] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
@@ -20,6 +19,13 @@ if (__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$k
     fontData.variable = __TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$kanit_763a7b36$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].variable;
 }
 const __TURBOPACK__default__export__ = fontData;
+}),
+"[next]/internal/font/google/kanit_763a7b36.module.css [app-rsc] (css module)", ((__turbopack_context__) => {
+
+__turbopack_context__.v({
+  "className": "kanit_763a7b36-module__MsfFAW__className",
+  "variable": "kanit_763a7b36-module__MsfFAW__variable",
+});
 }),
 "[project]/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.js [app-rsc] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
@@ -193,6 +199,10 @@ function RootLayout({ children }) {
         columnNumber: 5
     }, this);
 }
+}),
+"[project]/src/app/layout.tsx [app-rsc] (ecmascript, Next.js Server Component)", (function(__turbopack_context__){
+
+__turbopack_context__.n(__turbopack_context__.i("[project]/src/app/layout.tsx [app-rsc] (ecmascript)"));
 }),
 "[project]/src/components/layout/CookieConsent.tsx [app-rsc] (client reference proxy)", ((__turbopack_context__) => {
 "use strict";
@@ -570,7 +580,7 @@ const company = {
     email: "info@mapornautogroup.com",
     line: "@mapornautogroup",
     // LINE OA Maporn Auto Group (add-friend link)
-    lineUrl: "https://line.me/R/ti/p/@mapornautogroup",
+    lineUrl: "https://lin.ee/zt4TKs1",
     // Maporn Group - มาพรกรุ๊ป
     facebook: "https://www.facebook.com/profile.php?id=61569211525303",
     instagram: "https://instagram.com/mapornautogroup",
@@ -604,26 +614,28 @@ const companyTimeline = [
     {
         period: "1988–ปัจจุบัน",
         items: [
-            "ก่อตั้งตัวแทนจำหน่าย SUZUKI"
-        ]
+            "ก่อตั้งตัวแทนจำหน่าย SUZUKI ศรีนครินทร์"
+        ],
+        logo: "/brand/history/maporn-history-1988.webp"
     },
     {
         period: "2012–2021",
         items: [
             "ขยายสาขา SUZUKI เทพารักษ์"
-        ]
+        ],
+        logo: "/brand/history/maporn-history-2012.webp"
     },
     {
         period: "2017–2023",
         items: [
             "ขยายสาขา SUZUKI มีนบุรี"
-        ]
+        ],
+        logo: "/brand/history/maporn-history-2017.webp"
     },
     {
         period: "2023–ปัจจุบัน",
         items: [
-            "เปิด SUZYFIX",
-            "เริ่มธุรกิจรถยนต์ไฟฟ้าเชิงพาณิชย์"
+            "เปิด SUZYFIX"
         ]
     },
     {
@@ -642,13 +654,14 @@ const companyTimeline = [
         period: "2025–ปัจจุบัน",
         items: [
             "ขยายธุรกิจ OMODA JAECOO ระยอง"
-        ]
+        ],
+        logo: "/brand/history/maporn-history-2025.webp"
     },
     {
         period: "2026–ปัจจุบัน",
         items: [
             "ขยายสาขา SUZUKI ศรีราชา",
-            "ขยายธุรกิจ GWM กทม",
+            "ขยายธุรกิจ GWM ลำลูกกา",
             "ขยายธุรกิจ WULING, LEPAS ระยอง"
         ]
     }
@@ -671,18 +684,6 @@ const companyValues = [
         description: "ทีมขายและช่างเทคนิคที่ผ่านการอบรมมาตรฐานจากทุกแบรนด์"
     }
 ];
-}),
-]})(),
-"[next]/internal/font/google/kanit_763a7b36.module.css [app-rsc] (css module)", ((__turbopack_context__) => {
-
-__turbopack_context__.v({
-  "className": "kanit_763a7b36-module__MsfFAW__className",
-  "variable": "kanit_763a7b36-module__MsfFAW__variable",
-});
-}),
-"[project]/src/app/layout.tsx [app-rsc] (ecmascript, Next.js Server Component)", (function(__turbopack_context__){
-
-__turbopack_context__.n(__turbopack_context__.i("[project]/src/app/layout.tsx [app-rsc] (ecmascript)"));
 }),
 ];
 
