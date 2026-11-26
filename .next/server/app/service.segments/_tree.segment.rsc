@@ -18,7 +18,7 @@
 :HL["/brand/branches/srinakarin/exterior-dusk.webp","image"]
 :HL["/brand/branches/covers/suzuki-rayong.webp","image"]
 :HL["/brand/branches/suzy-fix/entrance.webp","image"]
-:HL["/brand/branches/sriracha/exterior.webp","image"]
+:HL["/brand/branches/sriracha/exterior2.webp","image"]
 :HL["/brand/branches/lamlukka/exterior-team.webp","image"]
 :HL["/brand/branches/covers/farizon-srinakarin.webp","image"]
 :HL["/brand/branches/covers/omoda-jaecoo-rayong.webp","image"]
@@ -26,4 +26,4 @@
 :HL["/brand/branches/covers/wuling-rayong.webp","image"]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"service","h":96,"c":"$Q2"}]]
-0:{"b":"IfLJkBgyx4yfL3rWDSr0_","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"iu1O68MmgjG9EiFgkmfmU","t":{"t":{"s":"","h":80,"c":"$Q1"}}}

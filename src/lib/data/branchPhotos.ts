@@ -45,7 +45,7 @@ export const branchGallery: Record<string, BranchPhoto[]> = {
     p("lamlukka", "technician", "ช่างผู้ชำนาญการ GWM"),
   ],
   sriracha: [
-    p("sriracha", "exterior", "โชว์รูม Suzuki Maporn ศรีราชา"),
+    p("sriracha", "exterior2", "โชว์รูม Suzuki Maporn ศรีราชา"),
     p("sriracha", "exterior-road", "โชว์รูมริมถนนสุขุมวิท ศรีราชา"),
     p("sriracha", "showroom", "ภายในโชว์รูม"),
     p("sriracha", "lounge", "ห้องรับรองลูกค้า"),

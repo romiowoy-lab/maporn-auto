@@ -28,7 +28,7 @@ import {
 const BRANCH_COVER: Record<string, string> = {
   srinakarin: '/brand/branches/srinakarin/exterior-dusk.webp',
   lamlukka: '/brand/branches/lamlukka/exterior-team.webp',
-  sriracha: '/brand/branches/sriracha/exterior.webp',
+  sriracha: '/brand/branches/sriracha/exterior2.webp',
   rayong: branchCover.rayong.src,
 };
 
